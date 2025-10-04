@@ -1,4 +1,4 @@
-package = "ti-chem"
+package = "tichem"
 version = "dev-1"
 source = {
    url = "https://github.com/SnapperGee/ti-chem"
