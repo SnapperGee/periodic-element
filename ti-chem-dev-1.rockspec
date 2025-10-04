@@ -5,8 +5,8 @@ source = {
 }
 description = {
    homepage = "https://github.com/SnapperGee/ti-chem",
-   license = "*** please specify a license ***",
-   summary = "",
+   license = "Proprietary",
+   summary = "Chemistry application(s) and utilities for the TI Nspire CX II.",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
    issues_url = "https://github.com/SnapperGee/ti-chem/issues"
 }
