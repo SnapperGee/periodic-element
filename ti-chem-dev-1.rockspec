@@ -8,11 +8,13 @@ description = {
    license = "Proprietary",
    summary = "Chemistry application(s) and utilities for the TI Nspire CX II.",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
-   issues_url = "https://github.com/SnapperGee/ti-chem/issues"
 }
 build = {
    type = "builtin",
    modules = {
       main = "src/main.lua"
    }
+}
+dependencies = {
+   "lua >= 5.1, < 5.2"
 }
