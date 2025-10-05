@@ -19,31 +19,31 @@ function Element:new(opts)
 
     assert(type(opts) == "table", "opts table required")
 
-    local name = assert(
-        type(opts.name) == "string" and #opts.name > 0 and opts.name,
+    assert(
+        type(opts.name) == "string" and #opts.name > 0,
         "non empty 'name' string is required"
     )
 
-    local symbol = assert(
-        type(opts.symbol) == "string" and #opts.symbol >= 1 and #opts.symbol <= 2 and opts.symbol,
+    assert(
+        type(opts.symbol) == "string" and #opts.symbol >= 1 and #opts.symbol <= 2,
         "1-2 char 'symbol' string is required"
     )
 
-    local number = assert(
-        type(opts.number) == "number" and opts.number > 0 and opts.number,
+    assert(
+        type(opts.number) == "number" and opts.number > 0,
         "positive 'number' atomic number is required"
     )
 
-    local mass = assert(
-        type(opts.mass) == "number" and opts.mass > 0 and opts.mass,
+    assert(
+        type(opts.mass) == "number" and opts.mass > 0,
         "positive 'mass' number is required"
     )
 
     local obj = setmetatable({
-        name = name,
-        symbol = symbol,
-        number = number,
-        mass = mass
+        name = opts.name,
+        symbol = opts.symbol,
+        number = opts.number,
+        mass = opts.mass
     }, self)
 
     return obj
