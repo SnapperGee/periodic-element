@@ -49,10 +49,4 @@ function Element:new(opts)
     return obj
 end
 
-function Element:__tostring()
-  return ("Element{name=%q, symbol=%q, number=%s, mass=%s}")
-    :format(tostring(self.name), tostring(self.symbol),
-            tostring(self.number), tostring(self.mass))
-end
-
 return Element

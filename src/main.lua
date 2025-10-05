@@ -1,4 +1,5 @@
 local Element = require("src.element")
+local inspect = require("inspect")
 
 local lithium = Element:new{
     name = "Lithium",
@@ -7,4 +8,4 @@ local lithium = Element:new{
     mass = 6.941
 }
 
-print(lithium)
+print(inspect(lithium))
