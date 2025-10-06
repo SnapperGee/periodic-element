@@ -3,8 +3,8 @@
 ---@field symbol string     -- 1-2 chars
 ---@field number integer    -- atomic number
 ---@field mass   number     -- atomic mass
----@field period number     -- period
----@field group  number|nil -- group
+---@field period number     -- 1..7
+---@field group  number|nil -- nil or 1..18
 local Element = {}
 
 Element.__index = Element
