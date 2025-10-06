@@ -60,7 +60,8 @@ function Element:new(opts)
             string.format("f-block elements have no IUPAC group: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
         )
     else
-        assert(type(opts.group) == "number" and opts.group % 1 == 0 and opts.group >= 1 and opts.group <= 18,
+        assert(
+            type(opts.group) == "number" and opts.group % 1 == 0 and opts.group >= 1 and opts.group <= 18,
             string.format("'group' integer in [1,18] for s/p/d-block expected but got: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
         )
     end
