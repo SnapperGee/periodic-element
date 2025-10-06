@@ -1,5 +1,6 @@
 local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
+local SUBSHELL_LETTER_RANK = { s=0, p=1, d=2, f=3 }
 
 ---@alias SubshellLetter '"s"'|'"p"'|'"d"'|'"f"'
 
@@ -12,6 +13,33 @@ local VALID_SUBSHELL_LETTER = { s = true, p = true, d = true, f = true }
 local SubshellOccupancy = {}
 
 SubshellOccupancy.__index = SubshellOccupancy
+
+function SubshellOccupancy.__eq(a, b)
+    return rawequal(a,b)
+        or a.quantum_number == b.quantum_number
+        and a.subshell_letter == b.subshell_letter
+        and a.electron_count == b.electron_count
+end
+
+function SubshellOccupancy.__lt(a, b)
+    if rawequal(a, b) then return false end
+
+    if a.quantum_number ~= b.quantum_number then
+        return a.quantum_number < b.quantum_number
+    end
+
+    local ra, rb = SUBSHELL_LETTER_RANK[a.subshell_letter], SUBSHELL_LETTER_RANK[b.subshell_letter]
+
+    if ra ~= rb then
+        return ra < rb
+    end
+
+    return a.electron_count < b.electron_count
+end
+
+function SubshellOccupancy.__le(a, b)
+    return not SubshellOccupancy.__lt(b, a)
+end
 
 ---@class SubshellOccupancyInitOpts
 ---@field quantum_number integer         -- principal quantum number (e.g., 3 in 3d10)
