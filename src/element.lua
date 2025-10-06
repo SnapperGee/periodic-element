@@ -41,7 +41,7 @@ function Element:new(opts)
 
     assert(
         type(opts.number) == "number" and opts.number % 1 == 0 and opts.number >= 1 and opts.number <= 118,
-        string.format("'number' integer between 1 and 118 expected but got: %s", tostring(opts.number))
+        string.format("'number' integer in [1, 118] expected but got: %s", tostring(opts.number))
     )
 
     assert(
@@ -51,19 +51,23 @@ function Element:new(opts)
 
     assert(
         type(opts.block) == "string" and VALID_BLOCK[opts.block],
-       "block must be one of 's','p','d','f'"
+       "'block' must be one of 's','p','d','f'"
     )
 
     if opts.block == "f" then
-        assert(opts.group == nil, "f-block elements have no IUPAC group")
+        assert(
+            opts.group == nil,
+            string.format("f-block elements have no IUPAC group: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
+        )
     else
         assert(type(opts.group) == "number" and opts.group % 1 == 0 and opts.group >= 1 and opts.group <= 18,
-            "group must be an integer in [1,18] for s/p/d-block")
+            string.format("'group' integer in [1,18] for s/p/d-block expected but got: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
+        )
     end
 
     assert(
         type(opts.period) == "number" and opts.period % 1 == 0 and opts.period >= 1 and opts.period <= 7,
-        string.format("'period' integer between 1 and 7 expected but got: %s", tostring(opts.period))
+        string.format("'period' integer in [1,7] expected but got: %s", tostring(opts.period))
     )
 
     local obj = setmetatable({
