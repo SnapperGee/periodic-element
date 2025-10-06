@@ -1,10 +1,15 @@
+---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
+
+local VALID_BLOCK = { s = true, p = true, d = true, f = true }
+
 ---@class Element
----@field name   string     -- element name
----@field symbol string     -- 1-2 chars
----@field number integer    -- atomic number
----@field mass   number     -- atomic mass
+---@field name   string      -- element name
+---@field symbol string      -- 1-2 chars
+---@field number integer     -- atomic number
+---@field mass   number      -- atomic mass
+---@field group  integer|nil -- nil if Block is f otherwise 1..18
 ---@field period integer     -- 1..7
----@field group  integer|nil -- nil or 1..18
+---@field block  Block
 local Element = {}
 
 Element.__index = Element
@@ -14,8 +19,9 @@ Element.__index = Element
 ---@field symbol string
 ---@field number integer
 ---@field mass   number
----@field period integer
 ---@field group  integer|nil
+---@field period integer
+---@field block  Block
 
 ---@param opts ElementInitOpts
 ---@return Element
@@ -34,7 +40,7 @@ function Element:new(opts)
     )
 
     assert(
-        type(opts.number) == "number" and opts.number >= 1 and opts.number <= 118 and opts.number % 1 == 0,
+        type(opts.number) == "number" and opts.number % 1 == 0 and opts.number >= 1 and opts.number <= 118,
         string.format("'number' integer between 1 and 118 expected but got: %s", tostring(opts.number))
     )
 
@@ -44,13 +50,20 @@ function Element:new(opts)
     )
 
     assert(
-        type(opts.period) == "number" and opts.period >= 1 and opts.period <= 7 and opts.period % 1 == 0,
-        string.format("'period' integer between 1 and 7 expected but got: %s", tostring(opts.period))
+        type(opts.block) == "string" and VALID_BLOCK[opts.block],
+       "block must be one of 's','p','d','f'"
     )
 
+    if opts.block == "f" then
+        assert(opts.group == nil, "f-block elements have no IUPAC group")
+    else
+        assert(type(opts.group) == "number" and opts.group % 1 == 0 and opts.group >= 1 and opts.group <= 18,
+            "group must be an integer in [1,18] for s/p/d-block")
+    end
+
     assert(
-        opts.group == nil or type(opts.group) == "number" and opts.group >= 1 and opts.group <= 18 and opts.period % 1 == 0,
-        string.format("'group' of nil or integer between 1 and 18 expected but got: %s", tostring(opts.group))
+        type(opts.period) == "number" and opts.period % 1 == 0 and opts.period >= 1 and opts.period <= 7,
+        string.format("'period' integer between 1 and 7 expected but got: %s", tostring(opts.period))
     )
 
     local obj = setmetatable({
@@ -58,8 +71,9 @@ function Element:new(opts)
         symbol = opts.symbol,
         number = opts.number,
         mass = opts.mass,
+        group = opts.group,
         period = opts.period,
-        group = opts.group
+        block = opts.block
     }, self)
 
     return obj

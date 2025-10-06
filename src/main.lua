@@ -6,8 +6,9 @@ local lithium = Element:new{
     symbol = "Li",
     number = 3,
     mass = 6.941,
-    period = 1,
-    group = 2
+    group = 1,
+    period = 2,
+    block = "s"
 }
 
 print(inspect(lithium))
