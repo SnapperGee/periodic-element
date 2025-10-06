@@ -3,21 +3,21 @@
 ---@field symbol string     -- 1-2 chars
 ---@field number integer    -- atomic number
 ---@field mass   number     -- atomic mass
----@field period number     -- 1..7
----@field group  number|nil -- nil or 1..18
+---@field period integer     -- 1..7
+---@field group  integer|nil -- nil or 1..18
 local Element = {}
 
 Element.__index = Element
 
----@class ElementInit
+---@class ElementInitOpts
 ---@field name   string
 ---@field symbol string
 ---@field number integer
 ---@field mass   number
----@field period number
----@field group  number|nil
+---@field period integer
+---@field group  integer|nil
 
----@param opts ElementInit
+---@param opts ElementInitOpts
 ---@return Element
 function Element:new(opts)
 
