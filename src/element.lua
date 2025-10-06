@@ -51,7 +51,7 @@ function Element:new(opts)
 
     assert(
         type(opts.block) == "string" and VALID_BLOCK[opts.block],
-       "'block' must be one of 's','p','d','f'"
+       string.format("'block' must be one of 's','p','d','f' but got: %s", tostring(opts.block))
     )
 
     if opts.block == "f" then
