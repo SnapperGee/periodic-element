@@ -1,4 +1,4 @@
-require("src.subshell_occupancy")
+local SubshellOccupancy = require("src.subshell_occupancy")
 
 ---@class ElectronConfiguration
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn"
