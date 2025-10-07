@@ -28,6 +28,8 @@ local ElectronConfiguration = {}
 
 ElectronConfiguration.__index = ElectronConfiguration
 
+-- TODO: implement comparison operators
+
 ---@class ElectronConfigurationInitOpts
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn"
 ---@field subshell_occupancy  SubshellOccupancy[] -- ordered list as written (keep authoring order)

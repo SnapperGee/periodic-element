@@ -14,6 +14,8 @@ local Element = {}
 
 Element.__index = Element
 
+-- TODO: implement comparison operators
+
 ---@class ElementInitOpts
 ---@field name   string
 ---@field symbol string
