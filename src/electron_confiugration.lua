@@ -19,6 +19,7 @@ local function is_array_of_subshell_occupancies(arg)
 end
 
 local NOBLE_GAS_SYMBOLS = { He = true, Ne = true, Ar = true, Kr = true, Xe = true, Rn = true, Og = true }
+local NOBLE_GAS_RANK = { He = 0, Ne = 1, Ar = 2, Kr = 3, Xe = 4, Rn = 5, Og = 6 }
 
 ---@class ElectronConfiguration
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn", "Og"
