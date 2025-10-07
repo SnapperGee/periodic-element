@@ -46,6 +46,7 @@ end
 ---@field subshell_letter SubshellLetter -- subshell letter: s/p/d/f
 ---@field electron_count integer         -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
 
+-- TODO: Make immutable
 ---@param opts SubshellOccupancyInitOpts
 ---@return SubshellOccupancy
 function SubshellOccupancy:new(opts)

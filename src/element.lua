@@ -23,6 +23,7 @@ Element.__index = Element
 ---@field period integer
 ---@field block  Block
 
+-- TODO: Make immutable
 ---@param opts ElementInitOpts
 ---@return Element
 function Element:new(opts)
