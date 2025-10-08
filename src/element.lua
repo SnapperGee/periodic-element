@@ -1,3 +1,5 @@
+local Family = require("src.family")
+
 ---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
 
 local VALID_BLOCK = { s = true, p = true, d = true, f = true }
@@ -5,9 +7,10 @@ local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 ---@class Element
 ---@field name   string      -- element name
 ---@field symbol string      -- 1-2 chars
----@field number integer     -- atomic number
+---@field number integer     -- atomic number 1..118
 ---@field mass   number      -- atomic mass
 ---@field group  integer|nil -- nil if Block is f otherwise 1..18
+---@field family string      -- group family
 ---@field period integer     -- 1..7
 ---@field block  Block
 local Element = {}
@@ -105,6 +108,7 @@ function Element:new(opts)
         number = opts.number,
         mass = opts.mass,
         group = opts.group,
+        family = Family(opts.number),
         period = opts.period,
         block = normalized_block
     }, self)
