@@ -10,7 +10,7 @@ local function is_array_of_subshell_occupancies(arg)
     if n == 0 then return false end
 
     for k, v in pairs(arg) do
-        if type(k) ~= "number" or k % 1 ~= 0 or k < 1 or k > n or type(v) ~= "table" or getmetatable(opts.subshell_occupancy) ~= SubshellOccupancy then
+        if type(k) ~= "number" or k % 1 ~= 0 or k < 1 or k > n or type(v) ~= "table" or getmetatable(v) ~= SubshellOccupancy then
             return false
         end
     end
