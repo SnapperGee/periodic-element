@@ -8,7 +8,7 @@ local VALID_L_LETTER = { s = true, p = true, d = true, f = true }
 
 ---@class SubshellOccupancy
 ---@field n integer        -- principal quantum number (e.g., 3 in 3d10)
----@field l SubshellLetter -- azimuthal (angular-momentum) quantum number (orbital/subshell type): s/p/d/f
+---@field l SubshellLetter -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
 ---@field electron_count integer         -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
 local SubshellOccupancy = {}
 
@@ -47,7 +47,7 @@ end
 
 ---@class SubshellOccupancyInitOpts
 ---@field n integer         -- principal quantum number (e.g., 3 in 3d10)
----@field l SubshellLetter -- subshell letter: s/p/d/f
+---@field l SubshellLetter -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
 ---@field electron_count integer         -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
 
 -- TODO: Make immutable
@@ -66,7 +66,7 @@ function SubshellOccupancy:new(opts)
 
     assert(
         VALID_L_LETTER[normalized_l],
-        string.format("'l' azimuthal (angular-momentum) quantum number (orbital/subshell type) must be one of 's','p','d','f' but got: %s", tostring(opts.l))
+        string.format("'l' (subshell letter) must be one of 's','p','d','f' but got: %s", tostring(opts.l))
     )
 
     assert(
