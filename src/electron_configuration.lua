@@ -32,32 +32,32 @@ function ElectronConfiguration.__newindex()
     error("ElectronConfiguration records are immutable", 2)
 end
 
-function ElectronConfiguration.__eq(a, b)
-    return rawequal(a,b)
-        or a.core == b.core
-        and a.subshell_occupancy == b.subshell_occupancy
+function ElectronConfiguration:__eq(other)
+    return rawequal(self,other)
+        or self.core == other.core
+        and self.subshell_occupancy == other.subshell_occupancy
 end
 
-function ElectronConfiguration.__lt(a, b)
-    if rawequal(a, b) then return false end
+function ElectronConfiguration:__lt(other)
+    if rawequal(self, other) then return false end
 
-    local ra = a.core and NOBLE_GAS_RANK[a.core] or -1
-    local rb = b.core and NOBLE_GAS_RANK[b.core] or -1
+    local ra = self.core and NOBLE_GAS_RANK[self.core] or -1
+    local rb = other.core and NOBLE_GAS_RANK[other.core] or -1
     if ra ~= rb then return ra < rb end
 
-    local na, nb = #a.subshell_occupancy, #b.subshell_occupancy
+    local na, nb = #self.subshell_occupancy, #other.subshell_occupancy
     local n = (na < nb) and na or nb
 
     for i = 1, n do
-        local ai, bi = a.subshell_occupancy[i], b.subshell_occupancy[i]
+        local ai, bi = self.subshell_occupancy[i], other.subshell_occupancy[i]
         if ai ~= bi then return ai < bi end
     end
 
     return na < nb
 end
 
-function ElectronConfiguration.__le(a, b)
-    return not ElectronConfiguration.__lt(b, a)
+function ElectronConfiguration:__le(other)
+    return not ElectronConfiguration.__lt(other, self)
 end
 
 ---@class ElectronConfigurationInitOpts
