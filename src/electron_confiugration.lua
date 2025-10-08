@@ -28,7 +28,7 @@ local ElectronConfiguration = {}
 
 ElectronConfiguration.__index = ElectronConfiguration
 
-function SubshellOccupancy.__newindex()
+function ElectronConfiguration.__newindex()
     error("ElectronConfiguration records are immutable", 2)
 end
 
