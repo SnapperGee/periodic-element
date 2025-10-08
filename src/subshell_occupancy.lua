@@ -18,31 +18,31 @@ function SubshellOccupancy.__newindex()
     error("SubshellOccupancy records are immutable", 2)
 end
 
-function SubshellOccupancy.__eq(a, b)
-    return rawequal(a,b)
-        or a.n == b.n
-        and a.l == b.l
-        and a.electron_count == b.electron_count
+function SubshellOccupancy:__eq(other)
+    return rawequal(self,other)
+        or self.n == other.n
+        and self.l == other.l
+        and self.electron_count == other.electron_count
 end
 
-function SubshellOccupancy.__lt(a, b)
-    if rawequal(a, b) then return false end
+function SubshellOccupancy:__lt(other)
+    if rawequal(self, other) then return false end
 
-    if a.n ~= b.n then
-        return a.n < b.n
+    if self.n ~= other.n then
+        return self.n < other.n
     end
 
-    local ra, rb = l_RANK[a.l], L_LETTER_RANK[b.subshell_letter]
+    local ra, rb = l_RANK[self.l], L_LETTER_RANK[other.subshell_letter]
 
     if ra ~= rb then
         return ra < rb
     end
 
-    return a.electron_count < b.electron_count
+    return self.electron_count < other.electron_count
 end
 
-function SubshellOccupancy.__le(a, b)
-    return not SubshellOccupancy.__lt(b, a)
+function SubshellOccupancy:__le(other)
+    return not SubshellOccupancy.__lt(other, self)
 end
 
 function SubshellOccupancy:principal_quantum_number()
