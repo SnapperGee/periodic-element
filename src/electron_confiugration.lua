@@ -32,7 +32,33 @@ function ElectronConfiguration.__newindex()
     error("ElectronConfiguration records are immutable", 2)
 end
 
--- TODO: implement comparison operators
+function ElectronConfiguration.__eq(a, b)
+    return rawequal(a,b)
+        or a.core == b.core
+        and a.subshell_occupancy == b.subshell_occupancy
+end
+
+function ElectronConfiguration.__lt(a, b)
+    if rawequal(a, b) then return false end
+
+    local ra = a.core and NOBLE_GAS_RANK[a.core] or -1
+    local rb = b.core and NOBLE_GAS_RANK[b.core] or -1
+    if ra ~= rb then return ra < rb end
+
+    local na, nb = #a.subshell_occupancy, #b.subshell_occupancy
+    local n = (na < nb) and na or nb
+
+    for i = 1, n do
+        local ai, bi = a.subshell_occupancy[i], b.subshell_occupancy[i]
+        if ai ~= bi then return ai < bi end
+    end
+
+    return na < nb
+end
+
+function ElectronConfiguration.__le(a, b)
+    return not ElectronConfiguration.__lt(b, a)
+end
 
 ---@class ElectronConfigurationInitOpts
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn"
