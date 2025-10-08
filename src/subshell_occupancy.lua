@@ -110,7 +110,7 @@ function SubshellOccupancy:new(opts)
 
     assert(
         type(opts.n) == "number" and opts.n % 1 == 0 and opts.n >= N_MIN[opts.l],
-        string.format("'n' (principal quantum number) with subshell '%s' must be integer greater than or equal to %d but got : %s", opts.l, N_MIN[opts.l], tostring(opts.n))
+        string.format("'n' (principal quantum number) with subshell '%s' must be integer greater than or equal to %d but got: %s", opts.l, N_MIN[opts.l], tostring(opts.n))
     )
 
     assert(
