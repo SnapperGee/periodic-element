@@ -18,7 +18,17 @@ function Element.__newindex()
     error("Element records are immutable", 2)
 end
 
--- TODO: implement comparison operators
+function Element.__eq(a, b)
+    return a.number == b.number
+end
+
+function Element.__lt(a, b)
+    return a.number < b.number
+end
+
+function Element.__le(a, b)
+    return not Element.__lt(b, a)
+end
 
 ---@class ElementInitOpts
 ---@field name   string
