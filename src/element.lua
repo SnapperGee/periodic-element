@@ -51,10 +51,14 @@ function Element:new(opts)
         string.format("non empty 'name' string expected but got: %s", tostring(opts.name))
     )
 
+    local normalized_name = opts.name:sub(1,1):upper() .. opts.name:sub(2):lower()
+
     assert(
         type(opts.symbol) == "string" and #opts.symbol >= 1 and #opts.symbol <= 2,
         string.format("1-2 char 'symbol' string expected but got: %s", tostring(opts.symbol))
     )
+
+    local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
 
     assert(
         type(opts.number) == "number" and opts.number % 1 == 0 and opts.number >= 1 and opts.number <= 118,
@@ -67,11 +71,18 @@ function Element:new(opts)
     )
 
     assert(
-        type(opts.block) == "string" and VALID_BLOCK[opts.block],
+        type(opts.block) == "string" and #opts.block == 1,
+        string.format("'block' must be single character but got: %s", tostring(opts.block))
+    )
+
+    local normalized_block = opts.block:lower()
+
+    assert(
+        VALID_BLOCK[normalized_block],
         string.format("'block' must be one of 's','p','d','f' but got: %s", tostring(opts.block))
     )
 
-    if opts.block == "f" then
+    if normalized_block == "f" then
         assert(
             opts.group == nil,
             string.format("f-block elements have no IUPAC group: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
@@ -89,13 +100,13 @@ function Element:new(opts)
     )
 
     local obj = setmetatable({
-        name = opts.name,
-        symbol = opts.symbol,
+        name = normalized_name,
+        symbol = normalized_symbol,
         number = opts.number,
         mass = opts.mass,
         group = opts.group,
         period = opts.period,
-        block = opts.block
+        block = normalized_block
     }, self)
 
     return obj
