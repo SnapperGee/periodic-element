@@ -45,11 +45,11 @@ function SubshellOccupancy.__le(a, b)
     return not SubshellOccupancy.__lt(b, a)
 end
 
-function SubshellOccupancy.principal_quantum_number()
+function SubshellOccupancy:principal_quantum_number()
     return self.n
 end
 
-function SubshellOccupancy.subshell_letter()
+function SubshellOccupancy:subshell_letter()
     return self.l
 end
 
@@ -88,8 +88,8 @@ function SubshellOccupancy:new(opts)
     )
 
     local obj = setmetatable({
-        quantum_number = opts.n,
-        subshell_letter = normalized_l,
+        n = opts.n,
+        l = normalized_l,
         electron_count = opts.electron_count
     }, self)
 
