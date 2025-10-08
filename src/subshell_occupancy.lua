@@ -58,7 +58,14 @@ function SubshellOccupancy:new(opts)
     assert(type(opts) == "table", "opts table required")
 
     assert(
-        type(opts.subshell_letter) == "string" and VALID_SUBSHELL_LETTER[opts.subshell_letter],
+        type(opts.subshell_letter) == "string" and #opts.subshell_letter == 1,
+        string.format("'subshell_letter' must be one character but got: %s", tostring(opts.subshell_letter))
+    )
+
+    local normalized_subshell_letter = opts.subshell_letter:lower()
+
+    assert(
+        VALID_SUBSHELL_LETTER[normalized_subshell_letter],
         string.format("'subshell_letter' must be one of 's','p','d','f' but got: %s", tostring(opts.subshell_letter))
     )
 
@@ -74,7 +81,7 @@ function SubshellOccupancy:new(opts)
 
     local obj = setmetatable({
         quantum_number = opts.quantum_number,
-        subshell_letter = opts.subshell_letter,
+        subshell_letter = normalized_subshell_letter,
         electron_count = opts.electron_count
     }, self)
 
