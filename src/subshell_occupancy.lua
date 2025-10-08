@@ -45,6 +45,28 @@ function SubshellOccupancy:__le(other)
     return not SubshellOccupancy.__lt(other, self)
 end
 
+function SubshellOccupancy:__tostring()
+    local keys, parts = {}, {}
+
+    local k = next(self)
+    while k ~= nil do
+        keys[#keys+1] = k
+        k = next(self, k)
+    end
+
+    table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
+
+    for _, key in ipairs(keys) do
+        local v = rawget(self, key)        -- raw read: no __index
+        local vr = (type(v) == "string") and string.format("%q", v) or tostring(v)
+        parts[#parts+1] = string.format("%s=%s", tostring(key), vr)
+    end
+
+    local key_value_pairs = table.concat(parts, ", ")
+
+    return string.format("SubshellOccupancy{%s}", key_value_pairs)
+end
+
 function SubshellOccupancy:principal_quantum_number()
     return self.n
 end
