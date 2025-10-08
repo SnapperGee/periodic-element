@@ -2,6 +2,11 @@ local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
 local L_LETTER_RANK = { s=0, p=1, d=2, f=3 }
 
+local SUPER = {
+    [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹",
+    ["+"]='⁺', ["-"]='⁻', ["="]='⁼', ["("]='⁽', [")"]='⁾',
+}
+
 ---@alias SubshellLetter '"s"'|'"p"'|'"d"'|'"f"'
 
 local VALID_L_LETTER = { s = true, p = true, d = true, f = true }
@@ -73,6 +78,10 @@ end
 
 function SubshellOccupancy:subshell_letter()
     return self.l
+end
+
+function SubshellOccupancy:formatted_string()
+    return string.format("%s%s%s", self.n, self.l, SUPER[self.electron_count])
 end
 
 ---@class SubshellOccupancyInitOpts
