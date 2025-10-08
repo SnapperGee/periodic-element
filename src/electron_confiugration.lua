@@ -28,6 +28,10 @@ local ElectronConfiguration = {}
 
 ElectronConfiguration.__index = ElectronConfiguration
 
+function SubshellOccupancy.__newindex()
+    error("ElectronConfiguration records are immutable", 2)
+end
+
 -- TODO: implement comparison operators
 
 ---@class ElectronConfigurationInitOpts

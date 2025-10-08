@@ -14,6 +14,10 @@ local Element = {}
 
 Element.__index = Element
 
+function Element.__newindex()
+    error("Element records are immutable", 2)
+end
+
 -- TODO: implement comparison operators
 
 ---@class ElementInitOpts

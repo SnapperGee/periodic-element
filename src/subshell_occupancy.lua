@@ -14,6 +14,10 @@ local SubshellOccupancy = {}
 
 SubshellOccupancy.__index = SubshellOccupancy
 
+function SubshellOccupancy.__newindex()
+    error("SubshellOccupancy records are immutable", 2)
+end
+
 function SubshellOccupancy.__eq(a, b)
     return rawequal(a,b)
         or a.quantum_number == b.quantum_number
