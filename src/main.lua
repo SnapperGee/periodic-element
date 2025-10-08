@@ -9,21 +9,22 @@ local lithium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-print(lithium_subshell_occupancy:formatted_string())
+-- print(lithium_subshell_occupancy:formatted_string())
 
--- local lithium_electron_configuration = ElectronConfiguration:new{
---     core = "he",
---     subshell_occupancy = { lithium_subshell_occupancy }
--- }
+local lithium_electron_configuration = ElectronConfiguration:new{
+    core = "he",
+    subshell_occupancy = { lithium_subshell_occupancy }
+}
 
--- local lithium = Element:new{
---     name = "lithium",
---     symbol = "li",
---     number = 3,
---     mass = 6.941,
---     group = 1,
---     period = 2,
---     block = "s"
--- }
+local lithium = Element:new{
+    name = "lithium",
+    symbol = "li",
+    number = 3,
+    mass = 6.941,
+    group = 1,
+    period = 2,
+    block = "s",
+    electron_configuration = lithium_electron_configuration
+}
 
--- print(inspect(lithium))
+print(inspect(lithium))

@@ -1,4 +1,5 @@
 local Family = require("src.family")
+local ElectronConfiguration = require("src.electron_configuration")
 
 ---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
 
@@ -13,6 +14,7 @@ local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 ---@field family string      -- group family
 ---@field period integer     -- 1..7
 ---@field block  Block
+---@field electron_configuration ElectronConfiguration
 local Element = {}
 
 Element.__index = Element
@@ -41,6 +43,7 @@ end
 ---@field group  integer|nil
 ---@field period integer
 ---@field block  Block
+---@field electron_configuration ElectronConfiguration
 
 -- TODO: Make immutable
 ---@param opts ElementInitOpts
@@ -102,6 +105,11 @@ function Element:new(opts)
         string.format("'period' integer in [1,7] expected but got: %s", tostring(opts.period))
     )
 
+    assert(
+        getmetatable(opts.electron_configuration) == ElectronConfiguration,
+        string.format("'electron_configuration' with metatable of type ElectronConfiguration but instead got: %s", tostring(opts.electron_configuration))
+    )
+
     local obj = setmetatable({
         name = normalized_name,
         symbol = normalized_symbol,
@@ -110,7 +118,8 @@ function Element:new(opts)
         group = opts.group,
         family = Family(opts.number),
         period = opts.period,
-        block = normalized_block
+        block = normalized_block,
+        electron_configuration = opts.electron_configuration
     }, self)
 
     return obj
