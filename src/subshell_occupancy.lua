@@ -45,6 +45,14 @@ function SubshellOccupancy.__le(a, b)
     return not SubshellOccupancy.__lt(b, a)
 end
 
+function SubshellOccupancy.principal_quantum_number()
+    return self.n
+end
+
+function SubshellOccupancy.subshell_letter()
+    return self.l
+end
+
 ---@class SubshellOccupancyInitOpts
 ---@field n integer         -- principal quantum number (e.g., 3 in 3d10)
 ---@field l SubshellLetter -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
