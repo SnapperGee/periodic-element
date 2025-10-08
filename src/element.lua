@@ -18,16 +18,16 @@ function Element.__newindex()
     error("Element records are immutable", 2)
 end
 
-function Element.__eq(a, b)
-    return a.number == b.number
+function Element:__eq(other)
+    return self.number == other.number
 end
 
-function Element.__lt(a, b)
-    return a.number < b.number
+function Element:__lt(other)
+    return self.number < other.number
 end
 
-function Element.__le(a, b)
-    return not Element.__lt(b, a)
+function Element:__le(other)
+    return not Element.__lt(other, self)
 end
 
 ---@class ElementInitOpts
