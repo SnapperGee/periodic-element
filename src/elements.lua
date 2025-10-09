@@ -113,8 +113,39 @@ local boron = Element:new{
     symbol = "B",
     number = 5,
     mass = 10.811,
-    group = 3,
+    group = 13,
     period = 2,
     block = "p",
     electron_configuration = boron_electron_configuration
+}
+
+local carbon_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 2,
+    l = "s",
+    electron_count = 2
+}
+
+local carbon_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 2,
+    l = "p",
+    electron_count = 2
+}
+
+local carbon_electron_configuration = ElectronConfiguration:new{
+    core = "He",
+    subshell_occupancy = {
+        carbon_subshell_occupancy1,
+        carbon_subshell_occupancy2
+    }
+}
+
+local carbon = Element:new{
+    name = "Carbon",
+    symbol = "C",
+    number = 6,
+    mass = 12.011,
+    group = 14,
+    period = 2,
+    block = "p",
+    electron_configuration = carbon_electron_configuration
 }
