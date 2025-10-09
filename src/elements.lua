@@ -35,8 +35,8 @@ local lithium_electron_configuration = ElectronConfiguration:new{
 }
 
 local lithium = Element:new{
-    name = "lithium",
-    symbol = "li",
+    name = "Lithium",
+    symbol = "Li",
     number = 3,
     mass = 6.941,
     group = 1,
