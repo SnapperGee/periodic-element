@@ -91,7 +91,7 @@ function ElectronConfiguration:new(opts)
 
     assert(
         normalized_core_string == nil or NOBLE_GAS_SYMBOLS[normalized_core_string],
-        string.format("expected 'core' string of nil, 'He','Ne','Ar','Kr','Xe',or 'Rn' but got: %s", opts.core)
+        string.format("expected 'core' string of nil, 'He','Ne','Ar','Kr','Xe',or 'Rn' but got: %s", tostring(opts.core))
     )
 
     assert(
