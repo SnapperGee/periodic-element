@@ -60,6 +60,17 @@ function ElectronConfiguration:__le(other)
     return not ElectronConfiguration.__lt(other, self)
 end
 
+function ElectronConfiguration:formatted_string()
+    local orbitals_string = ""
+
+
+    for _, subshell_occupancy in ipairs(self.subshell_occupancy) do
+        orbitals_string = orbitals_string .. subshell_occupancy.canonical_string
+    end
+
+    return (self.core and "[" .. self.core .. "]" or "") .. orbitals_string
+end
+
 ---@class ElectronConfigurationInitOpts
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn"
 ---@field subshell_occupancy  SubshellOccupancy[] -- ordered list as written (keep authoring order)

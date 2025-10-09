@@ -15,6 +15,7 @@ local VALID_L_LETTER = { s = true, p = true, d = true, f = true }
 ---@field n integer              -- principal quantum number (e.g., 3 in 3d10)
 ---@field l SubshellLetter       -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
 ---@field electron_count integer -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
+---@field canonical_string string
 local SubshellOccupancy = {}
 
 SubshellOccupancy.__index = SubshellOccupancy
@@ -80,10 +81,6 @@ function SubshellOccupancy:subshell_letter()
     return self.l
 end
 
-function SubshellOccupancy:formatted_string()
-    return string.format("%s%s%s", self.n, self.l, SUPER[self.electron_count])
-end
-
 ---@class SubshellOccupancyInitOpts
 ---@field n integer              -- principal quantum number (e.g., 3 in 3d10)
 ---@field l SubshellLetter       -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
@@ -121,7 +118,8 @@ function SubshellOccupancy:new(opts)
     local obj = setmetatable({
         n = opts.n,
         l = normalized_l,
-        electron_count = opts.electron_count
+        electron_count = opts.electron_count,
+        canonical_string = string.format("%d%s%s", opts.n, normalized_l, SUPER[opts.electron_count])
     }, self)
 
     return obj
