@@ -23,6 +23,27 @@ local hydrogen = Element:new{
     electron_configuration = hydrogen_electron_configuration
 }
 
+local helium_subshell_occupancy = SubshellOccupancy:new{
+    n = 2,
+    l = "s",
+    electron_count = 2
+}
+
+local helium_electron_configuration = ElectronConfiguration:new{
+    subshell_occupancy = { helium_subshell_occupancy }
+}
+
+local helium = Element:new{
+    name = "Helium",
+    symbol = "He",
+    number = 2,
+    mass = 4.003,
+    group = 18,
+    period = 1,
+    block = "s",
+    electron_configuration = helium_electron_configuration
+}
+
 local lithium_subshell_occupancy = SubshellOccupancy:new{
     n = 2,
     l = "s",
@@ -43,4 +64,57 @@ local lithium = Element:new{
     period = 2,
     block = "s",
     electron_configuration = lithium_electron_configuration
+}
+
+local beryllium_subshell_occupancy = SubshellOccupancy:new{
+    n = 2,
+    l = "s",
+    electron_count = 2
+}
+
+local beryllium_electron_configuration = ElectronConfiguration:new{
+    core = "He",
+    subshell_occupancy = { beryllium_subshell_occupancy }
+}
+
+local beryllium = Element:new{
+    name = "Beryllium",
+    symbol = "Be",
+    number = 4,
+    mass = 9.012,
+    group = 2,
+    period = 2,
+    block = "s",
+    electron_configuration = beryllium_electron_configuration
+}
+
+local boron_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 2,
+    l = "s",
+    electron_count = 2
+}
+
+local boron_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 2,
+    l = "p",
+    electron_count = 1
+}
+
+local boron_electron_configuration = ElectronConfiguration:new{
+    core = "He",
+    subshell_occupancy = {
+        boron_subshell_occupancy1,
+        boron_subshell_occupancy2
+    }
+}
+
+local boron = Element:new{
+    name = "Boron",
+    symbol = "B",
+    number = 5,
+    mass = 10.811,
+    group = 3,
+    period = 2,
+    block = "p",
+    electron_configuration = boron_electron_configuration
 }
