@@ -149,3 +149,34 @@ local carbon = Element:new{
     block = "p",
     electron_configuration = carbon_electron_configuration
 }
+
+local nitrogen_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 2,
+    l = "s",
+    electron_count = 2
+}
+
+local nitrogen_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 2,
+    l = "p",
+    electron_count = 3
+}
+
+local nitrogen_electron_configuration = ElectronConfiguration:new{
+    core = "He",
+    subshell_occupancy = {
+        nitrogen_subshell_occupancy1,
+        nitrogen_subshell_occupancy2
+    }
+}
+
+local nitrogen = Element:new{
+    name = "Nitrogen",
+    symbol = "N",
+    number = 7,
+    mass = 14.007,
+    group = 15,
+    period = 2,
+    block = "p",
+    electron_configuration = nitrogen_electron_configuration
+}
