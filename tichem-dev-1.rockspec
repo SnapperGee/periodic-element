@@ -10,7 +10,7 @@ description = {
    homepage = "https://github.com/SnapperGee/tichem",
    issues_url = "https://github.com/SnapperGee/tichem/issues",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
-   license = "Proprietary",
+   license = "MIT",
    labels = {"ti", "nspire", "cx", "texas instruments", "calculator", "chemistry", "stoichiometry"},
 }
 build = {
