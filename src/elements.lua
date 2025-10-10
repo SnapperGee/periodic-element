@@ -1658,3 +1658,1145 @@ local xenon = Element:new{
     block = "p",
     electron_configuration = xenon_electron_configuration
 }
+
+local cesium_subshell_occupancy = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 1
+}
+
+local cesium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = { cesium_subshell_occupancy }
+}
+
+local cesium = Element:new{
+    name = "Cesium",
+    symbol = "Cs",
+    number = 55,
+    mass = 132.905,
+    group = 1,
+    period = 6,
+    block = "s",
+    electron_configuration = cesium_electron_configuration
+}
+
+local barium_subshell_occupancy = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local barium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = { barium_subshell_occupancy }
+}
+
+local barium = Element:new{
+    name = "Barium",
+    symbol = "Ba",
+    number = 56,
+    mass = 137.328,
+    group = 2,
+    period = 6,
+    block = "s",
+    electron_configuration = barium_electron_configuration
+}
+
+local lanthanum_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 1
+}
+
+local lanthanum_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local lanthanum_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        lanthanum_subshell_occupancy1,
+        lanthanum_subshell_occupancy2
+    }
+}
+
+local lanthanum = Element:new{
+    name = "Lanthanum",
+    symbol = "La",
+    number = 57,
+    mass = 137.905,
+    group = 3,
+    period = 6,
+    block = "d",
+    electron_configuration = lanthanum_electron_configuration
+}
+
+local cerium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 1
+}
+
+local cerium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 1
+}
+
+local cerium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local cerium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        cerium_subshell_occupancy1,
+        cerium_subshell_occupancy2,
+        cerium_subshell_occupancy3
+    }
+}
+
+local cerium = Element:new{
+    name = "Cerium",
+    symbol = "Ce",
+    number = 58,
+    mass = 140.116,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = cerium_electron_configuration
+}
+
+local praseodymium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 3
+}
+
+local praseodymium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local praseodymium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        praseodymium_subshell_occupancy1,
+        praseodymium_subshell_occupancy2
+    }
+}
+
+local praseodymium = Element:new{
+    name = "Praseodymium",
+    symbol = "Pr",
+    number = 59,
+    mass = 140.908,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = praseodymium_electron_configuration
+}
+
+local neodymium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 4
+}
+
+local neodymium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local neodymium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        neodymium_subshell_occupancy1,
+        neodymium_subshell_occupancy2
+    }
+}
+
+local neodymium = Element:new{
+    name = "Neodymium",
+    symbol = "Nd",
+    number = 60,
+    mass = 144.243,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = neodymium_electron_configuration
+}
+
+local promethium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 5
+}
+
+local promethium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local promethium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        promethium_subshell_occupancy1,
+        promethium_subshell_occupancy2
+    }
+}
+
+local promethium = Element:new{
+    name = "Promethium",
+    symbol = "Pm",
+    number = 61,
+    mass = 144.913,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = promethium_electron_configuration
+}
+
+local samarium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 6
+}
+
+local samarium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local samarium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        samarium_subshell_occupancy1,
+        samarium_subshell_occupancy2
+    }
+}
+
+local samarium = Element:new{
+    name = "Samarium",
+    symbol = "Sm",
+    number = 62,
+    mass = 150.36,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = samarium_electron_configuration
+}
+
+local europium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 7
+}
+
+local europium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local europium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        europium_subshell_occupancy1,
+        europium_subshell_occupancy2
+    }
+}
+
+local europium = Element:new{
+    name = "Europium",
+    symbol = "Eu",
+    number = 63,
+    mass = 151.964,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = europium_electron_configuration
+}
+
+local gadolinium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 7
+}
+
+local gadolinium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 1
+}
+
+local gadolinium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local gadolinium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        gadolinium_subshell_occupancy1,
+        gadolinium_subshell_occupancy2,
+        gadolinium_subshell_occupancy3
+    }
+}
+
+local gadolinium = Element:new{
+    name = "Gadolinium",
+    symbol = "Gd",
+    number = 64,
+    mass = 157.25,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = gadolinium_electron_configuration
+}
+
+local terbium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 9
+}
+
+local terbium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local terbium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        terbium_subshell_occupancy1,
+        terbium_subshell_occupancy2
+    }
+}
+
+local terbium = Element:new{
+    name = "Terbium",
+    symbol = "Tb",
+    number = 65,
+    mass = 158.925,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = terbium_electron_configuration
+}
+
+local dysprosium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 10
+}
+
+local dysprosium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local dysprosium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        dysprosium_subshell_occupancy1,
+        dysprosium_subshell_occupancy2
+    }
+}
+
+local dysprosium = Element:new{
+    name = "Dysprosium",
+    symbol = "Dy",
+    number = 66,
+    mass = 162.500,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = dysprosium_electron_configuration
+}
+
+local holmium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 11
+}
+
+local holmium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local holmium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        holmium_subshell_occupancy1,
+        holmium_subshell_occupancy2
+    }
+}
+
+local holmium = Element:new{
+    name = "Holmium",
+    symbol = "Ho",
+    number = 67,
+    mass = 164.930,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = holmium_electron_configuration
+}
+
+local erbium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 12
+}
+
+local erbium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local erbium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        erbium_subshell_occupancy1,
+        erbium_subshell_occupancy2
+    }
+}
+
+local erbium = Element:new{
+    name = "Erbium",
+    symbol = "Er",
+    number = 68,
+    mass = 167.259,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = erbium_electron_configuration
+}
+
+local thulium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 13
+}
+
+local thulium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local thulium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        thulium_subshell_occupancy1,
+        thulium_subshell_occupancy2
+    }
+}
+
+local thulium = Element:new{
+    name = "Thulium",
+    symbol = "Tm",
+    number = 69,
+    mass = 168.934,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = thulium_electron_configuration
+}
+
+local ytterbium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local ytterbium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local ytterbium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        ytterbium_subshell_occupancy1,
+        ytterbium_subshell_occupancy2
+    }
+}
+
+local ytterbium = Element:new{
+    name = "Ytterbium",
+    symbol = "Yb",
+    number = 70,
+    mass = 173.055,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = ytterbium_electron_configuration
+}
+
+local lutetium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local lutetium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 1
+}
+
+local lutetium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local lutetium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        lutetium_subshell_occupancy1,
+        lutetium_subshell_occupancy2,
+        lutetium_subshell_occupancy3
+    }
+}
+
+local lutetium = Element:new{
+    name = "Lutetium",
+    symbol = "Lu",
+    number = 71,
+    mass = 174.967,
+    group = nil,
+    period = 6,
+    block = "f",
+    electron_configuration = lutetium_electron_configuration
+}
+
+local hafnium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local hafnium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 2
+}
+
+local hafnium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local hafnium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        hafnium_subshell_occupancy1,
+        hafnium_subshell_occupancy2,
+        hafnium_subshell_occupancy3
+    }
+}
+
+local hafnium = Element:new{
+    name = "Hafnium",
+    symbol = "Hf",
+    number = 72,
+    mass = 178.49,
+    group = 4,
+    period = 6,
+    block = "d",
+    electron_configuration = hafnium_electron_configuration
+}
+
+local tantalum_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local tantalum_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 3
+}
+
+local tantalum_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local tantalum_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        tantalum_subshell_occupancy1,
+        tantalum_subshell_occupancy2,
+        tantalum_subshell_occupancy3
+    }
+}
+
+local tantalum = Element:new{
+    name = "Tantalum",
+    symbol = "Ta",
+    number = 73,
+    mass = 180.948,
+    group = 5,
+    period = 6,
+    block = "d",
+    electron_configuration = tantalum_electron_configuration
+}
+
+local tungsten_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local tungsten_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 4
+}
+
+local tungsten_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local tungsten_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        tungsten_subshell_occupancy1,
+        tungsten_subshell_occupancy2,
+        tungsten_subshell_occupancy3
+    }
+}
+
+local tungsten = Element:new{
+    name = "Tungsten",
+    symbol = "W",
+    number = 74,
+    mass = 183.84,
+    group = 6,
+    period = 6,
+    block = "d",
+    electron_configuration = tungsten_electron_configuration
+}
+
+local rhenium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local rhenium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 5
+}
+
+local rhenium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local rhenium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        rhenium_subshell_occupancy1,
+        rhenium_subshell_occupancy2,
+        rhenium_subshell_occupancy3
+    }
+}
+
+local rhenium = Element:new{
+    name = "Rhenium",
+    symbol = "Re",
+    number = 75,
+    mass = 186.207,
+    group = 7,
+    period = 6,
+    block = "d",
+    electron_configuration = rhenium_electron_configuration
+}
+
+local osmium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local osmium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 6
+}
+
+local osmium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local osmium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        osmium_subshell_occupancy1,
+        osmium_subshell_occupancy2,
+        osmium_subshell_occupancy3
+    }
+}
+
+local osmium = Element:new{
+    name = "Osmium",
+    symbol = "Os",
+    number = 76,
+    mass = 190.23,
+    group = 8,
+    period = 6,
+    block = "d",
+    electron_configuration = osmium_electron_configuration
+}
+
+local iridium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local iridium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 7
+}
+
+local iridium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local iridium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        iridium_subshell_occupancy1,
+        iridium_subshell_occupancy2,
+        iridium_subshell_occupancy3
+    }
+}
+
+local iridium = Element:new{
+    name = "Iridium",
+    symbol = "Ir",
+    number = 77,
+    mass = 192.217,
+    group = 9,
+    period = 6,
+    block = "d",
+    electron_configuration = iridium_electron_configuration
+}
+
+local platinum_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local platinum_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 9
+}
+
+local platinum_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 1
+}
+
+local platinum_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        platinum_subshell_occupancy1,
+        platinum_subshell_occupancy2,
+        platinum_subshell_occupancy3
+    }
+}
+
+local platinum = Element:new{
+    name = "Platinum",
+    symbol = "Pt",
+    number = 78,
+    mass = 195.085,
+    group = 10,
+    period = 6,
+    block = "d",
+    electron_configuration = platinum_electron_configuration
+}
+
+local gold_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local gold_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local gold_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 1
+}
+
+local gold_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        gold_subshell_occupancy1,
+        gold_subshell_occupancy2,
+        gold_subshell_occupancy3
+    }
+}
+
+local gold = Element:new{
+    name = "Gold",
+    symbol = "Au",
+    number = 79,
+    mass = 196.967,
+    group = 11,
+    period = 6,
+    block = "d",
+    electron_configuration = gold_electron_configuration
+}
+
+local mercury_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local mercury_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local mercury_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local mercury_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        mercury_subshell_occupancy1,
+        mercury_subshell_occupancy2,
+        mercury_subshell_occupancy3
+    }
+}
+
+local mercury = Element:new{
+    name = "Mercury",
+    symbol = "Hg",
+    number = 80,
+    mass = 200.592,
+    group = 12,
+    period = 6,
+    block = "d",
+    electron_configuration = mercury_electron_configuration
+}
+
+local thallium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local thallium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local thallium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local thallium_subshell_occupancy4 = SubshellOccupancy:new{
+    n = 6,
+    l = "p",
+    electron_count = 1
+}
+
+local thallium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        thallium_subshell_occupancy1,
+        thallium_subshell_occupancy2,
+        thallium_subshell_occupancy3,
+        thallium_subshell_occupancy4
+    }
+}
+
+local thallium = Element:new{
+    name = "Thallium",
+    symbol = "Tl",
+    number = 81,
+    mass = 204.383,
+    group = 13,
+    period = 6,
+    block = "p",
+    electron_configuration = thallium_electron_configuration
+}
+
+local lead_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local lead_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local lead_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local lead_subshell_occupancy4 = SubshellOccupancy:new{
+    n = 6,
+    l = "p",
+    electron_count = 2
+}
+
+local lead_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        lead_subshell_occupancy1,
+        lead_subshell_occupancy2,
+        lead_subshell_occupancy3,
+        lead_subshell_occupancy4
+    }
+}
+
+local lead = Element:new{
+    name = "Lead",
+    symbol = "Pb",
+    number = 82,
+    mass = 207.2,
+    group = 14,
+    period = 6,
+    block = "p",
+    electron_configuration = lead_electron_configuration
+}
+
+local bismuth_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local bismuth_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local bismuth_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local bismuth_subshell_occupancy4 = SubshellOccupancy:new{
+    n = 6,
+    l = "p",
+    electron_count = 3
+}
+
+local bismuth_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        bismuth_subshell_occupancy1,
+        bismuth_subshell_occupancy2,
+        bismuth_subshell_occupancy3,
+        bismuth_subshell_occupancy4
+    }
+}
+
+local bismuth = Element:new{
+    name = "Bismuth",
+    symbol = "Bi",
+    number = 83,
+    mass = 208.980,
+    group = 15,
+    period = 6,
+    block = "p",
+    electron_configuration = bismuth_electron_configuration
+}
+
+local polonium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local polonium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local polonium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local polonium_subshell_occupancy4 = SubshellOccupancy:new{
+    n = 6,
+    l = "p",
+    electron_count = 4
+}
+
+local polonium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        polonium_subshell_occupancy1,
+        polonium_subshell_occupancy2,
+        polonium_subshell_occupancy3,
+        polonium_subshell_occupancy4
+    }
+}
+
+local polonium = Element:new{
+    name = "Polonium",
+    symbol = "Po",
+    number = 84,
+    mass = 208.982,
+    group = 16,
+    period = 6,
+    block = "p",
+    electron_configuration = polonium_electron_configuration
+}
+
+local astatine_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local astatine_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local astatine_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local astatine_subshell_occupancy4 = SubshellOccupancy:new{
+    n = 6,
+    l = "p",
+    electron_count = 5
+}
+
+local astatine_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        astatine_subshell_occupancy1,
+        astatine_subshell_occupancy2,
+        astatine_subshell_occupancy3,
+        astatine_subshell_occupancy4
+    }
+}
+
+local astatine = Element:new{
+    name = "Astatine",
+    symbol = "At",
+    number = 85,
+    mass = 209.987,
+    group = 17,
+    period = 6,
+    block = "p",
+    electron_configuration = astatine_electron_configuration
+}
+
+local radon_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local radon_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 10
+}
+
+local radon_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local radon_subshell_occupancy4 = SubshellOccupancy:new{
+    n = 6,
+    l = "p",
+    electron_count = 6
+}
+
+local radon_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        radon_subshell_occupancy1,
+        radon_subshell_occupancy2,
+        radon_subshell_occupancy3,
+        radon_subshell_occupancy4
+    }
+}
+
+local radon = Element:new{
+    name = "Radon",
+    symbol = "Rn",
+    number = 86,
+    mass = 222.018,
+    group = 18,
+    period = 6,
+    block = "p",
+    electron_configuration = radon_electron_configuration
+}
