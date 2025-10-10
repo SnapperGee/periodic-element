@@ -13,12 +13,6 @@ description = {
    license = "MIT",
    labels = {"ti", "nspire", "cx", "texas instruments", "calculator", "chemistry", "stoichiometry"},
 }
-build = {
-   type = "builtin",
-   modules = {
-      main = "src/main.lua"
-   }
-}
 dependencies = {
    "lua ~> 5.1"
 }
