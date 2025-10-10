@@ -1,4 +1,4 @@
-local SubshellOccupancy = require("src.subshell_occupancy")
+local SubshellOccupancy = require("element.subshell_occupancy")
 
 local function is_array_of_subshell_occupancies(arg)
     if type(arg) ~= "table" then return false end

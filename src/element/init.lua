@@ -1,5 +1,5 @@
-local Family = require("src.family")
-local ElectronConfiguration = require("src.electron_configuration")
+local Family = require("element.family")
+local ElectronConfiguration = require("element.electron_configuration")
 
 ---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
 

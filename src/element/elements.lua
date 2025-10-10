@@ -1,6 +1,6 @@
-local Element = require("src.element")
-local ElectronConfiguration = require("src.electron_configuration")
-local SubshellOccupancy = require("src.subshell_occupancy")
+local Element = require("element")
+local ElectronConfiguration = require("element.electron_configuration")
+local SubshellOccupancy = require("element.subshell_occupancy")
 
 local hydrogen_subshell_occupancy = SubshellOccupancy:new{
     n = 1,

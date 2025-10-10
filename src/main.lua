@@ -1,4 +1,4 @@
-local Elements = require("src.elements")
+local Elements = require("element.elements")
 local inspect = require("inspect")
 
-print("MEEP")
+print(inspect(Elements))
