@@ -1,13 +1,16 @@
+rockspec_format = "3.0"
 package = "tichem"
 version = "dev-1"
 source = {
-   url = "https://github.com/SnapperGee/ti-chem"
+   url = "git+https://github.com/SnapperGee/tichem"
 }
 description = {
-   homepage = "https://github.com/SnapperGee/ti-chem",
-   license = "Proprietary",
    summary = "Chemistry application(s) and utilities for the TI Nspire CX II.",
+   detailed = "Chemistry application(s) and utilities for the TI Nspire CX II.",
+   homepage = "https://github.com/SnapperGee/tichem",
+   issues_url = "https://github.com/SnapperGee/tichem/issues",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
+   license = "Proprietary",
 }
 build = {
    type = "builtin",
