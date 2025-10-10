@@ -110,13 +110,20 @@ function Element:new(opts)
         string.format("'electron_configuration' with metatable of type ElectronConfiguration but instead got: %s", tostring(opts.electron_configuration))
     )
 
+    local family = Family(opts.number)
+
+    assert(
+        family ~= "Unknown",
+        string.format("'family' for atomic number could not be determined: %i", opt.number)
+    )
+
     local obj = setmetatable({
         name = normalized_name,
         symbol = normalized_symbol,
         number = opts.number,
         mass = opts.mass,
         group = opts.group,
-        family = Family(opts.number),
+        family = family,
         period = opts.period,
         block = normalized_block,
         electron_configuration = opts.electron_configuration
