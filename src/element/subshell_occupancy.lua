@@ -119,7 +119,7 @@ function SubshellOccupancy:new(opts)
         n = opts.n,
         l = normalized_l,
         electron_count = opts.electron_count,
-        canonical_string = string.format("%d%s%s", opts.n, normalized_l, SUPER[opts.electron_count])
+        canonical_string = string.format("%d%s%s", tostring(opts.n), normalized_l, tostring(SUPER[opts.electron_count]))
     }, self)
 
     return obj
