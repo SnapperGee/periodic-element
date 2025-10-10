@@ -11,6 +11,7 @@ description = {
    issues_url = "https://github.com/SnapperGee/tichem/issues",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
    license = "Proprietary",
+   labels = {"ti", "nspire", "cx", "texas instruments", "calculator", "chemistry", "stoichiometry"},
 }
 build = {
    type = "builtin",
