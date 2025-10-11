@@ -38,7 +38,7 @@ function SubshellOccupancy:__lt(other)
         return self.n < other.n
     end
 
-    local ra, rb = L_LETTER_RANK[self.l], L_LETTER_RANK[self.l]
+    local ra, rb = L_LETTER_RANK[self.l], L_LETTER_RANK[other.l]
 
     if ra ~= rb then
         return ra < rb
