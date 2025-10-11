@@ -99,12 +99,10 @@ function ElectronConfiguration:new(opts)
         string.format("expected non empty 'subshell_occupancy' array of SubshellOccupancies but got: %s", tostring(opts.subshell_occupancy))
     )
 
-    local obj = setmetatable({
+    return setmetatable({
         core = normalized_core_string,
         subshell_occupancy = opts.subshell_occupancy
     }, self)
-
-    return obj
 end
 
 return ElectronConfiguration

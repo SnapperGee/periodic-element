@@ -117,7 +117,7 @@ function Element:new(opts)
         string.format("'family' for atomic number could not be determined: %i", opt.number)
     )
 
-    local obj = setmetatable({
+    return setmetatable({
         name = normalized_name,
         symbol = normalized_symbol,
         number = opts.number,
@@ -128,8 +128,6 @@ function Element:new(opts)
         block = normalized_block,
         electron_configuration = opts.electron_configuration
     }, self)
-
-    return obj
 end
 
 return Element

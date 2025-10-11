@@ -115,14 +115,12 @@ function SubshellOccupancy:new(opts)
         string.format("'electron_count' with subshell '%s' must be integer in [1, %d] but got: %s", opts.l, ELECTRON_CAP[opts.l], tostring(opts.electron_count))
     )
 
-    local obj = setmetatable({
+    return setmetatable({
         n = opts.n,
         l = normalized_l,
         electron_count = opts.electron_count,
         canonical_string = string.format("%d%s%s", tostring(opts.n), normalized_l, tostring(SUPER[opts.electron_count]))
     }, self)
-
-    return obj
 end
 
 return SubshellOccupancy
