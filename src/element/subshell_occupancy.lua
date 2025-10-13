@@ -63,7 +63,7 @@ function SubshellOccupancy:__tostring()
     table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
 
     for _, key in ipairs(keys) do
-        local v = rawget(self, key)        -- raw read: no __index
+        local v = rawget(self, key)
         local vr = (type(v) == "string") and string.format("%q", v) or tostring(v)
         parts[#parts+1] = string.format("%s=%s", tostring(key), vr)
     end
