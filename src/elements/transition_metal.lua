@@ -854,3 +854,269 @@ local gold = Element:new{
     block = "d",
     electron_configuration = gold_electron_configuration
 }
+
+local rutherfordium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local rutherfordium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 2
+}
+
+local rutherfordium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local rutherfordium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        rutherfordium_subshell_occupancy1,
+        rutherfordium_subshell_occupancy2,
+        rutherfordium_subshell_occupancy3
+    }
+}
+
+local rutherfordium = Element:new{
+    name = "Rutherfordium",
+    symbol = "Rf",
+    number = 104,
+    mass = 261,
+    group = 4,
+    period = 7,
+    block = "d",
+    electron_configuration = rutherfordium_electron_configuration
+}
+
+local dubnium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local dubnium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 3
+}
+
+local dubnium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local dubnium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        dubnium_subshell_occupancy1,
+        dubnium_subshell_occupancy2,
+        dubnium_subshell_occupancy3
+    }
+}
+
+local dubnium = Element:new{
+    name = "Dubnium",
+    symbol = "Db",
+    number = 105,
+    mass = 262,
+    group = 5,
+    period = 7,
+    block = "d",
+    electron_configuration = dubnium_electron_configuration
+}
+
+local bohrium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local bohrium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 5
+}
+
+local bohrium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local bohrium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        bohrium_subshell_occupancy1,
+        bohrium_subshell_occupancy2,
+        bohrium_subshell_occupancy3
+    }
+}
+
+local bohrium = Element:new{
+    name = "Bohrium",
+    symbol = "Bh",
+    number = 107,
+    mass = 264,
+    group = 7,
+    period = 7,
+    block = "d",
+    electron_configuration = bohrium_electron_configuration
+}
+
+local hassium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local hassium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 6
+}
+
+local hassium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local hassium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        hassium_subshell_occupancy1,
+        hassium_subshell_occupancy2,
+        hassium_subshell_occupancy3
+    }
+}
+
+local hassium = Element:new{
+    name = "Hassium",
+    symbol = "Hs",
+    number = 108,
+    mass = 269,
+    group = 8,
+    period = 7,
+    block = "d",
+    electron_configuration = hassium_electron_configuration
+}
+
+local meitnerium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local meitnerium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 7
+}
+
+local meitnerium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local meitnerium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        meitnerium_subshell_occupancy1,
+        meitnerium_subshell_occupancy2,
+        meitnerium_subshell_occupancy3
+    }
+}
+
+local meitnerium = Element:new{
+    name = "Meitnerium",
+    symbol = "Mt",
+    number = 109,
+    mass = 278,
+    group = 9,
+    period = 7,
+    block = "d",
+    electron_configuration = meitnerium_electron_configuration
+}
+
+local darmstadtium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local darmstadtium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 8
+}
+
+local darmstadtium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local darmstadtium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        darmstadtium_subshell_occupancy1,
+        darmstadtium_subshell_occupancy2,
+        darmstadtium_subshell_occupancy3
+    }
+}
+
+local darmstadtium = Element:new{
+    name = "Darmstadtium",
+    symbol = "Ds",
+    number = 110,
+    mass = 281,
+    group = 10,
+    period = 7,
+    block = "d",
+    electron_configuration = darmstadtium_electron_configuration
+}
+
+local roentgenium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local roentgenium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 9
+}
+
+local roentgenium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local roentgenium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        roentgenium_subshell_occupancy1,
+        roentgenium_subshell_occupancy2,
+        roentgenium_subshell_occupancy3
+    }
+}
+
+local roentgenium = Element:new{
+    name = "Roentgenium",
+    symbol = "Rg",
+    number = 111,
+    mass = 280,
+    group = 11,
+    period = 7,
+    block = "d",
+    electron_configuration = roentgenium_electron_configuration
+}
