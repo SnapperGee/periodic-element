@@ -60,7 +60,7 @@ local thorium = Element:new{
     mass = 232.038,
     group = nil,
     period = 7,
-    block = "d",
+    block = "f",
     electron_configuration = thorium_electron_configuration
 }
 
@@ -270,7 +270,7 @@ local curium_electron_configuration = ElectronConfiguration:new{
 local curium = Element:new{
     name = "Curium",
     symbol = "Cm",
-    number = 95,
+    number = 96,
     mass = 247.070,
     group = nil,
     period = 7,
