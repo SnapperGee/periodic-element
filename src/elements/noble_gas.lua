@@ -231,7 +231,7 @@ local oganesson_subshell_occupancy4 = SubshellOccupancy:new{
 }
 
 local oganesson_electron_configuration = ElectronConfiguration:new{
-    core = "Xe",
+    core = "Rn",
     subshell_occupancy = {
         oganesson_subshell_occupancy1,
         oganesson_subshell_occupancy2,
