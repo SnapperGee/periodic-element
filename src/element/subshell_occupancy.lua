@@ -3,8 +3,8 @@ local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
 local L_LETTER_RANK = { s=0, p=1, d=2, f=3 }
 
 local SUPER = {
-    [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹",
-    ["+"]='⁺', ["-"]='⁻', ["="]='⁼', ["("]='⁽', [")"]='⁾',
+    [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶",
+    "⁷", "⁸", "⁹", "¹⁰", "¹¹", "¹²", "¹³", "¹⁴"
 }
 
 ---@alias SubshellLetter '"s"'|'"p"'|'"d"'|'"f"'
@@ -106,20 +106,20 @@ function SubshellOccupancy:new(opts)
     )
 
     assert(
-        type(opts.n) == "number" and opts.n % 1 == 0 and opts.n >= N_MIN[opts.l],
-        string.format("'n' (principal quantum number) with subshell '%s' must be integer greater than or equal to %d but got: %s", opts.l, N_MIN[opts.l], tostring(opts.n))
+        type(opts.n) == "number" and opts.n % 1 == 0 and opts.n >= N_MIN[normalized_l],
+        string.format("'n' (principal quantum number) with subshell '%s' must be integer greater than or equal to %d but got: %s", opts.l, N_MIN[normalized_l], tostring(opts.n))
     )
 
     assert(
-        type(opts.electron_count) == "number" and opts.electron_count % 1 == 0 and opts.electron_count >= 1 and opts.electron_count <= ELECTRON_CAP[opts.l],
-        string.format("'electron_count' with subshell '%s' must be integer in [1, %d] but got: %s", opts.l, ELECTRON_CAP[opts.l], tostring(opts.electron_count))
+        type(opts.electron_count) == "number" and opts.electron_count % 1 == 0 and opts.electron_count >= 1 and opts.electron_count <= ELECTRON_CAP[normalized_l],
+        string.format("'electron_count' with subshell '%s' must be integer in [1, %d] but got: %s", opts.l, ELECTRON_CAP[normalized_l], tostring(opts.electron_count))
     )
 
     return setmetatable({
         n = opts.n,
         l = normalized_l,
         electron_count = opts.electron_count,
-        canonical_string = string.format("%d%s%s", opts.n, normalized_l, tostring(SUPER[opts.electron_count]))
+        canonical_string = string.format("%d%s%s", opts.n, normalized_l, SUPER[opts.electron_count])
     }, self)
 end
 
