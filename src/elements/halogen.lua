@@ -210,7 +210,7 @@ local tennessine_subshell_occupancy4 = SubshellOccupancy:new{
 }
 
 local tennessine_electron_configuration = ElectronConfiguration:new{
-    core = "Xe",
+    core = "Rn",
     subshell_occupancy = {
         tennessine_subshell_occupancy1,
         tennessine_subshell_occupancy2,
