@@ -54,7 +54,7 @@ local calcium_subshell_occupancy = SubshellOccupancy:new{
 
 local calcium_electron_configuration = ElectronConfiguration:new{
     core = "Ar",
-    subshell_occupancy = { calcium_subshell_occupancy1 }
+    subshell_occupancy = { calcium_subshell_occupancy }
 }
 
 local calcium = Element:new{
@@ -113,7 +113,7 @@ local barium = Element:new{
 }
 
 local radium_subshell_occupancy = SubshellOccupancy:new{
-    n = 6,
+    n = 7,
     l = "s",
     electron_count = 2
 }
