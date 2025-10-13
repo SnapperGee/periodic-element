@@ -886,7 +886,7 @@ local rutherfordium = Element:new{
     name = "Rutherfordium",
     symbol = "Rf",
     number = 104,
-    mass = 261,
+    mass = 267.122,
     group = 4,
     period = 7,
     block = "d",
@@ -924,11 +924,49 @@ local dubnium = Element:new{
     name = "Dubnium",
     symbol = "Db",
     number = 105,
-    mass = 262,
+    mass = 268.126,
     group = 5,
     period = 7,
     block = "d",
     electron_configuration = dubnium_electron_configuration
+}
+
+local seaborgium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local seaborgium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 4
+}
+
+local seaborgium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local seaborgium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        seaborgium_subshell_occupancy1,
+        seaborgium_subshell_occupancy2,
+        seaborgium_subshell_occupancy3
+    }
+}
+
+local seaborgium = Element:new{
+    name = "Seaborgium",
+    symbol = "Sg",
+    number = 106,
+    mass = 269.128,
+    group = 6,
+    period = 7,
+    block = "d",
+    electron_configuration = seaborgium_electron_configuration
 }
 
 local bohrium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -962,7 +1000,7 @@ local bohrium = Element:new{
     name = "Bohrium",
     symbol = "Bh",
     number = 107,
-    mass = 264,
+    mass = 270.133,
     group = 7,
     period = 7,
     block = "d",
@@ -1000,7 +1038,7 @@ local hassium = Element:new{
     name = "Hassium",
     symbol = "Hs",
     number = 108,
-    mass = 269,
+    mass = 269.1336,
     group = 8,
     period = 7,
     block = "d",
@@ -1038,7 +1076,7 @@ local meitnerium = Element:new{
     name = "Meitnerium",
     symbol = "Mt",
     number = 109,
-    mass = 278,
+    mass = 277.154,
     group = 9,
     period = 7,
     block = "d",
@@ -1076,7 +1114,7 @@ local darmstadtium = Element:new{
     name = "Darmstadtium",
     symbol = "Ds",
     number = 110,
-    mass = 281,
+    mass = 282.166,
     group = 10,
     period = 7,
     block = "d",
@@ -1114,7 +1152,7 @@ local roentgenium = Element:new{
     name = "Roentgenium",
     symbol = "Rg",
     number = 111,
-    mass = 280,
+    mass = 282.169,
     group = 11,
     period = 7,
     block = "d",
