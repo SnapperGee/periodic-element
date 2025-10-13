@@ -17,23 +17,29 @@ local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 ---@field electron_configuration ElectronConfiguration
 local Element = {}
 
-Element.__index = Element
+local DATA = setmetatable({}, { __mode = "k" })
 
-function Element.__newindex()
-    error("Element records are immutable", 2)
-end
-
-function Element:__eq(other)
-    return self.number == other.number
-end
-
-function Element:__lt(other)
-    return self.number < other.number
-end
-
-function Element:__le(other)
-    return not Element.__lt(other, self)
-end
+local METATABLE = {
+    __index = function(self, k)
+        local d = DATA[self]
+        return d and d[k] or nil
+    end,
+    __newindex = function(self, k, v)
+        error("Element records are immutable", 2)
+    end,
+    __eq = function(self, other)
+        local self_data, other_data = DATA[self], DATA[other]
+        return self_data and other_data and self_data.number == other_data.number
+    end,
+    __lt = function(self, other)
+        local self_data, other_data = DATA[self], DATA[other]
+        return self_data.number < other_data.number
+    end,
+    __le = function(self, other)
+        return not METATABLE.__lt(other, self)
+    end,
+    __metatable = Element
+}
 
 ---@class ElementInitOpts
 ---@field name   string
@@ -45,7 +51,6 @@ end
 ---@field block  Block
 ---@field electron_configuration ElectronConfiguration
 
--- TODO: Make immutable
 ---@param opts ElementInitOpts
 ---@return Element
 function Element:new(opts)
@@ -117,7 +122,9 @@ function Element:new(opts)
         string.format("'family' for atomic number could not be determined: %d", opts.number)
     )
 
-    return setmetatable({
+    local obj = setmetatable({}, METATABLE)
+
+    DATA[obj] = {
         name = normalized_name,
         symbol = normalized_symbol,
         number = opts.number,
@@ -127,7 +134,9 @@ function Element:new(opts)
         period = opts.period,
         block = normalized_block,
         electron_configuration = opts.electron_configuration
-    }, self)
+    }
+
+    return obj
 end
 
 return Element
