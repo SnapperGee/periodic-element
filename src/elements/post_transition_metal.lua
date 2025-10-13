@@ -57,7 +57,7 @@ local zinc = Element:new{
     name = "Zinc",
     symbol = "Zn",
     number = 30,
-    mass = 63.38,
+    mass = 65.38,
     group = 12,
     period = 4,
     block = "d",
@@ -108,7 +108,7 @@ local cadmium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 10
 }
 
-local cadmium_subshell_occupancy1 = SubshellOccupancy:new{
+local cadmium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -461,7 +461,7 @@ local copernicium = Element:new{
     mass = 285,
     group = 12,
     period = 7,
-    block = "p",
+    block = "d",
     electron_configuration = copernicium_electron_configuration
 }
 
@@ -546,7 +546,7 @@ local flerovium_electron_configuration = ElectronConfiguration:new{
 
 local flerovium = Element:new{
     name = "Flerovium",
-    symbol = "Nh",
+    symbol = "Fl",
     number = 114,
     mass = 289,
     group = 14,
