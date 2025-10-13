@@ -114,7 +114,7 @@ function Element:new(opts)
 
     assert(
         family ~= "Unknown",
-        string.format("'family' for atomic number could not be determined: %i", opt.number)
+        string.format("'family' for atomic number could not be determined: %i", opts.number)
     )
 
     return setmetatable({
