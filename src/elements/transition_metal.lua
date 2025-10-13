@@ -287,7 +287,7 @@ local yttrium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local yttrium_subshell_occupancy1 = SubshellOccupancy:new{
+local yttrium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -318,7 +318,7 @@ local zirconium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local zirconium_subshell_occupancy1 = SubshellOccupancy:new{
+local zirconium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -349,7 +349,7 @@ local niobium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 4
 }
 
-local niobium_subshell_occupancy1 = SubshellOccupancy:new{
+local niobium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -380,7 +380,7 @@ local molybdenum_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local molybdenum_subshell_occupancy1 = SubshellOccupancy:new{
+local molybdenum_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -411,7 +411,7 @@ local technetium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local technetium_subshell_occupancy1 = SubshellOccupancy:new{
+local technetium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -442,7 +442,7 @@ local ruthenium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 7
 }
 
-local ruthenium_subshell_occupancy1 = SubshellOccupancy:new{
+local ruthenium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -473,7 +473,7 @@ local rhodium_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 8
 }
 
-local rhodium_subshell_occupancy1 = SubshellOccupancy:new{
+local rhodium_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -526,7 +526,7 @@ local silver_subshell_occupancy1 = SubshellOccupancy:new{
     electron_count = 10
 }
 
-local silver_subshell_occupancy1 = SubshellOccupancy:new{
+local silver_subshell_occupancy2 = SubshellOccupancy:new{
     n = 5,
     l = "s",
     electron_count = 1
