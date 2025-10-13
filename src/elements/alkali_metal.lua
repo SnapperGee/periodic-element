@@ -9,7 +9,7 @@ local lithium_subshell_occupancy = SubshellOccupancy:new{
 }
 
 local lithium_electron_configuration = ElectronConfiguration:new{
-    core = "he",
+    core = "He",
     subshell_occupancy = { lithium_subshell_occupancy }
 }
 
@@ -54,7 +54,7 @@ local potassium_subshell_occupancy = SubshellOccupancy:new{
 
 local potassium_electron_configuration = ElectronConfiguration:new{
     core = "Ar",
-    subshell_occupancy = { potassium_subshell_occupancy1 }
+    subshell_occupancy = { potassium_subshell_occupancy }
 }
 
 local potassium = Element:new{
@@ -131,5 +131,5 @@ local francium = Element:new{
     group = 1,
     period = 7,
     block = "s",
-    electron_configuration = cesium_electron_configuration
+    electron_configuration = francium_electron_configuration
 }
