@@ -73,7 +73,7 @@ function Element:new(opts)
 
     assert(
         type(opts.mass) == "number" and opts.mass > 0,
-        string.format("positive 'mass' integer expected but got: %s", tostring(opts.mass))
+        string.format("positive 'mass' number expected but got: %s", tostring(opts.mass))
     )
 
     assert(
