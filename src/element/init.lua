@@ -28,10 +28,12 @@ local METATABLE = {
         error("Element records are immutable", 2)
     end,
     __eq = function(self, other)
+        if rawequal(self, other) then return true end
         local self_data, other_data = DATA[self], DATA[other]
         return self_data and other_data and self_data.number == other_data.number
     end,
     __lt = function(self, other)
+        if rawequal(self, other) then return false end
         local self_data, other_data = DATA[self], DATA[other]
         return self_data.number < other_data.number
     end,
