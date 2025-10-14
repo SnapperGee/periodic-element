@@ -1,21 +1,5 @@
 local Element = require("element")
-
-local function is_array_of_elements(arg)
-    if type(arg) ~= "table" or arg[1] == nil then return false end
-
-    for k, v in pairs(arg) do
-        if type(k) ~= "number"
-            or k < 1
-            or k % 1 ~= 0
-            or type(v) ~= "table"
-            or getmetatable(v) ~= Element
-            or (k ~= 1 and rawget(arg, k-1) == nil) then
-            return false
-        end
-    end
-
-    return true
-end
+local is_array = require("util.is_array")
 
 local Elements = {}
 
@@ -31,7 +15,7 @@ function Elements:new(elements)
     assert(type(elements) == "table", "elements table required")
 
     assert(
-        is_array_of_elements(elements),
+        is_array(elements, Element),
         string.format("expected non empty 'elements' array of Elements but got: %s", tostring(opts.subshell_occupancy))
     )
 
