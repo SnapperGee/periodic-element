@@ -18,3 +18,5 @@ local function is_array(arg, check_type)
 
     return true
 end
+
+return is_array
