@@ -1,16 +1,15 @@
 local Element = require("element")
 
 local function is_array_of_elements(arg)
-    if type(arg) ~= "table" then return false end
-
-    local n = 0
-
-    for _ in ipairs(arg) do n = n + 1 end
-
-    if n == 0 then return false end
+    if type(arg) ~= "table" or arg[1] == nil then return false end
 
     for k, v in pairs(arg) do
-        if type(k) ~= "number" or k % 1 ~= 0 or k < 1 or k > n or type(v) ~= "table" or getmetatable(v) ~= Element then
+        if type(k) ~= "number"
+            or k < 1
+            or k % 1 ~= 0
+            or type(v) ~= "table"
+            or getmetatable(v) ~= Element
+            or (k ~= 1 and rawget(arg, k-1) == nil) then
             return false
         end
     end
