@@ -1,22 +1,5 @@
 local SubshellOccupancy = require("element.subshell_occupancy")
-
-local function is_array_of_subshell_occupancies(arg)
-    if type(arg) ~= "table" then return false end
-
-    local n = 0
-
-    for _ in ipairs(arg) do n = n + 1 end
-
-    if n == 0 then return false end
-
-    for k, v in pairs(arg) do
-        if type(k) ~= "number" or k % 1 ~= 0 or k < 1 or k > n or type(v) ~= "table" or getmetatable(v) ~= SubshellOccupancy then
-            return false
-        end
-    end
-
-    return true
-end
+local is_array = require("util.is_array")
 
 local NOBLE_GAS_SYMBOLS = { He = true, Ne = true, Ar = true, Kr = true, Xe = true, Rn = true, Og = true }
 local NOBLE_GAS_RANK = { He = 0, Ne = 1, Ar = 2, Kr = 3, Xe = 4, Rn = 5, Og = 6 }
@@ -95,7 +78,7 @@ function ElectronConfiguration:new(opts)
     )
 
     assert(
-        is_array_of_subshell_occupancies(opts.subshell_occupancy),
+        is_array(opts.subshell_occupancy, SubshellOccupancy),
         string.format("expected non empty 'subshell_occupancy' array of SubshellOccupancies but got: %s", tostring(opts.subshell_occupancy))
     )
 
