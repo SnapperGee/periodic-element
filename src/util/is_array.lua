@@ -1,5 +1,5 @@
 ---@param arg any
----@param value_type? string|table|fun(v:any):boolean
+---@param value_type_or_predicate? string|table|fun(v:any):boolean
 ---@return boolean
 local function is_array(arg, value_type_or_predicate)
     if type(arg) ~= "table" or rawget(arg, 1) == nil then return false end
