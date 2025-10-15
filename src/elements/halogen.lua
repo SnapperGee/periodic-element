@@ -31,6 +31,7 @@ local fluorine = Element:new{
     group = 17,
     period = 2,
     block = "p",
+    oxidation_states = {-1},
     electron_configuration = fluorine_electron_configuration
 }
 
@@ -62,6 +63,7 @@ local chlorine = Element:new{
     group = 17,
     period = 3,
     block = "p",
+    oxidation_states = {-1, 1, 5, 7},
     electron_configuration = chlorine_electron_configuration
 }
 
@@ -100,6 +102,7 @@ local bromine = Element:new{
     group = 17,
     period = 4,
     block = "p",
+    oxidation_states = {-1, 1, 5},
     electron_configuration = bromine_electron_configuration
 }
 
@@ -138,6 +141,7 @@ local iodine = Element:new{
     group = 17,
     period = 5,
     block = "p",
+    oxidation_states = {-1, 1, 5, 7},
     electron_configuration = iodine_electron_configuration
 }
 
@@ -183,6 +187,7 @@ local astatine = Element:new{
     group = 17,
     period = 6,
     block = "p",
+    oxidation_states = {-1, 1, 3, 5, 7},
     electron_configuration = astatine_electron_configuration
 }
 
@@ -228,6 +233,7 @@ local tennessine = Element:new{
     group = 17,
     period = 7,
     block = "p",
+    oxidation_states = {-1, 1, 3, 5},
     electron_configuration = tennessine_electron_configuration
 }
 
