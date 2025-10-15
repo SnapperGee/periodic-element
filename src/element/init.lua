@@ -1,4 +1,5 @@
 local Family = require("element.family")
+local is_array = require("util.is_array")
 local ElectronConfiguration = require("element.electron_configuration")
 
 ---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
@@ -14,6 +15,7 @@ local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 ---@field family string      -- group family
 ---@field period integer     -- 1..7
 ---@field block  Block
+---@field oxidation_states integer[]
 ---@field electron_configuration ElectronConfiguration
 local Element = {}
 
@@ -51,6 +53,7 @@ local METATABLE = {
 ---@field group  integer|nil
 ---@field period integer
 ---@field block  Block
+---@field oxidation_states integer[]
 ---@field electron_configuration ElectronConfiguration
 
 ---@param opts ElementInitOpts
@@ -86,6 +89,11 @@ function Element:new(opts)
     assert(
         type(opts.block) == "string" and #opts.block == 1,
         string.format("'block' must be single character but got: %s", tostring(opts.block))
+    )
+
+    assert(
+        is_array(opts.oxidation_states, function(v) type(v) == "number" and v == math.floor(v) end),
+        string.format("'oxidation_states' must be non empty integer array but got: %s", tostring(opts.oxidation_states))
     )
 
     local normalized_block = opts.block:lower()
@@ -135,6 +143,7 @@ function Element:new(opts)
         family = family,
         period = opts.period,
         block = normalized_block,
+        oxidation_states = opts.oxidation_states,
         electron_configuration = opts.electron_configuration
     }
 
