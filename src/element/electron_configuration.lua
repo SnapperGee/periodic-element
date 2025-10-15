@@ -43,17 +43,6 @@ function ElectronConfiguration:__le(other)
     return not ElectronConfiguration.__lt(other, self)
 end
 
-function ElectronConfiguration:formatted_string()
-    local orbitals_string = ""
-
-
-    for _, subshell_occupancy in ipairs(self.subshell_occupancy) do
-        orbitals_string = orbitals_string .. subshell_occupancy.canonical_string
-    end
-
-    return (self.core and "[" .. self.core .. "]" or "") .. orbitals_string
-end
-
 ---@class ElectronConfigurationInitOpts
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn", "Og"
 ---@field subshell_occupancy  SubshellOccupancy[] -- ordered list as written (keep authoring order)
@@ -82,9 +71,18 @@ function ElectronConfiguration:new(opts)
         string.format("expected non empty 'subshell_occupancy' array of SubshellOccupancies but got: %s", tostring(opts.subshell_occupancy))
     )
 
+    local orbitals_string = ""
+
+    for _, subshell_occupancy in ipairs(self.subshell_occupancy) do
+        orbitals_string = orbitals_string .. subshell_occupancy.canonical_string
+    end
+
+    local canonical_string = (self.core and "[" .. self.core .. "]" or "") .. orbitals_string
+
     return setmetatable({
         core = normalized_core_string,
-        subshell_occupancy = opts.subshell_occupancy
+        subshell_occupancy = opts.subshell_occupancy,
+        canonical_string = canonical_string
     }, self)
 end
 
