@@ -69,7 +69,7 @@ end
 ---@return string
 function Family:__call(atomic_number)
     assert(
-        type(atomic_number) == "number" and atomic_number % 1 == 0 and atomic_number >= 1 and atomic_number <= 118,
+        type(atomic_number) == "number" and atomic_number == math.floor(atomic_number) and atomic_number >= 1 and atomic_number <= 118,
         string.format("'atomic_number' positive integer in [1, 118] required but got: %s", tostring(atomic_number))
     )
 
