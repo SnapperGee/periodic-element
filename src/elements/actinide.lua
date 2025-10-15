@@ -31,6 +31,7 @@ local actinium = Element:new{
     group = 3,
     period = 7,
     block = "d",
+    oxidation_states = {3},
     electron_configuration = actinium_electron_configuration
 }
 
@@ -62,6 +63,7 @@ local thorium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {4},
     electron_configuration = thorium_electron_configuration
 }
 
@@ -100,6 +102,7 @@ local protactinium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {4, 5},
     electron_configuration = protactinium_electron_configuration
 }
 
@@ -138,6 +141,7 @@ local uranium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3, 4, 5, 6},
     electron_configuration = uranium_electron_configuration
 }
 
@@ -176,6 +180,7 @@ local neptunium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3, 4, 5, 6},
     electron_configuration = neptunium_electron_configuration
 }
 
@@ -207,6 +212,7 @@ local plutonium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3, 4, 5, 6},
     electron_configuration = plutonium_electron_configuration
 }
 
@@ -238,6 +244,7 @@ local americium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3, 4, 5, 6},
     electron_configuration = americium_electron_configuration
 }
 
@@ -276,6 +283,7 @@ local curium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = curium_electron_configuration
 }
 
@@ -307,6 +315,7 @@ local berkelium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3, 4},
     electron_configuration = berkelium_electron_configuration
 }
 
@@ -338,6 +347,7 @@ local californium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = californium_electron_configuration
 }
 
@@ -369,6 +379,7 @@ local einsteinium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = einsteinium_electron_configuration
 }
 
@@ -400,6 +411,7 @@ local fermium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = fermium_electron_configuration
 }
 
@@ -431,6 +443,7 @@ local mendelevium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {2, 3},
     electron_configuration = mendelevium_electron_configuration
 }
 
@@ -462,6 +475,7 @@ local nobelium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {2, 3},
     electron_configuration = nobelium_electron_configuration
 }
 
@@ -500,6 +514,7 @@ local lawrencium = Element:new{
     group = nil,
     period = 7,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = lawrencium_electron_configuration
 }
 

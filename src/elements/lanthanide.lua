@@ -31,6 +31,7 @@ local lanthanum = Element:new{
     group = 3,
     period = 6,
     block = "d",
+    oxidation_states = {3},
     electron_configuration = lanthanum_electron_configuration
 }
 
@@ -69,6 +70,7 @@ local cerium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3, 4},
     electron_configuration = cerium_electron_configuration
 }
 
@@ -100,6 +102,7 @@ local praseodymium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = praseodymium_electron_configuration
 }
 
@@ -131,6 +134,7 @@ local neodymium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = neodymium_electron_configuration
 }
 
@@ -162,6 +166,7 @@ local promethium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = promethium_electron_configuration
 }
 
@@ -193,6 +198,7 @@ local samarium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {2, 3},
     electron_configuration = samarium_electron_configuration
 }
 
@@ -224,6 +230,7 @@ local europium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {2, 3},
     electron_configuration = europium_electron_configuration
 }
 
@@ -262,6 +269,7 @@ local gadolinium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = gadolinium_electron_configuration
 }
 
@@ -293,6 +301,7 @@ local terbium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = terbium_electron_configuration
 }
 
@@ -324,6 +333,7 @@ local dysprosium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = dysprosium_electron_configuration
 }
 
@@ -355,6 +365,7 @@ local holmium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = holmium_electron_configuration
 }
 
@@ -386,6 +397,7 @@ local erbium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = erbium_electron_configuration
 }
 
@@ -417,6 +429,7 @@ local thulium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = thulium_electron_configuration
 }
 
@@ -448,6 +461,7 @@ local ytterbium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {2, 3},
     electron_configuration = ytterbium_electron_configuration
 }
 
@@ -486,6 +500,7 @@ local lutetium = Element:new{
     group = nil,
     period = 6,
     block = "f",
+    oxidation_states = {3},
     electron_configuration = lutetium_electron_configuration
 }
 
