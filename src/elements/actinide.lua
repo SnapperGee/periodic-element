@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -501,3 +502,11 @@ local lawrencium = Element:new{
     block = "f",
     electron_configuration = lawrencium_electron_configuration
 }
+
+local actinides = Elements:new{
+    actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
+    curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium,
+    lawrencium
+}
+
+return actinides

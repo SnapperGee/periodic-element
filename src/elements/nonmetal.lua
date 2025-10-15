@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -215,3 +216,9 @@ local selenium = Element:new{
     block = "p",
     electron_configuration = selenium_electron_configuration
 }
+
+local nonmetals = Elements:new{
+    hydrogen, carbon, nitrogen, oxygen, phosphorus, sulfur, selenium
+}
+
+return nonmetals

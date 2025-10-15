@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -133,3 +134,9 @@ local radium = Element:new{
     block = "s",
     electron_configuration = radium_electron_configuration
 }
+
+local alkaline_earth_elements = Elements:new{
+    beryllium, magnesium, calcium, strontium, barium, radium
+}
+
+return alkaline_earth_elements

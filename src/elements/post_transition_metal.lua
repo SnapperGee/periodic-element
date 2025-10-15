@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -644,3 +645,10 @@ local livermorium = Element:new{
     block = "p",
     electron_configuration = livermorium_electron_configuration
 }
+
+local post_transition_metals = Elements:new{
+    aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
+    bismuth, polonium, copernicium, nihonium, flerovium, moscovium, livermorium
+}
+
+return post_transition_metals

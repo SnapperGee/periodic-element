@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -487,3 +488,10 @@ local lutetium = Element:new{
     block = "f",
     electron_configuration = lutetium_electron_configuration
 }
+
+local lanthanides = Elements:new{
+    lanthanum, cerium, praseodymium, neodymium, promethium, samarium, europium,
+    gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium, lutetium
+}
+
+return lanthanides

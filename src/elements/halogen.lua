@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -229,3 +230,9 @@ local tennessine = Element:new{
     block = "p",
     electron_configuration = tennessine_electron_configuration
 }
+
+local halogens = Elements:new{
+    fluorine, chlorine, bromine, iodine, astatine, tennessine
+}
+
+return halogens

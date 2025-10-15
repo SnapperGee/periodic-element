@@ -1,3 +1,3 @@
-local Elements = require("elements")
+local Actinide = require("elements.actinide")
 
-print(Elements)
+print(#Actinide.atomic_number_index[103])

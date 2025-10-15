@@ -1,4 +1,5 @@
 local Element = require("element")
+local Elements = require("elements")
 local ElectronConfiguration = require("element.electron_configuration")
 local SubshellOccupancy = require("element.subshell_occupancy")
 
@@ -250,3 +251,9 @@ local oganesson = Element:new{
     block = "p",
     electron_configuration = oganesson_electron_configuration
 }
+
+local noble_gases = Elements:new{
+    helium, neon, argon, krypton, xenon, radon, oganesson
+}
+
+return noble_gases
