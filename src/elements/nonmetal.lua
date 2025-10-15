@@ -21,6 +21,7 @@ local hydrogen = Element:new{
     group = 1,
     period = 1,
     block = "s",
+    oxidation_states = {-1, 1},
     electron_configuration = hydrogen_electron_configuration
 }
 
@@ -52,6 +53,7 @@ local carbon = Element:new{
     group = 14,
     period = 2,
     block = "p",
+    oxidation_states = {-4, 2, 4},
     electron_configuration = carbon_electron_configuration
 }
 
@@ -83,6 +85,7 @@ local nitrogen = Element:new{
     group = 15,
     period = 2,
     block = "p",
+    oxidation_states = {-3, -2, -1, 1, 2, 3, 4, 5},
     electron_configuration = nitrogen_electron_configuration
 }
 
@@ -114,6 +117,7 @@ local oxygen = Element:new{
     group = 16,
     period = 2,
     block = "p",
+    oxidation_states = {-2},
     electron_configuration = oxygen_electron_configuration
 }
 
@@ -145,6 +149,7 @@ local phosphorus = Element:new{
     group = 15,
     period = 3,
     block = "p",
+    oxidation_states = {-3, 3, 5},
     electron_configuration = phosphorus_electron_configuration
 }
 
@@ -176,6 +181,7 @@ local sulfur = Element:new{
     group = 16,
     period = 3,
     block = "p",
+    oxidation_states = {-2, 4, 6},
     electron_configuration = sulfur_electron_configuration
 }
 
@@ -214,6 +220,7 @@ local selenium = Element:new{
     group = 16,
     period = 4,
     block = "p",
+    oxidation_states = {-2, 4, 6},
     electron_configuration = selenium_electron_configuration
 }
 
