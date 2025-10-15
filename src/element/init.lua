@@ -74,7 +74,7 @@ function Element:new(opts)
     local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
 
     assert(
-        type(opts.number) == "number" and opts.number % 1 == 0 and opts.number >= 1 and opts.number <= 118,
+        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 118,
         string.format("'number' integer in [1, 118] expected but got: %s", tostring(opts.number))
     )
 
@@ -102,13 +102,13 @@ function Element:new(opts)
         )
     else
         assert(
-            type(opts.group) == "number" and opts.group % 1 == 0 and opts.group >= 1 and opts.group <= 18,
+            type(opts.group) == "number" and opts.group == math.floor(opts.group) and opts.group >= 1 and opts.group <= 18,
             string.format("'group' integer in [1,18] for s/p/d-block expected but got: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
         )
     end
 
     assert(
-        type(opts.period) == "number" and opts.period % 1 == 0 and opts.period >= 1 and opts.period <= 7,
+        type(opts.period) == "number" and opts.period == math.floor(opts.period) and opts.period >= 1 and opts.period <= 7,
         string.format("'period' integer in [1,7] expected but got: %s", tostring(opts.period))
     )
 
