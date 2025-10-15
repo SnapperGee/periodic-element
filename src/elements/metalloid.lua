@@ -31,6 +31,7 @@ local boron = Element:new{
     group = 13,
     period = 2,
     block = "p",
+    oxidation_states = {3},
     electron_configuration = boron_electron_configuration
 }
 
@@ -62,6 +63,7 @@ local silicon = Element:new{
     group = 14,
     period = 3,
     block = "p",
+    oxidation_states = {-4, 2, 4},
     electron_configuration = silicon_electron_configuration
 }
 
@@ -100,6 +102,7 @@ local germanium = Element:new{
     group = 14,
     period = 4,
     block = "p",
+    oxidation_states = {2, 4},
     electron_configuration = germanium_electron_configuration
 }
 
@@ -138,6 +141,7 @@ local arsenic = Element:new{
     group = 15,
     period = 4,
     block = "p",
+    oxidation_states = {-3, 3, 5},
     electron_configuration = arsenic_electron_configuration
 }
 
@@ -176,6 +180,7 @@ local antimony = Element:new{
     group = 15,
     period = 5,
     block = "p",
+    oxidation_states = {-3, 3, 5},
     electron_configuration = antimony_electron_configuration
 }
 
@@ -214,6 +219,7 @@ local tellurium = Element:new{
     group = 16,
     period = 5,
     block = "p",
+    oxidation_states = {-2, 4, 6},
     electron_configuration = tellurium_electron_configuration
 }
 
