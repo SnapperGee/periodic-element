@@ -22,6 +22,7 @@ local lithium = Element:new{
     group = 1,
     period = 2,
     block = "s",
+    oxidation_states = {1},
     electron_configuration = lithium_electron_configuration
 }
 
@@ -44,6 +45,7 @@ local sodium = Element:new{
     group = 1,
     period = 3,
     block = "s",
+    oxidation_states = {1},
     electron_configuration = sodium_electron_configuration
 }
 
@@ -66,6 +68,7 @@ local potassium = Element:new{
     group = 1,
     period = 4,
     block = "s",
+    oxidation_states = {1},
     electron_configuration = potassium_electron_configuration
 }
 
@@ -88,6 +91,7 @@ local rubidium = Element:new{
     group = 1,
     period = 5,
     block = "s",
+    oxidation_states = {1},
     electron_configuration = rubidium_electron_configuration
 }
 
@@ -110,6 +114,7 @@ local cesium = Element:new{
     group = 1,
     period = 6,
     block = "s",
+    oxidation_states = {1},
     electron_configuration = cesium_electron_configuration
 }
 
@@ -132,6 +137,7 @@ local francium = Element:new{
     group = 1,
     period = 7,
     block = "s",
+    oxidation_states = {1},
     electron_configuration = francium_electron_configuration
 }
 
