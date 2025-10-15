@@ -106,12 +106,12 @@ function SubshellOccupancy:new(opts)
     )
 
     assert(
-        type(opts.n) == "number" and opts.n % 1 == 0 and opts.n >= N_MIN[normalized_l],
+        type(opts.n) == "number" and opts.n == math.floor(opts.n) and opts.n >= N_MIN[normalized_l],
         string.format("'n' (principal quantum number) with subshell '%s' must be integer greater than or equal to %d but got: %s", opts.l, N_MIN[normalized_l], tostring(opts.n))
     )
 
     assert(
-        type(opts.electron_count) == "number" and opts.electron_count % 1 == 0 and opts.electron_count >= 1 and opts.electron_count <= ELECTRON_CAP[normalized_l],
+        type(opts.electron_count) == "number" and opts.electron_count == math.floor(opts.electron_count) and opts.electron_count >= 1 and opts.electron_count <= ELECTRON_CAP[normalized_l],
         string.format("'electron_count' with subshell '%s' must be integer in [1, %d] but got: %s", opts.l, ELECTRON_CAP[normalized_l], tostring(opts.electron_count))
     )
 
