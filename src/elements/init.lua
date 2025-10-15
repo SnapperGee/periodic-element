@@ -18,7 +18,7 @@ function Elements:__call(atomic_number_or_symbol_or_name)
             "Atomic number integer in [1, 118] expected but got: " .. tostring(atomic_number_or_symbol_or_name)
         )
 
-        return self[atomic_number_or_symbol_or_name]
+        return self.atomic_number_index[atomic_number_or_symbol_or_name]
     end
 
     if type(atomic_number_or_symbol_or_name) == "string" then
@@ -30,20 +30,10 @@ function Elements:__call(atomic_number_or_symbol_or_name)
         local normalized_symbol_or_name = atomic_number_or_symbol_or_name:sub(1,1):upper() .. atomic_number_or_symbol_or_name:sub(2):lower()
 
         if #normalized_symbol_or_name <= 2 then
-            for _, element in pairs(self) do
-                if element.symbol == normalized_symbol_or_name then
-                    return element
-                end
-            end
+            return self.symbol_index[normalized_symbol_or_name]
         else
-            for _, element in pairs(self) do
-                if element.name == normalized_symbol_or_name then
-                    return element
-                end
-            end
+            return self.name_index[normalized_symbol_or_name]
         end
-
-        return nil
     end
 
     error("element string symbol or name or integer atomic number expected but got: " .. tostring(type(atomic_number_or_symbol_or_name)), 2)
@@ -59,13 +49,27 @@ function Elements:new(elements)
         "non empty 'elements' array of Elements required"
     )
 
-    local elements_table = {}
+    local atomic_number_index = {}
+    local symbol_index = {}
+    local name_index = {}
 
     for _, element in ipairs(elements) do
-        elements_table[element.number] = element
+        atomic_number_index[element.number] = element
     end
 
-    return setmetatable(elements_table, self)
+    for _, element in ipairs(elements) do
+        symbol_index[element.symbol] = element
+    end
+
+    for _, element in ipairs(elements) do
+        name_index[element.name] = element
+    end
+
+    return setmetatable({
+        atomic_number_index = atomic_number_index,
+        symbol_index = symbol_index,
+        name_index = name_index
+    }, self)
 end
 
 return Elements
