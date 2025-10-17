@@ -92,7 +92,7 @@ function Element:new(opts)
     )
 
     assert(
-        is_array(opts.oxidation_states, function(v) type(v) == "number" and v == math.floor(v) end),
+        is_array(opts.oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end),
         string.format("'oxidation_states' must be non empty integer array but got: %s", tostring(opts.oxidation_states))
     )
 

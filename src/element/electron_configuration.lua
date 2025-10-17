@@ -73,11 +73,11 @@ function ElectronConfiguration:new(opts)
 
     local orbitals_string = ""
 
-    for _, subshell_occupancy in ipairs(self.subshell_occupancy) do
+    for _, subshell_occupancy in ipairs(opts.subshell_occupancy) do
         orbitals_string = orbitals_string .. subshell_occupancy.canonical_string
     end
 
-    local canonical_string = (self.core and "[" .. self.core .. "]" or "") .. orbitals_string
+    local canonical_string = (normalized_core_string and "[" .. normalized_core_string .. "]" or "") .. orbitals_string
 
     return setmetatable({
         core = normalized_core_string,
