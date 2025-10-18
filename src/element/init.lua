@@ -32,11 +32,17 @@ local METATABLE = {
     __eq = function(self, other)
         if rawequal(self, other) then return true end
         local self_data, other_data = DATA[self], DATA[other]
+        if self_data == nil or other_data == nil then
+            error("comparison with non-Element", 2)
+        end
         return self_data and other_data and self_data.number == other_data.number
     end,
     __lt = function(self, other)
         if rawequal(self, other) then return false end
         local self_data, other_data = DATA[self], DATA[other]
+        if self_data == nil or other_data == nil then
+            error("comparison with non-Element", 2)
+        end
         return self_data.number < other_data.number
     end,
     __le = function(self, other)
