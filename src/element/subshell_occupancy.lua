@@ -18,60 +18,82 @@ local VALID_L_LETTER = { s = true, p = true, d = true, f = true }
 ---@field canonical_string string
 local SubshellOccupancy = {}
 
-SubshellOccupancy.__index = SubshellOccupancy
+local DATA = setmetatable({}, { __mode = "k" })
 
-function SubshellOccupancy.__newindex()
-    error("SubshellOccupancy records are immutable", 2)
-end
+local METATABLE = {
+    __index = function(self, k)
+        local self_data = DATA[self]
+        if self_data ~= nil then
+            local value = self_data[k]
+            if value ~= nil then return value end
+        end
+        return SubshellOccupancy[k]
+    end,
+    __newindex = function(self, k, v)
+        error("SubshellOccupancy records are immutable", 2)
+    end,
+    __eq = function(self, other)
+        if rawequal(self, other) then return true end
 
-function SubshellOccupancy:__eq(other)
-    return rawequal(self,other)
-        or self.n == other.n
-        and self.l == other.l
-        and self.electron_count == other.electron_count
-end
+        local self_data, other_data = DATA[self], DATA[other]
 
-function SubshellOccupancy:__lt(other)
-    if rawequal(self, other) then return false end
+        if self_data == nil or other_data == nil then
+            error("comparison with non-SubshellOccupancy", 2)
+        end
 
-    if self.n ~= other.n then
-        return self.n < other.n
-    end
+        return self_data.n == other_data.n
+            and self_data.l == other_data.l
+            and self_data.electron_count == other_data.electron_count
+    end,
+    __lt = function(self, other)
+        if rawequal(self, other) then return false end
 
-    local ra, rb = L_LETTER_RANK[self.l], L_LETTER_RANK[other.l]
+        local self_data, other_data = DATA[self], DATA[other]
 
-    if ra ~= rb then
-        return ra < rb
-    end
+        if self_data == nil or other_data == nil then
+            error("comparison with non-SubshellOccupancy", 2)
+        end
 
-    return self.electron_count < other.electron_count
-end
+        if self_data.n ~= other_data.n then
+            return self_data.n < other_data.n
+        end
 
-function SubshellOccupancy:__le(other)
-    return not SubshellOccupancy.__lt(other, self)
-end
+        local ra, rb = L_LETTER_RANK[self_data.l], L_LETTER_RANK[other_data.l]
 
-function SubshellOccupancy:__tostring()
-    local keys, parts = {}, {}
+        if ra ~= rb then
+            return ra < rb
+        end
 
-    local k = next(self)
-    while k ~= nil do
-        keys[#keys+1] = k
-        k = next(self, k)
-    end
+        return self_data.electron_count < other_data.electron_count
+    end,
+    __le = function(self, other)
+        return not METATABLE.__lt(other, self)
+    end,
+    __tostring = function(self)
+        local keys, parts = {}, {}
 
-    table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
+        local self_data = DATA[self]
 
-    for _, key in ipairs(keys) do
-        local v = rawget(self, key)
-        local vr = (type(v) == "string") and string.format("%q", v) or tostring(v)
-        parts[#parts+1] = string.format("%s=%s", tostring(key), vr)
-    end
+        local k = next(self_data)
+        while k ~= nil do
+            keys[#keys+1] = k
+            k = next(self_data, k)
+        end
 
-    local key_value_pairs = table.concat(parts, ", ")
+        table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
 
-    return string.format("SubshellOccupancy{%s}", key_value_pairs)
-end
+        for _, key in ipairs(keys) do
+            local v = rawget(self_data, key)
+            local vr = (type(v) == "string") and string.format("%q", v) or tostring(v)
+            parts[#parts+1] = string.format("%s=%s", tostring(key), vr)
+        end
+
+        local key_value_pairs = table.concat(parts, ", ")
+
+        return string.format("SubshellOccupancy{%s}", key_value_pairs)
+    end,
+    __metatable = SubshellOccupancy
+}
 
 function SubshellOccupancy:principal_quantum_number()
     return self.n
@@ -86,7 +108,6 @@ end
 ---@field l SubshellLetter       -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
 ---@field electron_count integer -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
 
--- TODO: Make immutable
 ---@param opts SubshellOccupancyInitOpts
 ---@return SubshellOccupancy
 function SubshellOccupancy:new(opts)
@@ -115,12 +136,16 @@ function SubshellOccupancy:new(opts)
         string.format("'electron_count' with subshell '%s' must be integer in [1, %d] but got: %s", opts.l, ELECTRON_CAP[normalized_l], tostring(opts.electron_count))
     )
 
-    return setmetatable({
+    local obj = setmetatable({}, METATABLE)
+
+    DATA[obj] = {
         n = opts.n,
         l = normalized_l,
         electron_count = opts.electron_count,
         canonical_string = string.format("%d%s%s", opts.n, normalized_l, SUPER[opts.electron_count])
-    }, self)
+    }
+
+    return obj
 end
 
 return SubshellOccupancy
