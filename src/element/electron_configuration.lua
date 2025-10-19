@@ -9,45 +9,82 @@ local NOBLE_GAS_RANK = { He = 0, Ne = 1, Ar = 2, Kr = 3, Xe = 4, Rn = 5, Og = 6 
 ---@field subshell_occupancy SubshellOccupancy[] -- ordered list as written (keep authoring order)
 local ElectronConfiguration = {}
 
-ElectronConfiguration.__index = ElectronConfiguration
+local DATA = setmetatable({}, { __mode = "k" })
 
-function ElectronConfiguration.__newindex()
-    error("ElectronConfiguration records are immutable", 2)
-end
+local METATABLE = {
+    __index = function(self, k)
+        local self_data = DATA[self]
+        if self_data ~= nil then
+            local value = self_data[k]
+            if value ~= nil then return value end
+        end
+        return ElectronConfiguration[k]
+    end,
+    __newindex = function(self, k, v)
+        error("ElectronConfiguration records are immutable", 2)
+    end,
+    __eq = function(self, other)
+        if rawequal(self, other) then return true end
 
-function ElectronConfiguration:__eq(other)
-    return rawequal(self,other)
-        or self.core == other.core
-        and self.subshell_occupancy == other.subshell_occupancy
-end
+        local self_data, other_data = DATA[self], DATA[other]
 
-function ElectronConfiguration:__lt(other)
-    if rawequal(self, other) then return false end
+        if self_data == nil or other_data == nil then
+            return false
+        end
 
-    local ra = self.core and NOBLE_GAS_RANK[self.core] or -1
-    local rb = other.core and NOBLE_GAS_RANK[other.core] or -1
-    if ra ~= rb then return ra < rb end
+        if self_data.core ~= other_data.core then return false end
 
-    local na, nb = #self.subshell_occupancy, #other.subshell_occupancy
-    local n = (na < nb) and na or nb
+        local self_subshell_occupancy = self_data.subshell_occupancy
+        local other_subshell_occupancy = other_data.subshell_occupancy
 
-    for i = 1, n do
-        local ai, bi = self.subshell_occupancy[i], other.subshell_occupancy[i]
-        if ai ~= bi then return ai < bi end
-    end
+        if #self_subshell_occupancy ~= #other_subshell_occupancy then return false end
 
-    return na < nb
-end
+        for i = 1, #self_subshell_occupancy do
+            if self_subshell_occupancy[i] ~= other_subshell_occupancy[i] then
+                return false
+            end
+        end
 
-function ElectronConfiguration:__le(other)
-    return not ElectronConfiguration.__lt(other, self)
-end
+        return true
+    end,
+    __lt = function(self, other)
+        if rawequal(self, other) then return false end
+
+        local self_data, other_data = DATA[self], DATA[other]
+
+        if self_data == nil or other_data == nil then
+            error("comparison with non-ElectronConfiguration", 2)
+        end
+
+        local self_noble_gas_rank = self_data.core and NOBLE_GAS_RANK[self_data.core] or -1
+        local other_noble_gas_rank = other_data.core and NOBLE_GAS_RANK[other_data.core] or -1
+
+        if self_noble_gas_rank ~= other_noble_gas_rank then
+            return self_noble_gas_rank < other_noble_gas_rank
+        end
+
+        local self_number_of_subshells, other_number_of_subshells = #self_data.subshell_occupancy, #other_data.subshell_occupancy
+        local minimum_number_of_subshells = (self_number_of_subshells < other_number_of_subshells) and self_number_of_subshells or other_number_of_subshells
+
+        for i = 1, minimum_number_of_subshells do
+            local self_subshell_occupancy, other_subshell_occupancy = self_data.subshell_occupancy[i], other_data.subshell_occupancy[i]
+            if self_subshell_occupancy ~= other_subshell_occupancy then
+                return self_subshell_occupancy < other_subshell_occupancy
+            end
+        end
+
+        return self_number_of_subshells < other_number_of_subshells
+    end,
+    __le = function(self, other)
+        return not METATABLE.__lt(other, self)
+    end,
+    __metatable = ElectronConfiguration
+}
 
 ---@class ElectronConfigurationInitOpts
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn", "Og"
 ---@field subshell_occupancy  SubshellOccupancy[] -- ordered list as written (keep authoring order)
 
--- TODO: Make immutable
 ---@param opts ElectronConfigurationInitOpts
 ---@return ElectronConfiguration
 function ElectronConfiguration:new(opts)
@@ -71,19 +108,29 @@ function ElectronConfiguration:new(opts)
         string.format("expected non empty 'subshell_occupancy' array of SubshellOccupancies but got: %s", tostring(opts.subshell_occupancy))
     )
 
+    local subshell_occupancy_copy = {}
+
+    for i = 1, #opts.subshell_occupancy do
+        subshell_occupancy_copy[i] = opts.subshell_occupancy[i]
+    end
+
     local orbitals_string = ""
 
-    for _, subshell_occupancy in ipairs(opts.subshell_occupancy) do
+    for _, subshell_occupancy in ipairs(subshell_occupancy_copy) do
         orbitals_string = orbitals_string .. subshell_occupancy.canonical_string
     end
 
     local canonical_string = (normalized_core_string and "[" .. normalized_core_string .. "]" or "") .. orbitals_string
 
-    return setmetatable({
+    local obj = setmetatable({}, METATABLE)
+
+    DATA[obj] = {
         core = normalized_core_string,
-        subshell_occupancy = opts.subshell_occupancy,
+        subshell_occupancy = subshell_occupancy_copy,
         canonical_string = canonical_string
-    }, self)
+    }
+
+    return obj
 end
 
 return ElectronConfiguration
