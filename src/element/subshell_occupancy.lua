@@ -38,7 +38,7 @@ local METATABLE = {
         local self_data, other_data = DATA[self], DATA[other]
 
         if self_data == nil or other_data == nil then
-            error("comparison with non-SubshellOccupancy", 2)
+            return false
         end
 
         return self_data.n == other_data.n
