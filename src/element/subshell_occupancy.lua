@@ -54,14 +54,22 @@ local METATABLE = {
             error("comparison with non-SubshellOccupancy", 2)
         end
 
+        local self_l_rank = L_LETTER_RANK[self_data.l]
+        local other_l_rank = L_LETTER_RANK[other_data.l]
+
+        local k_self = self_data.n + self_l_rank
+        local k_other = other_data.n + other_l_rank
+
+        if k_self ~= k_other then
+            return k_self < k_other
+        end
+
         if self_data.n ~= other_data.n then
             return self_data.n < other_data.n
         end
 
-        local ra, rb = L_LETTER_RANK[self_data.l], L_LETTER_RANK[other_data.l]
-
-        if ra ~= rb then
-            return ra < rb
+        if self_l_rank ~= other_l_rank then
+            return self_l_rank < other_l_rank
         end
 
         return self_data.electron_count < other_data.electron_count
