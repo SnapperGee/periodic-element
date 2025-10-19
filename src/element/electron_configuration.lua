@@ -67,7 +67,10 @@ local METATABLE = {
         local minimum_number_of_subshells = (self_number_of_subshells < other_number_of_subshells) and self_number_of_subshells or other_number_of_subshells
 
         for i = 1, minimum_number_of_subshells do
-            local self_subshell_occupancy, other_subshell_occupancy = self_data.subshell_occupancy[i], other_data.subshell_occupancy[i]
+
+            local self_subshell_occupancy = self_data.subshell_occupancy[i]
+            local other_subshell_occupancy = other_data.subshell_occupancy[i]
+
             if self_subshell_occupancy ~= other_subshell_occupancy then
                 return self_subshell_occupancy < other_subshell_occupancy
             end
