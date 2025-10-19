@@ -28,7 +28,7 @@ local METATABLE = {
             local value = self_data[k]
             if value ~= nil then return value end
         end
-        return SubshellOccupancy[k]
+        return Element[k]
     end,
     __newindex = function(self, k, v)
         error("Element records are immutable", 2)
