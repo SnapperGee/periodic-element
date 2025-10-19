@@ -23,8 +23,12 @@ local DATA = setmetatable({}, { __mode = "k" })
 
 local METATABLE = {
     __index = function(self, k)
-        local d = DATA[self]
-        return d and d[k] or nil
+        local self_data = DATA[self]
+        if self_data ~= nil then
+            local value = self_data[k]
+            if value ~= nil then return value end
+        end
+        return SubshellOccupancy[k]
     end,
     __newindex = function(self, k, v)
         error("Element records are immutable", 2)
