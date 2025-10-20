@@ -2,16 +2,20 @@ local is_array = require("util.is_array")
 
 local OxidationStates = {}
 
+local DATA = setmetatable({}, { __mode = "k" })
+
 function OxidationStates:ipairs()
-    local a = DATA[self]
+    local self_data = DATA[self]
     local i = 0
     return function()
         i = i + 1
-        if i <= #a then return i, a[i] end
+        if i <= #self_data then return i, self_data[i] end
     end
 end
 
-local DATA = setmetatable({}, { __mode = "k" })
+function OxidationStates:length()
+    return #DATA[self]
+end
 
 local METATABLE = {
     __index = function(self, k)
