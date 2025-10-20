@@ -81,3 +81,5 @@ function OxidationStates:new(oxidation_states)
 
     return obj
 end
+
+return OxidationStates
