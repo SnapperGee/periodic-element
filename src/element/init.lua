@@ -1,6 +1,7 @@
 local Family = require("element.family")
 local is_array = require("util.is_array")
 local ElectronConfiguration = require("element.electron_configuration")
+local OxidationStates = require("element.oxidation_states")
 
 ---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
 
@@ -15,7 +16,7 @@ local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 ---@field family string      -- group family
 ---@field period integer     -- 1..7
 ---@field block  Block
----@field oxidation_states integer[]
+---@field oxidation_states OxidationStates
 ---@field electron_configuration ElectronConfiguration
 local Element = {}
 
@@ -63,7 +64,7 @@ local METATABLE = {
 ---@field group  integer|nil
 ---@field period integer
 ---@field block  Block
----@field oxidation_states integer[]
+---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
 
 ---@param opts ElementInitOpts
@@ -102,9 +103,19 @@ function Element:new(opts)
     )
 
     assert(
-        is_array(opts.oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end),
-        string.format("'oxidation_states' must be non empty integer array but got: %s", tostring(opts.oxidation_states))
+        getmetatable(opts.oxidation_states) == OxidationStates
+        or is_array(opts.oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end)
+        and #opts.oxidation_states > 0,
+        string.format("'oxidation_states' must be OxidationStates object or non empty integer array but got: %s", tostring(opts.oxidation_states))
     )
+
+    local oxidation_states
+
+    if getmetatable(opts.oxidation_states) == OxidationStates then
+        oxidation_states = opts.oxidation_states
+    else
+        oxidation_states = OxidationStates:new(opts.oxidation_states)
+    end
 
     local normalized_block = opts.block:lower()
 
