@@ -81,6 +81,22 @@ local METATABLE = {
     __le = function(self, other)
         return not METATABLE.__lt(other, self)
     end,
+    __tostring = function(self)
+
+        local self_data = DATA[self]
+
+        local subshells_string = ""
+
+        for k, v in ipairs(self_data.subshell_occupancy) do
+            subshells_string = subshells_string .. v.canonical_string
+
+            if k ~= #self_data.subshell_occupancy then
+                subshells_string = subshells_string .. ", "
+            end
+        end
+
+        return string.format("ElectronConfiguration{core=%s, subshell_occupancy={%s}}", tostring(self_data.core), subshells_string)
+    end,
     __metatable = ElectronConfiguration
 }
 
