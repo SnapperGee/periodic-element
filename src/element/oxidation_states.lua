@@ -13,9 +13,7 @@ function OxidationStates:ipairs()
     end
 end
 
-function OxidationStates:length()
-    return #DATA[self]
-end
+function OxidationStates:length() return #DATA[self] end
 
 local METATABLE = {
     __index = function(self, k)
