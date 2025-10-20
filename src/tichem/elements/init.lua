@@ -1,5 +1,5 @@
-local Element = require("element")
-local is_array = require("util.is_array")
+local Element = require("tichem.element")
+local is_array = require("tichem.util.is_array")
 
 local Elements = {}
 

@@ -1,7 +1,7 @@
-local Element = require("element")
-local Elements = require("elements")
-local ElectronConfiguration = require("element.electron_configuration")
-local SubshellOccupancy = require("element.subshell_occupancy")
+local Element = require("tichem.element")
+local Elements = require("tichem.elements")
+local ElectronConfiguration = require("tichem.element.electron_configuration")
+local SubshellOccupancy = require("tichem.element.subshell_occupancy")
 
 local boron_subshell_occupancy1 = SubshellOccupancy:new{
     n = 2,

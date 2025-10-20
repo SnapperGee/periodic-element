@@ -1,4 +1,4 @@
-local is_array = require("util.is_array")
+local is_array = require("tichem.util.is_array")
 
 local OxidationStates = {}
 
