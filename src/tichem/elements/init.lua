@@ -60,6 +60,8 @@ local METATABLE = {
     __metatable = Elements
 }
 
+---@param elements Element[]
+---@return Elements
 function Elements:new(elements)
 
     assert(type(elements) == "table", "elements table required")
