@@ -50,6 +50,22 @@ local METATABLE = {
 
         return true
     end,
+    __tostring = function(self)
+
+        local self_data = DATA[self]
+
+        local oxidation_state_ints_string = ""
+
+        for i = 1, #self_data do
+            oxidation_state_ints_string = oxidation_state_ints_string .. tostring(self_data[i])
+
+            if i ~= #self_data then
+                oxidation_state_ints_string = oxidation_state_ints_string .. ", "
+            end
+        end
+
+        return string.format("OxidationStates{%s}", oxidation_state_ints_string)
+    end,
     __metatable = OxidationStates
 }
 
