@@ -164,7 +164,7 @@ function Element:new(opts)
         family = family,
         period = opts.period,
         block = normalized_block,
-        oxidation_states = opts.oxidation_states,
+        oxidation_states = oxidation_states,
         electron_configuration = opts.electron_configuration
     }
 
