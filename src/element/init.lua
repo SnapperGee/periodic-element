@@ -53,6 +53,42 @@ local METATABLE = {
     __le = function(self, other)
         return not METATABLE.__lt(other, self)
     end,
+    __tostring = function(self)
+
+        local self_data = DATA[self]
+
+        local oxidation_states_string = ""
+
+        for k, oxidation_state in self_data.oxidation_states:ipairs() do
+            if oxidation_state < 0 then
+                oxidation_states_string = oxidation_states_string .. "-"
+            end
+
+            if oxidation_state > 0 then
+                oxidation_states_string = oxidation_states_string .. "+"
+            end
+
+            oxidation_states_string = oxidation_states_string .. oxidation_state
+
+            if k ~= self_data.oxidation_states:length() then
+                oxidation_states_string = oxidation_states_string .. ", "
+            end
+        end
+
+        return string.format(
+            "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\"}",
+            self_data.name,
+            self_data.symbol,
+            self_data.number,
+            self_data.mass,
+            tostring(self_data.group),
+            self_data.period,
+            self_data.block,
+            oxidation_states_string,
+            self_data.electron_configuration.canonical_string
+        )
+
+    end,
     __metatable = Element
 }
 
