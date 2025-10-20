@@ -1,6 +1,6 @@
 local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
-local L_LETTER_RANK = { s=0, p=1, d=2, f=3 }
+local L_LETTER_RANK = { s = 0, p = 1, d = 2, f = 3 }
 
 local SUPER = {
     [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶",
