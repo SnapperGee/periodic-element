@@ -41,6 +41,22 @@ local METATABLE = {
 
         error("element string symbol or name or integer atomic number expected but got: " .. tostring(type(atomic_number_or_symbol_or_name)), 2)
     end,
+    __tostring = function(self)
+
+        local self_data = DATA[self]
+
+        local element_symbols_string = ""
+
+        for k, v in pairs(self_data.atomic_number_index) do
+            element_symbols_string = element_symbols_string .. v.symbol
+
+            if next(self_data.atomic_number_index, k) ~= nil then
+                element_symbols_string = element_symbols_string .. ", "
+            end
+        end
+
+        return string.format("Elements{%s}", element_symbols_string)
+    end,
     __metatable = Elements
 }
 
