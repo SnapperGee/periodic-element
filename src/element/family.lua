@@ -1,4 +1,4 @@
-local Family = {
+local family = {
     [3]="Alkali Metal",
     [11]="Alkali Metal",
     [19]="Alkali Metal",
@@ -61,13 +61,9 @@ local Family = {
     [34]="Nonmetal"
 }
 
-function Family.__newindex()
-    error("Family records are immutable", 2)
-end
-
 ---@param atomic_number integer -- 1..118
 ---@return string
-function Family:__call(atomic_number)
+function family_of_atomic_number(atomic_number)
     assert(
         type(atomic_number) == "number" and atomic_number == math.floor(atomic_number) and atomic_number >= 1 and atomic_number <= 118,
         string.format("'atomic_number' positive integer in [1, 118] required but got: %s", tostring(atomic_number))
@@ -88,9 +84,7 @@ function Family:__call(atomic_number)
         return "Transition Metal"
     end
 
-    local family = rawget(self, atomic_number)
-
-    return family or "Unknown"
+    return family[atomic_number] or "Unknown"
 end
 
-return setmetatable(Family, Family)
+return family_of_atomic_number
