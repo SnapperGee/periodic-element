@@ -1,4 +1,4 @@
-local to_superscript = require("tichem.util.to_superscript")
+local to_script = require("tichem.util.to_script")
 
 local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
@@ -182,7 +182,7 @@ function SubshellOccupancy:new(opts)
         n = opts.n,
         l = normalized_l,
         electron_count = opts.electron_count,
-        canonical_string = string.format("%d%s%s", opts.n, normalized_l, to_superscript(opts.electron_count))
+        canonical_string = string.format("%d%s%s", opts.n, normalized_l, to_script.super(opts.electron_count))
     }
 
     return obj
