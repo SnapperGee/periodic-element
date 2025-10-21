@@ -1,4 +1,4 @@
-local SUPER = {
+local SUPERSCRIPT_CHARACTERS = {
     [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"
 }
 
@@ -30,7 +30,7 @@ local function to_superscript(arg)
         local digit = math.floor(arg / pow) -- leading digit
         arg = arg - digit * pow             -- remove that digit
         pow = math.floor(pow / 10)          -- step down
-        out[#out + 1] = SUPER[digit]
+        out[#out + 1] = SUPER_CHARACTER[digit]
     end
 
     return table.concat(out)
