@@ -103,14 +103,18 @@ local METATABLE = {
     __metatable = SubshellOccupancy
 }
 
+---@return integer
 function SubshellOccupancy:principal_quantum_number()
     return self.n
 end
 
+---@return SubshellLetter
 function SubshellOccupancy:subshell_letter()
     return self.l
 end
 
+---@param other SubshellOccupancy
+---@return integer
 function SubshellOccupancy:spectroscopic_compare(other)
     if rawequal(self, other) then return 0 end
 
