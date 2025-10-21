@@ -1,9 +1,11 @@
 local is_array = require("tichem.util.is_array")
 
+---@class OxidationStates
 local OxidationStates = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
+---@return fun(): integer, integer
 function OxidationStates:ipairs()
     local self_data = DATA[self]
     local i = 0

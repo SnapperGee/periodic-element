@@ -1,6 +1,7 @@
 local Element = require("tichem.element")
 local is_array = require("tichem.util.is_array")
 
+---@class Elements
 local Elements = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
