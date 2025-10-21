@@ -1,9 +1,9 @@
-local SUBSCRIPT_CHARACTER = {
-    [0] = "₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", ["-"] = "₋"
+local SUPERSCRIPT_CHARACTER = {
+    [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", ["-"] = "⁻", ["+"] = "⁺"
 }
 
-local SUPERSCRIPT_CHARACTER = {
-    [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", ["-"] = "⁻"
+local SUBSCRIPT_CHARACTER = {
+    [0] = "₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", ["-"] = "₋", ["+"] = "₊"
 }
 
 ---@param script_type "super"|"sub"
