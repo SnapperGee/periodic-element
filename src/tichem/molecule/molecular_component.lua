@@ -2,7 +2,7 @@ local Element = require("tichem.element")
 
 ---@class MolecularComponent
 ---@field element Element
----@field count   integer -- number of elements
+---@field count   integer -- number of element atoms
 local MolecularComponent = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
