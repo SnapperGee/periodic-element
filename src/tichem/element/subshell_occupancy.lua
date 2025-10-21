@@ -1,11 +1,8 @@
+local to_superscript = require("tichem.util.to_superscript")
+
 local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
 local L_LETTER_RANK = { s = 0, p = 1, d = 2, f = 3 }
-
-local SUPER = {
-    [0]="⁰", "¹", "²", "³", "⁴", "⁵", "⁶",
-    "⁷", "⁸", "⁹", "¹⁰", "¹¹", "¹²", "¹³", "¹⁴"
-}
 
 ---@alias SubshellLetter '"s"'|'"p"'|'"d"'|'"f"'
 
@@ -185,7 +182,7 @@ function SubshellOccupancy:new(opts)
         n = opts.n,
         l = normalized_l,
         electron_count = opts.electron_count,
-        canonical_string = string.format("%d%s%s", opts.n, normalized_l, SUPER[opts.electron_count])
+        canonical_string = string.format("%d%s%s", opts.n, normalized_l, to_superscript(opts.electron_count))
     }
 
     return obj
