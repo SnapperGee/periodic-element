@@ -10,7 +10,7 @@ local PostTransitionMetal = require("tichem.elements.post_transition_metal")
 local TransitionMetal = require("tichem.elements.transition_metal")
 local ElementArray = require("tichem.elements.element_array")
 
-local elements = {}
+local elements_collector = {}
 
 local element_arrays = {
     Actinide, AlkaliMetal, AlkalineEarth, Halogen, Lanthanide, Metalloid, NobleGas,
@@ -20,10 +20,10 @@ local element_arrays = {
 for element_array_index = 1, #element_arrays do
     local element_array = element_arrays[element_array_index]
     for element_index = 1, element_array:length() do
-        elements[#elements + 1] = element_array[element_index]
+        elements_collector[#elements_collector + 1] = element_array[element_index]
     end
 end
 
-local all_elements_array = ElementArray:new(elements)
+local elements_array = ElementArray:new(elements_collector)
 
-return all_elements_array
+return elements_array
