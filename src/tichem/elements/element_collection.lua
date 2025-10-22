@@ -1,17 +1,17 @@
 local Element = require("tichem.element")
 local is_array = require("tichem.util.is_array")
 
----@class ElementArray
-local ElementArray = {}
+---@class ElementCollection
+local ElementCollection = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
 local METATABLE = {
     __index = function(self, k)
-        return ElementArray[k]
+        return ElementCollection[k]
     end,
     __newindex = function(self, k, v)
-        error("ElementArray records are immutable", 2)
+        error("ElementCollection records are immutable", 2)
     end,
     __call = function(self, atomic_number_or_symbol_or_name)
         local self_data = DATA[self]
@@ -52,20 +52,20 @@ local METATABLE = {
             element_symbols_string_parts[#element_symbols_string_parts + 1] = symbol
         end
 
-        return string.format("ElementArray{%s}", table.concat(element_symbols_string_parts, ", "))
+        return string.format("ElementCollection{%s}", table.concat(element_symbols_string_parts, ", "))
     end,
-    __metatable = ElementArray
+    __metatable = ElementCollection
 }
 
 ---@param elements Element[]
----@return ElementArray
-function ElementArray:new(elements)
+---@return ElementCollection
+function ElementCollection:new(elements)
 
     assert(type(elements) == "table", "elements table required")
 
     assert(
         is_array(elements, Element),
-        "non empty 'elements' array of ElementArray required"
+        "non empty 'elements' array of ElementCollection required"
     )
 
     local atomic_number_index = {}
@@ -89,4 +89,4 @@ function ElementArray:new(elements)
     return obj
 end
 
-return ElementArray
+return ElementCollection

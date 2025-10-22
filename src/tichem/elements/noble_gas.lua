@@ -1,5 +1,5 @@
 local Element = require("tichem.element")
-local ElementArray = require("tichem.elements.element_array")
+local ElementCollection = require("tichem.elements.element_collection")
 local ElectronConfiguration = require("tichem.element.electron_configuration")
 local SubshellOccupancy = require("tichem.element.subshell_occupancy")
 
@@ -259,7 +259,7 @@ local oganesson = Element:new{
     electron_configuration = oganesson_electron_configuration
 }
 
-local noble_gases = ElementArray:new{
+local noble_gases = ElementCollection:new{
     helium, neon, argon, krypton, xenon, radon, oganesson
 }
 
