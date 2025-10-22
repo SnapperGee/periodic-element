@@ -99,4 +99,23 @@ end
 ---@return integer
 function OxidationStates:length() return #DATA[self] end
 
+---@return string
+function OxidationStates:formatted_string()
+    local self_data = DATA[self]
+    local oxidation_state_strings = {}
+
+    for i = 1, #self_data do
+
+        local oxidation_state = self_data[i]
+
+        if oxidation_state > 0 then
+            oxidation_state_strings[i] = "+" .. oxidation_state
+        else
+            oxidation_state_strings[i] = tostring(oxidation_state)
+        end
+    end
+
+    return table.concat(oxidation_state_strings, ", ")
+end
+
 return OxidationStates

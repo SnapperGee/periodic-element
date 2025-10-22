@@ -57,16 +57,6 @@ local METATABLE = {
 
         local self_data = DATA[self]
 
-        local oxidation_states_string_parts = {}
-
-        for i, oxidation_state in self_data.oxidation_states:ipairs() do
-            if oxidation_state > 0 then
-                oxidation_states_string_parts[i] = "+" .. oxidation_state
-            else
-                oxidation_states_string_parts[i] = tostring(oxidation_state)
-            end
-        end
-
         return string.format(
             "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\"}",
             self_data.name,
@@ -76,7 +66,7 @@ local METATABLE = {
             tostring(self_data.group),
             self_data.period,
             self_data.block,
-            table.concat(oxidation_states_string_parts, ", "),
+            self_data.oxidation_states:formatted_string(),
             self_data.electron_configuration.canonical_string
         )
     end,
