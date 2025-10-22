@@ -87,8 +87,8 @@ local METATABLE = {
 
         local subshell_string_parts = {}
 
-        for i, subshell_occupancy in ipairs(self_data.subshell_occupancy) do
-            subshell_string_parts[i] = subshell_occupancy.canonical_string
+        for i = 1, #self_data.subshell_occupancy do
+            subshell_string_parts[i] = self_data.subshell_occupancy[i].canonical_string
         end
 
         return string.format(

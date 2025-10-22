@@ -48,8 +48,8 @@ local METATABLE = {
 
         local oxidation_state_string_parts = {}
 
-        for i, oxidation_state in ipairs(self_data) do
-            oxidation_state_string_parts[i] = tostring(oxidation_state)
+        for i = 1, #self_data do
+            oxidation_state_string_parts[i] = tostring(self_data[i])
         end
 
         return string.format("OxidationStates{%s}", table.concat(oxidation_state_string_parts, ", "))
