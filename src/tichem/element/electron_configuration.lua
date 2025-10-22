@@ -85,17 +85,17 @@ local METATABLE = {
 
         local self_data = DATA[self]
 
-        local subshells_string = ""
+        local subshell_string_parts = {}
 
-        for k, v in ipairs(self_data.subshell_occupancy) do
-            subshells_string = subshells_string .. v.canonical_string
-
-            if k ~= #self_data.subshell_occupancy then
-                subshells_string = subshells_string .. ", "
-            end
+        for i, subshell_occupancy in ipairs(self_data.subshell_occupancy) do
+            subshell_string_parts[i] = subshell_occupancy.canonical_string
         end
 
-        return string.format("ElectronConfiguration{core=%s, subshell_occupancy={%s}}", tostring(self_data.core), subshells_string)
+        return string.format(
+            "ElectronConfiguration{core=%s, subshell_occupancy={%s}}",
+            tostring(self_data.core),
+            table.concat(subshell_string_parts, ", ")
+        )
     end,
     __metatable = ElectronConfiguration
 }
