@@ -5,18 +5,6 @@ local OxidationStates = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
----@return fun(): integer, integer
-function OxidationStates:ipairs()
-    local self_data = DATA[self]
-    local i = 0
-    return function()
-        i = i + 1
-        if i <= #self_data then return i, self_data[i] end
-    end
-end
-
-function OxidationStates:length() return #DATA[self] end
-
 local METATABLE = {
     __index = function(self, k)
         local self_data = DATA[self]
@@ -58,17 +46,13 @@ local METATABLE = {
 
         local self_data = DATA[self]
 
-        local oxidation_state_ints_string = ""
+        local oxidation_state_string_parts = {}
 
-        for i = 1, #self_data do
-            oxidation_state_ints_string = oxidation_state_ints_string .. tostring(self_data[i])
-
-            if i ~= #self_data then
-                oxidation_state_ints_string = oxidation_state_ints_string .. ", "
-            end
+        for i, oxidation_state in ipairs(self_data) do
+            oxidation_state_string_parts[i] = tostring(oxidation_state)
         end
 
-        return string.format("OxidationStates{%s}", oxidation_state_ints_string)
+        return string.format("OxidationStates{%s}", table.concat(oxidation_state_string_parts, ", "))
     end,
     __metatable = OxidationStates
 }
@@ -101,5 +85,18 @@ function OxidationStates:new(oxidation_states)
 
     return obj
 end
+
+---@return fun(): integer, integer
+function OxidationStates:ipairs()
+    local self_data = DATA[self]
+    local i = 0
+    return function()
+        i = i + 1
+        if i <= #self_data then return i, self_data[i] end
+    end
+end
+
+---@return integer
+function OxidationStates:length() return #DATA[self] end
 
 return OxidationStates
