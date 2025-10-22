@@ -19,8 +19,8 @@ local element_collections = {
 
 for elements_index = 1, #element_collections do
     local element_collection = element_collections[elements_index]
-    for element_index, element in element_collection:ipairs() do
-        elements[#elements + 1] = element
+    for element_index = 1, element_collection:length() do
+        elements[#elements + 1] = element_collection[element_index]
     end
 end
 

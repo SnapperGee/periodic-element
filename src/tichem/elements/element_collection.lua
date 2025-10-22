@@ -8,6 +8,10 @@ local DATA = setmetatable({}, { __mode = "k" })
 
 local METATABLE = {
     __index = function(self, k)
+        if type(k) == "number" then
+            local elements = DATA[self].elements
+            return elements[k]
+        end
         return ElementCollection[k]
     end,
     __newindex = function(self, k, v)
