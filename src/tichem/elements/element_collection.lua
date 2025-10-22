@@ -94,6 +94,11 @@ function ElementCollection:new(elements)
     return obj
 end
 
+---@return integer
+function ElementCollection:length()
+    return #DATA[self].elements
+end
+
 ---@return fun(): integer, Element
 function ElementCollection:ipairs()
     local elements = DATA[self].elements
