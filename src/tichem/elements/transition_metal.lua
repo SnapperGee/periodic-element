@@ -1158,3 +1158,13 @@ local roentgenium = Element:new{
     block = "d",
     electron_configuration = roentgenium_electron_configuration
 }
+
+local transition_metals = ElementArray:new{
+    scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
+    copper, yttrium, zirconium, niobium, molybdenum, technetium,ruthenium,
+    rhodium, palladium, silver, hafnium, tantalum, tungsten, rhenium, osmium,
+    iridium, platinum, gold, rutherfordium, dubnium, seaborgium, bohrium,
+    hassium, meitnerium, darmstadtium, roentgenium
+}
+
+return transition_metals
