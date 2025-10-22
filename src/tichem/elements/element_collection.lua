@@ -68,25 +68,40 @@ function ElementCollection:new(elements)
         "non empty 'elements' array of ElementCollection required"
     )
 
+    local elements_copy = {}
     local atomic_number_index = {}
     local symbol_index = {}
     local name_index = {}
 
     for i, element in ipairs(elements) do
+        elements_copy[i] = element
         atomic_number_index[element.number] = element
         symbol_index[element.symbol] = element
         name_index[element.name] = element
     end
 
+    table.sort(elements_copy)
+
     local obj = setmetatable({}, METATABLE)
 
     DATA[obj] = {
+        elements = elements_copy,
         atomic_number_index = atomic_number_index,
         symbol_index = symbol_index,
         name_index = name_index
     }
 
     return obj
+end
+
+---@return fun(): integer, Element
+function ElementCollection:ipairs()
+    local elements = DATA[self].elements
+    local i = 0
+    return function()
+        i = i + 1
+        if i <= #elements then return i, elements[i] end
+    end
 end
 
 return ElementCollection
