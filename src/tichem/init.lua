@@ -1,3 +1,3 @@
-local Actinide = require("tichem.elements.actinide")
+local elements = require("tichem.elements")
 
-print(Actinide("Lr").name)
+print(elements)
