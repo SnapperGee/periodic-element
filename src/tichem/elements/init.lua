@@ -8,24 +8,22 @@ local NobleGas = require("tichem.elements.noble_gas")
 local Nonmetal = require("tichem.elements.nonmetal")
 local PostTransitionMetal = require("tichem.elements.post_transition_metal")
 local TransitionMetal = require("tichem.elements.transition_metal")
+local ElementCollection = require("tichem.elements.element_collection")
 
----@class Elements
-local Elements = {}
+local elements = {}
 
-local DATA = setmetatable({}, { __mode = "k" })
-
-local METATABLE = {
-    __index = function(self, k)
-        return Elements[k]
-    end,
-    __newindex = function(self, k, v)
-        error("Elements records are immutable", 2)
-    end,
-    __metatable = Elements
+local element_collections = {
+    Actinide, AlkaliMetal, AlkalineEarth, Halogen, Lanthanide, Metalloid, NobleGas,
+    Nonmetal, PostTransitionMetal, TransitionMetal
 }
 
----@return Elements
-function Elements:new(elements)
+for elements_index = 1, #element_collections do
+    local element_collection = element_collections[elements_index]
+    for element_index, element in element_collection:ipairs() do
+        elements[#elements + 1] = element
+    end
 end
 
-return Elements
+local all_elements_collection = ElementCollection:new(elements)
+
+return all_elements_collection

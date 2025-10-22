@@ -44,12 +44,12 @@ local METATABLE = {
     end,
     __tostring = function(self)
 
-        local self_data = DATA[self]
+        local elements = DATA[self].elements
 
         local element_symbols_string_parts = {}
 
-        for symbol, element in pairs(self_data.symbol_index) do
-            element_symbols_string_parts[#element_symbols_string_parts + 1] = symbol
+        for i = 1, #elements do
+            element_symbols_string_parts[#element_symbols_string_parts + 1] = elements[i].symbol
         end
 
         return string.format("ElementCollection{%s}", table.concat(element_symbols_string_parts, ", "))
