@@ -1,4 +1,5 @@
 local Element = require("tichem.element")
+local to_script = require("tichem.util.to_script")
 
 ---@class Molecule
 local Molecule = {}
@@ -36,6 +37,20 @@ local METATABLE = {
         end
 
         return true
+    end,
+    __tostring = function(self)
+        local self_data = DATA[self]
+        local element_string_parts = {}
+        for element, count in pairs(self_data,elements) do
+            element_string_parts[#element_string_parts + 1] = element.symbol .. "=" .. count
+        end
+        table.sort(element_string_parts)
+        return string.format(
+            "Molecule{length=%d, mass=%.4f, elements={%s}}",
+            self_data.length,
+            self_data.mass,
+            table.concat(element_string_parts, ", ")
+        )
     end,
     __metatable = Molecule
 }
