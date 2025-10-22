@@ -57,21 +57,13 @@ local METATABLE = {
 
         local self_data = DATA[self]
 
-        local oxidation_states_string = ""
+        local oxidation_states_string_parts = {}
 
-        for k, oxidation_state in self_data.oxidation_states:ipairs() do
-            if oxidation_state < 0 then
-                oxidation_states_string = oxidation_states_string .. "-"
-            end
-
+        for i, oxidation_state in self_data.oxidation_states:ipairs() do
             if oxidation_state > 0 then
-                oxidation_states_string = oxidation_states_string .. "+"
-            end
-
-            oxidation_states_string = oxidation_states_string .. oxidation_state
-
-            if k ~= self_data.oxidation_states:length() then
-                oxidation_states_string = oxidation_states_string .. ", "
+                oxidation_states_string_parts[i] = "+" .. oxidation_state
+            else
+                oxidation_states_string_parts[i] = tostring(oxidation_state)
             end
         end
 
@@ -84,10 +76,9 @@ local METATABLE = {
             tostring(self_data.group),
             self_data.period,
             self_data.block,
-            oxidation_states_string,
+            table.concat(oxidation_states_string_parts, ", "),
             self_data.electron_configuration.canonical_string
         )
-
     end,
     __metatable = Element
 }
