@@ -1,4 +1,7 @@
+local Element = require("tichem.element")
+
 ---@class Molecule
+---@field mass integer   -- molar mass of molecule
 ---@field length integer -- Number of elements in molecule
 local Molecule = {}
 
@@ -39,3 +42,36 @@ local METATABLE = {
     end,
     __metatable = Molecule
 }
+
+---@param element_counts table<Element, integer> -- non empty table of Elements mapped to integers > 0
+---@return Molecule
+function Molecule:new(element_counts)
+    assert(type(element_counts) == "table", "'element_counts' table expected")
+
+    local length = 0
+    local mass = 0
+    local elements = {}
+
+    for element, count in pairs(element_counts) do
+        assert(getmetatable(element) == Element, "non Element 'element_counts' key")
+        assert(
+            type(count) == "number" and count > 0 and count == math.floor(count),
+            "non positive integer 'element_counts' value: " .. tostring(count)
+        )
+
+        length = length + 1
+        mass = mass + (element.mass * count)
+        elements[element] = count
+    end
+
+    assert(length ~= 0, "non empty 'element_counts' table expected")
+
+    local obj = setmetatable({}, METATABLE)
+
+    DATA[obj] = {
+        length = length,
+        mass = mass
+    }
+
+    return obj
+end
