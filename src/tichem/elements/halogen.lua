@@ -1,5 +1,5 @@
 local Element = require("tichem.element")
-local Elements = require("tichem.elements")
+local ElementArray = require("tichem.elements.element_array")
 local ElectronConfiguration = require("tichem.element.electron_configuration")
 local SubshellOccupancy = require("tichem.element.subshell_occupancy")
 
@@ -237,7 +237,7 @@ local tennessine = Element:new{
     electron_configuration = tennessine_electron_configuration
 }
 
-local halogens = Elements:new{
+local halogens = ElementArray:new{
     fluorine, chlorine, bromine, iodine, astatine, tennessine
 }
 
