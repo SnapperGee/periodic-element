@@ -1,5 +1,13 @@
-local Element = require("tichem.element")
-local is_array = require("tichem.util.is_array")
+local Actinide = require("tichem.elements.actinide")
+local AlkaliMetal = require("tichem.elements.alkali_metal")
+local AlkalineEarth = require("tichem.elements.alkaline_earth")
+local Halogen = require("tichem.elements.halogen")
+local Lanthanide = require("tichem.elements.lanthanide")
+local Metalloid = require("tichem.elements.metalloid")
+local NobleGas = require("tichem.elements.noble_gas")
+local Nonmetal = require("tichem.elements.nonmetal")
+local PostTransitionMetal = require("tichem.elements.post_transition_metal")
+local TransitionMetal = require("tichem.elements.transition_metal")
 
 ---@class Elements
 local Elements = {}
