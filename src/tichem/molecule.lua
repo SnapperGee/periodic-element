@@ -1,8 +1,6 @@
 local Element = require("tichem.element")
 
 ---@class Molecule
----@field mass integer   -- molar mass of molecule
----@field length integer -- Number of elements in molecule
 local Molecule = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
@@ -10,9 +8,8 @@ local DATA = setmetatable({}, { __mode = "k" })
 local METATABLE = {
     __index = function(self, k)
         local self_data = DATA[self]
-        if self_data ~= nil then
-            local value = self_data[k]
-            if value ~= nil then return value end
+        if self_data ~= nil and getmetatable(k) == Element then
+            return self_data.elements[k]
         end
         return Molecule[k]
     end,
@@ -32,8 +29,8 @@ local METATABLE = {
             return false
         end
 
-        for element, count in pairs(self_data) do
-            if other_data[element] ~= count then
+        for element, count in pairs(self_data.elements) do
+            if other_data.elements[element] ~= count then
                 return false
             end
         end
@@ -53,10 +50,10 @@ function Molecule:new(element_counts)
     local elements = {}
 
     for element, count in pairs(element_counts) do
-        assert(getmetatable(element) == Element, "non Element 'element_counts' key")
+        assert(getmetatable(element) == Element, "non Element key in 'element_counts'")
         assert(
             type(count) == "number" and count > 0 and count == math.floor(count),
-            "non positive integer 'element_counts' value: " .. tostring(count)
+            "non-positive integer count: " .. tostring(count)
         )
 
         length = length + 1
@@ -70,8 +67,41 @@ function Molecule:new(element_counts)
 
     DATA[obj] = {
         length = length,
-        mass = mass
+        mass = mass,
+        elements = elements
     }
 
     return obj
 end
+
+---@return fun():Element, integer
+function Molecule:elements()
+    local t = DATA[self].elements
+    local k
+    return function()
+        k = next(t, k)
+        if k ~= nil then
+            return k, t[k]
+        end
+    end
+end
+
+---@param element Element
+---@return integer -- returns 0 if element not present
+function Molecule:count(element)
+    assert(getmetatable(element) == Element, "Element expected")
+    local self_data = DATA[self]
+    return self_data.elements[element] or 0
+end
+
+---@return number -- molar mass of this molecule
+function Molecule:mass()
+    return DATA[self].mass
+end
+
+---@return integer -- total number of elements this molecule contains
+function Molecule:length()
+    return DATA[self].length
+end
+
+return Molecule
