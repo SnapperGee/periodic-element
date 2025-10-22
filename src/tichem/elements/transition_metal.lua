@@ -1,5 +1,5 @@
 local Element = require("tichem.element")
-local ElementCollection = require("tichem.elements.element_collection")
+local ElementArray = require("tichem.elements.element_array")
 local ElectronConfiguration = require("tichem.element.electron_configuration")
 local SubshellOccupancy = require("tichem.element.subshell_occupancy")
 
@@ -1194,7 +1194,7 @@ local roentgenium = Element:new{
     electron_configuration = roentgenium_electron_configuration
 }
 
-local transition_metals = ElementCollection:new{
+local transition_metals = ElementArray:new{
     scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium,ruthenium,
     rhodium, palladium, silver, hafnium, tantalum, tungsten, rhenium, osmium,

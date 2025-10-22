@@ -1,8 +1,8 @@
 local Element = require("tichem.element")
 local is_array = require("tichem.util.is_array")
 
----@class ElementCollection
-local ElementCollection = {}
+---@class ElementArray
+local ElementArray = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
@@ -12,10 +12,10 @@ local METATABLE = {
             local elements = DATA[self].elements
             return elements[k]
         end
-        return ElementCollection[k]
+        return ElementArray[k]
     end,
     __newindex = function(self, k, v)
-        error("ElementCollection records are immutable", 2)
+        error("ElementArray records are immutable", 2)
     end,
     __call = function(self, atomic_number_or_symbol_or_name)
         local self_data = DATA[self]
@@ -56,20 +56,20 @@ local METATABLE = {
             element_symbols_string_parts[#element_symbols_string_parts + 1] = elements[i].symbol
         end
 
-        return string.format("ElementCollection{%s}", table.concat(element_symbols_string_parts, ", "))
+        return string.format("ElementArray{%s}", table.concat(element_symbols_string_parts, ", "))
     end,
-    __metatable = ElementCollection
+    __metatable = ElementArray
 }
 
 ---@param elements Element[]
----@return ElementCollection
-function ElementCollection:new(elements)
+---@return ElementArray
+function ElementArray:new(elements)
 
     assert(type(elements) == "table", "elements table required")
 
     assert(
         is_array(elements, Element),
-        "non empty 'elements' array of ElementCollection required"
+        "non empty 'elements' array of ElementArray required"
     )
 
     local elements_copy = {}
@@ -99,12 +99,12 @@ function ElementCollection:new(elements)
 end
 
 ---@return integer
-function ElementCollection:length()
+function ElementArray:length()
     return #DATA[self].elements
 end
 
 ---@return fun(): integer, Element
-function ElementCollection:ipairs()
+function ElementArray:ipairs()
     local elements = DATA[self].elements
     local i = 0
     return function()
@@ -113,4 +113,4 @@ function ElementCollection:ipairs()
     end
 end
 
-return ElementCollection
+return ElementArray

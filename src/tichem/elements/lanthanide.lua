@@ -1,5 +1,5 @@
 local Element = require("tichem.element")
-local ElementCollection = require("tichem.elements.element_collection")
+local ElementArray = require("tichem.elements.element_array")
 local ElectronConfiguration = require("tichem.element.electron_configuration")
 local SubshellOccupancy = require("tichem.element.subshell_occupancy")
 
@@ -504,7 +504,7 @@ local lutetium = Element:new{
     electron_configuration = lutetium_electron_configuration
 }
 
-local lanthanides = ElementCollection:new{
+local lanthanides = ElementArray:new{
     lanthanum, cerium, praseodymium, neodymium, promethium, samarium, europium,
     gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium, lutetium
 }
