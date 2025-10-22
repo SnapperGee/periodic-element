@@ -46,17 +46,13 @@ local METATABLE = {
 
         local self_data = DATA[self]
 
-        local element_symbols_string = ""
+        local element_symbols_string_parts = {}
 
-        for k, v in pairs(self_data.atomic_number_index) do
-            element_symbols_string = element_symbols_string .. v.symbol
-
-            if next(self_data.atomic_number_index, k) ~= nil then
-                element_symbols_string = element_symbols_string .. ", "
-            end
+        for symbol, element in pairs(self_data.symbol_index) do
+            element_symbols_string_parts[#element_symbols_string_parts + 1] = symbol
         end
 
-        return string.format("Elements{%s}", element_symbols_string)
+        return string.format("Elements{%s}", table.concat(element_symbols_string_parts, ", "))
     end,
     __metatable = Elements
 }
@@ -76,15 +72,9 @@ function Elements:new(elements)
     local symbol_index = {}
     local name_index = {}
 
-    for _, element in ipairs(elements) do
+    for i, element in ipairs(elements) do
         atomic_number_index[element.number] = element
-    end
-
-    for _, element in ipairs(elements) do
         symbol_index[element.symbol] = element
-    end
-
-    for _, element in ipairs(elements) do
         name_index[element.name] = element
     end
 
