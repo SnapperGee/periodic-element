@@ -56,7 +56,7 @@ in some regard, feel free to open an [issue][issues].
 
 ## License
 
-This package uses the MIT license and is free to be used for whatever.
+This package uses the [MIT](./LICENSE.txt) license and is free to be used for whatever.
 
 [issues]: https://github.com/SnapperGee/periodic-element/issues "periodic-element issues"
 [lua badge]: https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white "lua"
