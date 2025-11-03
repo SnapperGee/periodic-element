@@ -1,6 +1,6 @@
 rockspec_format = "3.0"
 package = "periodic-element"
-version = "dev-1"
+version = "1.0-0"
 source = {
    url = "git+https://github.com/SnapperGee/periodic-element"
 }
