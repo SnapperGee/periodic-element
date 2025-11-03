@@ -22,56 +22,60 @@ local Element = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
-local METATABLE = {
-    __index = function(self, k)
-        local self_data = DATA[self]
-        if self_data ~= nil then
-            local value = self_data[k]
-            if value ~= nil then return value end
-        end
-        return Element[k]
-    end,
-    __newindex = function(self, k, v)
-        error("Element records are immutable", 2)
-    end,
-    __eq = function(self, other)
-        if rawequal(self, other) then return true end
-        local self_data, other_data = DATA[self], DATA[other]
-        if self_data == nil or other_data == nil then
-            return false
-        end
-        return self_data and other_data and self_data.number == other_data.number
-    end,
-    __lt = function(self, other)
-        if rawequal(self, other) then return false end
-        local self_data, other_data = DATA[self], DATA[other]
-        if self_data == nil or other_data == nil then
-            error("comparison with non-Element", 2)
-        end
-        return self_data.number < other_data.number
-    end,
-    __le = function(self, other)
-        return not METATABLE.__lt(other, self)
-    end,
-    __tostring = function(self)
+local METATABLE = {__metatable = Element}
 
-        local self_data = DATA[self]
+function METATABLE:__index(k)
+    local self_data = DATA[self]
+    if self_data ~= nil then
+        local value = self_data[k]
+        if value ~= nil then return value end
+    end
+    return Element[k]
+end
 
-        return string.format(
-            "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\"}",
-            self_data.name,
-            self_data.symbol,
-            self_data.number,
-            self_data.mass,
-            tostring(self_data.group),
-            self_data.period,
-            self_data.block,
-            self_data.oxidation_states:formatted_string(),
-            self_data.electron_configuration.canonical_string
-        )
-    end,
-    __metatable = Element
-}
+function METATABLE:__newindex(k, v)
+    error("Element records are immutable", 2)
+end
+
+function METATABLE:__eq(other)
+    if rawequal(self, other) then return true end
+    local self_data, other_data = DATA[self], DATA[other]
+    if self_data == nil or other_data == nil then
+        return false
+    end
+    return self_data and other_data and self_data.number == other_data.number
+end
+
+function METATABLE:__lt(other)
+    if rawequal(self, other) then return false end
+    local self_data, other_data = DATA[self], DATA[other]
+    if self_data == nil or other_data == nil then
+        error("comparison with non-Element", 2)
+    end
+    return self_data.number < other_data.number
+end
+
+function METATABLE:__le(other)
+    return not METATABLE.__lt(other, self)
+end
+
+function METATABLE:__tostring()
+
+    local self_data = DATA[self]
+
+    return string.format(
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\"}",
+        self_data.name,
+        self_data.symbol,
+        self_data.number,
+        self_data.mass,
+        tostring(self_data.group),
+        self_data.period,
+        self_data.block,
+        self_data.oxidation_states:formatted_string(),
+        self_data.electron_configuration.canonical_string
+    )
+end
 
 ---@class ElementInitOpts
 ---@field name   string
