@@ -89,7 +89,7 @@ function Molecule:new(element_counts)
     return obj
 end
 
----@return fun():Element, integer
+---@return fun(): Element?, integer?
 function Molecule:elements()
     local t = DATA[self].elements
     local k
@@ -98,6 +98,7 @@ function Molecule:elements()
         if k ~= nil then
             return k, t[k]
         end
+        return nil, nil
     end
 end
 
