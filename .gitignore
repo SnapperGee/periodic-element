@@ -9,3 +9,4 @@ build
 /lua
 /lua_modules
 /.luarocks
+/*.src.rock
