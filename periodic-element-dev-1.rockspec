@@ -11,7 +11,7 @@ description = {
    issues_url = "https://github.com/SnapperGee/periodic-element/issues",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
    license = "MIT",
-   labels = {"chemistry", "periodic", "element"},
+   labels = {"chemistry", "periodic", "element", "periodic-table", "periodic-table-of-elements", "periodic-element"},
 }
 dependencies = {
    "lua ~> 5.1"
