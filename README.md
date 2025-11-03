@@ -87,6 +87,13 @@ local hydrogen = Element:new{
 }
 ```
 
+It should be noted that this class performs numerous validations on its
+constructor arguments to make sure a "valid" (according to this lua module)
+element is created. If any of these validations fail an exception is thrown. For
+instance a `number` property must be between `1` and `118`, a `name` can't be
+blank, a `symbol` can only be 1-2 characters, and a block can only be one of
+`'s'`, `'p'`, `'d'`, or `'f'` characters or `nil`.
+
 ## Elements Module
 
 This package contains instantiated `Element` objects in `elements.*` submodules
