@@ -43,7 +43,17 @@ function METATABLE:__eq(other)
     if self_data == nil or other_data == nil then
         return false
     end
-    return self_data and other_data and self_data.number == other_data.number
+    return self_data and other_data
+        and self_data.name == other_data.name
+        and self_data.symbol == other_data.symbol
+        and self_data.number == other_data.number
+        and self_data.mass == other_data.mass
+        and self_data.group == other_data.group
+        and self_data.family == other_data.family
+        and self_data.period == other_data.period
+        and self_data.block == other_data.block
+        and self_data.oxidation_states == other_data.oxidation_states
+        and self_data.electron_configuration == other_data.electron_configuration
 end
 
 function METATABLE:__lt(other)
