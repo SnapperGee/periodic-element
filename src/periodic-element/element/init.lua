@@ -7,6 +7,8 @@ local OxidationStates = require("periodic-element.element.oxidation_states")
 
 local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 
+--- Class for creating objects that can represent an elements of the periodic
+--- table of elements.
 ---@class Element
 ---@field name   string      -- element name
 ---@field symbol string      -- 1-2 chars
@@ -98,6 +100,10 @@ end
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
 
+--- Constructor for Element objects. Parameters are validated making sure
+--- they're valid element properties according to this lua module. For instance
+--- an atomic number can only be in the range of [1, 118]. If an validation
+--- fails an exception is thrown.
 ---@param opts ElementInitOpts
 ---@return Element
 function Element:new(opts)
