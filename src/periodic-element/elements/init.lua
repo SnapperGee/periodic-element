@@ -8,7 +8,7 @@ local NobleGas = require("periodic-element.elements.noble_gas")
 local Nonmetal = require("periodic-element.elements.nonmetal")
 local PostTransitionMetal = require("periodic-element.elements.post_transition_metal")
 local TransitionMetal = require("periodic-element.elements.transition_metal")
-local ElementArray = require("periodic-element.elements.element_array")
+local ElementSet = require("src.periodic-element.elements.element_set")
 
 local elements_collector = {}
 
@@ -24,6 +24,6 @@ for element_array_index = 1, #element_arrays do
     end
 end
 
-local elements_array = ElementArray:new(elements_collector)
+local elements_array = ElementSet:new(elements_collector)
 
 return elements_array

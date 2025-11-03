@@ -42,14 +42,14 @@ properties have yet to be fully quantified and are subject to change and possibl
 being out of date in this package if they're not updated to reflect new/updated
 discoveries. If that's the case feel free to submit an [issue][issues].
 
-## Molecule & ElementArray Collections
+## Molecule & ElementSet Collections
 
-This package also exports a `Molecule` and `ElementArray` class that provide
+This package also exports a `Molecule` and `ElementSet` class that provide
 specialized collections for `Element` objects. The `Elements` module
-object/table is actually an instance of an `ElementArray` that contains an
+object/table is actually an instance of an `ElementSet` that contains an
 `Element` object for every periodic element.
 
-The `Elements` module object is actually an `ElementArray` object that contains
+The `Elements` module object is actually an `ElementSet` object that contains
 an `Element` object for every element of the periodic table of elements.
 
 ## Immutability

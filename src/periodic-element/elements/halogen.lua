@@ -1,5 +1,5 @@
 local Element = require("periodic-element.element")
-local ElementArray = require("periodic-element.elements.element_array")
+local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
@@ -237,7 +237,7 @@ local tennessine = Element:new{
     electron_configuration = tennessine_electron_configuration
 }
 
-local halogens = ElementArray:new{
+local halogens = ElementSet:new{
     fluorine, chlorine, bromine, iodine, astatine, tennessine
 }
 

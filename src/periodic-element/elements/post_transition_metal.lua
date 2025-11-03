@@ -1,5 +1,5 @@
 local Element = require("periodic-element.element")
-local ElementArray = require("periodic-element.elements.element_array")
+local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
@@ -662,7 +662,7 @@ local livermorium = Element:new{
     electron_configuration = livermorium_electron_configuration
 }
 
-local post_transition_metals = ElementArray:new{
+local post_transition_metals = ElementSet:new{
     aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
     bismuth, polonium, copernicium, nihonium, flerovium, moscovium, livermorium
 }

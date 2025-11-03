@@ -1,5 +1,5 @@
 local Element = require("periodic-element.element")
-local ElementArray = require("periodic-element.elements.element_array")
+local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
@@ -259,7 +259,7 @@ local oganesson = Element:new{
     electron_configuration = oganesson_electron_configuration
 }
 
-local noble_gases = ElementArray:new{
+local noble_gases = ElementSet:new{
     helium, neon, argon, krypton, xenon, radon, oganesson
 }
 

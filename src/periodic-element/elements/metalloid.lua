@@ -1,5 +1,5 @@
 local Element = require("periodic-element.element")
-local ElementArray = require("periodic-element.elements.element_array")
+local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
@@ -223,7 +223,7 @@ local tellurium = Element:new{
     electron_configuration = tellurium_electron_configuration
 }
 
-local metalloids = ElementArray:new{
+local metalloids = ElementSet:new{
     boron, silicon, germanium, arsenic, antimony, tellurium
 }
 

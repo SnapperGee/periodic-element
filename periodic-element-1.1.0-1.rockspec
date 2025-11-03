@@ -1,9 +1,9 @@
 rockspec_format = "3.1"
 package = "periodic-element"
-version = "1.0.0-4"
+version = "1.1.0-1"
 source = {
    url = "git+https://github.com/SnapperGee/periodic-element",
-   tag = "1.0.0-4"
+   tag = "1.1.0-1"
 }
 description = {
    summary = "Represent an element from the periodic table of elements.",
@@ -17,7 +17,7 @@ description = {
         main and most used ones exported by this module. It's capable of getting
         an Element object via atomic number, symbol, or name.
 
-        This package also provides a Molecule and ElementArray class which
+        This package also provides a Molecule and ElementSet class which
         offers specialized collections for Element objects.
 
         This package employs an immutable by default architecture so all objects

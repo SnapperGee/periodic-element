@@ -1,8 +1,8 @@
 local Element = require("periodic-element.element")
 local is_array = require("periodic-element.util.is_array")
 
----@class ElementArray
-local ElementArray = {}
+---@class ElementSet
+local ElementSet = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
@@ -12,10 +12,10 @@ local METATABLE = {
             local elements = DATA[self].elements
             return elements[k]
         end
-        return ElementArray[k]
+        return ElementSet[k]
     end,
     __newindex = function(self, k, v)
-        error("ElementArray records are immutable", 2)
+        error("ElementSet objects are immutable", 2)
     end,
     __call = function(self, atomic_number_or_symbol_or_name)
         local self_data = DATA[self]
@@ -56,20 +56,20 @@ local METATABLE = {
             element_symbols_string_parts[#element_symbols_string_parts + 1] = elements[i].symbol
         end
 
-        return string.format("ElementArray{%s}", table.concat(element_symbols_string_parts, ", "))
+        return string.format("ElementSet{%s}", table.concat(element_symbols_string_parts, ", "))
     end,
-    __metatable = ElementArray
+    __metatable = ElementSet
 }
 
 ---@param elements Element[]
----@return ElementArray
-function ElementArray:new(elements)
+---@return ElementSet
+function ElementSet:new(elements)
 
     assert(type(elements) == "table", "elements table required")
 
     assert(
         is_array(elements, Element),
-        "non empty 'elements' array of ElementArray required"
+        "ElementSet: non empty 'elements' array required"
     )
 
     local elements_copy = {}
@@ -77,11 +77,13 @@ function ElementArray:new(elements)
     local symbol_index = {}
     local name_index = {}
 
-    for i, element in ipairs(elements) do
-        elements_copy[i] = element
-        atomic_number_index[element.number] = element
-        symbol_index[element.symbol] = element
-        name_index[element.name] = element
+    for _, element in ipairs(elements) do
+        if not atomic_number_index[element.number] then
+            elements_copy[#elements_copy + 1] = element
+            atomic_number_index[element.number] = element
+            symbol_index[element.symbol] = element
+            name_index[element.name] = element
+        end
     end
 
     table.sort(elements_copy)
@@ -99,12 +101,12 @@ function ElementArray:new(elements)
 end
 
 ---@return integer
-function ElementArray:length()
+function ElementSet:length()
     return #DATA[self].elements
 end
 
 ---@return fun(): integer?, Element?
-function ElementArray:ipairs()
+function ElementSet:ipairs()
     local elements = DATA[self].elements
     local i = 0
     return function()
@@ -114,4 +116,4 @@ function ElementArray:ipairs()
     end
 end
 
-return ElementArray
+return ElementSet
