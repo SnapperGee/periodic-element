@@ -112,6 +112,15 @@ transition metals or post-transition metals. This package attempts to conform to
 whichever convention is most accurate. If you feel that it does it incorrectly
 in some regard, feel free to open an [issue][issues].
 
+## Misc. Package Info
+
+This lua module was written and intended for lua 5.1. It doesn't have any
+external dependencies and doesn't use many non standard features so it will most
+likely work with other later versions, but no guaranties are made to its
+reliability when used with versions other than lua 5.1.
+
+This package uses the rockspec 3.1 format.
+
 ## License
 
 This package uses the [MIT](./LICENSE.txt) license and is free to be used for whatever.
