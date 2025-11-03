@@ -17,88 +17,92 @@ local SubshellOccupancy = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
-local METATABLE = {
-    __index = function(self, k)
-        local self_data = DATA[self]
-        if self_data ~= nil then
-            local value = self_data[k]
-            if value ~= nil then return value end
-        end
-        return SubshellOccupancy[k]
-    end,
-    __newindex = function(self, k, v)
-        error("SubshellOccupancy records are immutable", 2)
-    end,
-    __eq = function(self, other)
-        if rawequal(self, other) then return true end
+local METATABLE = {__metatable = SubshellOccupancy}
 
-        local self_data, other_data = DATA[self], DATA[other]
+function METATABLE:__index(k)
+    local self_data = DATA[self]
+    if self_data ~= nil then
+        local value = self_data[k]
+        if value ~= nil then return value end
+    end
+    return SubshellOccupancy[k]
+end
 
-        if self_data == nil or other_data == nil then
-            return false
-        end
+function METATABLE:__newindex(k, v)
+    error("SubshellOccupancy records are immutable", 2)
+end
 
-        return self_data.n == other_data.n
-            and self_data.l == other_data.l
-            and self_data.electron_count == other_data.electron_count
-    end,
-    __lt = function(self, other)
-        if rawequal(self, other) then return false end
+function METATABLE:__eq(other)
+    if rawequal(self, other) then return true end
 
-        local self_data, other_data = DATA[self], DATA[other]
+    local self_data, other_data = DATA[self], DATA[other]
 
-        if self_data == nil or other_data == nil then
-            error("comparison with non-SubshellOccupancy", 2)
-        end
+    if self_data == nil or other_data == nil then
+        return false
+    end
 
-        local self_l_rank = L_LETTER_RANK[self_data.l]
-        local other_l_rank = L_LETTER_RANK[other_data.l]
+    return self_data.n == other_data.n
+        and self_data.l == other_data.l
+        and self_data.electron_count == other_data.electron_count
+end
 
-        local k_self = self_data.n + self_l_rank
-        local k_other = other_data.n + other_l_rank
+function METATABLE:__lt(other)
+    if rawequal(self, other) then return false end
 
-        if k_self ~= k_other then
-            return k_self < k_other
-        end
+    local self_data, other_data = DATA[self], DATA[other]
 
-        if self_data.n ~= other_data.n then
-            return self_data.n < other_data.n
-        end
+    if self_data == nil or other_data == nil then
+        error("comparison with non-SubshellOccupancy", 2)
+    end
 
-        if self_l_rank ~= other_l_rank then
-            return self_l_rank < other_l_rank
-        end
+    local self_l_rank = L_LETTER_RANK[self_data.l]
+    local other_l_rank = L_LETTER_RANK[other_data.l]
 
-        return self_data.electron_count < other_data.electron_count
-    end,
-    __le = function(self, other)
-        return not METATABLE.__lt(other, self)
-    end,
-    __tostring = function(self)
-        local keys, parts = {}, {}
+    local k_self = self_data.n + self_l_rank
+    local k_other = other_data.n + other_l_rank
 
-        local self_data = DATA[self]
+    if k_self ~= k_other then
+        return k_self < k_other
+    end
 
-        local k = next(self_data)
-        while k ~= nil do
-            keys[#keys+1] = k
-            k = next(self_data, k)
-        end
+    if self_data.n ~= other_data.n then
+        return self_data.n < other_data.n
+    end
 
-        table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
+    if self_l_rank ~= other_l_rank then
+        return self_l_rank < other_l_rank
+    end
 
-        for _, key in ipairs(keys) do
-            local v = rawget(self_data, key)
-            local vr = (type(v) == "string") and string.format("%q", v) or tostring(v)
-            parts[#parts+1] = string.format("%s=%s", tostring(key), vr)
-        end
+    return self_data.electron_count < other_data.electron_count
+end
 
-        local key_value_pairs = table.concat(parts, ", ")
+function METATABLE:__le(other)
+    return not METATABLE.__lt(other, self)
+end
 
-        return string.format("SubshellOccupancy{%s}", key_value_pairs)
-    end,
-    __metatable = SubshellOccupancy
-}
+function METATABLE:__tostring()
+    local keys, parts = {}, {}
+
+    local self_data = DATA[self]
+
+    local k = next(self_data)
+    while k ~= nil do
+        keys[#keys+1] = k
+        k = next(self_data, k)
+    end
+
+    table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
+
+    for _, key in ipairs(keys) do
+        local v = rawget(self_data, key)
+        local vr = (type(v) == "string") and string.format("%q", v) or tostring(v)
+        parts[#parts+1] = string.format("%s=%s", tostring(key), vr)
+    end
+
+    local key_value_pairs = table.concat(parts, ", ")
+
+    return string.format("SubshellOccupancy{%s}", key_value_pairs)
+end
 
 ---@return integer
 function SubshellOccupancy:principal_quantum_number()
