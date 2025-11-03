@@ -29,7 +29,7 @@ This package contains instantiated `element` objects in `elements.*` submodules
 organized by their family for each periodic element. For instance, there's an
 `elements.alkali_metal` submodule that contains `element` objects for the alkali
 metals. So in most cases it shouldn't be necessary to have to create a new object
-for pre-existing elements. As of writing this, this pakage contains elements up
+for pre-existing elements. As of writing this, this package contains elements up
 to Oganesson. Some of these element's, particularly more recently discoverd ones,
 properties have yet to be fully quantified and are subject to change and possibly
 being out of date in this package if they're not updated to reflect new/updated
