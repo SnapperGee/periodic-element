@@ -1,9 +1,9 @@
 rockspec_format = "3.0"
 package = "periodic-element"
-version = "1.0.0-1"
+version = "1.0.0-2"
 source = {
    url = "git+https://github.com/SnapperGee/periodic-element",
-   tag = "1.0.0-1"
+   tag = "1.0.0-2"
 }
 description = {
    summary = "Represent an element from the periodic table of elements.",
@@ -13,8 +13,8 @@ description = {
         writing this, all periodic elements have instantiated objects this
         module exports so having to create one shouldn't be needed.
 
-        This package also provides a `molecule` class which offers a specialized
-        collection for element objects.
+        This package also provides a `molecule` and `element_array` class which
+        offers specialized collections for element objects.
 
         This package employs an immutable by default architecture so all objects
         and objects created from its classes are immutable.

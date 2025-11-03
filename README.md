@@ -35,10 +35,10 @@ properties have yet to be fully quantified and are subject to change and possibl
 being out of date in this package if they're not updated to reflect new/updated
 discoveries. If that's the case feel free to submit an [issue][issues].
 
-## Molecule
+## Molecule & ElementArray Collections
 
-This package also exports a `molecule` class module table that can be used as a
-collection specialized for `element` objects.
+This package also exports a `molecule` and `ElementArray` class that provide
+specialized collections for `element` objects.
 
 ## Immutability
 
