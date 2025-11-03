@@ -6,12 +6,37 @@ Represent an element from the periodic table of elements.
 ![Git][git badge]
 ![GitHub][github badge]
 
+## Installation & Usage
+
+This lua module can be installed as a [lua rock][lua rock]:
+
+```bash
+luarocks install periodic-element
+```
+
+Once installed as a dependency it can be imported and used:
+
+```lua
+local elements = require("periodic-element.elements")
+
+local carbon = elements("C")
+-- elements[6], elements(6), elements("carbon") would also work exactly the same
+
+print(carbon)
+
+--[[
+Element{name="Carbon", symbol="C", number=6, mass=12.011, group=14, period=2, block='p', oxidation_states={-4, +2, +4}, electron_configuration="[He]2s²2p²"}
+]]
+```
+
 ## Elements Module Object/Table
 
 This will most likely be one of the main and most used module objects of this
 module. It contains the `Elements` module object which can be used to get an
 `Element` object via its atomic number, symbol, or name making it very easy and
 convenient to use `Element` objects.
+
+Reference the [example above](#installation--usage) for how it can be used.
 
 ## Element
 
@@ -29,6 +54,25 @@ properties an element on the periodic table of element has. This includes:
 - block
 - oxidation states
 - and electron configuration
+
+This is the type of object returned by the exported `Elements` object. Cases of
+this class being used external to this module will probably not be too common,
+but an example of its usage is:
+
+```lua
+local Element = require("periodic-element.element")
+local ElectronConfiguration = require("periodic-element.element.electron_configuration")
+
+local hydrogen_subshell_occupancy = SubshellOccupancy:new{
+    n = 1,
+    l = "s",
+    electron_count = 1
+}
+
+local hydrogen_electron_configuration = ElectronConfiguration:new{
+    subshell_occupancy = { hydrogen_subshell_occupancy }
+}
+```
 
 ## Elements Module
 
@@ -49,8 +93,10 @@ specialized collections for `Element` objects. The `Elements` module
 object/table is actually an instance of an `ElementSet` that contains an
 `Element` object for every periodic element.
 
-The `Elements` module object is actually an `ElementSet` object that contains
-an `Element` object for every element of the periodic table of elements.
+An `ElementSet` will throw an exception if its attempted to be instantiated with
+`Element` objects that have conflicting properties. For instance if an element
+with atomic number `1` and symbol `'H'` is added to the set then an element with
+atomic number `6` and symbol `'H'` is attempted to be added, then it will throw. Attempting to add a duplicate `Element` will not throw.
 
 ## Immutability
 
@@ -70,6 +116,7 @@ in some regard, feel free to open an [issue][issues].
 
 This package uses the [MIT](./LICENSE.txt) license and is free to be used for whatever.
 
+[lua rock]: https://luarocks.org/modules/snap/periodic-element "periodic-element lua rock"
 [issues]: https://github.com/SnapperGee/periodic-element/issues "periodic-element issues"
 [lua badge]: https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white "lua"
 [lua website]: https://www.lua.org/manual/5.1/ "lua"
