@@ -103,13 +103,14 @@ function ElementArray:length()
     return #DATA[self].elements
 end
 
----@return fun(): integer, Element
+---@return fun(): integer?, Element?
 function ElementArray:ipairs()
     local elements = DATA[self].elements
     local i = 0
     return function()
         i = i + 1
         if i <= #elements then return i, elements[i] end
+        return nil, nil
     end
 end
 
