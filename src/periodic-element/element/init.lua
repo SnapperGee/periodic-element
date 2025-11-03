@@ -102,8 +102,8 @@ end
 
 --- Constructor for Element objects. Parameters are validated making sure
 --- they're valid element properties according to this lua module. For instance
---- an atomic number can only be in the range of [1, 118]. If an validation
---- fails an exception is thrown.
+--- an atomic number can only be in the range [1, 118]. If any validation fails
+--- an exception is thrown.
 ---@param opts ElementInitOpts
 ---@return Element
 function Element:new(opts)
