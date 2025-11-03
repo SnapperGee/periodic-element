@@ -86,13 +86,16 @@ function OxidationStates:new(oxidation_states)
     return obj
 end
 
----@return fun(): integer, integer
+---@return fun(): integer?, integer?
 function OxidationStates:ipairs()
     local self_data = DATA[self]
     local i = 0
     return function()
         i = i + 1
-        if i <= #self_data then return i, self_data[i] end
+        if i <= #self_data then
+            return i, self_data[i]
+        end
+        return nil, nil
     end
 end
 
