@@ -96,7 +96,6 @@ function ElementSet:new(elements)
                 string.format("ElementSet: key collision for %s", tostring(element))
             )
 
-            -- Case 3: first time we see this element
             elements_copy[#elements_copy + 1] = element
             atomic_number_index[element.number] = element
             symbol_index[element.symbol] = element
