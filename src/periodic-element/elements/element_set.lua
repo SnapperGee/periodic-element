@@ -78,8 +78,33 @@ function ElementSet:new(elements)
     local name_index = {}
 
     for i = 1, #elements do
+        local is_duplicate = false
         local element = elements[i]
-        if not atomic_number_index[element.number] then
+
+        for j = 1, #elements_copy do
+            local copy_element = elements_copy[j]
+            if element == copy_element then
+                is_duplicate = true
+                break
+            end
+        end
+
+        if not is_duplicate then
+            assert(
+                atomic_number_index[element.number] == element,
+                string.format("ElementSet: element number collision: %s | %s", atomic_number_index[element.number], element)
+            )
+
+            assert(
+                symbol_index[element.symbol] == element,
+                string.format("ElementSet: element symbol collision: %s | %s", symbol_index[element.symbol], element)
+            )
+
+            assert(
+                name_index[element.name] == element,
+                string.format("ElementSet: element name collision: %s | %s", name_index[element.name], element)
+            )
+
             elements_copy[#elements_copy + 1] = element
             atomic_number_index[element.number] = element
             symbol_index[element.symbol] = element
