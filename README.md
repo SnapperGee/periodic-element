@@ -9,7 +9,7 @@ Represent an element from the periodic table of elements.
 ## Element
 
 This lua package makes it possible to programmatically represent a periodic
-element. It's built around the `element` class module table that contains the
+element. It's built around the `Element` class module table that contains the
 properties an element on the periodic table of element has. This includes:
 
 - name
@@ -25,9 +25,9 @@ properties an element on the periodic table of element has. This includes:
 
 ## Elements
 
-This package contains instantiated `element` objects in `elements.*` submodules
+This package contains instantiated `Element` objects in `elements.*` submodules
 organized by their family for each periodic element. For instance, there's an
-`elements.alkali_metal` submodule that contains `element` objects for the alkali
+`elements.alkali_metal` submodule that contains `Element` objects for the alkali
 metals. So in most cases it shouldn't be necessary to have to create a new object
 for pre-existing elements. As of writing this, this package contains elements up
 to Oganesson. Some of these element's, particularly more recently discoverd ones,
@@ -37,8 +37,8 @@ discoveries. If that's the case feel free to submit an [issue][issues].
 
 ## Molecule & ElementArray Collections
 
-This package also exports a `molecule` and `ElementArray` class that provide
-specialized collections for `element` objects.
+This package also exports a `Molecule` and `ElementArray` class that provide
+specialized collections for `Element` objects.
 
 ## Immutability
 
