@@ -11,94 +11,98 @@ local ElectronConfiguration = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
 
-local METATABLE = {
-    __index = function(self, k)
-        local self_data = DATA[self]
-        if self_data ~= nil then
-            local value = self_data[k]
-            if value ~= nil then return value end
-        end
-        return ElectronConfiguration[k]
-    end,
-    __newindex = function(self, k, v)
-        error("ElectronConfiguration records are immutable", 2)
-    end,
-    __eq = function(self, other)
-        if rawequal(self, other) then return true end
+local METATABLE = {__metatable = ElectronConfiguration}
 
-        local self_data, other_data = DATA[self], DATA[other]
+function METATABLE:__index(k)
+    local self_data = DATA[self]
+    if self_data ~= nil then
+        local value = self_data[k]
+        if value ~= nil then return value end
+    end
+    return ElectronConfiguration[k]
+end
 
-        if self_data == nil or other_data == nil then
+function METATABLE:__newindex(k, v)
+    error("ElectronConfiguration records are immutable", 2)
+end
+
+function METATABLE:__eq(other)
+    if rawequal(self, other) then return true end
+
+    local self_data, other_data = DATA[self], DATA[other]
+
+    if self_data == nil or other_data == nil then
+        return false
+    end
+
+    if self_data.core ~= other_data.core then return false end
+
+    local self_subshell_occupancy = self_data.subshell_occupancy
+    local other_subshell_occupancy = other_data.subshell_occupancy
+
+    if #self_subshell_occupancy ~= #other_subshell_occupancy then return false end
+
+    for i = 1, #self_subshell_occupancy do
+        if self_subshell_occupancy[i] ~= other_subshell_occupancy[i] then
             return false
         end
+    end
 
-        if self_data.core ~= other_data.core then return false end
+    return true
+end
 
-        local self_subshell_occupancy = self_data.subshell_occupancy
-        local other_subshell_occupancy = other_data.subshell_occupancy
+function METATABLE:__lt(other)
+    if rawequal(self, other) then return false end
 
-        if #self_subshell_occupancy ~= #other_subshell_occupancy then return false end
+    local self_data, other_data = DATA[self], DATA[other]
 
-        for i = 1, #self_subshell_occupancy do
-            if self_subshell_occupancy[i] ~= other_subshell_occupancy[i] then
-                return false
-            end
+    if self_data == nil or other_data == nil then
+        error("comparison with non-ElectronConfiguration", 2)
+    end
+
+    local self_noble_gas_rank = self_data.core and NOBLE_GAS_RANK[self_data.core] or -1
+    local other_noble_gas_rank = other_data.core and NOBLE_GAS_RANK[other_data.core] or -1
+
+    if self_noble_gas_rank ~= other_noble_gas_rank then
+        return self_noble_gas_rank < other_noble_gas_rank
+    end
+
+    local self_number_of_subshells, other_number_of_subshells = #self_data.subshell_occupancy, #other_data.subshell_occupancy
+    local minimum_number_of_subshells = (self_number_of_subshells < other_number_of_subshells) and self_number_of_subshells or other_number_of_subshells
+
+    for i = 1, minimum_number_of_subshells do
+
+        local self_subshell_occupancy = self_data.subshell_occupancy[i]
+        local other_subshell_occupancy = other_data.subshell_occupancy[i]
+
+        if self_subshell_occupancy ~= other_subshell_occupancy then
+            return self_subshell_occupancy < other_subshell_occupancy
         end
+    end
 
-        return true
-    end,
-    __lt = function(self, other)
-        if rawequal(self, other) then return false end
+    return self_number_of_subshells < other_number_of_subshells
+end
 
-        local self_data, other_data = DATA[self], DATA[other]
+function METATABLE:__le(other)
+    return not METATABLE.__lt(other, self)
+end
 
-        if self_data == nil or other_data == nil then
-            error("comparison with non-ElectronConfiguration", 2)
-        end
+function METATABLE:__tostring()
 
-        local self_noble_gas_rank = self_data.core and NOBLE_GAS_RANK[self_data.core] or -1
-        local other_noble_gas_rank = other_data.core and NOBLE_GAS_RANK[other_data.core] or -1
+    local self_data = DATA[self]
 
-        if self_noble_gas_rank ~= other_noble_gas_rank then
-            return self_noble_gas_rank < other_noble_gas_rank
-        end
+    local subshell_string_parts = {}
 
-        local self_number_of_subshells, other_number_of_subshells = #self_data.subshell_occupancy, #other_data.subshell_occupancy
-        local minimum_number_of_subshells = (self_number_of_subshells < other_number_of_subshells) and self_number_of_subshells or other_number_of_subshells
+    for i = 1, #self_data.subshell_occupancy do
+        subshell_string_parts[i] = self_data.subshell_occupancy[i].canonical_string
+    end
 
-        for i = 1, minimum_number_of_subshells do
-
-            local self_subshell_occupancy = self_data.subshell_occupancy[i]
-            local other_subshell_occupancy = other_data.subshell_occupancy[i]
-
-            if self_subshell_occupancy ~= other_subshell_occupancy then
-                return self_subshell_occupancy < other_subshell_occupancy
-            end
-        end
-
-        return self_number_of_subshells < other_number_of_subshells
-    end,
-    __le = function(self, other)
-        return not METATABLE.__lt(other, self)
-    end,
-    __tostring = function(self)
-
-        local self_data = DATA[self]
-
-        local subshell_string_parts = {}
-
-        for i = 1, #self_data.subshell_occupancy do
-            subshell_string_parts[i] = self_data.subshell_occupancy[i].canonical_string
-        end
-
-        return string.format(
-            "ElectronConfiguration{core=%s, subshell_occupancy={%s}}",
-            tostring(self_data.core),
-            table.concat(subshell_string_parts, ", ")
-        )
-    end,
-    __metatable = ElectronConfiguration
-}
+    return string.format(
+        "ElectronConfiguration{core=%s, subshell_occupancy={%s}}",
+        tostring(self_data.core),
+        table.concat(subshell_string_parts, ", ")
+    )
+end
 
 ---@class ElectronConfigurationInitOpts
 ---@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn", "Og"
