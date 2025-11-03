@@ -41,7 +41,7 @@ local METATABLE = {
     __tostring = function(self)
         local self_data = DATA[self]
         local element_string_parts = {}
-        for element, count in pairs(self_data,elements) do
+        for element, count in pairs(self_data.elements) do
             element_string_parts[#element_string_parts + 1] = element.symbol .. "=" .. count
         end
         table.sort(element_string_parts)
