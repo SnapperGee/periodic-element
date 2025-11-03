@@ -1,5 +1,5 @@
-local Element = require("tichem.element")
-local to_script = require("tichem.util.to_script")
+local Element = require("periodic-element.element")
+local to_script = require("periodic-element.util.to_script")
 
 ---@class Molecule
 local Molecule = {}

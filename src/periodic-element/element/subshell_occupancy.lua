@@ -1,4 +1,4 @@
-local to_script = require("tichem.util.to_script")
+local to_script = require("periodic-element.util.to_script")
 
 local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }

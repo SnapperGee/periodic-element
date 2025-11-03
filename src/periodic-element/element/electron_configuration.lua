@@ -1,5 +1,5 @@
-local SubshellOccupancy = require("tichem.element.subshell_occupancy")
-local is_array = require("tichem.util.is_array")
+local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
+local is_array = require("periodic-element.util.is_array")
 
 local NOBLE_GAS_SYMBOLS = { He = true, Ne = true, Ar = true, Kr = true, Xe = true, Rn = true, Og = true }
 local NOBLE_GAS_RANK = { He = 0, Ne = 1, Ar = 2, Kr = 3, Xe = 4, Rn = 5, Og = 6 }

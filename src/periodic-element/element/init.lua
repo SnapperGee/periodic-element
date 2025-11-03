@@ -1,7 +1,7 @@
-local Family = require("tichem.element.family")
-local is_array = require("tichem.util.is_array")
-local ElectronConfiguration = require("tichem.element.electron_configuration")
-local OxidationStates = require("tichem.element.oxidation_states")
+local Family = require("periodic-element.element.family")
+local is_array = require("periodic-element.util.is_array")
+local ElectronConfiguration = require("periodic-element.element.electron_configuration")
+local OxidationStates = require("periodic-element.element.oxidation_states")
 
 ---@alias Block '"s"'|'"p"'|'"d"'|'"f"'
 

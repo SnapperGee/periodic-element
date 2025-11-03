@@ -1,7 +1,7 @@
-local Element = require("tichem.element")
-local ElementArray = require("tichem.elements.element_array")
-local ElectronConfiguration = require("tichem.element.electron_configuration")
-local SubshellOccupancy = require("tichem.element.subshell_occupancy")
+local Element = require("periodic-element.element")
+local ElementArray = require("periodic-element.elements.element_array")
+local ElectronConfiguration = require("periodic-element.element.electron_configuration")
+local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
 local scandium_subshell_occupancy1 = SubshellOccupancy:new{
     n = 3,

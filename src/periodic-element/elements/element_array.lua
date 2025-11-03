@@ -1,5 +1,5 @@
-local Element = require("tichem.element")
-local is_array = require("tichem.util.is_array")
+local Element = require("periodic-element.element")
+local is_array = require("periodic-element.util.is_array")
 
 ---@class ElementArray
 local ElementArray = {}
