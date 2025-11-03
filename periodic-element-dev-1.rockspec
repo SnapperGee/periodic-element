@@ -5,8 +5,8 @@ source = {
    url = "git+https://github.com/SnapperGee/periodic-element"
 }
 description = {
-   summary = "Represent an element from the Periodic Table of Elements.",
-   detailed = "Represent an element from the Periodic Table of Elements.",
+   summary = "Represent an element from the periodic table of elements.",
+   detailed = "Represent an element from the periodic table of elements.",
    homepage = "https://github.com/SnapperGee/periodic-element",
    issues_url = "https://github.com/SnapperGee/periodic-element/issues",
    maintainer = "Snapper Gee <XxSnapperGeexX@gmail.com>",
