@@ -6,6 +6,13 @@ Represent an element from the periodic table of elements.
 ![Git][git badge]
 ![GitHub][github badge]
 
+## Elements Module Object/Table
+
+This will most likely be one of the main and most used module objects of this
+module. It contains the `Elements` module object which can be used to get an
+`Element` object via its atomic number, symbol, or name making it very easy and
+convenient to use `Element` objects.
+
 ## Element
 
 This lua package makes it possible to programmatically represent a periodic
@@ -23,7 +30,7 @@ properties an element on the periodic table of element has. This includes:
 - oxidation states
 - and electron configuration
 
-## Elements
+## Elements Module
 
 This package contains instantiated `Element` objects in `elements.*` submodules
 organized by their family for each periodic element. For instance, there's an
@@ -38,7 +45,12 @@ discoveries. If that's the case feel free to submit an [issue][issues].
 ## Molecule & ElementArray Collections
 
 This package also exports a `Molecule` and `ElementArray` class that provide
-specialized collections for `Element` objects.
+specialized collections for `Element` objects. The `Elements` module
+object/table is actually an instance of an `ElementArray` that contains an
+`Element` object for every periodic element.
+
+The `Elements` module object is actually an `ElementArray` object that contains
+an `Element` object for every element of the periodic table of elements.
 
 ## Immutability
 
