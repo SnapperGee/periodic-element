@@ -77,7 +77,8 @@ function ElementSet:new(elements)
     local symbol_index = {}
     local name_index = {}
 
-    for _, element in ipairs(elements) do
+    for i = 1, #elements do
+        local element = elements[i]
         if not atomic_number_index[element.number] then
             elements_copy[#elements_copy + 1] = element
             atomic_number_index[element.number] = element
