@@ -63,7 +63,7 @@ local family = {
 
 ---@param atomic_number integer -- 1..118
 ---@return string
-function family_of_atomic_number(atomic_number)
+local function family_of_atomic_number(atomic_number)
     assert(
         type(atomic_number) == "number" and atomic_number == math.floor(atomic_number) and atomic_number >= 1 and atomic_number <= 118,
         string.format("'atomic_number' positive integer in [1, 118] required but got: %s", tostring(atomic_number))
