@@ -28,9 +28,8 @@ local lanthanum = Element:new{
     symbol = "La",
     number = 57,
     mass = 138.905,
-    group = 3,
+    group = nil,
     period = 6,
-    block = "d",
     oxidation_states = {3},
     electron_configuration = lanthanum_electron_configuration
 }
@@ -69,7 +68,6 @@ local cerium = Element:new{
     mass = 140.116,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3, 4},
     electron_configuration = cerium_electron_configuration
 }
@@ -101,7 +99,6 @@ local praseodymium = Element:new{
     mass = 140.908,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = praseodymium_electron_configuration
 }
@@ -133,7 +130,6 @@ local neodymium = Element:new{
     mass = 144.243,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = neodymium_electron_configuration
 }
@@ -165,7 +161,6 @@ local promethium = Element:new{
     mass = 144.913,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = promethium_electron_configuration
 }
@@ -197,7 +192,6 @@ local samarium = Element:new{
     mass = 150.36,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {2, 3},
     electron_configuration = samarium_electron_configuration
 }
@@ -229,7 +223,6 @@ local europium = Element:new{
     mass = 151.964,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {2, 3},
     electron_configuration = europium_electron_configuration
 }
@@ -268,7 +261,6 @@ local gadolinium = Element:new{
     mass = 157.25,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = gadolinium_electron_configuration
 }
@@ -300,7 +292,6 @@ local terbium = Element:new{
     mass = 158.925,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = terbium_electron_configuration
 }
@@ -332,7 +323,6 @@ local dysprosium = Element:new{
     mass = 162.500,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = dysprosium_electron_configuration
 }
@@ -364,7 +354,6 @@ local holmium = Element:new{
     mass = 164.930,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = holmium_electron_configuration
 }
@@ -396,7 +385,6 @@ local erbium = Element:new{
     mass = 167.259,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = erbium_electron_configuration
 }
@@ -428,7 +416,6 @@ local thulium = Element:new{
     mass = 168.934,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = thulium_electron_configuration
 }
@@ -460,53 +447,13 @@ local ytterbium = Element:new{
     mass = 173.055,
     group = nil,
     period = 6,
-    block = "f",
     oxidation_states = {2, 3},
     electron_configuration = ytterbium_electron_configuration
 }
 
-local lutetium_subshell_occupancy1 = SubshellOccupancy:new{
-    n = 4,
-    l = "f",
-    electron_count = 14
-}
-
-local lutetium_subshell_occupancy2 = SubshellOccupancy:new{
-    n = 5,
-    l = "d",
-    electron_count = 1
-}
-
-local lutetium_subshell_occupancy3 = SubshellOccupancy:new{
-    n = 6,
-    l = "s",
-    electron_count = 2
-}
-
-local lutetium_electron_configuration = ElectronConfiguration:new{
-    core = "Xe",
-    subshell_occupancy = {
-        lutetium_subshell_occupancy1,
-        lutetium_subshell_occupancy2,
-        lutetium_subshell_occupancy3
-    }
-}
-
-local lutetium = Element:new{
-    name = "Lutetium",
-    symbol = "Lu",
-    number = 71,
-    mass = 174.967,
-    group = nil,
-    period = 6,
-    block = "f",
-    oxidation_states = {3},
-    electron_configuration = lutetium_electron_configuration
-}
-
 local lanthanides = ElementSet:new{
     lanthanum, cerium, praseodymium, neodymium, promethium, samarium, europium,
-    gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium, lutetium
+    gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium
 }
 
 return lanthanides

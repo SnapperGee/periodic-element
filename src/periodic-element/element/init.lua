@@ -1,9 +1,8 @@
 local Family = require("periodic-element.element.family")
+local block_of_atomic_number = require("src.periodic-element.element.block")
 local is_array = require("periodic-element.util.is_array")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local OxidationStates = require("periodic-element.element.oxidation_states")
-
----@alias Block '"s"'|'"p"'|'"d"'|'"f"'
 
 local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 
@@ -96,7 +95,6 @@ end
 ---@field mass   number
 ---@field group  integer|nil
 ---@field period integer
----@field block  Block
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
 
@@ -134,9 +132,11 @@ function Element:new(opts)
         string.format("positive 'mass' number expected but got: %s", tostring(opts.mass))
     )
 
+    local block = block_of_atomic_number(opts.number)
+
     assert(
-        type(opts.block) == "string" and #opts.block == 1,
-        string.format("'block' must be single character but got: %s", tostring(opts.block))
+        block ~= nil,
+        string.format("'block' could not be determined from number: %d", opts.number)
     )
 
     assert(
@@ -154,22 +154,15 @@ function Element:new(opts)
         oxidation_states = OxidationStates:new(opts.oxidation_states)
     end
 
-    local normalized_block = opts.block:lower()
-
-    assert(
-        VALID_BLOCK[normalized_block],
-        string.format("'block' must be one of 's','p','d','f' but got: %s", tostring(opts.block))
-    )
-
-    if normalized_block == "f" then
+    if block == "f" then
         assert(
             opts.group == nil,
-            string.format("f-block elements have no IUPAC group: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
+            string.format("f-block elements have no IUPAC group: block=%s | group=%s", tostring(block), tostring(opts.group))
         )
     else
         assert(
             type(opts.group) == "number" and opts.group == math.floor(opts.group) and opts.group >= 1 and opts.group <= 18,
-            string.format("'group' integer in [1,18] for s/p/d-block expected but got: block=%s | group=%s", tostring(opts.block), tostring(opts.group))
+            string.format("'group' integer in [1,18] for s/p/d-block expected but got: block=%s | group=%s", tostring(block), tostring(opts.group))
         )
     end
 
@@ -200,7 +193,7 @@ function Element:new(opts)
         group = opts.group,
         family = family,
         period = opts.period,
-        block = normalized_block,
+        block = block,
         oxidation_states = oxidation_states,
         electron_configuration = opts.electron_configuration
     }

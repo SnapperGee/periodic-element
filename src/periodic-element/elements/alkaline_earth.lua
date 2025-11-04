@@ -21,7 +21,6 @@ local beryllium = Element:new{
     mass = 9.012,
     group = 2,
     period = 2,
-    block = "s",
     oxidation_states = {2},
     electron_configuration = beryllium_electron_configuration
 }
@@ -44,7 +43,6 @@ local magnesium = Element:new{
     mass = 24.305,
     group = 2,
     period = 3,
-    block = "s",
     oxidation_states = {2},
     electron_configuration = magnesium_electron_configuration
 }
@@ -67,7 +65,6 @@ local calcium = Element:new{
     mass = 40.078,
     group = 2,
     period = 4,
-    block = "s",
     oxidation_states = {2},
     electron_configuration = calcium_electron_configuration
 }
@@ -90,7 +87,6 @@ local strontium = Element:new{
     mass = 87.62,
     group = 2,
     period = 5,
-    block = "s",
     oxidation_states = {2},
     electron_configuration = strontium_electron_configuration
 }
@@ -113,7 +109,6 @@ local barium = Element:new{
     mass = 137.328,
     group = 2,
     period = 6,
-    block = "s",
     oxidation_states = {2},
     electron_configuration = barium_electron_configuration
 }
@@ -136,7 +131,6 @@ local radium = Element:new{
     mass = 226.025,
     group = 2,
     period = 7,
-    block = "s",
     oxidation_states = {2},
     electron_configuration = radium_electron_configuration
 }

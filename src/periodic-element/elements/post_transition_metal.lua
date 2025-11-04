@@ -30,7 +30,6 @@ local aluminum = Element:new{
     mass = 26.982,
     group = 13,
     period = 3,
-    block = "p",
     oxidation_states = {3},
     electron_configuration = aluminum_electron_configuration
 }
@@ -62,7 +61,6 @@ local zinc = Element:new{
     mass = 65.38,
     group = 12,
     period = 4,
-    block = "d",
     oxidation_states = {2},
     electron_configuration = zinc_electron_configuration
 }
@@ -101,7 +99,6 @@ local gallium = Element:new{
     mass = 69.723,
     group = 13,
     period = 4,
-    block = "p",
     oxidation_states = {3},
     electron_configuration = gallium_electron_configuration
 }
@@ -133,7 +130,6 @@ local cadmium = Element:new{
     mass = 112.414,
     group = 12,
     period = 5,
-    block = "d",
     oxidation_states = {2},
     electron_configuration = cadmium_electron_configuration
 }
@@ -172,7 +168,6 @@ local indium = Element:new{
     mass = 114.818,
     group = 13,
     period = 5,
-    block = "p",
     oxidation_states = {3},
     electron_configuration = indium_electron_configuration
 }
@@ -211,7 +206,6 @@ local tin = Element:new{
     mass = 118.711,
     group = 14,
     period = 5,
-    block = "p",
     oxidation_states = {2, 4},
     electron_configuration = tin_electron_configuration
 }
@@ -250,7 +244,6 @@ local mercury = Element:new{
     mass = 200.592,
     group = 12,
     period = 6,
-    block = "d",
     oxidation_states = {1, 2},
     electron_configuration = mercury_electron_configuration
 }
@@ -296,7 +289,6 @@ local thallium = Element:new{
     mass = 204.383,
     group = 13,
     period = 6,
-    block = "p",
     oxidation_states = {1, 3},
     electron_configuration = thallium_electron_configuration
 }
@@ -342,7 +334,6 @@ local lead = Element:new{
     mass = 207.2,
     group = 14,
     period = 6,
-    block = "p",
     oxidation_states = {2, 4},
     electron_configuration = lead_electron_configuration
 }
@@ -388,7 +379,6 @@ local bismuth = Element:new{
     mass = 208.980,
     group = 15,
     period = 6,
-    block = "p",
     oxidation_states = {3, 5},
     electron_configuration = bismuth_electron_configuration
 }
@@ -434,7 +424,6 @@ local polonium = Element:new{
     mass = 208.982,
     group = 16,
     period = 6,
-    block = "p",
     oxidation_states = {2, 4},
     electron_configuration = polonium_electron_configuration
 }
@@ -473,7 +462,6 @@ local copernicium = Element:new{
     mass = 286.179,
     group = 12,
     period = 7,
-    block = "d",
     oxidation_states = {0, 1, 2},
     electron_configuration = copernicium_electron_configuration
 }
@@ -519,7 +507,6 @@ local nihonium = Element:new{
     mass = 286.182,
     group = 13,
     period = 7,
-    block = "p",
     oxidation_states = {1, 3, 5},
     electron_configuration = nihonium_electron_configuration
 }
@@ -565,7 +552,6 @@ local flerovium = Element:new{
     mass = 290.192,
     group = 14,
     period = 7,
-    block = "p",
     oxidation_states = {0, 1, 2, 4, 6},
     electron_configuration = flerovium_electron_configuration
 }
@@ -611,7 +597,6 @@ local moscovium = Element:new{
     mass = 290.196,
     group = 15,
     period = 7,
-    block = "p",
     oxidation_states = {1, 3},
     electron_configuration = moscovium_electron_configuration
 }
@@ -657,7 +642,6 @@ local livermorium = Element:new{
     mass = 293.205,
     group = 16,
     period = 7,
-    block = "p",
     oxidation_states = {-2, 2, 4},
     electron_configuration = livermorium_electron_configuration
 }

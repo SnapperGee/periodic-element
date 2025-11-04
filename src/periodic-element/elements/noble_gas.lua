@@ -20,7 +20,6 @@ local helium = Element:new{
     mass = 4.003,
     group = 18,
     period = 1,
-    block = "s",
     oxidation_states = {0},
     electron_configuration = helium_electron_configuration
 }
@@ -52,7 +51,6 @@ local neon = Element:new{
     mass = 20.180,
     group = 18,
     period = 2,
-    block = "p",
     oxidation_states = {0},
     electron_configuration = neon_electron_configuration
 }
@@ -84,7 +82,6 @@ local argon = Element:new{
     mass = 39.948,
     group = 18,
     period = 3,
-    block = "p",
     oxidation_states = {0},
     electron_configuration = argon_electron_configuration
 }
@@ -123,7 +120,6 @@ local krypton = Element:new{
     mass = 83.798,
     group = 18,
     period = 4,
-    block = "p",
     oxidation_states = {0},
     electron_configuration = krypton_electron_configuration
 }
@@ -162,7 +158,6 @@ local xenon = Element:new{
     mass = 131.249,
     group = 18,
     period = 5,
-    block = "p",
     oxidation_states = {0},
     electron_configuration = xenon_electron_configuration
 }
@@ -208,7 +203,6 @@ local radon = Element:new{
     mass = 222.018,
     group = 18,
     period = 6,
-    block = "p",
     oxidation_states = {0},
     electron_configuration = radon_electron_configuration
 }
@@ -254,7 +248,6 @@ local oganesson = Element:new{
     mass = 295.216,
     group = 18,
     period = 7,
-    block = "p",
     oxidation_states = {-1, 0, 1, 2, 4, 6},
     electron_configuration = oganesson_electron_configuration
 }

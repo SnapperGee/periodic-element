@@ -28,9 +28,8 @@ local actinium = Element:new{
     symbol = "Ac",
     number = 89,
     mass = 227.028,
-    group = 3,
+    group = nil,
     period = 7,
-    block = "d",
     oxidation_states = {3},
     electron_configuration = actinium_electron_configuration
 }
@@ -62,7 +61,6 @@ local thorium = Element:new{
     mass = 232.038,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {4},
     electron_configuration = thorium_electron_configuration
 }
@@ -101,7 +99,6 @@ local protactinium = Element:new{
     mass = 231.036,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {4, 5},
     electron_configuration = protactinium_electron_configuration
 }
@@ -140,7 +137,6 @@ local uranium = Element:new{
     mass = 238.029,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3, 4, 5, 6},
     electron_configuration = uranium_electron_configuration
 }
@@ -179,7 +175,6 @@ local neptunium = Element:new{
     mass = 237.048,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3, 4, 5, 6},
     electron_configuration = neptunium_electron_configuration
 }
@@ -211,7 +206,6 @@ local plutonium = Element:new{
     mass = 244.064,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3, 4, 5, 6},
     electron_configuration = plutonium_electron_configuration
 }
@@ -243,7 +237,6 @@ local americium = Element:new{
     mass = 243.061,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3, 4, 5, 6},
     electron_configuration = americium_electron_configuration
 }
@@ -282,7 +275,6 @@ local curium = Element:new{
     mass = 247.070,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = curium_electron_configuration
 }
@@ -314,7 +306,6 @@ local berkelium = Element:new{
     mass = 247.070,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3, 4},
     electron_configuration = berkelium_electron_configuration
 }
@@ -346,7 +337,6 @@ local californium = Element:new{
     mass = 251.080,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = californium_electron_configuration
 }
@@ -378,7 +368,6 @@ local einsteinium = Element:new{
     mass = 254,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = einsteinium_electron_configuration
 }
@@ -410,7 +399,6 @@ local fermium = Element:new{
     mass = 257.095,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {3},
     electron_configuration = fermium_electron_configuration
 }
@@ -442,7 +430,6 @@ local mendelevium = Element:new{
     mass = 258.1,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {2, 3},
     electron_configuration = mendelevium_electron_configuration
 }
@@ -474,54 +461,13 @@ local nobelium = Element:new{
     mass = 259.101,
     group = nil,
     period = 7,
-    block = "f",
     oxidation_states = {2, 3},
     electron_configuration = nobelium_electron_configuration
 }
 
-local lawrencium_subshell_occupancy1 = SubshellOccupancy:new{
-    n = 5,
-    l = "f",
-    electron_count = 14
-}
-
-local lawrencium_subshell_occupancy2 = SubshellOccupancy:new{
-    n = 6,
-    l = "d",
-    electron_count = 1
-}
-
-local lawrencium_subshell_occupancy3 = SubshellOccupancy:new{
-    n = 7,
-    l = "s",
-    electron_count = 2
-}
-
-local lawrencium_electron_configuration = ElectronConfiguration:new{
-    core = "Rn",
-    subshell_occupancy = {
-        lawrencium_subshell_occupancy1,
-        lawrencium_subshell_occupancy2,
-        lawrencium_subshell_occupancy3
-    }
-}
-
-local lawrencium = Element:new{
-    name = "Lawrencium",
-    symbol = "Lr",
-    number = 103,
-    mass = 266.120,
-    group = nil,
-    period = 7,
-    block = "f",
-    oxidation_states = {3},
-    electron_configuration = lawrencium_electron_configuration
-}
-
 local actinides = ElementSet:new{
     actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
-    curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium,
-    lawrencium
+    curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium
 }
 
 return actinides

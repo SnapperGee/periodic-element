@@ -30,7 +30,6 @@ local scandium = Element:new{
     mass = 44.956,
     group = 3,
     period = 4,
-    block = "d",
     oxidation_states = {3},
     electron_configuration = scandium_electron_configuration
 }
@@ -62,7 +61,6 @@ local titanium = Element:new{
     mass = 47.88,
     group = 4,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3, 4},
     electron_configuration = titanium_electron_configuration
 }
@@ -94,7 +92,6 @@ local vanadium = Element:new{
     mass = 50.942,
     group = 5,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3, 4, 5},
     electron_configuration = vanadium_electron_configuration
 }
@@ -126,7 +123,6 @@ local chromium = Element:new{
     mass = 51.996,
     group = 6,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3, 6},
     electron_configuration = chromium_electron_configuration
 }
@@ -158,7 +154,6 @@ local manganese = Element:new{
     mass = 54.938,
     group = 7,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3, 4, 7},
     electron_configuration = manganese_electron_configuration
 }
@@ -190,7 +185,6 @@ local iron = Element:new{
     mass = 55.845,
     group = 8,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3},
     electron_configuration = iron_electron_configuration
 }
@@ -222,7 +216,6 @@ local cobalt = Element:new{
     mass = 58.933,
     group = 9,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3},
     electron_configuration = cobalt_electron_configuration
 }
@@ -254,7 +247,6 @@ local nickel = Element:new{
     mass = 58.693,
     group = 10,
     period = 4,
-    block = "d",
     oxidation_states = {2, 3},
     electron_configuration = nickel_electron_configuration
 }
@@ -286,7 +278,6 @@ local copper = Element:new{
     mass = 63.546,
     group = 11,
     period = 4,
-    block = "d",
     oxidation_states = {1, 2},
     electron_configuration = copper_electron_configuration
 }
@@ -318,7 +309,6 @@ local yttrium = Element:new{
     mass = 88.906,
     group = 3,
     period = 5,
-    block = "d",
     oxidation_states = {3},
     electron_configuration = yttrium_electron_configuration
 }
@@ -350,7 +340,6 @@ local zirconium = Element:new{
     mass = 91.224,
     group = 4,
     period = 5,
-    block = "d",
     oxidation_states = {4},
     electron_configuration = zirconium_electron_configuration
 }
@@ -382,7 +371,6 @@ local niobium = Element:new{
     mass = 92.906,
     group = 5,
     period = 5,
-    block = "d",
     oxidation_states = {3, 5},
     electron_configuration = niobium_electron_configuration
 }
@@ -414,7 +402,6 @@ local molybdenum = Element:new{
     mass = 95.95,
     group = 6,
     period = 5,
-    block = "d",
     oxidation_states = {6},
     electron_configuration = molybdenum_electron_configuration
 }
@@ -446,7 +433,6 @@ local technetium = Element:new{
     mass = 98.907,
     group = 7,
     period = 5,
-    block = "d",
     oxidation_states = {4, 6, 7},
     electron_configuration = technetium_electron_configuration
 }
@@ -478,7 +464,6 @@ local ruthenium = Element:new{
     mass = 101.07,
     group = 8,
     period = 5,
-    block = "d",
     oxidation_states = {3},
     electron_configuration = ruthenium_electron_configuration
 }
@@ -510,7 +495,6 @@ local rhodium = Element:new{
     mass = 102.906,
     group = 9,
     period = 5,
-    block = "d",
     oxidation_states = {3},
     electron_configuration = rhodium_electron_configuration
 }
@@ -533,7 +517,6 @@ local palladium = Element:new{
     mass = 106.42,
     group = 10,
     period = 5,
-    block = "d",
     oxidation_states = {2, 3},
     electron_configuration = palladium_electron_configuration
 }
@@ -565,9 +548,46 @@ local silver = Element:new{
     mass = 107.868,
     group = 11,
     period = 5,
-    block = "d",
     oxidation_states = {1},
     electron_configuration = silver_electron_configuration
+}
+
+local lutetium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 4,
+    l = "f",
+    electron_count = 14
+}
+
+local lutetium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 5,
+    l = "d",
+    electron_count = 1
+}
+
+local lutetium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 6,
+    l = "s",
+    electron_count = 2
+}
+
+local lutetium_electron_configuration = ElectronConfiguration:new{
+    core = "Xe",
+    subshell_occupancy = {
+        lutetium_subshell_occupancy1,
+        lutetium_subshell_occupancy2,
+        lutetium_subshell_occupancy3
+    }
+}
+
+local lutetium = Element:new{
+    name = "Lutetium",
+    symbol = "Lu",
+    number = 71,
+    mass = 174.967,
+    group = 3,
+    period = 6,
+    oxidation_states = {3},
+    electron_configuration = lutetium_electron_configuration
 }
 
 local hafnium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -604,7 +624,6 @@ local hafnium = Element:new{
     mass = 178.49,
     group = 4,
     period = 6,
-    block = "d",
     oxidation_states = {4},
     electron_configuration = hafnium_electron_configuration
 }
@@ -643,7 +662,6 @@ local tantalum = Element:new{
     mass = 180.948,
     group = 5,
     period = 6,
-    block = "d",
     oxidation_states = {5},
     electron_configuration = tantalum_electron_configuration
 }
@@ -682,7 +700,6 @@ local tungsten = Element:new{
     mass = 183.84,
     group = 6,
     period = 6,
-    block = "d",
     oxidation_states = {6},
     electron_configuration = tungsten_electron_configuration
 }
@@ -721,7 +738,6 @@ local rhenium = Element:new{
     mass = 186.207,
     group = 7,
     period = 6,
-    block = "d",
     oxidation_states = {4, 6, 7},
     electron_configuration = rhenium_electron_configuration
 }
@@ -760,7 +776,6 @@ local osmium = Element:new{
     mass = 190.23,
     group = 8,
     period = 6,
-    block = "d",
     oxidation_states = {3, 4},
     electron_configuration = osmium_electron_configuration
 }
@@ -799,7 +814,6 @@ local iridium = Element:new{
     mass = 192.217,
     group = 9,
     period = 6,
-    block = "d",
     oxidation_states = {3, 4},
     electron_configuration = iridium_electron_configuration
 }
@@ -838,7 +852,6 @@ local platinum = Element:new{
     mass = 195.085,
     group = 10,
     period = 6,
-    block = "d",
     oxidation_states = {2, 4},
     electron_configuration = platinum_electron_configuration
 }
@@ -877,7 +890,6 @@ local gold = Element:new{
     mass = 196.967,
     group = 11,
     period = 6,
-    block = "d",
     oxidation_states = {1, 3},
     electron_configuration = gold_electron_configuration
 }
@@ -909,6 +921,44 @@ local rutherfordium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
+local lawrencium_subshell_occupancy1 = SubshellOccupancy:new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local lawrencium_subshell_occupancy2 = SubshellOccupancy:new{
+    n = 6,
+    l = "d",
+    electron_count = 1
+}
+
+local lawrencium_subshell_occupancy3 = SubshellOccupancy:new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local lawrencium_electron_configuration = ElectronConfiguration:new{
+    core = "Rn",
+    subshell_occupancy = {
+        lawrencium_subshell_occupancy1,
+        lawrencium_subshell_occupancy2,
+        lawrencium_subshell_occupancy3
+    }
+}
+
+local lawrencium = Element:new{
+    name = "Lawrencium",
+    symbol = "Lr",
+    number = 103,
+    mass = 266.120,
+    group = 3,
+    period = 7,
+    oxidation_states = {3},
+    electron_configuration = lawrencium_electron_configuration
+}
+
 local rutherfordium = Element:new{
     name = "Rutherfordium",
     symbol = "Rf",
@@ -916,7 +966,6 @@ local rutherfordium = Element:new{
     mass = 267.122,
     group = 4,
     period = 7,
-    block = "d",
     oxidation_states = {4},
     electron_configuration = rutherfordium_electron_configuration
 }
@@ -955,7 +1004,6 @@ local dubnium = Element:new{
     mass = 268.126,
     group = 5,
     period = 7,
-    block = "d",
     oxidation_states = {3, 4, 5},
     electron_configuration = dubnium_electron_configuration
 }
@@ -994,7 +1042,6 @@ local seaborgium = Element:new{
     mass = 269.128,
     group = 6,
     period = 7,
-    block = "d",
     oxidation_states = {0, 3, 4, 5, 6},
     electron_configuration = seaborgium_electron_configuration
 }
@@ -1033,7 +1080,6 @@ local bohrium = Element:new{
     mass = 270.133,
     group = 7,
     period = 7,
-    block = "d",
     oxidation_states = {3, 4, 5, 7},
     electron_configuration = bohrium_electron_configuration
 }
@@ -1072,7 +1118,6 @@ local hassium = Element:new{
     mass = 269.1336,
     group = 8,
     period = 7,
-    block = "d",
     oxidation_states = {2, 3, 4, 5, 6, 8},
     electron_configuration = hassium_electron_configuration
 }
@@ -1111,7 +1156,6 @@ local meitnerium = Element:new{
     mass = 277.154,
     group = 9,
     period = 7,
-    block = "d",
     oxidation_states = {1, 3, 4, 6, 8, 9},
     electron_configuration = meitnerium_electron_configuration
 }
@@ -1150,7 +1194,6 @@ local darmstadtium = Element:new{
     mass = 282.166,
     group = 10,
     period = 7,
-    block = "d",
     oxidation_states = {0, 2, 4, 6, 8},
     electron_configuration = darmstadtium_electron_configuration
 }
@@ -1189,7 +1232,6 @@ local roentgenium = Element:new{
     mass = 282.169,
     group = 11,
     period = 7,
-    block = "d",
     oxidation_states = {-1, 1, 3, 5},
     electron_configuration = roentgenium_electron_configuration
 }
@@ -1197,9 +1239,9 @@ local roentgenium = Element:new{
 local transition_metals = ElementSet:new{
     scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium,ruthenium,
-    rhodium, palladium, silver, hafnium, tantalum, tungsten, rhenium, osmium,
-    iridium, platinum, gold, rutherfordium, dubnium, seaborgium, bohrium,
-    hassium, meitnerium, darmstadtium, roentgenium
+    rhodium, palladium, silver, lutetium,hafnium, tantalum, tungsten, rhenium,
+    osmium, iridium, platinum, gold, lawrencium, rutherfordium, dubnium,
+    seaborgium, bohrium, hassium, meitnerium, darmstadtium, roentgenium
 }
 
 return transition_metals

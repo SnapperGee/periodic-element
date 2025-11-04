@@ -62,29 +62,29 @@ local family = {
 }
 
 ---@param atomic_number integer -- 1..118
----@return string
+---@return string|nil
 local function family_of_atomic_number(atomic_number)
     assert(
         type(atomic_number) == "number" and atomic_number == math.floor(atomic_number) and atomic_number >= 1 and atomic_number <= 118,
         string.format("'atomic_number' positive integer in [1, 118] required but got: %s", tostring(atomic_number))
     )
 
-    if atomic_number >= 57 and atomic_number <= 71 then
+    if atomic_number >= 57 and atomic_number <= 70 then
         return "Lanthanide"
     end
 
-    if atomic_number >= 89 and atomic_number <= 103 then
+    if atomic_number >= 89 and atomic_number <= 102 then
         return "Actinide"
     end
 
     if atomic_number >= 21 and atomic_number <= 29
         or atomic_number >= 39 and atomic_number <= 47
-        or atomic_number >= 72 and atomic_number <= 79
-        or atomic_number >= 104 and atomic_number <= 111 then
+        or atomic_number >= 71 and atomic_number <= 79
+        or atomic_number >= 103 and atomic_number <= 111 then
         return "Transition Metal"
     end
 
-    return family[atomic_number] or "Unknown"
+    return family[atomic_number] or nil
 end
 
 return family_of_atomic_number

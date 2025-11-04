@@ -81,7 +81,6 @@ local hydrogen = Element:new{
     mass = 1.008,
     group = 1,
     period = 1,
-    block = "s",
     oxidation_states = {-1, 1},
     electron_configuration = hydrogen_electron_configuration
 }
@@ -124,20 +123,29 @@ This package attempts to make things as immutable as possible so if you're
 getting any errors, be sure to check the error messages and that you're not
 attempting to mutate an immutable object.
 
-## Non Standard Conventions
+## Debated Conventions
 
 There are conventions regarding element classification that can sometimes vary.
 For instance whether to consider elements in group 12 (Zn, Cd, Hg, Cn)
 transition metals or post-transition metals. This package attempts to conform to
-whichever convention is most accurate. If you feel that it does it incorrectly
-in some regard, feel free to open an [issue][issues].
+whichever convention is most current and/or accurate. If you feel that it does
+it incorrectly in some regard, feel free to open an [issue][issues].
+
+### This module's conventions/opinions
+
+- Atomic elements Lanthanum 57 and Actinium 89 are considered to be Lanthanides
+  and Actinides respectively and be part of the 'f' block and have no group
+  number.
+
+- Lutetium 71 and Lawrencium 103 are considered to be transition metals in group
+  3 and part of the 'd' block.
 
 ## Misc. Package Info
 
-This lua module was written and intended for lua 5.1. It doesn't have any
-external dependencies and doesn't use many non standard features so it will most
-likely work with other later versions, but no guaranties are made to its
-reliability when used with versions other than lua 5.1.
+This lua module was written and is intended for lua 5.1. It doesn't have any
+external build dependencies and doesn't use many non standard features so it
+will most likely work with other later versions, but no guaranties are made to
+its reliability when used with versions other than lua 5.1.
 
 This package uses the rockspec 3.1 format.
 
