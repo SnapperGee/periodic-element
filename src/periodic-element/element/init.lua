@@ -4,8 +4,6 @@ local is_array = require("periodic-element.util.is_array")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local OxidationStates = require("periodic-element.element.oxidation_states")
 
-local VALID_BLOCK = { s = true, p = true, d = true, f = true }
-
 --- Class for creating objects that can represent an elements of the periodic
 --- table of elements.
 ---@class Element
@@ -19,6 +17,14 @@ local VALID_BLOCK = { s = true, p = true, d = true, f = true }
 ---@field block  Block
 ---@field oxidation_states OxidationStates
 ---@field electron_configuration ElectronConfiguration
+---@field electronegativity number|nil -- Pauling Scale
+---@field atomic_radius integer -- van der Waals
+---@field ionization_energy number
+---@field electron_affinity number
+---@field melting_point number
+---@field boiling_point number
+---@field density number
+---@field standard_state string
 local Element = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
@@ -55,6 +61,15 @@ function METATABLE:__eq(other)
         and self_data.block == other_data.block
         and self_data.oxidation_states == other_data.oxidation_states
         and self_data.electron_configuration == other_data.electron_configuration
+        and self_data.electronegativity == other_data.electronegativity
+        and self_data.atomic_radius == other_data.atomic_radius
+        and self_data.ionization_energy == other_data.ionization_energy
+        and self_data.ionization_energy == other_data.ionization_energy
+        and self_data.electron_affinity == other_data.electron_affinity
+        and self_data.melting_point == other_data.melting_point
+        and self_data.boiling_point == other_data.boiling_point
+        and self_data.density == other_data.density
+        and self_data.standard_state == other_data.standard_state
 end
 
 function METATABLE:__lt(other)
@@ -75,7 +90,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%.2f, atomic_radius=%d, ionization_energy=%.3f, electron_affinity=%.3f, melting_point=%d, boiling_point=%d, density=%f, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
@@ -84,19 +99,35 @@ function METATABLE:__tostring()
         self_data.period,
         self_data.block,
         self_data.oxidation_states:formatted_string(),
-        self_data.electron_configuration.canonical_string
+        self_data.electron_configuration.canonical_string,
+        self_data.electronegativity,
+        self_data.atomic_radius,
+        self_data.ionization_energy,
+        self_data.electron_affinity,
+        self_data.melting_point,
+        self_data.boiling_point,
+        self_data.density,
+        self_data.standard_state
     )
 end
 
 ---@class ElementInitOpts
----@field name   string
+---@field name string
 ---@field symbol string
 ---@field number integer
----@field mass   number
----@field group  integer|nil
+---@field mass number
+---@field group integer|nil
 ---@field period integer
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
+---@field electronegativity number|nil -- Pauling Scale
+---@field atomic_radius integer -- van der Waals
+---@field ionization_energy number
+---@field electron_affinity number
+---@field melting_point number
+---@field boiling_point number
+---@field density number
+---@field standard_state string
 
 --- Constructor for Element objects. Parameters are validated making sure
 --- they're valid element properties according to this lua module. For instance
@@ -179,9 +210,41 @@ function Element:new(opts)
     local family = Family(opts.number)
 
     assert(
-        family ~= "Unknown",
+        family ~= nil,
         string.format("'family' for atomic number could not be determined: %d", opts.number)
     )
+
+    assert(
+        type(opts.electronegativity) == "number" and opts.electronegativity >= 0,
+        string.format("non negative 'electronegativity' number expected but got: %s", tostring(opts.electronegativity))
+    )
+
+    assert(
+        type(opts.atomic_radius) == "number" and opts.atomic_radius == math.floor(opts.atomic_radius) and opts.atomic_radius > 0,
+        string.format("'opts.atomic_radius' integer greater than 0 expected but got: %s", tostring(opts.atomic_radius))
+    )
+
+    assert(
+        type(opts.ionization_energy) == "number" and opts.ionization_energy > 0,
+        string.format("'ionization_energy' number greater than 0 expected but got: %s", tostring(opts.ionization_energy))
+    )
+
+    assert(
+        opts.electron_affinity == nil or type(opts.electron_affinity) == "number" and opts.electron_affinity > 0,
+        string.format("'electron_affinity' number greater than 0 expected but got: %s", tostring(opts.electron_affinity))
+    )
+
+    assert(
+        type(opts.density) == "number" and opts.density > 0,
+        string.format("'density' number greater than 0 expected but got: %s", tostring(opts.density))
+    )
+
+    assert(
+        type(opts.standard_state) == "string" and #opts.standard_state > 0,
+        string.format("non empty 'standard_state' string expected but got: %s", tostring(opts.standard_state))
+    )
+
+    local normalized_standard_state = opts.name:sub(1,1):upper() .. opts.name:sub(2):lower()
 
     local obj = setmetatable({}, METATABLE)
 
@@ -195,7 +258,15 @@ function Element:new(opts)
         period = opts.period,
         block = block,
         oxidation_states = oxidation_states,
-        electron_configuration = opts.electron_configuration
+        electron_configuration = opts.electron_configuration,
+        electronegativity = opts.electronegativity,
+        atomic_radius = opts.atomic_radius,
+        ionization_energy = opts.ionization_energy,
+        electron_affinity = opts.electron_affinity,
+        melting_point = opts.melting_point,
+        boiling_point = opts.boiling_point,
+        density = opts.density,
+        standard_state = normalized_standard_state
     }
 
     return obj
