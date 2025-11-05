@@ -24,7 +24,7 @@ description = {
         and objects created from its classes are immutable.
 
         Only elements with relatively known properties are included in this
-        package. This means it only includes up to Nobelium 102.
+        package. This means it only includes up to Berkelium 97.
     ]],
     homepage = "https://github.com/SnapperGee/periodic-element",
     issues_url = "https://github.com/SnapperGee/periodic-element/issues",

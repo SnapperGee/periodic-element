@@ -17,13 +17,13 @@ local OxidationStates = require("periodic-element.element.oxidation_states")
 ---@field block  Block
 ---@field oxidation_states OxidationStates
 ---@field electron_configuration ElectronConfiguration
----@field electronegativity number|nil -- Pauling Scale
+---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number
----@field electron_affinity number
+---@field electron_affinity number|nil
 ---@field melting_point number
 ---@field boiling_point number|nil
----@field density number|nil
+---@field density number
 ---@field standard_state string
 local Element = {}
 
@@ -120,13 +120,13 @@ end
 ---@field period integer
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
----@field electronegativity number|nil -- Pauling Scale
+---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number
----@field electron_affinity number
+---@field electron_affinity number|nil
 ---@field melting_point number
 ---@field boiling_point number|nil
----@field density number|nil
+---@field density number
 ---@field standard_state string
 
 --- Constructor for Element objects. Parameters are validated making sure
@@ -245,7 +245,7 @@ function Element:new(opts)
     )
 
     assert(
-        opts.density == nil or type(opts.density) == "number" and opts.density > 0,
+        type(opts.density) == "number" and opts.density > 0,
         string.format("'density' number greater than 0 expected but got: %s", tostring(opts.density))
     )
 
