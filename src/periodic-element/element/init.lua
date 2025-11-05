@@ -9,7 +9,7 @@ local OxidationStates = require("periodic-element.element.oxidation_states")
 ---@class Element
 ---@field name   string      -- element name
 ---@field symbol string      -- 1-2 chars
----@field number integer     -- atomic number 1..118
+---@field number integer     -- atomic number 1..97
 ---@field mass   number      -- atomic mass
 ---@field group  integer|nil -- nil if Block is f otherwise 1..18
 ---@field family string      -- group family
@@ -154,8 +154,8 @@ function Element:new(opts)
     local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
 
     assert(
-        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 118,
-        string.format("'number' integer in [1, 118] expected but got: %s", tostring(opts.number))
+        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 97,
+        string.format("'number' integer in [1, 97] expected but got: %s", tostring(opts.number))
     )
 
     assert(
