@@ -22,8 +22,8 @@ local OxidationStates = require("periodic-element.element.oxidation_states")
 ---@field ionization_energy number
 ---@field electron_affinity number
 ---@field melting_point number
----@field boiling_point number
----@field density number
+---@field boiling_point number|nil
+---@field density number|nil
 ---@field standard_state string
 local Element = {}
 
@@ -125,8 +125,8 @@ end
 ---@field ionization_energy number
 ---@field electron_affinity number
 ---@field melting_point number
----@field boiling_point number
----@field density number
+---@field boiling_point number|nil
+---@field density number|nil
 ---@field standard_state string
 
 --- Constructor for Element objects. Parameters are validated making sure
@@ -154,7 +154,7 @@ function Element:new(opts)
     local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
 
     assert(
-        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 97,
+        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 118,
         string.format("'number' integer in [1, 97] expected but got: %s", tostring(opts.number))
     )
 
@@ -231,11 +231,21 @@ function Element:new(opts)
 
     assert(
         opts.electron_affinity == nil or type(opts.electron_affinity) == "number" and opts.electron_affinity > 0,
-        string.format("'electron_affinity' number greater than 0 expected but got: %s", tostring(opts.electron_affinity))
+        string.format("'electron_affinity' number greater than 0 (or nil) expected but got: %s", tostring(opts.electron_affinity))
     )
 
     assert(
-        type(opts.density) == "number" and opts.density > 0,
+        type(opts.melting_point) == "number" and opts.melting_point >= 0,
+        string.format("non negative 'melting_point' number expected but got: %s", tostring(opts.melting_point))
+    )
+
+    assert(
+        opts.boiling_point == nil or type(opts.boiling_point) == "number" and opts.boiling_point > opts.melting_point,
+        string.format("'boiling_point' number greater than melting point (or nil) expected but got: melting_point=%s | boiling_point=%s", tostring(opts.melting_point), tostring(opts.boiling_point))
+    )
+
+    assert(
+        opts.density == nil or type(opts.density) == "number" and opts.density > 0,
         string.format("'density' number greater than 0 expected but got: %s", tostring(opts.density))
     )
 
