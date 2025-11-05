@@ -142,12 +142,15 @@ it incorrectly in some regard, feel free to open an [issue][issues].
 
 ## Misc. Package Info
 
+Only elements with relatively known properties are included in this package.
+This means it only includes up to Nobelium 102.
+
 This lua module was written and is intended for lua 5.1. It doesn't have any
 external build dependencies and doesn't use many non standard features so it
 will most likely work with other later versions, but no guaranties are made to
 its reliability when used with versions other than lua 5.1.
 
-This package uses the rockspec 3.1 format.
+This package uses the luarocks rockspec 3.1 format.
 
 ## License
 
