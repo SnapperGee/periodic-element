@@ -241,19 +241,8 @@ local oganesson_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local oganesson = Element:new{
-    name = "Oganesson",
-    symbol = "Og",
-    number = 118,
-    mass = 295.216,
-    group = 18,
-    period = 7,
-    oxidation_states = {-1, 0, 1, 2, 4, 6},
-    electron_configuration = oganesson_electron_configuration
-}
-
 local noble_gases = ElementSet:new{
-    helium, neon, argon, krypton, xenon, radon, oganesson
+    helium, neon, argon, krypton, xenon, radon
 }
 
 return noble_gases
