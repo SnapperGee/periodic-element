@@ -1,9 +1,9 @@
 rockspec_format = "3.1"
 package = "periodic-element"
-version = "1.3.0-1"
+version = "1.3.0-2"
 source = {
     url = "git+https://github.com/SnapperGee/periodic-element",
-    tag = "1.3.0-1"
+    tag = "1.3.0-2"
 }
 description = {
     summary = "Represent an element from the periodic table of elements.",
@@ -22,6 +22,9 @@ description = {
 
         This package employs an immutable by default architecture so all objects
         and objects created from its classes are immutable.
+
+        Only elements with relatively known properties are included in this
+        package. This means it only includes up to Nobelium 102.
     ]],
     homepage = "https://github.com/SnapperGee/periodic-element",
     issues_url = "https://github.com/SnapperGee/periodic-element/issues",
