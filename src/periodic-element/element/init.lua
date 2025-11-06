@@ -122,12 +122,12 @@ end
 ---@field period integer
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
----@field electronegativity number|nil -- Pauling Scale
+---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number -- eV
----@field electron_affinity number|nil -- eV
+---@field electron_affinity number -- eV
 ---@field melting_point number -- kelvin
----@field boiling_point number|nil -- kelvin
+---@field boiling_point number -- kelvin
 ---@field density number -- g/cm³
 ---@field standard_state "solid"|"liquid"|"gas"
 
@@ -138,6 +138,178 @@ end
 ---@param opts ElementOpts
 ---@return Element
 function Element.new(opts)
+
+    assert(type(opts) == "table", "opts table required")
+
+    assert(
+        type(opts.name) == "string" and #opts.name > 0,
+        string.format("non empty 'name' string expected but got: %s", tostring(opts.name))
+    )
+
+    local normalized_name = opts.name:sub(1,1):upper() .. opts.name:sub(2):lower()
+
+    assert(
+        type(opts.symbol) == "string" and #opts.symbol >= 1 and #opts.symbol <= 2,
+        string.format("1-2 char 'symbol' string expected but got: %s", tostring(opts.symbol))
+    )
+
+    local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
+
+    assert(
+        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 118,
+        string.format("'number' integer in [1, 97] expected but got: %s", tostring(opts.number))
+    )
+
+    assert(
+        type(opts.mass) == "number" and opts.mass > 0,
+        string.format("positive 'mass' number expected but got: %s", tostring(opts.mass))
+    )
+
+    local block = block_of_atomic_number(opts.number)
+
+    assert(
+        block ~= nil,
+        string.format("'block' could not be determined from number: %d", opts.number)
+    )
+
+    assert(
+        getmetatable(opts.oxidation_states) == OxidationStates
+        or is_array(opts.oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end)
+        and #opts.oxidation_states > 0,
+        string.format("'oxidation_states' must be OxidationStates object or non empty integer array but got: %s", tostring(opts.oxidation_states))
+    )
+
+    local oxidation_states
+
+    if getmetatable(opts.oxidation_states) == OxidationStates then
+        oxidation_states = opts.oxidation_states
+    else
+        oxidation_states = OxidationStates.new(opts.oxidation_states)
+    end
+
+    if block == "f" then
+        assert(
+            opts.group == nil,
+            string.format("f-block elements have no IUPAC group: block=%s | group=%s", tostring(block), tostring(opts.group))
+        )
+    else
+        assert(
+            type(opts.group) == "number" and opts.group == math.floor(opts.group) and opts.group >= 1 and opts.group <= 18,
+            string.format("'group' integer in [1,18] for s/p/d-block expected but got: block=%s | group=%s", tostring(block), tostring(opts.group))
+        )
+    end
+
+    assert(
+        type(opts.period) == "number" and opts.period == math.floor(opts.period) and opts.period >= 1 and opts.period <= 7,
+        string.format("'period' integer in [1,7] expected but got: %s", tostring(opts.period))
+    )
+
+    assert(
+        getmetatable(opts.electron_configuration) == ElectronConfiguration,
+        string.format("'electron_configuration' with metatable of type ElectronConfiguration but instead got: %s", tostring(opts.electron_configuration))
+    )
+
+    local family = Family(opts.number)
+
+    assert(
+        family ~= nil,
+        string.format("'family' for atomic number could not be determined: %d", opts.number)
+    )
+
+    assert(
+        type(opts.electronegativity) == "number" and opts.electronegativity >= 0,
+        string.format("non negative 'electronegativity' number expected but got: %s", tostring(opts.electronegativity))
+    )
+
+    assert(
+        type(opts.atomic_radius) == "number" and opts.atomic_radius == math.floor(opts.atomic_radius) and opts.atomic_radius > 0,
+        string.format("'opts.atomic_radius' integer greater than 0 expected but got: %s", tostring(opts.atomic_radius))
+    )
+
+    assert(
+        type(opts.ionization_energy) == "number" and opts.ionization_energy > 0,
+        string.format("'ionization_energy' number greater than 0 expected but got: %s", tostring(opts.ionization_energy))
+    )
+
+    assert(
+        type(opts.electron_affinity) == "number" and opts.electron_affinity > 0,
+        string.format("'electron_affinity' number greater than 0 (or nil) expected but got: %s", tostring(opts.electron_affinity))
+    )
+
+    assert(
+        type(opts.melting_point) == "number" and opts.melting_point >= 0,
+        string.format("non negative 'melting_point' number expected but got: %s", tostring(opts.melting_point))
+    )
+
+    assert(
+        type(opts.boiling_point) == "number" and opts.boiling_point > 0,
+        string.format("'boiling_point' number greater than melting point (or nil) expected but got: melting_point=%s | boiling_point=%s", tostring(opts.melting_point), tostring(opts.boiling_point))
+    )
+
+    assert(
+        type(opts.density) == "number" and opts.density > 0,
+        string.format("'density' number greater than 0 expected but got: %s", tostring(opts.density))
+    )
+
+    assert(
+        type(opts.standard_state) == "string" and #opts.standard_state > 0,
+        string.format("non empty 'standard_state' string expected but got: %s", tostring(opts.standard_state))
+    )
+
+    local normalized_standard_state = opts.standard_state:sub(1,1):upper() .. opts.standard_state:sub(2):lower()
+
+    assert(
+        standard_states[normalized_standard_state],
+        string.format("expected 'standard_state' value of \"solid\", \"liquid\", or \"gas\" but got: \"%s\"", tostring(opts.standard_state))
+    )
+
+    local obj = setmetatable({}, METATABLE)
+
+    DATA[obj] = {
+        name = normalized_name,
+        symbol = normalized_symbol,
+        number = opts.number,
+        mass = opts.mass,
+        group = opts.group,
+        family = family,
+        period = opts.period,
+        block = block,
+        oxidation_states = oxidation_states,
+        electron_configuration = opts.electron_configuration,
+        electronegativity = opts.electronegativity,
+        atomic_radius = opts.atomic_radius,
+        ionization_energy = opts.ionization_energy,
+        electron_affinity = opts.electron_affinity,
+        melting_point = opts.melting_point,
+        boiling_point = opts.boiling_point,
+        density = opts.density,
+        standard_state = normalized_standard_state
+    }
+
+    return obj
+end
+
+---@class PartialElement: Element
+---@field electronegativity number|nil -- Pauling Scale
+---@field electron_affinity number|nil -- eV
+---@field boiling_point number|nil -- kelvin
+
+---@class PartialElementOpts: ElementOpts
+---@field electronegativity number|nil -- Pauling Scale
+---@field atomic_radius integer -- van der Waals
+---@field ionization_energy number -- eV
+---@field electron_affinity number|nil -- eV
+---@field melting_point number -- kelvin
+---@field boiling_point number|nil -- kelvin
+---@field density number -- g/cm³
+
+--- Constructor for Element objects. Parameters are validated making sure
+--- they're valid element properties according to this lua module. For instance
+--- an atomic number can only be in the range [1, 118]. If any validation fails
+--- an exception is thrown.
+---@param opts PartialElementOpts
+---@return PartialElement
+function Element.partial(opts)
 
     assert(type(opts) == "table", "opts table required")
 
