@@ -31,7 +31,14 @@ local actinium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3},
-    electron_configuration = actinium_electron_configuration
+    electron_configuration = actinium_electron_configuration,
+    electronegativity = 1.1,
+    atomic_radius = 260,
+    ionization_energy = 5.17,
+    melting_point = 1324,
+    boiling_point = 3471,
+    density = 10.07,
+    standard_state = "solid"
 }
 
 local thorium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -62,7 +69,14 @@ local thorium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {4},
-    electron_configuration = thorium_electron_configuration
+    electron_configuration = thorium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 237,
+    ionization_energy = 6.08,
+    melting_point = 2023,
+    boiling_point = 5061,
+    density = 11.72,
+    standard_state = "solid"
 }
 
 local protactinium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -100,7 +114,13 @@ local protactinium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {4, 5},
-    electron_configuration = protactinium_electron_configuration
+    electron_configuration = protactinium_electron_configuration,
+    electronegativity = 1.5,
+    atomic_radius = 243,
+    ionization_energy = 5.89,
+    melting_point = 1845,
+    density = 15.37,
+    standard_state = "solid"
 }
 
 local uranium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -138,7 +158,14 @@ local uranium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
-    electron_configuration = uranium_electron_configuration
+    electron_configuration = uranium_electron_configuration,
+    electronegativity = 1.38,
+    atomic_radius = 240,
+    ionization_energy = 6.194,
+    melting_point = 1408,
+    boiling_point = 4404,
+    density = 18.95,
+    standard_state = "solid"
 }
 
 local neptunium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -176,7 +203,14 @@ local neptunium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
-    electron_configuration = neptunium_electron_configuration
+    electron_configuration = neptunium_electron_configuration,
+    electronegativity = 1.36,
+    atomic_radius = 221,
+    ionization_energy = 6.266,
+    melting_point = 917,
+    boiling_point = 4175,
+    density = 20.25,
+    standard_state = "solid"
 }
 
 local plutonium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -207,7 +241,14 @@ local plutonium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
-    electron_configuration = plutonium_electron_configuration
+    electron_configuration = plutonium_electron_configuration,
+    electronegativity = 1.28,
+    atomic_radius = 243,
+    ionization_energy = 6.06,
+    melting_point = 913,
+    boiling_point = 3501,
+    density = 19.84,
+    standard_state = "solid"
 }
 
 local americium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -238,7 +279,14 @@ local americium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
-    electron_configuration = americium_electron_configuration
+    electron_configuration = americium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 244,
+    ionization_energy = 5.993,
+    melting_point = 1449,
+    boiling_point = 2284,
+    density = 13.69,
+    standard_state = "solid"
 }
 
 local curium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -276,7 +324,14 @@ local curium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3},
-    electron_configuration = curium_electron_configuration
+    electron_configuration = curium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 245,
+    ionization_energy = 6.02,
+    melting_point = 1618,
+    boiling_point = 3400,
+    density = 13.51,
+    standard_state = "solid"
 }
 
 local berkelium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -307,7 +362,13 @@ local berkelium = Element:new{
     group = nil,
     period = 7,
     oxidation_states = {3, 4},
-    electron_configuration = berkelium_electron_configuration
+    electron_configuration = berkelium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 244,
+    ionization_energy = 6.23,
+    melting_point = 1323,
+    density = 14,
+    standard_state = "solid"
 }
 
 local actinides = ElementSet:new{
