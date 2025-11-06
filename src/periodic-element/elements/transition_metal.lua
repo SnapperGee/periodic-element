@@ -31,7 +31,15 @@ local scandium = Element:new{
     group = 3,
     period = 4,
     oxidation_states = {3},
-    electron_configuration = scandium_electron_configuration
+    electron_configuration = scandium_electron_configuration,
+    electronegativity = 1.36,
+    atomic_radius = 211,
+    ionization_energy = 6.561,
+    electron_affinity = 0.188,
+    melting_point = 1814,
+    boiling_point = 3109,
+    density = 2.99,
+    standard_state = "solid"
 }
 
 local titanium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -62,7 +70,15 @@ local titanium = Element:new{
     group = 4,
     period = 4,
     oxidation_states = {2, 3, 4},
-    electron_configuration = titanium_electron_configuration
+    electron_configuration = titanium_electron_configuration,
+    electronegativity = 1.54,
+    atomic_radius = 187,
+    ionization_energy = 6.828,
+    electron_affinity = 0.079,
+    melting_point = 1941,
+    boiling_point = 3560,
+    density = 4.5,
+    standard_state = "solid"
 }
 
 local vanadium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -93,7 +109,15 @@ local vanadium = Element:new{
     group = 5,
     period = 4,
     oxidation_states = {2, 3, 4, 5},
-    electron_configuration = vanadium_electron_configuration
+    electron_configuration = vanadium_electron_configuration,
+    electronegativity = 1.63,
+    atomic_radius = 179,
+    ionization_energy = 6.746,
+    electron_affinity = 0.525,
+    melting_point = 2183,
+    boiling_point = 3680,
+    density = 6,
+    standard_state = "solid"
 }
 
 local chromium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -124,7 +148,15 @@ local chromium = Element:new{
     group = 6,
     period = 4,
     oxidation_states = {2, 3, 6},
-    electron_configuration = chromium_electron_configuration
+    electron_configuration = chromium_electron_configuration,
+    electronegativity = 1.66,
+    atomic_radius = 189,
+    ionization_energy = 6.767,
+    electron_affinity = 0.666,
+    melting_point = 2180,
+    boiling_point = 2944,
+    density = 7.15,
+    standard_state = "solid"
 }
 
 local manganese_subshell_occupancy1 = SubshellOccupancy:new{
@@ -155,7 +187,14 @@ local manganese = Element:new{
     group = 7,
     period = 4,
     oxidation_states = {2, 3, 4, 7},
-    electron_configuration = manganese_electron_configuration
+    electron_configuration = manganese_electron_configuration,
+    electronegativity = 1.55,
+    atomic_radius = 197,
+    ionization_energy = 7.434,
+    melting_point = 1519,
+    boiling_point = 2334,
+    density = 7.3,
+    standard_state = "solid"
 }
 
 local iron_subshell_occupancy1 = SubshellOccupancy:new{
@@ -186,7 +225,15 @@ local iron = Element:new{
     group = 8,
     period = 4,
     oxidation_states = {2, 3},
-    electron_configuration = iron_electron_configuration
+    electron_configuration = iron_electron_configuration,
+    electronegativity = 1.83,
+    atomic_radius = 194,
+    ionization_energy = 7.902,
+    electron_affinity = 0.163,
+    melting_point = 1811,
+    boiling_point = 3134,
+    density = 7.874,
+    standard_state = "solid"
 }
 
 local cobalt_subshell_occupancy1 = SubshellOccupancy:new{
@@ -217,7 +264,15 @@ local cobalt = Element:new{
     group = 9,
     period = 4,
     oxidation_states = {2, 3},
-    electron_configuration = cobalt_electron_configuration
+    electron_configuration = cobalt_electron_configuration,
+    electronegativity = 1.88,
+    atomic_radius = 192,
+    ionization_energy = 7.881,
+    electron_affinity = 0.661,
+    melting_point = 1768,
+    boiling_point = 3200,
+     density = 8.86,
+     standard_state = "solid"
 }
 
 local nickel_subshell_occupancy1 = SubshellOccupancy:new{
@@ -248,7 +303,15 @@ local nickel = Element:new{
     group = 10,
     period = 4,
     oxidation_states = {2, 3},
-    electron_configuration = nickel_electron_configuration
+    electron_configuration = nickel_electron_configuration,
+    electronegativity = 1.91,
+    atomic_radius = 163,
+    ionization_energy = 7.64,
+    electron_affinity = 1.156,
+    melting_point = 1728,
+    boiling_point = 3186,
+    density = 8.912,
+    standard_state = "solid"
 }
 
 local copper_subshell_occupancy1 = SubshellOccupancy:new{
@@ -279,7 +342,15 @@ local copper = Element:new{
     group = 11,
     period = 4,
     oxidation_states = {1, 2},
-    electron_configuration = copper_electron_configuration
+    electron_configuration = copper_electron_configuration,
+    electronegativity = 1.9,
+    atomic_radius = 140,
+    ionization_energy = 7.726,
+    electron_affinity = 1.228,
+    melting_point = 1357.77,
+    boiling_point = 2835,
+    density = 8.933,
+    standard_state = "solid"
 }
 
 local yttrium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -310,7 +381,14 @@ local yttrium = Element:new{
     group = 3,
     period = 5,
     oxidation_states = {3},
-    electron_configuration = yttrium_electron_configuration
+    electron_configuration = yttrium_electron_configuration,
+    electronegativity = 1.65,
+    atomic_radius = 139,
+    ionization_energy = 9.394,
+    melting_point = 692.68,
+    boiling_point = 1180,
+    density = 7.134,
+    standard_state = "solid"
 }
 
 local zirconium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -341,7 +419,15 @@ local zirconium = Element:new{
     group = 4,
     period = 5,
     oxidation_states = {4},
-    electron_configuration = zirconium_electron_configuration
+    electron_configuration = zirconium_electron_configuration,
+    electronegativity = 1.33,
+    atomic_radius = 186,
+    ionization_energy = 6.634,
+    electron_affinity = 0.426,
+    melting_point = 2128,
+    boiling_point = 4682,
+    density = 6.52,
+    standard_state = "solid"
 }
 
 local niobium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -372,7 +458,15 @@ local niobium = Element:new{
     group = 5,
     period = 5,
     oxidation_states = {3, 5},
-    electron_configuration = niobium_electron_configuration
+    electron_configuration = niobium_electron_configuration,
+    electronegativity = 1.6,
+    atomic_radius = 207,
+    ionization_energy = 6.759,
+    electron_affinity = 0.893,
+    melting_point = 2750,
+    boiling_point = 5017,
+    density = 8.57,
+    standard_state = "solid"
 }
 
 local molybdenum_subshell_occupancy1 = SubshellOccupancy:new{
@@ -403,7 +497,15 @@ local molybdenum = Element:new{
     group = 6,
     period = 5,
     oxidation_states = {6},
-    electron_configuration = molybdenum_electron_configuration
+    electron_configuration = molybdenum_electron_configuration,
+    electronegativity = 2.16,
+    atomic_radius = 209,
+    ionization_energy = 7.092,
+    electron_affinity = 0.746,
+    melting_point = 2896,
+    boiling_point = 4912,
+    density = 10.2,
+    standard_state = "solid"
 }
 
 local technetium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -434,7 +536,15 @@ local technetium = Element:new{
     group = 7,
     period = 5,
     oxidation_states = {4, 6, 7},
-    electron_configuration = technetium_electron_configuration
+    electron_configuration = technetium_electron_configuration,
+    electronegativity = 1.9,
+    atomic_radius = 209,
+    ionization_energy = 7.28,
+    electron_affinity = 0.55,
+    melting_point = 2430,
+    boiling_point = 4538,
+    density = 11,
+    standard_state = "solid"
 }
 
 local ruthenium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -465,7 +575,15 @@ local ruthenium = Element:new{
     group = 8,
     period = 5,
     oxidation_states = {3},
-    electron_configuration = ruthenium_electron_configuration
+    electron_configuration = ruthenium_electron_configuration,
+    electronegativity = 2.2,
+    atomic_radius = 207,
+    ionization_energy = 7.361,
+    electron_affinity = 1.05,
+    melting_point = 2607,
+    boiling_point = 4423,
+    density = 12.1,
+    standard_state = "solid"
 }
 
 local rhodium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -496,7 +614,15 @@ local rhodium = Element:new{
     group = 9,
     period = 5,
     oxidation_states = {3},
-    electron_configuration = rhodium_electron_configuration
+    electron_configuration = rhodium_electron_configuration,
+    electronegativity = 2.28,
+    atomic_radius = 195,
+    ionization_energy = 7.459,
+    electron_affinity = 1.137,
+    melting_point = 2237,
+    boiling_point = 3968,
+    density = 12.4,
+    standard_state = "solid"
 }
 
 local palladium_subshell_occupancy = SubshellOccupancy:new{
@@ -518,7 +644,15 @@ local palladium = Element:new{
     group = 10,
     period = 5,
     oxidation_states = {2, 3},
-    electron_configuration = palladium_electron_configuration
+    electron_configuration = palladium_electron_configuration,
+    electronegativity = 2.2,
+    atomic_radius = 202,
+    ionization_energy = 8.337,
+    electron_affinity = 0.557,
+    melting_point = 1828.05,
+    boiling_point = 3236,
+    density = 12,
+    standard_state = "solid"
 }
 
 local silver_subshell_occupancy1 = SubshellOccupancy:new{
@@ -549,7 +683,15 @@ local silver = Element:new{
     group = 11,
     period = 5,
     oxidation_states = {1},
-    electron_configuration = silver_electron_configuration
+    electron_configuration = silver_electron_configuration,
+    electronegativity = 1.93,
+    atomic_radius = 172,
+    ionization_energy = 7.576,
+    electron_affinity = 1.302,
+    melting_point = 1234.93,
+    boiling_point = 2435,
+    density = 10.501,
+    standard_state = "solid"
 }
 
 local lutetium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -587,7 +729,14 @@ local lutetium = Element:new{
     group = 3,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = lutetium_electron_configuration
+    electron_configuration = lutetium_electron_configuration,
+    electronegativity = 1.27,
+    atomic_radius = 221,
+    ionization_energy = 5.426,
+    melting_point = 1936,
+    boiling_point = 3675,
+    density = 9.84,
+    standard_state = "solid"
 }
 
 local hafnium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -625,7 +774,14 @@ local hafnium = Element:new{
     group = 4,
     period = 6,
     oxidation_states = {4},
-    electron_configuration = hafnium_electron_configuration
+    electron_configuration = hafnium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 212,
+    ionization_energy = 6.825,
+    melting_point = 2506,
+    boiling_point = 4876,
+    density = 13.3,
+    standard_state = "solid"
 }
 
 local tantalum_subshell_occupancy1 = SubshellOccupancy:new{
@@ -663,7 +819,15 @@ local tantalum = Element:new{
     group = 5,
     period = 6,
     oxidation_states = {5},
-    electron_configuration = tantalum_electron_configuration
+    electron_configuration = tantalum_electron_configuration,
+    electronegativity = 1.5,
+    atomic_radius = 217,
+    ionization_energy = 7.89,
+    electron_affinity = 0.322,
+    melting_point = 3290,
+    boiling_point = 5731,
+    density = 16.4,
+    standard_state = "solid"
 }
 
 local tungsten_subshell_occupancy1 = SubshellOccupancy:new{
@@ -701,7 +865,15 @@ local tungsten = Element:new{
     group = 6,
     period = 6,
     oxidation_states = {6},
-    electron_configuration = tungsten_electron_configuration
+    electron_configuration = tungsten_electron_configuration,
+    electronegativity = 2.36,
+    atomic_radius = 210,
+    ionization_energy = 7.98,
+    electron_affinity = 0.815,
+    melting_point = 3695,
+    boiling_point = 5828,
+    density = 19.3,
+    standard_state = "solid"
 }
 
 local rhenium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -739,7 +911,15 @@ local rhenium = Element:new{
     group = 7,
     period = 6,
     oxidation_states = {4, 6, 7},
-    electron_configuration = rhenium_electron_configuration
+    electron_configuration = rhenium_electron_configuration,
+    electronegativity = 1.9,
+    atomic_radius = 217,
+    ionization_energy = 7.88,
+    electron_affinity = 0.15,
+    melting_point = 3459,
+    boiling_point = 5869,
+    density = 20.8,
+    standard_state = "solid"
 }
 
 local osmium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -777,7 +957,15 @@ local osmium = Element:new{
     group = 8,
     period = 6,
     oxidation_states = {3, 4},
-    electron_configuration = osmium_electron_configuration
+    electron_configuration = osmium_electron_configuration,
+    electronegativity = 2.2,
+    atomic_radius = 216,
+    ionization_energy = 8.7,
+    electron_affinity = 1.1,
+    melting_point = 3306,
+    boiling_point = 5285,
+    density = 22.57,
+    standard_state = "solid"
 }
 
 local iridium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -815,7 +1003,15 @@ local iridium = Element:new{
     group = 9,
     period = 6,
     oxidation_states = {3, 4},
-    electron_configuration = iridium_electron_configuration
+    electron_configuration = iridium_electron_configuration,
+    electronegativity = 2.2,
+    atomic_radius = 202,
+    ionization_energy = 9.1,
+    electron_affinity = 1.565,
+    melting_point = 2719,
+    boiling_point = 4701,
+    density = 22.42,
+    standard_state = "solid"
 }
 
 local platinum_subshell_occupancy1 = SubshellOccupancy:new{
@@ -853,7 +1049,15 @@ local platinum = Element:new{
     group = 10,
     period = 6,
     oxidation_states = {2, 4},
-    electron_configuration = platinum_electron_configuration
+    electron_configuration = platinum_electron_configuration,
+    electronegativity = 2.28,
+    atomic_radius = 209,
+    ionization_energy = 9,
+    electron_affinity = 2.128,
+    melting_point = 2041.55,
+    boiling_point = 4098,
+    density = 21.46,
+    standard_state = "solid"
 }
 
 local gold_subshell_occupancy1 = SubshellOccupancy:new{
@@ -891,7 +1095,15 @@ local gold = Element:new{
     group = 11,
     period = 6,
     oxidation_states = {1, 3},
-    electron_configuration = gold_electron_configuration
+    electron_configuration = gold_electron_configuration,
+    electronegativity = 2.54,
+    atomic_radius = 166,
+    ionization_energy = 9.226,
+    electron_affinity = 2.309,
+    melting_point = 1337.33,
+    boiling_point = 3129,
+    density = 19.282,
+    standard_state = "solid"
 }
 
 local transition_metals = ElementSet:new{
