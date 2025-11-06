@@ -19,12 +19,12 @@ local standard_states = { Solid = true, Liquid = true, Gas = true }
 ---@field block  Block
 ---@field oxidation_states OxidationStates
 ---@field electron_configuration ElectronConfiguration
----@field electronegativity number|nil -- Pauling Scale
+---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number -- eV
----@field electron_affinity number|nil -- eV
+---@field electron_affinity number -- eV
 ---@field melting_point number -- kelvin
----@field boiling_point number|nil -- kelvin
+---@field boiling_point number -- kelvin
 ---@field density number -- g/cm³
 ---@field standard_state "Solid"|"Liquid"|"Gas"
 local Element = {}
