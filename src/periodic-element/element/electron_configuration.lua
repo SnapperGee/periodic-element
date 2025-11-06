@@ -110,7 +110,7 @@ end
 
 ---@param opts ElectronConfigurationInitOpts
 ---@return ElectronConfiguration
-function ElectronConfiguration:new(opts)
+function ElectronConfiguration.new(opts)
 
     assert(type(opts) == "table", "opts table required")
 

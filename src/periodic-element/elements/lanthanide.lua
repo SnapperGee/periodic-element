@@ -15,7 +15,7 @@ local lanthanum_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local lanthanum_electron_configuration = ElectronConfiguration:new{
+local lanthanum_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         lanthanum_subshell_occupancy1,
@@ -60,7 +60,7 @@ local cerium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local cerium_electron_configuration = ElectronConfiguration:new{
+local cerium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         cerium_subshell_occupancy1,
@@ -100,7 +100,7 @@ local praseodymium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local praseodymium_electron_configuration = ElectronConfiguration:new{
+local praseodymium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         praseodymium_subshell_occupancy1,
@@ -138,7 +138,7 @@ local neodymium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local neodymium_electron_configuration = ElectronConfiguration:new{
+local neodymium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         neodymium_subshell_occupancy1,
@@ -176,7 +176,7 @@ local promethium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local promethium_electron_configuration = ElectronConfiguration:new{
+local promethium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         promethium_subshell_occupancy1,
@@ -213,7 +213,7 @@ local samarium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local samarium_electron_configuration = ElectronConfiguration:new{
+local samarium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         samarium_subshell_occupancy1,
@@ -251,7 +251,7 @@ local europium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local europium_electron_configuration = ElectronConfiguration:new{
+local europium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         europium_subshell_occupancy1,
@@ -294,7 +294,7 @@ local gadolinium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local gadolinium_electron_configuration = ElectronConfiguration:new{
+local gadolinium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         gadolinium_subshell_occupancy1,
@@ -333,7 +333,7 @@ local terbium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local terbium_electron_configuration = ElectronConfiguration:new{
+local terbium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         terbium_subshell_occupancy1,
@@ -370,7 +370,7 @@ local dysprosium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local dysprosium_electron_configuration = ElectronConfiguration:new{
+local dysprosium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         dysprosium_subshell_occupancy1,
@@ -408,7 +408,7 @@ local holmium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local holmium_electron_configuration = ElectronConfiguration:new{
+local holmium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         holmium_subshell_occupancy1,
@@ -446,7 +446,7 @@ local erbium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local erbium_electron_configuration = ElectronConfiguration:new{
+local erbium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         erbium_subshell_occupancy1,
@@ -484,7 +484,7 @@ local thulium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local thulium_electron_configuration = ElectronConfiguration:new{
+local thulium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         thulium_subshell_occupancy1,
@@ -522,7 +522,7 @@ local ytterbium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local ytterbium_electron_configuration = ElectronConfiguration:new{
+local ytterbium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         ytterbium_subshell_occupancy1,

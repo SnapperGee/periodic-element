@@ -9,7 +9,7 @@ local hydrogen_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local hydrogen_electron_configuration = ElectronConfiguration:new{
+local hydrogen_electron_configuration = ElectronConfiguration.new{
     subshell_occupancy = { hydrogen_subshell_occupancy }
 }
 
@@ -36,7 +36,7 @@ local carbon_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local carbon_electron_configuration = ElectronConfiguration:new{
+local carbon_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = {
         carbon_subshell_occupancy1,
@@ -67,7 +67,7 @@ local nitrogen_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 3
 }
 
-local nitrogen_electron_configuration = ElectronConfiguration:new{
+local nitrogen_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = {
         nitrogen_subshell_occupancy1,
@@ -98,7 +98,7 @@ local oxygen_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 4
 }
 
-local oxygen_electron_configuration = ElectronConfiguration:new{
+local oxygen_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = {
         oxygen_subshell_occupancy1,
@@ -129,7 +129,7 @@ local phosphorus_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 3
 }
 
-local phosphorus_electron_configuration = ElectronConfiguration:new{
+local phosphorus_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = {
         phosphorus_subshell_occupancy1,
@@ -160,7 +160,7 @@ local sulfur_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 4
 }
 
-local sulfur_electron_configuration = ElectronConfiguration:new{
+local sulfur_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = {
         sulfur_subshell_occupancy1,
@@ -197,7 +197,7 @@ local selenium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 4
 }
 
-local selenium_electron_configuration = ElectronConfiguration:new{
+local selenium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         selenium_subshell_occupancy1,

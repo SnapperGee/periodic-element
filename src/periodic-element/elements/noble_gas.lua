@@ -9,7 +9,7 @@ local helium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local helium_electron_configuration = ElectronConfiguration:new{
+local helium_electron_configuration = ElectronConfiguration.new{
     subshell_occupancy = { helium_subshell_occupancy }
 }
 
@@ -36,7 +36,7 @@ local neon_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 6
 }
 
-local neon_electron_configuration = ElectronConfiguration:new{
+local neon_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = {
         neon_subshell_occupancy1,
@@ -67,7 +67,7 @@ local argon_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 6
 }
 
-local argon_electron_configuration = ElectronConfiguration:new{
+local argon_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = {
         argon_subshell_occupancy1,
@@ -104,7 +104,7 @@ local krypton_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 6
 }
 
-local krypton_electron_configuration = ElectronConfiguration:new{
+local krypton_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         krypton_subshell_occupancy1,
@@ -142,7 +142,7 @@ local xenon_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 6
 }
 
-local xenon_electron_configuration = ElectronConfiguration:new{
+local xenon_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         xenon_subshell_occupancy1,
@@ -186,7 +186,7 @@ local radon_subshell_occupancy4 = SubshellOccupancy:new{
     electron_count = 6
 }
 
-local radon_electron_configuration = ElectronConfiguration:new{
+local radon_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         radon_subshell_occupancy1,
@@ -231,7 +231,7 @@ local oganesson_subshell_occupancy4 = SubshellOccupancy:new{
     electron_count = 6
 }
 
-local oganesson_electron_configuration = ElectronConfiguration:new{
+local oganesson_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         oganesson_subshell_occupancy1,

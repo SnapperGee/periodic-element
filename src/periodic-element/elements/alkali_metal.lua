@@ -9,7 +9,7 @@ local lithium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local lithium_electron_configuration = ElectronConfiguration:new{
+local lithium_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = { lithium_subshell_occupancy }
 }
@@ -31,7 +31,7 @@ local sodium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local sodium_electron_configuration = ElectronConfiguration:new{
+local sodium_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = { sodium_subshell_occupancy }
 }
@@ -53,7 +53,7 @@ local potassium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local potassium_electron_configuration = ElectronConfiguration:new{
+local potassium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = { potassium_subshell_occupancy }
 }
@@ -75,7 +75,7 @@ local rubidium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local rubidium_electron_configuration = ElectronConfiguration:new{
+local rubidium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = { rubidium_subshell_occupancy }
 }
@@ -97,7 +97,7 @@ local cesium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local cesium_electron_configuration = ElectronConfiguration:new{
+local cesium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = { cesium_subshell_occupancy }
 }
@@ -119,7 +119,7 @@ local francium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local francium_electron_configuration = ElectronConfiguration:new{
+local francium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = { francium_subshell_occupancy }
 }

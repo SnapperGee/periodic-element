@@ -9,7 +9,7 @@ local beryllium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local beryllium_electron_configuration = ElectronConfiguration:new{
+local beryllium_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = { beryllium_subshell_occupancy }
 }
@@ -31,7 +31,7 @@ local magnesium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local magnesium_electron_configuration = ElectronConfiguration:new{
+local magnesium_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = { magnesium_subshell_occupancy }
 }
@@ -53,7 +53,7 @@ local calcium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local calcium_electron_configuration = ElectronConfiguration:new{
+local calcium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = { calcium_subshell_occupancy }
 }
@@ -75,7 +75,7 @@ local strontium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local strontium_electron_configuration = ElectronConfiguration:new{
+local strontium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = { strontium_subshell_occupancy }
 }
@@ -97,7 +97,7 @@ local barium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local barium_electron_configuration = ElectronConfiguration:new{
+local barium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = { barium_subshell_occupancy }
 }
@@ -119,7 +119,7 @@ local radium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local radium_electron_configuration = ElectronConfiguration:new{
+local radium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = { radium_subshell_occupancy }
 }

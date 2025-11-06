@@ -15,7 +15,7 @@ local actinium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local actinium_electron_configuration = ElectronConfiguration:new{
+local actinium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         actinium_subshell_occupancy1,
@@ -53,7 +53,7 @@ local thorium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local thorium_electron_configuration = ElectronConfiguration:new{
+local thorium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         thorium_subshell_occupancy1,
@@ -97,7 +97,7 @@ local protactinium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local protactinium_electron_configuration = ElectronConfiguration:new{
+local protactinium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         protactinium_subshell_occupancy1,
@@ -141,7 +141,7 @@ local uranium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local uranium_electron_configuration = ElectronConfiguration:new{
+local uranium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         uranium_subshell_occupancy1,
@@ -186,7 +186,7 @@ local neptunium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local neptunium_electron_configuration = ElectronConfiguration:new{
+local neptunium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         neptunium_subshell_occupancy1,
@@ -225,7 +225,7 @@ local plutonium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local plutonium_electron_configuration = ElectronConfiguration:new{
+local plutonium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         plutonium_subshell_occupancy1,
@@ -263,7 +263,7 @@ local americium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local americium_electron_configuration = ElectronConfiguration:new{
+local americium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         americium_subshell_occupancy1,
@@ -307,7 +307,7 @@ local curium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local curium_electron_configuration = ElectronConfiguration:new{
+local curium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         curium_subshell_occupancy1,
@@ -346,7 +346,7 @@ local berkelium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local berkelium_electron_configuration = ElectronConfiguration:new{
+local berkelium_electron_configuration = ElectronConfiguration.new{
     core = "Rn",
     subshell_occupancy = {
         berkelium_subshell_occupancy1,

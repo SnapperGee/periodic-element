@@ -15,7 +15,7 @@ local fluorine_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local fluorine_electron_configuration = ElectronConfiguration:new{
+local fluorine_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = {
         fluorine_subshell_occupancy1,
@@ -46,7 +46,7 @@ local chlorine_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local chlorine_electron_configuration = ElectronConfiguration:new{
+local chlorine_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = {
         chlorine_subshell_occupancy1,
@@ -83,7 +83,7 @@ local bromine_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local bromine_electron_configuration = ElectronConfiguration:new{
+local bromine_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         bromine_subshell_occupancy1,
@@ -121,7 +121,7 @@ local iodine_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local iodine_electron_configuration = ElectronConfiguration:new{
+local iodine_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         iodine_subshell_occupancy1,
@@ -165,7 +165,7 @@ local astatine_subshell_occupancy4 = SubshellOccupancy:new{
     electron_count = 5
 }
 
-local astatine_electron_configuration = ElectronConfiguration:new{
+local astatine_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         astatine_subshell_occupancy1,

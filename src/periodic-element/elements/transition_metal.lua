@@ -15,7 +15,7 @@ local scandium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local scandium_electron_configuration = ElectronConfiguration:new{
+local scandium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         scandium_subshell_occupancy1,
@@ -54,7 +54,7 @@ local titanium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local titanium_electron_configuration = ElectronConfiguration:new{
+local titanium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         titanium_subshell_occupancy1,
@@ -93,7 +93,7 @@ local vanadium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local vanadium_electron_configuration = ElectronConfiguration:new{
+local vanadium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         vanadium_subshell_occupancy1,
@@ -132,7 +132,7 @@ local chromium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local chromium_electron_configuration = ElectronConfiguration:new{
+local chromium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         chromium_subshell_occupancy1,
@@ -171,7 +171,7 @@ local manganese_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local manganese_electron_configuration = ElectronConfiguration:new{
+local manganese_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         manganese_subshell_occupancy1,
@@ -209,7 +209,7 @@ local iron_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local iron_electron_configuration = ElectronConfiguration:new{
+local iron_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         iron_subshell_occupancy1,
@@ -248,7 +248,7 @@ local cobalt_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local cobalt_electron_configuration = ElectronConfiguration:new{
+local cobalt_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         cobalt_subshell_occupancy1,
@@ -287,7 +287,7 @@ local nickel_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local nickel_electron_configuration = ElectronConfiguration:new{
+local nickel_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         nickel_subshell_occupancy1,
@@ -326,7 +326,7 @@ local copper_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local copper_electron_configuration = ElectronConfiguration:new{
+local copper_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         copper_subshell_occupancy1,
@@ -365,7 +365,7 @@ local yttrium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local yttrium_electron_configuration = ElectronConfiguration:new{
+local yttrium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         yttrium_subshell_occupancy1,
@@ -403,7 +403,7 @@ local zirconium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local zirconium_electron_configuration = ElectronConfiguration:new{
+local zirconium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         zirconium_subshell_occupancy1,
@@ -442,7 +442,7 @@ local niobium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local niobium_electron_configuration = ElectronConfiguration:new{
+local niobium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         niobium_subshell_occupancy1,
@@ -481,7 +481,7 @@ local molybdenum_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local molybdenum_electron_configuration = ElectronConfiguration:new{
+local molybdenum_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         molybdenum_subshell_occupancy1,
@@ -520,7 +520,7 @@ local technetium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local technetium_electron_configuration = ElectronConfiguration:new{
+local technetium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         technetium_subshell_occupancy1,
@@ -559,7 +559,7 @@ local ruthenium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local ruthenium_electron_configuration = ElectronConfiguration:new{
+local ruthenium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         ruthenium_subshell_occupancy1,
@@ -598,7 +598,7 @@ local rhodium_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local rhodium_electron_configuration = ElectronConfiguration:new{
+local rhodium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         rhodium_subshell_occupancy1,
@@ -631,7 +631,7 @@ local palladium_subshell_occupancy = SubshellOccupancy:new{
     electron_count = 10
 }
 
-local palladium_electron_configuration = ElectronConfiguration:new{
+local palladium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = { palladium_subshell_occupancy }
 }
@@ -667,7 +667,7 @@ local silver_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local silver_electron_configuration = ElectronConfiguration:new{
+local silver_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         silver_subshell_occupancy1,
@@ -712,7 +712,7 @@ local lutetium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local lutetium_electron_configuration = ElectronConfiguration:new{
+local lutetium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         lutetium_subshell_occupancy1,
@@ -757,7 +757,7 @@ local hafnium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local hafnium_electron_configuration = ElectronConfiguration:new{
+local hafnium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         hafnium_subshell_occupancy1,
@@ -802,7 +802,7 @@ local tantalum_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local tantalum_electron_configuration = ElectronConfiguration:new{
+local tantalum_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         tantalum_subshell_occupancy1,
@@ -848,7 +848,7 @@ local tungsten_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local tungsten_electron_configuration = ElectronConfiguration:new{
+local tungsten_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         tungsten_subshell_occupancy1,
@@ -894,7 +894,7 @@ local rhenium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local rhenium_electron_configuration = ElectronConfiguration:new{
+local rhenium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         rhenium_subshell_occupancy1,
@@ -940,7 +940,7 @@ local osmium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local osmium_electron_configuration = ElectronConfiguration:new{
+local osmium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         osmium_subshell_occupancy1,
@@ -986,7 +986,7 @@ local iridium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local iridium_electron_configuration = ElectronConfiguration:new{
+local iridium_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         iridium_subshell_occupancy1,
@@ -1032,7 +1032,7 @@ local platinum_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local platinum_electron_configuration = ElectronConfiguration:new{
+local platinum_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         platinum_subshell_occupancy1,
@@ -1078,7 +1078,7 @@ local gold_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local gold_electron_configuration = ElectronConfiguration:new{
+local gold_electron_configuration = ElectronConfiguration.new{
     core = "Xe",
     subshell_occupancy = {
         gold_subshell_occupancy1,

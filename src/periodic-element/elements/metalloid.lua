@@ -15,7 +15,7 @@ local boron_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 1
 }
 
-local boron_electron_configuration = ElectronConfiguration:new{
+local boron_electron_configuration = ElectronConfiguration.new{
     core = "He",
     subshell_occupancy = {
         boron_subshell_occupancy1,
@@ -54,7 +54,7 @@ local silicon_subshell_occupancy2 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local silicon_electron_configuration = ElectronConfiguration:new{
+local silicon_electron_configuration = ElectronConfiguration.new{
     core = "Ne",
     subshell_occupancy = {
         silicon_subshell_occupancy1,
@@ -99,7 +99,7 @@ local germanium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 2
 }
 
-local germanium_electron_configuration = ElectronConfiguration:new{
+local germanium_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         germanium_subshell_occupancy1,
@@ -145,7 +145,7 @@ local arsenic_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 3
 }
 
-local arsenic_electron_configuration = ElectronConfiguration:new{
+local arsenic_electron_configuration = ElectronConfiguration.new{
     core = "Ar",
     subshell_occupancy = {
         arsenic_subshell_occupancy1,
@@ -191,7 +191,7 @@ local antimony_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 3
 }
 
-local antimony_electron_configuration = ElectronConfiguration:new{
+local antimony_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         antimony_subshell_occupancy1,
@@ -237,7 +237,7 @@ local tellurium_subshell_occupancy3 = SubshellOccupancy:new{
     electron_count = 4
 }
 
-local tellurium_electron_configuration = ElectronConfiguration:new{
+local tellurium_electron_configuration = ElectronConfiguration.new{
     core = "Kr",
     subshell_occupancy = {
         tellurium_subshell_occupancy1,
