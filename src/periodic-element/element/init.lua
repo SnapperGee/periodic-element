@@ -24,7 +24,7 @@ local OxidationStates = require("periodic-element.element.oxidation_states")
 ---@field melting_point number
 ---@field boiling_point number|nil
 ---@field density number
----@field standard_state string
+---@field standard_state "Solid"|"Liquid"|"Gas"
 local Element = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
@@ -127,7 +127,7 @@ end
 ---@field melting_point number
 ---@field boiling_point number|nil
 ---@field density number
----@field standard_state string
+---@field standard_state "solid"|"liquid"|"gas"
 
 --- Constructor for Element objects. Parameters are validated making sure
 --- they're valid element properties according to this lua module. For instance
