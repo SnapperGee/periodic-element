@@ -206,7 +206,7 @@ function Element.new(opts)
 
     assert(
         getmetatable(opts.electron_configuration) == ElectronConfiguration,
-        string.format("'electron_configuration' with metatable of type ElectronConfiguration but instead got: %s", tostring(opts.electron_configuration))
+        string.format("'electron_configuration' with metatable of type ElectronConfiguration expected but instead got: %s", tostring(getmetatable(opts.electron_configuration)))
     )
 
     local family = Family(opts.number)
@@ -232,8 +232,8 @@ function Element.new(opts)
     )
 
     assert(
-        type(opts.electron_affinity) == "number" and opts.electron_affinity > 0,
-        string.format("'electron_affinity' number greater than 0 (or nil) expected but got: %s", tostring(opts.electron_affinity))
+        type(opts.electron_affinity) == "number" and opts.electron_affinity >= 0,
+        string.format("non negative 'electron_affinity' number expected but got: %s", tostring(opts.electron_affinity))
     )
 
     assert(
@@ -374,7 +374,7 @@ function Element.partial(opts)
 
     assert(
         getmetatable(opts.electron_configuration) == ElectronConfiguration,
-        string.format("'electron_configuration' with metatable of type ElectronConfiguration but instead got: %s", tostring(opts.electron_configuration))
+        string.format("'electron_configuration' with metatable of type ElectronConfiguration expected but instead got: %s", tostring(getmetatable(opts.electron_configuration)))
     )
 
     local family = Family(opts.number)
@@ -400,8 +400,8 @@ function Element.partial(opts)
     )
 
     assert(
-        opts.electron_affinity == nil or type(opts.electron_affinity) == "number" and opts.electron_affinity > 0,
-        string.format("'electron_affinity' number greater than 0 (or nil) expected but got: %s", tostring(opts.electron_affinity))
+        opts.electron_affinity == nil or type(opts.electron_affinity) == "number" and opts.electron_affinity >= 0,
+        string.format("non negative 'electron_affinity' number or nil expected but got: %s", tostring(opts.electron_affinity))
     )
 
     assert(
