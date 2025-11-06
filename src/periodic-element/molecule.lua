@@ -46,7 +46,7 @@ local METATABLE = {
         end
         table.sort(element_string_parts)
         return string.format(
-            "Molecule{length=%d, mass=%.4f, elements={%s}}",
+            "Molecule{length=%d, mass=%g, elements={%s}}",
             self_data.length,
             self_data.mass,
             table.concat(element_string_parts, ", ")
