@@ -242,7 +242,7 @@ function Element:new(opts)
     )
 
     assert(
-        opts.boiling_point == nil or type(opts.boiling_point) == "number" and opts.boiling_point > opts.melting_point,
+        opts.boiling_point == nil or type(opts.boiling_point) == "number" and opts.boiling_point > 0,
         string.format("'boiling_point' number greater than melting point (or nil) expected but got: melting_point=%s | boiling_point=%s", tostring(opts.melting_point), tostring(opts.boiling_point))
     )
 
