@@ -57,7 +57,7 @@ local METATABLE = {
 
 ---@param element_counts table<Element, integer> -- non empty table of Elements mapped to integers > 0
 ---@return Molecule
-function Molecule:new(element_counts)
+function Molecule.new(element_counts)
     assert(type(element_counts) == "table", "'element_counts' table expected")
 
     local length = 0
