@@ -113,7 +113,7 @@ function METATABLE:__tostring()
     )
 end
 
----@class ElementInitOpts
+---@class ElementOpts
 ---@field name string
 ---@field symbol string
 ---@field number integer
@@ -135,7 +135,7 @@ end
 --- they're valid element properties according to this lua module. For instance
 --- an atomic number can only be in the range [1, 118]. If any validation fails
 --- an exception is thrown.
----@param opts ElementInitOpts
+---@param opts ElementOpts
 ---@return Element
 function Element.new(opts)
 
