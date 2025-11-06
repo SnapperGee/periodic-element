@@ -19,7 +19,7 @@ local standard_states = { Solid = true, Liquid = true, Gas = true }
 ---@field block  Block
 ---@field oxidation_states OxidationStates
 ---@field electron_configuration ElectronConfiguration
----@field electronegativity number -- Pauling Scale
+---@field electronegativity number|nil -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number -- eV
 ---@field electron_affinity number|nil -- eV
@@ -122,7 +122,7 @@ end
 ---@field period integer
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
----@field electronegativity number -- Pauling Scale
+---@field electronegativity number|nil -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number -- eV
 ---@field electron_affinity number|nil -- eV
