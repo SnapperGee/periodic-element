@@ -1,4 +1,4 @@
----@alias Block '"s"'|'"p"'|'"d"'|'"f"'
+---@alias Block "s"|"p"|"d"|"f"
 
 local s_atomic_numbers = {
     [1] = true,
