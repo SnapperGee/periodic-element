@@ -265,7 +265,7 @@ local tellurium = Element.new{
     standard_state = "solid"
 }
 
-local metalloids = ElementSet:new{
+local metalloids = ElementSet.new{
     boron, silicon, germanium, arsenic, antimony, tellurium
 }
 

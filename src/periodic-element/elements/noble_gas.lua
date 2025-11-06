@@ -241,7 +241,7 @@ local oganesson_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local noble_gases = ElementSet:new{
+local noble_gases = ElementSet.new{
     helium, neon, argon, krypton, xenon, radon
 }
 

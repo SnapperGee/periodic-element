@@ -24,6 +24,6 @@ for element_array_index = 1, #element_arrays do
     end
 end
 
-local elements_array = ElementSet:new(elements_collector)
+local elements_array = ElementSet.new(elements_collector)
 
 return elements_array

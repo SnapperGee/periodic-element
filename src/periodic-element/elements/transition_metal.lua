@@ -1106,7 +1106,7 @@ local gold = Element.new{
     standard_state = "solid"
 }
 
-local transition_metals = ElementSet:new{
+local transition_metals = ElementSet.new{
     scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium,ruthenium,
     rhodium, palladium, silver, lutetium,hafnium, tantalum, tungsten, rhenium,

@@ -547,7 +547,7 @@ local ytterbium = Element.new{
     standard_state = "solid"
 }
 
-local lanthanides = ElementSet:new{
+local lanthanides = ElementSet.new{
     lanthanum, cerium, praseodymium, neodymium, promethium, samarium, europium,
     gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium
 }

@@ -135,7 +135,7 @@ local francium = Element.new{
     electron_configuration = francium_electron_configuration
 }
 
-local alkali_metals = ElementSet:new{
+local alkali_metals = ElementSet.new{
     lithium, sodium, potassium, rubidium, cesium, francium
 }
 

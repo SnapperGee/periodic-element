@@ -135,7 +135,7 @@ local radium = Element.new{
     electron_configuration = radium_electron_configuration
 }
 
-local alkaline_earth_elements = ElementSet:new{
+local alkaline_earth_elements = ElementSet.new{
     beryllium, magnesium, calcium, strontium, barium, radium
 }
 

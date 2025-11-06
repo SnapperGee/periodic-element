@@ -186,7 +186,7 @@ local astatine = Element.new{
     electron_configuration = astatine_electron_configuration
 }
 
-local halogens = ElementSet:new{
+local halogens = ElementSet.new{
     fluorine, chlorine, bromine, iodine, astatine
 }
 

@@ -63,7 +63,7 @@ local METATABLE = {
 
 ---@param elements Element[]
 ---@return ElementSet
-function ElementSet:new(elements)
+function ElementSet.new(elements)
 
     assert(type(elements) == "table", "elements table required")
 

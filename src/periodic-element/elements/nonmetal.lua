@@ -217,7 +217,7 @@ local selenium = Element.new{
     electron_configuration = selenium_electron_configuration
 }
 
-local nonmetals = ElementSet:new{
+local nonmetals = ElementSet.new{
     hydrogen, carbon, nitrogen, oxygen, phosphorus, sulfur, selenium
 }
 

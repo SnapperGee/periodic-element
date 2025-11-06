@@ -540,7 +540,7 @@ local copernicium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local post_transition_metals = ElementSet:new{
+local post_transition_metals = ElementSet.new{
     aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
     bismuth, polonium
 }

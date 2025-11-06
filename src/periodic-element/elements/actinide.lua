@@ -371,7 +371,7 @@ local berkelium = Element.new{
     standard_state = "solid"
 }
 
-local actinides = ElementSet:new{
+local actinides = ElementSet.new{
     actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
     curium, berkelium
 }
