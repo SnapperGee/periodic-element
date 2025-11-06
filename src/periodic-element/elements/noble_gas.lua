@@ -207,40 +207,6 @@ local radon = Element.new{
     electron_configuration = radon_electron_configuration
 }
 
-local oganesson_subshell_occupancy1 = SubshellOccupancy.new{
-    n = 5,
-    l = "f",
-    electron_count = 14
-}
-
-local oganesson_subshell_occupancy2 = SubshellOccupancy.new{
-    n = 6,
-    l = "d",
-    electron_count = 10
-}
-
-local oganesson_subshell_occupancy3 = SubshellOccupancy.new{
-    n = 7,
-    l = "s",
-    electron_count = 2
-}
-
-local oganesson_subshell_occupancy4 = SubshellOccupancy.new{
-    n = 7,
-    l = "p",
-    electron_count = 6
-}
-
-local oganesson_electron_configuration = ElectronConfiguration.new{
-    core = "Rn",
-    subshell_occupancy = {
-        oganesson_subshell_occupancy1,
-        oganesson_subshell_occupancy2,
-        oganesson_subshell_occupancy3,
-        oganesson_subshell_occupancy4
-    }
-}
-
 local noble_gases = ElementSet.new{
     helium, neon, argon, krypton, xenon, radon
 }
