@@ -1,11 +1,11 @@
 ---@meta
 
 ---@param desc string
----@param func function()
+---@param func fun()
 describe = function(desc, func) end
 
 ---@param desc string
----@param func function()
+---@param func fun()
 it = function(desc, func) end
 
 assert = {
