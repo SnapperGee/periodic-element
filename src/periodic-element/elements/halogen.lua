@@ -23,7 +23,7 @@ local fluorine_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local fluorine = Element:new{
+local fluorine = Element.new{
     name = "Fluorine",
     symbol = "F",
     number = 9,
@@ -54,7 +54,7 @@ local chlorine_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local chlorine = Element:new{
+local chlorine = Element.new{
     name = "Chlorine",
     symbol = "Cl",
     number = 17,
@@ -92,7 +92,7 @@ local bromine_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local bromine = Element:new{
+local bromine = Element.new{
     name = "Bromine",
     symbol = "Br",
     number = 35,
@@ -130,7 +130,7 @@ local iodine_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local iodine = Element:new{
+local iodine = Element.new{
     name = "Iodine",
     symbol = "I",
     number = 53,
@@ -175,7 +175,7 @@ local astatine_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local astatine = Element:new{
+local astatine = Element.new{
     name = "Astatine",
     symbol = "At",
     number = 85,

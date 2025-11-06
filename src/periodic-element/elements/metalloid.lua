@@ -23,7 +23,7 @@ local boron_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local boron = Element:new{
+local boron = Element.new{
     name = "Boron",
     symbol = "B",
     number = 5,
@@ -62,7 +62,7 @@ local silicon_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local silicon = Element:new{
+local silicon = Element.new{
     name = "Silicon",
     symbol = "Si",
     number = 14,
@@ -108,7 +108,7 @@ local germanium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local germanium = Element:new{
+local germanium = Element.new{
     name = "Germanium",
     symbol = "Ge",
     number = 32,
@@ -154,7 +154,7 @@ local arsenic_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local arsenic = Element:new{
+local arsenic = Element.new{
     name = "Arsenic",
     symbol = "As",
     number = 33,
@@ -200,7 +200,7 @@ local antimony_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local antimony = Element:new{
+local antimony = Element.new{
     name = "Antimony",
     symbol = "Sb",
     number = 51,
@@ -246,7 +246,7 @@ local tellurium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local tellurium = Element:new{
+local tellurium = Element.new{
     name = "Tellurium",
     symbol = "Te",
     number = 52,

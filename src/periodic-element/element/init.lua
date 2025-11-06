@@ -137,7 +137,7 @@ end
 --- an exception is thrown.
 ---@param opts ElementInitOpts
 ---@return Element
-function Element:new(opts)
+function Element.new(opts)
 
     assert(type(opts) == "table", "opts table required")
 

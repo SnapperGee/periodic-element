@@ -23,7 +23,7 @@ local aluminum_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local aluminum = Element:new{
+local aluminum = Element.new{
     name = "Aluminum",
     symbol = "Al",
     number = 13,
@@ -62,7 +62,7 @@ local zinc_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local zinc = Element:new{
+local zinc = Element.new{
     name = "Zinc",
     symbol = "Zn",
     number = 30,
@@ -107,7 +107,7 @@ local gallium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local gallium = Element:new{
+local gallium = Element.new{
     name = "Gallium",
     symbol = "Ga",
     number = 31,
@@ -146,7 +146,7 @@ local cadmium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local cadmium = Element:new{
+local cadmium = Element.new{
     name = "Cadmium",
     symbol = "Cd",
     number = 48,
@@ -191,7 +191,7 @@ local indium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local indium = Element:new{
+local indium = Element.new{
     name = "Indium",
     symbol = "In",
     number = 49,
@@ -237,7 +237,7 @@ local tin_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local tin = Element:new{
+local tin = Element.new{
     name = "Tin",
     symbol = "Sn",
     number = 50,
@@ -283,7 +283,7 @@ local mercury_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local mercury = Element:new{
+local mercury = Element.new{
     name = "Mercury",
     symbol = "Hg",
     number = 80,
@@ -335,7 +335,7 @@ local thallium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local thallium = Element:new{
+local thallium = Element.new{
     name = "Thallium",
     symbol = "Tl",
     number = 81,
@@ -388,7 +388,7 @@ local lead_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local lead = Element:new{
+local lead = Element.new{
     name = "Lead",
     symbol = "Pb",
     number = 82,
@@ -441,7 +441,7 @@ local bismuth_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local bismuth = Element:new{
+local bismuth = Element.new{
     name = "Bismuth",
     symbol = "Bi",
     number = 83,
@@ -494,7 +494,7 @@ local polonium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local polonium = Element:new{
+local polonium = Element.new{
     name = "Polonium",
     symbol = "Po",
     number = 84,

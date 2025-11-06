@@ -23,7 +23,7 @@ local scandium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local scandium = Element:new{
+local scandium = Element.new{
     name = "Scandium",
     symbol = "Sc",
     number = 21,
@@ -62,7 +62,7 @@ local titanium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local titanium = Element:new{
+local titanium = Element.new{
     name = "Titanium",
     symbol = "Ti",
     number = 22,
@@ -101,7 +101,7 @@ local vanadium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local vanadium = Element:new{
+local vanadium = Element.new{
     name = "Vanadium",
     symbol = "V",
     number = 23,
@@ -140,7 +140,7 @@ local chromium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local chromium = Element:new{
+local chromium = Element.new{
     name = "Chromium",
     symbol = "Cr",
     number = 24,
@@ -179,7 +179,7 @@ local manganese_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local manganese = Element:new{
+local manganese = Element.new{
     name = "Manganese",
     symbol = "Mn",
     number = 25,
@@ -217,7 +217,7 @@ local iron_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local iron = Element:new{
+local iron = Element.new{
     name = "Iron",
     symbol = "Fe",
     number = 26,
@@ -256,7 +256,7 @@ local cobalt_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local cobalt = Element:new{
+local cobalt = Element.new{
     name = "Cobalt",
     symbol = "Co",
     number = 27,
@@ -295,7 +295,7 @@ local nickel_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local nickel = Element:new{
+local nickel = Element.new{
     name = "Nickel",
     symbol = "Ni",
     number = 28,
@@ -334,7 +334,7 @@ local copper_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local copper = Element:new{
+local copper = Element.new{
     name = "Copper",
     symbol = "Cu",
     number = 29,
@@ -373,7 +373,7 @@ local yttrium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local yttrium = Element:new{
+local yttrium = Element.new{
     name = "Yttrium",
     symbol = "Y",
     number = 39,
@@ -411,7 +411,7 @@ local zirconium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local zirconium = Element:new{
+local zirconium = Element.new{
     name = "Zirconium",
     symbol = "Zr",
     number = 40,
@@ -450,7 +450,7 @@ local niobium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local niobium = Element:new{
+local niobium = Element.new{
     name = "Niobium",
     symbol = "Nb",
     number = 41,
@@ -489,7 +489,7 @@ local molybdenum_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local molybdenum = Element:new{
+local molybdenum = Element.new{
     name = "Molybdenum",
     symbol = "Mo",
     number = 42,
@@ -528,7 +528,7 @@ local technetium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local technetium = Element:new{
+local technetium = Element.new{
     name = "Technetium",
     symbol = "Tc",
     number = 43,
@@ -567,7 +567,7 @@ local ruthenium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local ruthenium = Element:new{
+local ruthenium = Element.new{
     name = "Ruthenium",
     symbol = "Ru",
     number = 44,
@@ -606,7 +606,7 @@ local rhodium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local rhodium = Element:new{
+local rhodium = Element.new{
     name = "Rhodium",
     symbol = "Rh",
     number = 45,
@@ -636,7 +636,7 @@ local palladium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { palladium_subshell_occupancy }
 }
 
-local palladium = Element:new{
+local palladium = Element.new{
     name = "Palladium",
     symbol = "Pd",
     number = 46,
@@ -675,7 +675,7 @@ local silver_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local silver = Element:new{
+local silver = Element.new{
     name = "Silver",
     symbol = "Ag",
     number = 47,
@@ -721,7 +721,7 @@ local lutetium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local lutetium = Element:new{
+local lutetium = Element.new{
     name = "Lutetium",
     symbol = "Lu",
     number = 71,
@@ -766,7 +766,7 @@ local hafnium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local hafnium = Element:new{
+local hafnium = Element.new{
     name = "Hafnium",
     symbol = "Hf",
     number = 72,
@@ -811,7 +811,7 @@ local tantalum_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local tantalum = Element:new{
+local tantalum = Element.new{
     name = "Tantalum",
     symbol = "Ta",
     number = 73,
@@ -857,7 +857,7 @@ local tungsten_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local tungsten = Element:new{
+local tungsten = Element.new{
     name = "Tungsten",
     symbol = "W",
     number = 74,
@@ -903,7 +903,7 @@ local rhenium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local rhenium = Element:new{
+local rhenium = Element.new{
     name = "Rhenium",
     symbol = "Re",
     number = 75,
@@ -949,7 +949,7 @@ local osmium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local osmium = Element:new{
+local osmium = Element.new{
     name = "Osmium",
     symbol = "Os",
     number = 76,
@@ -995,7 +995,7 @@ local iridium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local iridium = Element:new{
+local iridium = Element.new{
     name = "Iridium",
     symbol = "Ir",
     number = 77,
@@ -1041,7 +1041,7 @@ local platinum_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local platinum = Element:new{
+local platinum = Element.new{
     name = "Platinum",
     symbol = "Pt",
     number = 78,
@@ -1087,7 +1087,7 @@ local gold_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local gold = Element:new{
+local gold = Element.new{
     name = "Gold",
     symbol = "Au",
     number = 79,

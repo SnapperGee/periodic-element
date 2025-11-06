@@ -13,7 +13,7 @@ local hydrogen_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { hydrogen_subshell_occupancy }
 }
 
-local hydrogen = Element:new{
+local hydrogen = Element.new{
     name = "Hydrogen",
     symbol = "H",
     number = 1,
@@ -44,7 +44,7 @@ local carbon_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local carbon = Element:new{
+local carbon = Element.new{
     name = "Carbon",
     symbol = "C",
     number = 6,
@@ -75,7 +75,7 @@ local nitrogen_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local nitrogen = Element:new{
+local nitrogen = Element.new{
     name = "Nitrogen",
     symbol = "N",
     number = 7,
@@ -106,7 +106,7 @@ local oxygen_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local oxygen = Element:new{
+local oxygen = Element.new{
     name = "Oxygen",
     symbol = "O",
     number = 8,
@@ -137,7 +137,7 @@ local phosphorus_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local phosphorus = Element:new{
+local phosphorus = Element.new{
     name = "Phosphorus",
     symbol = "P",
     number = 15,
@@ -168,7 +168,7 @@ local sulfur_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local sulfur = Element:new{
+local sulfur = Element.new{
     name = "Sulfur",
     symbol = "S",
     number = 16,
@@ -206,7 +206,7 @@ local selenium_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local selenium = Element:new{
+local selenium = Element.new{
     name = "Selenium",
     symbol = "Se",
     number = 34,

@@ -14,7 +14,7 @@ local beryllium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { beryllium_subshell_occupancy }
 }
 
-local beryllium = Element:new{
+local beryllium = Element.new{
     name = "Beryllium",
     symbol = "Be",
     number = 4,
@@ -36,7 +36,7 @@ local magnesium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { magnesium_subshell_occupancy }
 }
 
-local magnesium = Element:new{
+local magnesium = Element.new{
     name = "Magnesium",
     symbol = "Mg",
     number = 12,
@@ -58,7 +58,7 @@ local calcium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { calcium_subshell_occupancy }
 }
 
-local calcium = Element:new{
+local calcium = Element.new{
     name = "Calcium",
     symbol = "Ca",
     number = 20,
@@ -80,7 +80,7 @@ local strontium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { strontium_subshell_occupancy }
 }
 
-local strontium = Element:new{
+local strontium = Element.new{
     name = "Strontium",
     symbol = "Sr",
     number = 38,
@@ -102,7 +102,7 @@ local barium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { barium_subshell_occupancy }
 }
 
-local barium = Element:new{
+local barium = Element.new{
     name = "Barium",
     symbol = "Ba",
     number = 56,
@@ -124,7 +124,7 @@ local radium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { radium_subshell_occupancy }
 }
 
-local radium = Element:new{
+local radium = Element.new{
     name = "Radium",
     symbol = "Ra",
     number = 88,

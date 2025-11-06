@@ -13,7 +13,7 @@ local helium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { helium_subshell_occupancy }
 }
 
-local helium = Element:new{
+local helium = Element.new{
     name = "Helium",
     symbol = "He",
     number = 2,
@@ -44,7 +44,7 @@ local neon_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local neon = Element:new{
+local neon = Element.new{
     name = "Neon",
     symbol = "Ne",
     number = 10,
@@ -75,7 +75,7 @@ local argon_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local argon = Element:new{
+local argon = Element.new{
     name = "Argon",
     symbol = "Ar",
     number = 18,
@@ -113,7 +113,7 @@ local krypton_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local krypton = Element:new{
+local krypton = Element.new{
     name = "Krypton",
     symbol = "Kr",
     number = 36,
@@ -151,7 +151,7 @@ local xenon_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local xenon = Element:new{
+local xenon = Element.new{
     name = "Xenon",
     symbol = "Xe",
     number = 54,
@@ -196,7 +196,7 @@ local radon_electron_configuration = ElectronConfiguration:new{
     }
 }
 
-local radon = Element:new{
+local radon = Element.new{
     name = "Radon",
     symbol = "Rn",
     number = 86,

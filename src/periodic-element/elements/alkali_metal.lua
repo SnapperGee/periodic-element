@@ -14,7 +14,7 @@ local lithium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { lithium_subshell_occupancy }
 }
 
-local lithium = Element:new{
+local lithium = Element.new{
     name = "Lithium",
     symbol = "Li",
     number = 3,
@@ -36,7 +36,7 @@ local sodium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { sodium_subshell_occupancy }
 }
 
-local sodium = Element:new{
+local sodium = Element.new{
     name = "Sodium",
     symbol = "Na",
     number = 11,
@@ -58,7 +58,7 @@ local potassium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { potassium_subshell_occupancy }
 }
 
-local potassium = Element:new{
+local potassium = Element.new{
     name = "Potassium",
     symbol = "K",
     number = 19,
@@ -80,7 +80,7 @@ local rubidium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { rubidium_subshell_occupancy }
 }
 
-local rubidium = Element:new{
+local rubidium = Element.new{
     name = "Rubidium",
     symbol = "Rb",
     number = 37,
@@ -102,7 +102,7 @@ local cesium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { cesium_subshell_occupancy }
 }
 
-local cesium = Element:new{
+local cesium = Element.new{
     name = "Cesium",
     symbol = "Cs",
     number = 55,
@@ -124,7 +124,7 @@ local francium_electron_configuration = ElectronConfiguration:new{
     subshell_occupancy = { francium_subshell_occupancy }
 }
 
-local francium = Element:new{
+local francium = Element.new{
     name = "Francium",
     symbol = "Fr",
     number = 87,
