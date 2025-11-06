@@ -4,6 +4,8 @@ local is_array = require("periodic-element.util.is_array")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local OxidationStates = require("periodic-element.element.oxidation_states")
 
+local standard_states = { Solid = true, Liquid = true, Gas = true }
+
 --- Class for creating objects that can represent an elements of the periodic
 --- table of elements.
 ---@class Element
@@ -254,7 +256,12 @@ function Element:new(opts)
         string.format("non empty 'standard_state' string expected but got: %s", tostring(opts.standard_state))
     )
 
-    local normalized_standard_state = opts.name:sub(1,1):upper() .. opts.name:sub(2):lower()
+    local normalized_standard_state = opts.standard_state:sub(1,1):upper() .. opts.standard_state:sub(2):lower()
+
+    assert(
+        standard_states[normalized_standard_state],
+        string.format("expected 'standard_state' value of \"solid\", \"liquid\", or \"gas\" but got: \"%s\"", tostring(opts.standard_state))
+    )
 
     local obj = setmetatable({}, METATABLE)
 
