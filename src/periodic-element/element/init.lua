@@ -296,12 +296,8 @@ end
 
 ---@class PartialElementOpts: ElementOpts
 ---@field electronegativity number|nil -- Pauling Scale
----@field atomic_radius integer -- van der Waals
----@field ionization_energy number -- eV
 ---@field electron_affinity number|nil -- eV
----@field melting_point number -- kelvin
 ---@field boiling_point number|nil -- kelvin
----@field density number -- g/cm³
 
 --- Constructor for Element objects. Parameters are validated making sure
 --- they're valid element properties according to this lua module. For instance
