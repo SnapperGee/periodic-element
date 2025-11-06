@@ -31,7 +31,15 @@ local lanthanum = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = lanthanum_electron_configuration
+    electron_configuration = lanthanum_electron_configuration,
+    electronegativity = 1.1,
+    atomic_radius = 240,
+    ionization_energy = 5.577,
+    electron_affinity = 0.5,
+    melting_point = 1191,
+    boiling_point = 3737,
+    density = 6.15,
+    standard_state = "solid"
 }
 
 local cerium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -69,7 +77,15 @@ local cerium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3, 4},
-    electron_configuration = cerium_electron_configuration
+    electron_configuration = cerium_electron_configuration,
+    electronegativity = 1.12,
+    atomic_radius = 235,
+    ionization_energy = 5.539,
+    electron_affinity = 0.5,
+    melting_point = 1071,
+    boiling_point = 3697,
+    density = 6.77,
+    standard_state = "solid"
 }
 
 local praseodymium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -100,7 +116,14 @@ local praseodymium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = praseodymium_electron_configuration
+    electron_configuration = praseodymium_electron_configuration,
+    electronegativity = 1.13,
+    atomic_radius = 239,
+    ionization_energy = 5.464,
+    melting_point = 1204,
+    boiling_point = 3793,
+    density = 6.77,
+    standard_state = "solid"
 }
 
 local neodymium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -131,7 +154,14 @@ local neodymium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = neodymium_electron_configuration
+    electron_configuration = neodymium_electron_configuration,
+    electronegativity = 1.14,
+    atomic_radius = 229,
+    ionization_energy = 5.525,
+    melting_point = 1294,
+    boiling_point = 3347,
+    density = 7.01,
+    standard_state = "solid"
 }
 
 local promethium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -162,7 +192,13 @@ local promethium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = promethium_electron_configuration
+    electron_configuration = promethium_electron_configuration,
+    atomic_radius = 236,
+    ionization_energy = 5.55,
+    melting_point = 1315,
+    boiling_point = 3273,
+    density = 7.26,
+    standard_state = "solid"
 }
 
 local samarium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -193,7 +229,14 @@ local samarium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {2, 3},
-    electron_configuration = samarium_electron_configuration
+    electron_configuration = samarium_electron_configuration,
+    electron_affinity = 1.17,
+    atomic_radius = 229,
+    ionization_energy = 5.644,
+    melting_point = 1347,
+    boiling_point = 2067,
+    density = 7.52,
+    standard_state = "solid"
 }
 
 local europium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -224,7 +267,13 @@ local europium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {2, 3},
-    electron_configuration = europium_electron_configuration
+    electron_configuration = europium_electron_configuration,
+    atomic_radius = 233,
+    ionization_energy = 5.67,
+    melting_point = 1095,
+    boiling_point = 1802,
+    density = 5.24,
+    standard_state = "solid"
 }
 
 local gadolinium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -262,7 +311,14 @@ local gadolinium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = gadolinium_electron_configuration
+    electron_configuration = gadolinium_electron_configuration,
+    electron_affinity = 1.2,
+    atomic_radius = 237,
+    ionization_energy = 6.15,
+    melting_point = 1586,
+    boiling_point = 3546,
+    density = 7.9,
+    standard_state = "solid"
 }
 
 local terbium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -293,7 +349,13 @@ local terbium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = terbium_electron_configuration
+    electron_configuration = terbium_electron_configuration,
+    atomic_radius = 221,
+    ionization_energy = 5.864,
+    melting_point = 1629,
+    boiling_point = 3503,
+    density = 8.23,
+    standard_state = "solid"
 }
 
 local dysprosium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -324,7 +386,14 @@ local dysprosium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = dysprosium_electron_configuration
+    electron_configuration = dysprosium_electron_configuration,
+    electron_affinity = 1.22,
+    atomic_radius = 229,
+    ionization_energy = 5.939,
+    melting_point = 1685,
+    boiling_point = 2840,
+    density = 8.55,
+    standard_state = "solid"
 }
 
 local holmium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -355,7 +424,14 @@ local holmium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = holmium_electron_configuration
+    electron_configuration = holmium_electron_configuration,
+    electron_affinity = 1.23,
+    atomic_radius = 216,
+    ionization_energy = 6.022,
+    melting_point = 1747,
+    boiling_point = 2973,
+    density = 8.8,
+    standard_state = "solid"
 }
 
 local erbium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -386,7 +462,14 @@ local erbium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = erbium_electron_configuration
+    electron_configuration = erbium_electron_configuration,
+    electron_affinity = 1.24,
+    atomic_radius = 235,
+    ionization_energy = 6.108,
+    melting_point = 1802,
+    boiling_point = 3141,
+    density = 9.07,
+    standard_state = "solid"
 }
 
 local thulium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -417,7 +500,14 @@ local thulium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {3},
-    electron_configuration = thulium_electron_configuration
+    electron_configuration = thulium_electron_configuration,
+    electron_affinity = 1.25,
+    atomic_radius = 227,
+    ionization_energy = 6.184,
+    melting_point = 1818,
+    boiling_point = 2223,
+    density = 9.32,
+    standard_state = "solid"
 }
 
 local ytterbium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -448,7 +538,13 @@ local ytterbium = Element:new{
     group = nil,
     period = 6,
     oxidation_states = {2, 3},
-    electron_configuration = ytterbium_electron_configuration
+    electron_configuration = ytterbium_electron_configuration,
+    atomic_radius = 242,
+    ionization_energy = 6.254,
+    melting_point = 1092,
+    boiling_point = 1469,
+    density = 6.9,
+    standard_state = "solid"
 }
 
 local lanthanides = ElementSet:new{
