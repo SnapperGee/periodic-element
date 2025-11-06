@@ -3,7 +3,7 @@ local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local beryllium_subshell_occupancy = SubshellOccupancy:new{
+local beryllium_subshell_occupancy = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
@@ -25,7 +25,7 @@ local beryllium = Element.new{
     electron_configuration = beryllium_electron_configuration
 }
 
-local magnesium_subshell_occupancy = SubshellOccupancy:new{
+local magnesium_subshell_occupancy = SubshellOccupancy.new{
     n = 3,
     l = "s",
     electron_count = 2
@@ -47,7 +47,7 @@ local magnesium = Element.new{
     electron_configuration = magnesium_electron_configuration
 }
 
-local calcium_subshell_occupancy = SubshellOccupancy:new{
+local calcium_subshell_occupancy = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -69,7 +69,7 @@ local calcium = Element.new{
     electron_configuration = calcium_electron_configuration
 }
 
-local strontium_subshell_occupancy = SubshellOccupancy:new{
+local strontium_subshell_occupancy = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -91,7 +91,7 @@ local strontium = Element.new{
     electron_configuration = strontium_electron_configuration
 }
 
-local barium_subshell_occupancy = SubshellOccupancy:new{
+local barium_subshell_occupancy = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -113,7 +113,7 @@ local barium = Element.new{
     electron_configuration = barium_electron_configuration
 }
 
-local radium_subshell_occupancy = SubshellOccupancy:new{
+local radium_subshell_occupancy = SubshellOccupancy.new{
     n = 7,
     l = "s",
     electron_count = 2

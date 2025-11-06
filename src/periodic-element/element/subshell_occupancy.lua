@@ -154,7 +154,7 @@ end
 
 ---@param opts SubshellOccupancyInitOpts
 ---@return SubshellOccupancy
-function SubshellOccupancy:new(opts)
+function SubshellOccupancy.new(opts)
 
     assert(type(opts) == "table", "opts table required")
 

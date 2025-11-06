@@ -3,13 +3,13 @@ local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local fluorine_subshell_occupancy1 = SubshellOccupancy:new{
+local fluorine_subshell_occupancy1 = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
 }
 
-local fluorine_subshell_occupancy2 = SubshellOccupancy:new{
+local fluorine_subshell_occupancy2 = SubshellOccupancy.new{
     n = 2,
     l = "p",
     electron_count = 5
@@ -34,13 +34,13 @@ local fluorine = Element.new{
     electron_configuration = fluorine_electron_configuration
 }
 
-local chlorine_subshell_occupancy1 = SubshellOccupancy:new{
+local chlorine_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "s",
     electron_count = 2
 }
 
-local chlorine_subshell_occupancy2 = SubshellOccupancy:new{
+local chlorine_subshell_occupancy2 = SubshellOccupancy.new{
     n = 3,
     l = "p",
     electron_count = 5
@@ -65,19 +65,19 @@ local chlorine = Element.new{
     electron_configuration = chlorine_electron_configuration
 }
 
-local bromine_subshell_occupancy1 = SubshellOccupancy:new{
+local bromine_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 10
 }
 
-local bromine_subshell_occupancy2 = SubshellOccupancy:new{
+local bromine_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
 }
 
-local bromine_subshell_occupancy3 = SubshellOccupancy:new{
+local bromine_subshell_occupancy3 = SubshellOccupancy.new{
     n = 4,
     l = "p",
     electron_count = 5
@@ -103,19 +103,19 @@ local bromine = Element.new{
     electron_configuration = bromine_electron_configuration
 }
 
-local iodine_subshell_occupancy1 = SubshellOccupancy:new{
+local iodine_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 10
 }
 
-local iodine_subshell_occupancy2 = SubshellOccupancy:new{
+local iodine_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 2
 }
 
-local iodine_subshell_occupancy3 = SubshellOccupancy:new{
+local iodine_subshell_occupancy3 = SubshellOccupancy.new{
     n = 5,
     l = "p",
     electron_count = 5
@@ -141,25 +141,25 @@ local iodine = Element.new{
     electron_configuration = iodine_electron_configuration
 }
 
-local astatine_subshell_occupancy1 = SubshellOccupancy:new{
+local astatine_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local astatine_subshell_occupancy2 = SubshellOccupancy:new{
+local astatine_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 10
 }
 
-local astatine_subshell_occupancy3 = SubshellOccupancy:new{
+local astatine_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
 }
 
-local astatine_subshell_occupancy4 = SubshellOccupancy:new{
+local astatine_subshell_occupancy4 = SubshellOccupancy.new{
     n = 6,
     l = "p",
     electron_count = 5

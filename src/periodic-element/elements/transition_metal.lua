@@ -3,13 +3,13 @@ local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local scandium_subshell_occupancy1 = SubshellOccupancy:new{
+local scandium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 1
 }
 
-local scandium_subshell_occupancy2 = SubshellOccupancy:new{
+local scandium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -42,13 +42,13 @@ local scandium = Element.new{
     standard_state = "solid"
 }
 
-local titanium_subshell_occupancy1 = SubshellOccupancy:new{
+local titanium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 2
 }
 
-local titanium_subshell_occupancy2 = SubshellOccupancy:new{
+local titanium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -81,13 +81,13 @@ local titanium = Element.new{
     standard_state = "solid"
 }
 
-local vanadium_subshell_occupancy1 = SubshellOccupancy:new{
+local vanadium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 3
 }
 
-local vanadium_subshell_occupancy2 = SubshellOccupancy:new{
+local vanadium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -120,13 +120,13 @@ local vanadium = Element.new{
     standard_state = "solid"
 }
 
-local chromium_subshell_occupancy1 = SubshellOccupancy:new{
+local chromium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 5
 }
 
-local chromium_subshell_occupancy2 = SubshellOccupancy:new{
+local chromium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 1
@@ -159,13 +159,13 @@ local chromium = Element.new{
     standard_state = "solid"
 }
 
-local manganese_subshell_occupancy1 = SubshellOccupancy:new{
+local manganese_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 5
 }
 
-local manganese_subshell_occupancy2 = SubshellOccupancy:new{
+local manganese_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -197,13 +197,13 @@ local manganese = Element.new{
     standard_state = "solid"
 }
 
-local iron_subshell_occupancy1 = SubshellOccupancy:new{
+local iron_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 6
 }
 
-local iron_subshell_occupancy2 = SubshellOccupancy:new{
+local iron_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -236,13 +236,13 @@ local iron = Element.new{
     standard_state = "solid"
 }
 
-local cobalt_subshell_occupancy1 = SubshellOccupancy:new{
+local cobalt_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 7
 }
 
-local cobalt_subshell_occupancy2 = SubshellOccupancy:new{
+local cobalt_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -275,13 +275,13 @@ local cobalt = Element.new{
      standard_state = "solid"
 }
 
-local nickel_subshell_occupancy1 = SubshellOccupancy:new{
+local nickel_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 8
 }
 
-local nickel_subshell_occupancy2 = SubshellOccupancy:new{
+local nickel_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
@@ -314,13 +314,13 @@ local nickel = Element.new{
     standard_state = "solid"
 }
 
-local copper_subshell_occupancy1 = SubshellOccupancy:new{
+local copper_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 10
 }
 
-local copper_subshell_occupancy2 = SubshellOccupancy:new{
+local copper_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 1
@@ -353,13 +353,13 @@ local copper = Element.new{
     standard_state = "solid"
 }
 
-local yttrium_subshell_occupancy1 = SubshellOccupancy:new{
+local yttrium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 1
 }
 
-local yttrium_subshell_occupancy2 = SubshellOccupancy:new{
+local yttrium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -391,13 +391,13 @@ local yttrium = Element.new{
     standard_state = "solid"
 }
 
-local zirconium_subshell_occupancy1 = SubshellOccupancy:new{
+local zirconium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 2
 }
 
-local zirconium_subshell_occupancy2 = SubshellOccupancy:new{
+local zirconium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -430,13 +430,13 @@ local zirconium = Element.new{
     standard_state = "solid"
 }
 
-local niobium_subshell_occupancy1 = SubshellOccupancy:new{
+local niobium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 4
 }
 
-local niobium_subshell_occupancy2 = SubshellOccupancy:new{
+local niobium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -469,13 +469,13 @@ local niobium = Element.new{
     standard_state = "solid"
 }
 
-local molybdenum_subshell_occupancy1 = SubshellOccupancy:new{
+local molybdenum_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 5
 }
 
-local molybdenum_subshell_occupancy2 = SubshellOccupancy:new{
+local molybdenum_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -508,13 +508,13 @@ local molybdenum = Element.new{
     standard_state = "solid"
 }
 
-local technetium_subshell_occupancy1 = SubshellOccupancy:new{
+local technetium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 5
 }
 
-local technetium_subshell_occupancy2 = SubshellOccupancy:new{
+local technetium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 2
@@ -547,13 +547,13 @@ local technetium = Element.new{
     standard_state = "solid"
 }
 
-local ruthenium_subshell_occupancy1 = SubshellOccupancy:new{
+local ruthenium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 7
 }
 
-local ruthenium_subshell_occupancy2 = SubshellOccupancy:new{
+local ruthenium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -586,13 +586,13 @@ local ruthenium = Element.new{
     standard_state = "solid"
 }
 
-local rhodium_subshell_occupancy1 = SubshellOccupancy:new{
+local rhodium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 8
 }
 
-local rhodium_subshell_occupancy2 = SubshellOccupancy:new{
+local rhodium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -625,7 +625,7 @@ local rhodium = Element.new{
     standard_state = "solid"
 }
 
-local palladium_subshell_occupancy = SubshellOccupancy:new{
+local palladium_subshell_occupancy = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 10
@@ -655,13 +655,13 @@ local palladium = Element.new{
     standard_state = "solid"
 }
 
-local silver_subshell_occupancy1 = SubshellOccupancy:new{
+local silver_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 10
 }
 
-local silver_subshell_occupancy2 = SubshellOccupancy:new{
+local silver_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -694,19 +694,19 @@ local silver = Element.new{
     standard_state = "solid"
 }
 
-local lutetium_subshell_occupancy1 = SubshellOccupancy:new{
+local lutetium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local lutetium_subshell_occupancy2 = SubshellOccupancy:new{
+local lutetium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 1
 }
 
-local lutetium_subshell_occupancy3 = SubshellOccupancy:new{
+local lutetium_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -739,19 +739,19 @@ local lutetium = Element.new{
     standard_state = "solid"
 }
 
-local hafnium_subshell_occupancy1 = SubshellOccupancy:new{
+local hafnium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local hafnium_subshell_occupancy2 = SubshellOccupancy:new{
+local hafnium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 2
 }
 
-local hafnium_subshell_occupancy3 = SubshellOccupancy:new{
+local hafnium_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -784,19 +784,19 @@ local hafnium = Element.new{
     standard_state = "solid"
 }
 
-local tantalum_subshell_occupancy1 = SubshellOccupancy:new{
+local tantalum_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local tantalum_subshell_occupancy2 = SubshellOccupancy:new{
+local tantalum_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 3
 }
 
-local tantalum_subshell_occupancy3 = SubshellOccupancy:new{
+local tantalum_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -830,19 +830,19 @@ local tantalum = Element.new{
     standard_state = "solid"
 }
 
-local tungsten_subshell_occupancy1 = SubshellOccupancy:new{
+local tungsten_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local tungsten_subshell_occupancy2 = SubshellOccupancy:new{
+local tungsten_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 4
 }
 
-local tungsten_subshell_occupancy3 = SubshellOccupancy:new{
+local tungsten_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -876,19 +876,19 @@ local tungsten = Element.new{
     standard_state = "solid"
 }
 
-local rhenium_subshell_occupancy1 = SubshellOccupancy:new{
+local rhenium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local rhenium_subshell_occupancy2 = SubshellOccupancy:new{
+local rhenium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 5
 }
 
-local rhenium_subshell_occupancy3 = SubshellOccupancy:new{
+local rhenium_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -922,19 +922,19 @@ local rhenium = Element.new{
     standard_state = "solid"
 }
 
-local osmium_subshell_occupancy1 = SubshellOccupancy:new{
+local osmium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local osmium_subshell_occupancy2 = SubshellOccupancy:new{
+local osmium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 6
 }
 
-local osmium_subshell_occupancy3 = SubshellOccupancy:new{
+local osmium_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -968,19 +968,19 @@ local osmium = Element.new{
     standard_state = "solid"
 }
 
-local iridium_subshell_occupancy1 = SubshellOccupancy:new{
+local iridium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local iridium_subshell_occupancy2 = SubshellOccupancy:new{
+local iridium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 7
 }
 
-local iridium_subshell_occupancy3 = SubshellOccupancy:new{
+local iridium_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
@@ -1014,19 +1014,19 @@ local iridium = Element.new{
     standard_state = "solid"
 }
 
-local platinum_subshell_occupancy1 = SubshellOccupancy:new{
+local platinum_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local platinum_subshell_occupancy2 = SubshellOccupancy:new{
+local platinum_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 9
 }
 
-local platinum_subshell_occupancy3 = SubshellOccupancy:new{
+local platinum_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 1
@@ -1060,19 +1060,19 @@ local platinum = Element.new{
     standard_state = "solid"
 }
 
-local gold_subshell_occupancy1 = SubshellOccupancy:new{
+local gold_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local gold_subshell_occupancy2 = SubshellOccupancy:new{
+local gold_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 10
 }
 
-local gold_subshell_occupancy3 = SubshellOccupancy:new{
+local gold_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 1

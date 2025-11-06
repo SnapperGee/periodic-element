@@ -3,7 +3,7 @@ local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local hydrogen_subshell_occupancy = SubshellOccupancy:new{
+local hydrogen_subshell_occupancy = SubshellOccupancy.new{
     n = 1,
     l = "s",
     electron_count = 1
@@ -24,13 +24,13 @@ local hydrogen = Element.new{
     electron_configuration = hydrogen_electron_configuration
 }
 
-local carbon_subshell_occupancy1 = SubshellOccupancy:new{
+local carbon_subshell_occupancy1 = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
 }
 
-local carbon_subshell_occupancy2 = SubshellOccupancy:new{
+local carbon_subshell_occupancy2 = SubshellOccupancy.new{
     n = 2,
     l = "p",
     electron_count = 2
@@ -55,13 +55,13 @@ local carbon = Element.new{
     electron_configuration = carbon_electron_configuration
 }
 
-local nitrogen_subshell_occupancy1 = SubshellOccupancy:new{
+local nitrogen_subshell_occupancy1 = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
 }
 
-local nitrogen_subshell_occupancy2 = SubshellOccupancy:new{
+local nitrogen_subshell_occupancy2 = SubshellOccupancy.new{
     n = 2,
     l = "p",
     electron_count = 3
@@ -86,13 +86,13 @@ local nitrogen = Element.new{
     electron_configuration = nitrogen_electron_configuration
 }
 
-local oxygen_subshell_occupancy1 = SubshellOccupancy:new{
+local oxygen_subshell_occupancy1 = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
 }
 
-local oxygen_subshell_occupancy2 = SubshellOccupancy:new{
+local oxygen_subshell_occupancy2 = SubshellOccupancy.new{
     n = 2,
     l = "p",
     electron_count = 4
@@ -117,13 +117,13 @@ local oxygen = Element.new{
     electron_configuration = oxygen_electron_configuration
 }
 
-local phosphorus_subshell_occupancy1 = SubshellOccupancy:new{
+local phosphorus_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "s",
     electron_count = 2
 }
 
-local phosphorus_subshell_occupancy2 = SubshellOccupancy:new{
+local phosphorus_subshell_occupancy2 = SubshellOccupancy.new{
     n = 3,
     l = "p",
     electron_count = 3
@@ -148,13 +148,13 @@ local phosphorus = Element.new{
     electron_configuration = phosphorus_electron_configuration
 }
 
-local sulfur_subshell_occupancy1 = SubshellOccupancy:new{
+local sulfur_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "s",
     electron_count = 2
 }
 
-local sulfur_subshell_occupancy2 = SubshellOccupancy:new{
+local sulfur_subshell_occupancy2 = SubshellOccupancy.new{
     n = 3,
     l = "p",
     electron_count = 4
@@ -179,19 +179,19 @@ local sulfur = Element.new{
     electron_configuration = sulfur_electron_configuration
 }
 
-local selenium_subshell_occupancy1 = SubshellOccupancy:new{
+local selenium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 10
 }
 
-local selenium_subshell_occupancy2 = SubshellOccupancy:new{
+local selenium_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
 }
 
-local selenium_subshell_occupancy3 = SubshellOccupancy:new{
+local selenium_subshell_occupancy3 = SubshellOccupancy.new{
     n = 4,
     l = "p",
     electron_count = 4

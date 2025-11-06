@@ -3,7 +3,7 @@ local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local helium_subshell_occupancy = SubshellOccupancy:new{
+local helium_subshell_occupancy = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
@@ -24,13 +24,13 @@ local helium = Element.new{
     electron_configuration = helium_electron_configuration
 }
 
-local neon_subshell_occupancy1 = SubshellOccupancy:new{
+local neon_subshell_occupancy1 = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 2
 }
 
-local neon_subshell_occupancy2 = SubshellOccupancy:new{
+local neon_subshell_occupancy2 = SubshellOccupancy.new{
     n = 2,
     l = "p",
     electron_count = 6
@@ -55,13 +55,13 @@ local neon = Element.new{
     electron_configuration = neon_electron_configuration
 }
 
-local argon_subshell_occupancy1 = SubshellOccupancy:new{
+local argon_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "s",
     electron_count = 2
 }
 
-local argon_subshell_occupancy2 = SubshellOccupancy:new{
+local argon_subshell_occupancy2 = SubshellOccupancy.new{
     n = 3,
     l = "p",
     electron_count = 6
@@ -86,19 +86,19 @@ local argon = Element.new{
     electron_configuration = argon_electron_configuration
 }
 
-local krypton_subshell_occupancy1 = SubshellOccupancy:new{
+local krypton_subshell_occupancy1 = SubshellOccupancy.new{
     n = 3,
     l = "d",
     electron_count = 10
 }
 
-local krypton_subshell_occupancy2 = SubshellOccupancy:new{
+local krypton_subshell_occupancy2 = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 2
 }
 
-local krypton_subshell_occupancy3 = SubshellOccupancy:new{
+local krypton_subshell_occupancy3 = SubshellOccupancy.new{
     n = 4,
     l = "p",
     electron_count = 6
@@ -124,19 +124,19 @@ local krypton = Element.new{
     electron_configuration = krypton_electron_configuration
 }
 
-local xenon_subshell_occupancy1 = SubshellOccupancy:new{
+local xenon_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "d",
     electron_count = 10
 }
 
-local xenon_subshell_occupancy2 = SubshellOccupancy:new{
+local xenon_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 2
 }
 
-local xenon_subshell_occupancy3 = SubshellOccupancy:new{
+local xenon_subshell_occupancy3 = SubshellOccupancy.new{
     n = 5,
     l = "p",
     electron_count = 6
@@ -162,25 +162,25 @@ local xenon = Element.new{
     electron_configuration = xenon_electron_configuration
 }
 
-local radon_subshell_occupancy1 = SubshellOccupancy:new{
+local radon_subshell_occupancy1 = SubshellOccupancy.new{
     n = 4,
     l = "f",
     electron_count = 14
 }
 
-local radon_subshell_occupancy2 = SubshellOccupancy:new{
+local radon_subshell_occupancy2 = SubshellOccupancy.new{
     n = 5,
     l = "d",
     electron_count = 10
 }
 
-local radon_subshell_occupancy3 = SubshellOccupancy:new{
+local radon_subshell_occupancy3 = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 2
 }
 
-local radon_subshell_occupancy4 = SubshellOccupancy:new{
+local radon_subshell_occupancy4 = SubshellOccupancy.new{
     n = 6,
     l = "p",
     electron_count = 6
@@ -207,25 +207,25 @@ local radon = Element.new{
     electron_configuration = radon_electron_configuration
 }
 
-local oganesson_subshell_occupancy1 = SubshellOccupancy:new{
+local oganesson_subshell_occupancy1 = SubshellOccupancy.new{
     n = 5,
     l = "f",
     electron_count = 14
 }
 
-local oganesson_subshell_occupancy2 = SubshellOccupancy:new{
+local oganesson_subshell_occupancy2 = SubshellOccupancy.new{
     n = 6,
     l = "d",
     electron_count = 10
 }
 
-local oganesson_subshell_occupancy3 = SubshellOccupancy:new{
+local oganesson_subshell_occupancy3 = SubshellOccupancy.new{
     n = 7,
     l = "s",
     electron_count = 2
 }
 
-local oganesson_subshell_occupancy4 = SubshellOccupancy:new{
+local oganesson_subshell_occupancy4 = SubshellOccupancy.new{
     n = 7,
     l = "p",
     electron_count = 6

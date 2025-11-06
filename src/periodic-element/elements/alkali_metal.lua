@@ -3,7 +3,7 @@ local ElementSet = require("src.periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local lithium_subshell_occupancy = SubshellOccupancy:new{
+local lithium_subshell_occupancy = SubshellOccupancy.new{
     n = 2,
     l = "s",
     electron_count = 1
@@ -25,7 +25,7 @@ local lithium = Element.new{
     electron_configuration = lithium_electron_configuration
 }
 
-local sodium_subshell_occupancy = SubshellOccupancy:new{
+local sodium_subshell_occupancy = SubshellOccupancy.new{
     n = 3,
     l = "s",
     electron_count = 1
@@ -47,7 +47,7 @@ local sodium = Element.new{
     electron_configuration = sodium_electron_configuration
 }
 
-local potassium_subshell_occupancy = SubshellOccupancy:new{
+local potassium_subshell_occupancy = SubshellOccupancy.new{
     n = 4,
     l = "s",
     electron_count = 1
@@ -69,7 +69,7 @@ local potassium = Element.new{
     electron_configuration = potassium_electron_configuration
 }
 
-local rubidium_subshell_occupancy = SubshellOccupancy:new{
+local rubidium_subshell_occupancy = SubshellOccupancy.new{
     n = 5,
     l = "s",
     electron_count = 1
@@ -91,7 +91,7 @@ local rubidium = Element.new{
     electron_configuration = rubidium_electron_configuration
 }
 
-local cesium_subshell_occupancy = SubshellOccupancy:new{
+local cesium_subshell_occupancy = SubshellOccupancy.new{
     n = 6,
     l = "s",
     electron_count = 1
@@ -113,7 +113,7 @@ local cesium = Element.new{
     electron_configuration = cesium_electron_configuration
 }
 
-local francium_subshell_occupancy = SubshellOccupancy:new{
+local francium_subshell_occupancy = SubshellOccupancy.new{
     n = 7,
     l = "s",
     electron_count = 1
