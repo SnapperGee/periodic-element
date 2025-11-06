@@ -23,9 +23,9 @@ local standard_states = { Solid = true, Liquid = true, Gas = true }
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number
 ---@field electron_affinity number|nil
----@field melting_point number
----@field boiling_point number|nil
----@field density number
+---@field melting_point number -- kelvin
+---@field boiling_point number|nil -- kelvin
+---@field density number -- g/cm³
 ---@field standard_state "Solid"|"Liquid"|"Gas"
 local Element = {}
 
@@ -126,9 +126,9 @@ end
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number
 ---@field electron_affinity number|nil
----@field melting_point number
----@field boiling_point number|nil
----@field density number
+---@field melting_point number -- kelvin
+---@field boiling_point number|nil -- kelvin
+---@field density number -- g/cm³
 ---@field standard_state "solid"|"liquid"|"gas"
 
 --- Constructor for Element objects. Parameters are validated making sure
