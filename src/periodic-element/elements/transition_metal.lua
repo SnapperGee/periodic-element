@@ -179,7 +179,7 @@ local manganese_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local manganese = Element.new{
+local manganese = Element.partial{
     name = "Manganese",
     symbol = "Mn",
     number = 25,
@@ -373,7 +373,7 @@ local yttrium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local yttrium = Element.new{
+local yttrium = Element.partial{
     name = "Yttrium",
     symbol = "Y",
     number = 39,
@@ -721,7 +721,7 @@ local lutetium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local lutetium = Element.new{
+local lutetium = Element.partial{
     name = "Lutetium",
     symbol = "Lu",
     number = 71,
@@ -766,7 +766,7 @@ local hafnium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local hafnium = Element.new{
+local hafnium = Element.partial{
     name = "Hafnium",
     symbol = "Hf",
     number = 72,

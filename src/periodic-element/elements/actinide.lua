@@ -23,7 +23,7 @@ local actinium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local actinium = Element.new{
+local actinium = Element.partial{
     name = "Actinium",
     symbol = "Ac",
     number = 89,
@@ -61,7 +61,7 @@ local thorium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local thorium = Element.new{
+local thorium = Element.partial{
     name = "Thorium",
     symbol = "Th",
     number = 90,
@@ -106,7 +106,7 @@ local protactinium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local protactinium = Element.new{
+local protactinium = Element.partial{
     name = "Protactinium",
     symbol = "Pa",
     number = 91,
@@ -150,7 +150,7 @@ local uranium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local uranium = Element.new{
+local uranium = Element.partial{
     name = "Uranium",
     symbol = "U",
     number = 92,
@@ -195,7 +195,7 @@ local neptunium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local neptunium = Element.new{
+local neptunium = Element.partial{
     name = "Neptunium",
     symbol = "Np",
     number = 93,
@@ -233,7 +233,7 @@ local plutonium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local plutonium = Element.new{
+local plutonium = Element.partial{
     name = "Plutonium",
     symbol = "Pu",
     number = 94,
@@ -271,7 +271,7 @@ local americium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local americium = Element.new{
+local americium = Element.partial{
     name = "Americium",
     symbol = "Am",
     number = 95,
@@ -316,7 +316,7 @@ local curium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local curium = Element.new{
+local curium = Element.partial{
     name = "Curium",
     symbol = "Cm",
     number = 96,
@@ -354,7 +354,7 @@ local berkelium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local berkelium = Element.new{
+local berkelium = Element.partial{
     name = "Berkelium",
     symbol = "Bk",
     number = 97,

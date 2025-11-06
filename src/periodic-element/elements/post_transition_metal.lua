@@ -62,7 +62,7 @@ local zinc_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local zinc = Element.new{
+local zinc = Element.partial{
     name = "Zinc",
     symbol = "Zn",
     number = 30,
@@ -146,7 +146,7 @@ local cadmium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local cadmium = Element.new{
+local cadmium = Element.partial{
     name = "Cadmium",
     symbol = "Cd",
     number = 48,
@@ -283,7 +283,7 @@ local mercury_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local mercury = Element.new{
+local mercury = Element.partial{
     name = "Mercury",
     symbol = "Hg",
     number = 80,

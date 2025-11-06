@@ -108,7 +108,7 @@ local praseodymium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local praseodymium = Element.new{
+local praseodymium = Element.partial{
     name = "Praseodymium",
     symbol = "Pr",
     number = 59,
@@ -146,7 +146,7 @@ local neodymium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local neodymium = Element.new{
+local neodymium = Element.partial{
     name = "Neodymium",
     symbol = "Nd",
     number = 60,
@@ -184,7 +184,7 @@ local promethium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local promethium = Element.new{
+local promethium = Element.partial{
     name = "Promethium",
     symbol = "Pm",
     number = 61,
@@ -221,7 +221,7 @@ local samarium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local samarium = Element.new{
+local samarium = Element.partial{
     name = "Samarium",
     symbol = "Sm",
     number = 62,
@@ -259,7 +259,7 @@ local europium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local europium = Element.new{
+local europium = Element.partial{
     name = "Europium",
     symbol = "Eu",
     number = 63,
@@ -303,7 +303,7 @@ local gadolinium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local gadolinium = Element.new{
+local gadolinium = Element.partial{
     name = "Gadolinium",
     symbol = "Gd",
     number = 64,
@@ -341,7 +341,7 @@ local terbium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local terbium = Element.new{
+local terbium = Element.partial{
     name = "Terbium",
     symbol = "Tb",
     number = 65,
@@ -378,7 +378,7 @@ local dysprosium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local dysprosium = Element.new{
+local dysprosium = Element.partial{
     name = "Dysprosium",
     symbol = "Dy",
     number = 66,
@@ -416,7 +416,7 @@ local holmium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local holmium = Element.new{
+local holmium = Element.partial{
     name = "Holmium",
     symbol = "Ho",
     number = 67,
@@ -454,7 +454,7 @@ local erbium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local erbium = Element.new{
+local erbium = Element.partial{
     name = "Erbium",
     symbol = "Er",
     number = 68,
@@ -492,7 +492,7 @@ local thulium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local thulium = Element.new{
+local thulium = Element.partial{
     name = "Thulium",
     symbol = "Tm",
     number = 69,
@@ -530,7 +530,7 @@ local ytterbium_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local ytterbium = Element.new{
+local ytterbium = Element.partial{
     name = "Ytterbium",
     symbol = "Yb",
     number = 70,
