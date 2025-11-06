@@ -31,7 +31,15 @@ local boron = Element:new{
     group = 13,
     period = 2,
     oxidation_states = {3},
-    electron_configuration = boron_electron_configuration
+    electron_configuration = boron_electron_configuration,
+    electronegativity = 2.04,
+    atomic_radius = 192,
+    ionization_energy = 8.298,
+    electron_affinity = 0.277,
+    melting_point = 2348,
+    boiling_point = 4273,
+    density = 2.37,
+    standard_state = "solid"
 }
 
 local silicon_subshell_occupancy1 = SubshellOccupancy:new{
@@ -62,7 +70,15 @@ local silicon = Element:new{
     group = 14,
     period = 3,
     oxidation_states = {-4, 2, 4},
-    electron_configuration = silicon_electron_configuration
+    electron_configuration = silicon_electron_configuration,
+    electronegativity = 1.9,
+    atomic_radius = 210,
+    ionization_energy = 8.152,
+    electron_affinity = 1.385,
+    melting_point = 1687,
+    boiling_point = 3538,
+    density = 2.3296,
+    standard_state = "solid"
 }
 
 local germanium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -100,7 +116,15 @@ local germanium = Element:new{
     group = 14,
     period = 4,
     oxidation_states = {2, 4},
-    electron_configuration = germanium_electron_configuration
+    electron_configuration = germanium_electron_configuration,
+    electronegativity = 2.01,
+    atomic_radius = 211,
+    ionization_energy = 7.9,
+    electron_affinity = 1.35,
+    melting_point = 1211.4,
+    boiling_point = 3106,
+    density = 5.323,
+    standard_state = "solid"
 }
 
 local arsenic_subshell_occupancy1 = SubshellOccupancy:new{
@@ -138,7 +162,15 @@ local arsenic = Element:new{
     group = 15,
     period = 4,
     oxidation_states = {-3, 3, 5},
-    electron_configuration = arsenic_electron_configuration
+    electron_configuration = arsenic_electron_configuration,
+    electron_affinity = 2.18,
+    atomic_radius = 185,
+    ionization_energy = 9.815,
+    electronegativity = 0.81,
+    melting_point = 1090,
+    boiling_point = 887,
+    density = 5.776,
+    standard_state = "solid"
 }
 
 local antimony_subshell_occupancy1 = SubshellOccupancy:new{
@@ -176,7 +208,15 @@ local antimony = Element:new{
     group = 15,
     period = 5,
     oxidation_states = {-3, 3, 5},
-    electron_configuration = antimony_electron_configuration
+    electron_configuration = antimony_electron_configuration,
+    electronegativity = 2.05,
+    atomic_radius = 206,
+    ionization_energy = 8.64,
+    electron_affinity = 1.07,
+    melting_point = 903.78,
+    boiling_point = 1860,
+    density = 6.685,
+    standard_state = "solid"
 }
 
 local tellurium_subshell_occupancy1 = SubshellOccupancy:new{
@@ -214,7 +254,15 @@ local tellurium = Element:new{
     group = 16,
     period = 5,
     oxidation_states = {-2, 4, 6},
-    electron_configuration = tellurium_electron_configuration
+    electron_configuration = tellurium_electron_configuration,
+    electron_affinity = 2.1,
+    atomic_radius = 206,
+    ionization_energy = 9.01,
+    electronegativity = 1.971,
+    melting_point = 722.66,
+    boiling_point = 1261,
+    density = 6.232,
+    standard_state = "solid"
 }
 
 local metalloids = ElementSet:new{
