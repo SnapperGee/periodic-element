@@ -21,7 +21,15 @@ local hydrogen = Element.new{
     group = 1,
     period = 1,
     oxidation_states = {-1, 1},
-    electron_configuration = hydrogen_electron_configuration
+    electron_configuration = hydrogen_electron_configuration,
+    electronegativity = 2.2,
+    atomic_radius = 120,
+    ionization_energy = 13.598,
+    electron_affinity = 0.754,
+    melting_point = 13.81,
+    boiling_point = 20.28,
+    density = 0.00008988,
+    standard_state = "gas"
 }
 
 local carbon_subshell_occupancy1 = SubshellOccupancy.new{
@@ -52,7 +60,15 @@ local carbon = Element.new{
     group = 14,
     period = 2,
     oxidation_states = {-4, 2, 4},
-    electron_configuration = carbon_electron_configuration
+    electron_configuration = carbon_electron_configuration,
+    electronegativity = 2.55,
+    atomic_radius = 170,
+    ionization_energy = 11.26,
+    electron_affinity = 1.263,
+    melting_point = 3823,
+    boiling_point = 4098,
+    density = 2.267,
+    standard_state = "solid"
 }
 
 local nitrogen_subshell_occupancy1 = SubshellOccupancy.new{
@@ -83,7 +99,15 @@ local nitrogen = Element.new{
     group = 15,
     period = 2,
     oxidation_states = {-3, -2, -1, 1, 2, 3, 4, 5},
-    electron_configuration = nitrogen_electron_configuration
+    electron_configuration = nitrogen_electron_configuration,
+    electronegativity = 3.04,
+    atomic_radius = 155,
+    ionization_energy = 14.534,
+    electron_affinity = 0,
+    melting_point = 63.15,
+    boiling_point = 77.36,
+    density = 0.0012506,
+    standard_state = "gas"
 }
 
 local oxygen_subshell_occupancy1 = SubshellOccupancy.new{
@@ -114,7 +138,15 @@ local oxygen = Element.new{
     group = 16,
     period = 2,
     oxidation_states = {-2},
-    electron_configuration = oxygen_electron_configuration
+    electron_configuration = oxygen_electron_configuration,
+    electronegativity = 3.44,
+    atomic_radius = 152,
+    ionization_energy = 13.618,
+    electron_affinity = 1.461,
+    melting_point = 54.36,
+    boiling_point = 90.2,
+    density = 0.001429,
+    standard_state = "gas"
 }
 
 local phosphorus_subshell_occupancy1 = SubshellOccupancy.new{
@@ -145,7 +177,15 @@ local phosphorus = Element.new{
     group = 15,
     period = 3,
     oxidation_states = {-3, 3, 5},
-    electron_configuration = phosphorus_electron_configuration
+    electron_configuration = phosphorus_electron_configuration,
+    electronegativity = 2.19,
+    atomic_radius = 180,
+    ionization_energy = 10.487,
+    electron_affinity = 0.746,
+    melting_point = 317.3,
+    boiling_point = 553.65,
+    density = 1.82,
+    standard_state = "solid"
 }
 
 local sulfur_subshell_occupancy1 = SubshellOccupancy.new{
@@ -176,7 +216,15 @@ local sulfur = Element.new{
     group = 16,
     period = 3,
     oxidation_states = {-2, 4, 6},
-    electron_configuration = sulfur_electron_configuration
+    electron_configuration = sulfur_electron_configuration,
+    electronegativity = 2.58,
+    atomic_radius = 180,
+    ionization_energy = 10.36,
+    electron_affinity = 2.077,
+    melting_point = 388.36,
+    boiling_point = 717.75,
+    density = 2.067,
+    standard_state = "solid"
 }
 
 local selenium_subshell_occupancy1 = SubshellOccupancy.new{
@@ -214,7 +262,15 @@ local selenium = Element.new{
     group = 16,
     period = 4,
     oxidation_states = {-2, 4, 6},
-    electron_configuration = selenium_electron_configuration
+    electron_configuration = selenium_electron_configuration,
+    electronegativity = 2.55,
+    atomic_radius = 190,
+    ionization_energy = 9.752,
+    electron_affinity = 2.021,
+    melting_point = 493.65,
+    boiling_point = 958,
+    density = 4.809,
+    standard_state = "solid"
 }
 
 local nonmetals = ElementSet.new{
