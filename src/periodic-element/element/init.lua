@@ -184,7 +184,7 @@ function Element.new(opts)
     if getmetatable(opts.oxidation_states) == OxidationStates then
         oxidation_states = opts.oxidation_states
     else
-        oxidation_states = OxidationStates:new(opts.oxidation_states)
+        oxidation_states = OxidationStates.new(opts.oxidation_states)
     end
 
     if block == "f" then

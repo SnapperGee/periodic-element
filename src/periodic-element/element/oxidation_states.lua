@@ -59,7 +59,7 @@ local METATABLE = {
 
 ---@param oxidation_states integer[]
 ---@return OxidationStates
-function OxidationStates:new(oxidation_states)
+function OxidationStates.new(oxidation_states)
     assert(
         is_array(oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end),
         "integer array required"
