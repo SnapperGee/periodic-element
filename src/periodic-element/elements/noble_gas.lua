@@ -13,7 +13,7 @@ local helium_electron_configuration = ElectronConfiguration.new{
     subshell_occupancy = { helium_subshell_occupancy }
 }
 
-local helium = Element.new{
+local helium = Element.partial{
     name = "Helium",
     symbol = "He",
     number = 2,
@@ -21,7 +21,13 @@ local helium = Element.new{
     group = 18,
     period = 1,
     oxidation_states = {0},
-    electron_configuration = helium_electron_configuration
+    electron_configuration = helium_electron_configuration,
+    atomic_radius = 140,
+    ionization_energy = 24.587,
+    melting_point = 0.95,
+    boiling_point = 4.22,
+    density = 0.0001785,
+    standard_state = "gas"
 }
 
 local neon_subshell_occupancy1 = SubshellOccupancy.new{
@@ -44,7 +50,7 @@ local neon_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local neon = Element.new{
+local neon = Element.partial{
     name = "Neon",
     symbol = "Ne",
     number = 10,
@@ -52,7 +58,13 @@ local neon = Element.new{
     group = 18,
     period = 2,
     oxidation_states = {0},
-    electron_configuration = neon_electron_configuration
+    electron_configuration = neon_electron_configuration,
+    atomic_radius = 154,
+    ionization_energy = 21.565,
+    melting_point = 24.56,
+    boiling_point = 27.07,
+    density = 0.0008999,
+    standard_state = "gas"
 }
 
 local argon_subshell_occupancy1 = SubshellOccupancy.new{
@@ -75,7 +87,7 @@ local argon_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local argon = Element.new{
+local argon = Element.partial{
     name = "Argon",
     symbol = "Ar",
     number = 18,
@@ -83,7 +95,13 @@ local argon = Element.new{
     group = 18,
     period = 3,
     oxidation_states = {0},
-    electron_configuration = argon_electron_configuration
+    electron_configuration = argon_electron_configuration,
+    atomic_radius = 188,
+    ionization_energy = 15.76,
+    melting_point = 83.8,
+    87.3,
+    density = 0.0017837,
+    standard_state = "gas"
 }
 
 local krypton_subshell_occupancy1 = SubshellOccupancy.new{
@@ -113,7 +131,7 @@ local krypton_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local krypton = Element.new{
+local krypton = Element.partial{
     name = "Krypton",
     symbol = "Kr",
     number = 36,
@@ -121,7 +139,14 @@ local krypton = Element.new{
     group = 18,
     period = 4,
     oxidation_states = {0},
-    electron_configuration = krypton_electron_configuration
+    electron_configuration = krypton_electron_configuration,
+    electronegativity = 3,
+    atomic_radius = 202,
+    ionization_energy = 14,
+    melting_point = 115.79,
+    boiling_point = 119.93,
+    density = 0.003733,
+    standard_state = "gas"
 }
 
 local xenon_subshell_occupancy1 = SubshellOccupancy.new{
@@ -151,7 +176,7 @@ local xenon_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local xenon = Element.new{
+local xenon = Element.partial{
     name = "Xenon",
     symbol = "Xe",
     number = 54,
@@ -159,7 +184,14 @@ local xenon = Element.new{
     group = 18,
     period = 5,
     oxidation_states = {0},
-    electron_configuration = xenon_electron_configuration
+    electron_configuration = xenon_electron_configuration,
+    electronegativity = 2.6,
+    atomic_radius = 216,
+    ionization_energy = 12.13,
+    melting_point = 161.36,
+    boiling_point = 165.03,
+    density = 0.005887,
+    standard_state = "gas"
 }
 
 local radon_subshell_occupancy1 = SubshellOccupancy.new{
@@ -196,7 +228,7 @@ local radon_electron_configuration = ElectronConfiguration.new{
     }
 }
 
-local radon = Element.new{
+local radon = Element.partial{
     name = "Radon",
     symbol = "Rn",
     number = 86,
@@ -204,7 +236,13 @@ local radon = Element.new{
     group = 18,
     period = 6,
     oxidation_states = {0},
-    electron_configuration = radon_electron_configuration
+    electron_configuration = radon_electron_configuration,
+    atomic_radius = 220,
+    ionization_energy = 10.745,
+    melting_point = 202,
+    boiling_point = 211.45,
+    density = 0.00973,
+    standard_state = "gas"
 }
 
 local noble_gases = ElementSet.new{
