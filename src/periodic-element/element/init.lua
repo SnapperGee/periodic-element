@@ -21,7 +21,7 @@ local standard_states = { Solid = true, Liquid = true, Gas = true }
 ---@field electron_configuration ElectronConfiguration
 ---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
----@field ionization_energy number
+---@field ionization_energy number -- eV
 ---@field electron_affinity number|nil
 ---@field melting_point number -- kelvin
 ---@field boiling_point number|nil -- kelvin
@@ -124,7 +124,7 @@ end
 ---@field electron_configuration ElectronConfiguration
 ---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
----@field ionization_energy number
+---@field ionization_energy number -- eV
 ---@field electron_affinity number|nil
 ---@field melting_point number -- kelvin
 ---@field boiling_point number|nil -- kelvin
