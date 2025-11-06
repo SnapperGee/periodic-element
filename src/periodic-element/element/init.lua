@@ -92,7 +92,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%.3f, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%.2f, atomic_radius=%d, ionization_energy=%.3f, electron_affinity=%.3f, melting_point=%d, boiling_point=%d, density=%f, standard_state=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%g, atomic_radius=%d, ionization_energy=%g, electron_affinity=%g, melting_point=%d, boiling_point=%d, density=%g, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
