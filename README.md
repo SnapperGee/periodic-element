@@ -64,17 +64,17 @@ local Element = require("periodic-element.element")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
-local hydrogen_subshell_occupancy = SubshellOccupancy:new{
+local hydrogen_subshell_occupancy = SubshellOccupancy.new{
     n = 1,
     l = "s",
     electron_count = 1
 }
 
-local hydrogen_electron_configuration = ElectronConfiguration:new{
+local hydrogen_electron_configuration = ElectronConfiguration.new{
     subshell_occupancy = { hydrogen_subshell_occupancy }
 }
 
-local hydrogen = Element:new{
+local hydrogen = Element.new{
     name = "Hydrogen",
     symbol = "H",
     number = 1,
