@@ -22,7 +22,15 @@ local lithium = Element.new{
     group = 1,
     period = 2,
     oxidation_states = {1},
-    electron_configuration = lithium_electron_configuration
+    electron_configuration = lithium_electron_configuration,
+    electronegativity = 0.98,
+    atomic_radius = 182,
+    ionization_energy = 5.392,
+    electron_affinity = 0.618,
+    melting_point = 453.65,
+    boiling_point = 1615,
+    density = 0.534,
+    standard_state = "solid"
 }
 
 local sodium_subshell_occupancy = SubshellOccupancy.new{
@@ -44,7 +52,15 @@ local sodium = Element.new{
     group = 1,
     period = 3,
     oxidation_states = {1},
-    electron_configuration = sodium_electron_configuration
+    electron_configuration = sodium_electron_configuration,
+    electronegativity = 0.93,
+    atomic_radius = 227,
+    ionization_energy = 5.139,
+    electron_affinity = 0.548,
+    melting_point = 370.95,
+    boiling_point = 1156,
+    density = 0.97,
+    standard_state = "solid"
 }
 
 local potassium_subshell_occupancy = SubshellOccupancy.new{
@@ -66,7 +82,15 @@ local potassium = Element.new{
     group = 1,
     period = 4,
     oxidation_states = {1},
-    electron_configuration = potassium_electron_configuration
+    electron_configuration = potassium_electron_configuration,
+    electronegativity = 0.82,
+    atomic_radius = 275,
+    ionization_energy = 4.341,
+    electron_affinity = 0.501,
+    melting_point = 336.53,
+    boiling_point = 1032,
+    density = 0.89,
+    standard_state = "solid"
 }
 
 local rubidium_subshell_occupancy = SubshellOccupancy.new{
@@ -88,7 +112,15 @@ local rubidium = Element.new{
     group = 1,
     period = 5,
     oxidation_states = {1},
-    electron_configuration = rubidium_electron_configuration
+    electron_configuration = rubidium_electron_configuration,
+    electronegativity = 0.82,
+    atomic_radius = 303,
+    ionization_energy = 4.177,
+    electron_affinity = 0.468,
+    melting_point = 312.46,
+    boiling_point = 961,
+    density = 1.53,
+    standard_state = "solid"
 }
 
 local cesium_subshell_occupancy = SubshellOccupancy.new{
@@ -110,7 +142,15 @@ local cesium = Element.new{
     group = 1,
     period = 6,
     oxidation_states = {1},
-    electron_configuration = cesium_electron_configuration
+    electron_configuration = cesium_electron_configuration,
+    electronegativity = 0.79,
+    atomic_radius = 343,
+    ionization_energy = 3.894,
+    electron_affinity = 0.472,
+    melting_point = 301.59,
+    boiling_point = 944,
+    density = 1.93,
+    standard_state = "solid"
 }
 
 local francium_subshell_occupancy = SubshellOccupancy.new{
@@ -124,7 +164,7 @@ local francium_electron_configuration = ElectronConfiguration.new{
     subshell_occupancy = { francium_subshell_occupancy }
 }
 
-local francium = Element.new{
+local francium = Element.partial{
     name = "Francium",
     symbol = "Fr",
     number = 87,
@@ -132,7 +172,13 @@ local francium = Element.new{
     group = 1,
     period = 7,
     oxidation_states = {1},
-    electron_configuration = francium_electron_configuration
+    electron_configuration = francium_electron_configuration,
+    electronegativity = 0.7,
+    atomic_radius = 348,
+    ionization_energy = 3.9,
+    electron_affinity = 0.47,
+    melting_point = 300,
+    standard_state = "solid"
 }
 
 local alkali_metals = ElementSet.new{
