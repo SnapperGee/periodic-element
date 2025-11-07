@@ -225,8 +225,54 @@ local astatine = Element.partial{
     standard_state = "solid"
 }
 
+local tennessine_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local tennessine_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "p",
+    electron_count = 5
+}
+
+local tennessine_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local tennessine_subshell_occupancy4 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 10
+}
+
+local tennessine_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        tennessine_subshell_occupancy1,
+        tennessine_subshell_occupancy2,
+        tennessine_subshell_occupancy3,
+        tennessine_subshell_occupancy4
+    }
+}
+
+local tennessine = Element.partial{
+    name = "Tennessine",
+    symbol = "At",
+    number = 117,
+    mass = 294.211,
+    group = 17,
+    period = 7,
+    oxidation_states = {-1, 1, 3, 5},
+    electron_configuration = tennessine_electron_configuration,
+    standard_state = "solid"
+}
+
 local halogens = ElementSet.new{
-    fluorine, chlorine, bromine, iodine, astatine
+    fluorine, chlorine, bromine, iodine, astatine, tennessine
 }
 
 return halogens
