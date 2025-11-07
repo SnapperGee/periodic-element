@@ -538,44 +538,38 @@ function Element:formatted_string(indent)
 
         elseif key == "atomic_radius" then
             strings[#strings + 1] = string.format(
-                "atomic_radius = %s%s",
-                value and string.format("%g", value) or tostring(value),
-                value and " pm" or ""
+                "atomic_radius = %s",
+                value and string.format("%g pm", value) or tostring(value)
             )
 
         elseif key == "ionization_energy" then
             strings[#strings + 1] = string.format(
-                "ionization_energy = %s%s",
-                value and string.format("%g", value) or tostring(value),
-                value and " eV" or ""
+                "ionization_energy = %s",
+                value and string.format("%g eV", value) or tostring(value)
             )
 
         elseif key == "electron_affinity" then
             strings[#strings + 1] = string.format(
-                "electron_affinity = %s%s",
-                value and string.format("%g", value) or tostring(value),
-                value and " eV" or ""
+                "electron_affinity = %s",
+                value and string.format("%g eV", value) or tostring(value)
             )
 
         elseif key == "melting_point" then
             strings[#strings + 1] = string.format(
-                "melting_point = %s%s",
-                value and string.format("%d", value) or tostring(value),
-                value and " K" or ""
+                "melting_point = %s",
+                value and string.format("%d K", value) or tostring(value)
             )
 
         elseif key == "boiling_point" then
             strings[#strings + 1] = string.format(
-                "boiling_point = %s%s",
-                value and string.format("%d", value) or tostring(value),
-                value and " K" or ""
+                "boiling_point = %s",
+                value and string.format("%d K", value) or tostring(value)
             )
 
         elseif key == "density" then
             strings[#strings + 1] = string.format(
-                "density = %s%s",
-                value and string.format("%g", value) or tostring(value),
-                value and " g/cm³" or ""
+                "density = %s",
+                value and string.format("%g g/cm³", value) or tostring(value)
             )
 
         elseif key == "standard_state" then
