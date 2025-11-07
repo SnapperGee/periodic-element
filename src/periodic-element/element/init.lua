@@ -92,7 +92,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%g, atomic_radius=%d, ionization_energy=%g, electron_affinity=%g, melting_point=%d, boiling_point=%d, density=%g, standard_state=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%g, atomic_radius=%d, ionization_energy=%g, electron_affinity=%s, melting_point=%d, boiling_point=%s, density=%g, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
@@ -105,9 +105,9 @@ function METATABLE:__tostring()
         self_data.electronegativity,
         self_data.atomic_radius,
         self_data.ionization_energy,
-        self_data.electron_affinity,
+        self_data.electron_affinity and string.format("%g", self_data.electron_affinity) or tostring(self_data.electron_affinity),
         self_data.melting_point,
-        self_data.boiling_point,
+        self_data.boiling_point and string.format("%g", self_data.boiling_point) or tostring(self_data.boiling_point),
         self_data.density,
         self_data.standard_state
     )
