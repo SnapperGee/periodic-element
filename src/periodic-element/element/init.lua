@@ -179,13 +179,9 @@ function Element.new(opts)
         string.format("'oxidation_states' must be OxidationStates object or non empty integer array but got: %s", tostring(opts.oxidation_states))
     )
 
-    local oxidation_states
-
-    if getmetatable(opts.oxidation_states) == OxidationStates then
-        oxidation_states = opts.oxidation_states
-    else
-        oxidation_states = OxidationStates.new(opts.oxidation_states)
-    end
+    local oxidation_states = getmetatable(opts.oxidation_states) == OxidationStates
+        and opts.oxidation_states
+        or OxidationStates.new(opts.oxidation_states)
 
     if block == "f" then
         assert(
@@ -350,13 +346,9 @@ function Element.partial(opts)
         string.format("'oxidation_states' must be OxidationStates object or non empty integer array but got: %s", tostring(opts.oxidation_states))
     )
 
-    local oxidation_states
-
-    if getmetatable(opts.oxidation_states) == OxidationStates then
-        oxidation_states = opts.oxidation_states
-    else
-        oxidation_states = OxidationStates.new(opts.oxidation_states)
-    end
+    local oxidation_states = getmetatable(opts.oxidation_states) == OxidationStates
+        and opts.oxidation_states
+        or OxidationStates.new(opts.oxidation_states)
 
     if block == "f" then
         assert(
@@ -393,13 +385,13 @@ function Element.partial(opts)
     )
 
     assert(
-        type(opts.atomic_radius) == "number" and opts.atomic_radius == math.floor(opts.atomic_radius) and opts.atomic_radius > 0,
-        string.format("'opts.atomic_radius' integer greater than 0 expected but got: %s", tostring(opts.atomic_radius))
+        opts.atomic_radius == nil or type(opts.atomic_radius) == "number" and opts.atomic_radius == math.floor(opts.atomic_radius) and opts.atomic_radius > 0,
+        string.format("'opts.atomic_radius' integer greater than 0 or nil expected but got: %s", tostring(opts.atomic_radius))
     )
 
     assert(
-        type(opts.ionization_energy) == "number" and opts.ionization_energy > 0,
-        string.format("'ionization_energy' number greater than 0 expected but got: %s", tostring(opts.ionization_energy))
+        opts.ionization_energy == nil or type(opts.ionization_energy) == "number" and opts.ionization_energy > 0,
+        string.format("'ionization_energy' number greater than 0 or nil expected but got: %s", tostring(opts.ionization_energy))
     )
 
     assert(
@@ -408,8 +400,8 @@ function Element.partial(opts)
     )
 
     assert(
-        type(opts.melting_point) == "number" and opts.melting_point >= 0,
-        string.format("non negative 'melting_point' number expected but got: %s", tostring(opts.melting_point))
+        opts.melting_point == nil or type(opts.melting_point) == "number" and opts.melting_point >= 0,
+        string.format("non negative 'melting_point' number or nil expected but got: %s", tostring(opts.melting_point))
     )
 
     assert(
