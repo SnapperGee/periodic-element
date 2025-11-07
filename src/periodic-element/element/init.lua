@@ -156,8 +156,8 @@ function Element.new(opts)
     local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
 
     assert(
-        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 118,
-        string.format("'number' integer in [1, 97] expected but got: %s", tostring(opts.number))
+        type(opts.number) == "number" and opts.number == math.floor(opts.number),
+        string.format("'number' integer expected but got: %s", tostring(opts.number))
     )
 
     assert(
@@ -332,8 +332,8 @@ function Element.partial(opts)
     local normalized_symbol = opts.symbol:sub(1,1):upper() .. opts.symbol:sub(2):lower()
 
     assert(
-        type(opts.number) == "number" and opts.number == math.floor(opts.number) and opts.number >= 1 and opts.number <= 118,
-        string.format("'number' integer in [1, 97] expected but got: %s", tostring(opts.number))
+        type(opts.number) == "number" and opts.number == math.floor(opts.number),
+        string.format("'number' integer expected but got: %s", tostring(opts.number))
     )
 
     assert(
