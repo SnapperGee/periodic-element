@@ -292,7 +292,7 @@ local oganesson = Element.partial{
 }
 
 local noble_gases = ElementSet.new{
-    helium, neon, argon, krypton, xenon, radon
+    helium, neon, argon, krypton, xenon, radon, oganesson
 }
 
 return noble_gases
