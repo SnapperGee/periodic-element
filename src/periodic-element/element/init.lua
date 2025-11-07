@@ -344,11 +344,6 @@ function Element.partial(opts)
     local block = block_of_atomic_number(opts.number)
 
     assert(
-        block ~= nil,
-        string.format("'block' could not be determined from number: %d", opts.number)
-    )
-
-    assert(
         getmetatable(opts.oxidation_states) == OxidationStates
         or is_array(opts.oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end)
         and #opts.oxidation_states > 0,
