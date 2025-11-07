@@ -37,5 +37,6 @@ test_dependencies = {
     "luacov ~> 0.16"
 }
 dependencies = {
-    "lua ~> 5.1"
+    "lua ~> 5.1",
+    "argparse ~> 0.7"
 }
