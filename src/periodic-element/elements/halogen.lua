@@ -261,7 +261,7 @@ local tennessine_electron_configuration = ElectronConfiguration.new{
 
 local tennessine = Element.partial{
     name = "Tennessine",
-    symbol = "At",
+    symbol = "Ts",
     number = 117,
     mass = 294.211,
     group = 17,
