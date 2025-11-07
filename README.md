@@ -25,7 +25,7 @@ local carbon = elements("C")
 print(carbon)
 
 --[[
-Element{name="Carbon", symbol="C", number=6, mass=12.011, group=14, period=2, block='p', oxidation_states={-4, +2, +4}, electron_configuration="[He]2s²2p²"}
+Element{name="Carbon", symbol="C", number=6, mass=12.011, group=14, period=2, block='p', oxidation_states={-4, +2, +4}, electron_configuration="[He]2s²2p²", electronegativity=2.55, atomic_radius=170, ionization_energy=11.26, electron_affinity=1.263, melting_point=3823, boiling_point=4098, density=2.267, standard_state="Solid"}
 ]]
 ```
 
@@ -82,7 +82,15 @@ local hydrogen = Element.new{
     group = 1,
     period = 1,
     oxidation_states = {-1, 1},
-    electron_configuration = hydrogen_electron_configuration
+    electron_configuration = hydrogen_electron_configuration,
+    electronegativity = 2.2,
+    atomic_radius = 120,
+    ionization_energy = 13.598,
+    electron_affinity = 0.754,
+    melting_point = 13.81,
+    boiling_point = 20.28,
+    density = 0.00008988,
+    standard_state = "gas"
 }
 ```
 
