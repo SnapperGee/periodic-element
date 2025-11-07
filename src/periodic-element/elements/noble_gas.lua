@@ -245,6 +245,52 @@ local radon = Element.partial{
     standard_state = "gas"
 }
 
+local oganesson_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local oganesson_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "p",
+    electron_count = 6
+}
+
+local oganesson_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local oganesson_subshell_occupancy4 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 10
+}
+
+local oganesson_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        oganesson_subshell_occupancy1,
+        oganesson_subshell_occupancy2,
+        oganesson_subshell_occupancy3,
+        oganesson_subshell_occupancy4
+    }
+}
+
+local oganesson = Element.partial{
+    name = "oganesson",
+    symbol = "Og",
+    number = 118,
+    mass = 295.216,
+    group = 18,
+    period = 7,
+    oxidation_states = {-1, 0, 1, 2, 4, 6},
+    electron_configuration = oganesson_electron_configuration,
+    standard_state = "gas"
+}
+
 local noble_gases = ElementSet.new{
     helium, neon, argon, krypton, xenon, radon
 }

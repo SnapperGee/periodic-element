@@ -92,7 +92,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%d, ionization_energy=%g, electron_affinity=%s, melting_point=%d, boiling_point=%s, density=%s, standard_state=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%s, ionization_energy=%s, electron_affinity=%s, melting_point=%s, boiling_point=%s, density=%s, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
@@ -103,10 +103,10 @@ function METATABLE:__tostring()
         self_data.oxidation_states:formatted_string(),
         self_data.electron_configuration.canonical_string,
         self_data.electronegativity and string.format("%g", self_data.electronegativity) or tostring(self_data.electronegativity),
-        self_data.atomic_radius,
-        self_data.ionization_energy,
+        self_data.atomic_radius and string.format("%d", self_data.atomic_radius) or tostring(self_data.atomic_radius),
+        self_data.ionization_energy and string.format("%g", self_data.ionization_energy) or tostring(self_data.ionization_energy),
         self_data.electron_affinity and string.format("%g", self_data.electron_affinity) or tostring(self_data.electron_affinity),
-        self_data.melting_point,
+        self_data.melting_point and string.format("%d", self_data.melting_point) or tostring(self_data.melting_point),
         self_data.boiling_point and string.format("%g", self_data.boiling_point) or tostring(self_data.boiling_point),
         self_data.density and string.format("%g", self_data.density) or tostring(self_data.density),
         self_data.standard_state
@@ -291,15 +291,21 @@ end
 
 ---@class PartialElement: Element
 ---@field electronegativity number|nil -- Pauling Scale
+---@field atomic_radius integer|nil -- van der Waals
+---@field ionization_energy number|nil -- eV
 ---@field electron_affinity number|nil -- eV
----@field density number|nil  -- g/cm³
+---@field melting_point number|nil -- kelvin
 ---@field boiling_point number|nil -- kelvin
+---@field density number|nil  -- g/cm³
 
 ---@class PartialElementOpts: ElementOpts
 ---@field electronegativity number|nil -- Pauling Scale
 ---@field electron_affinity number|nil -- eV
----@field density number|nil  -- g/cm³
+---@field atomic_radius integer|nil -- van der Waals
+---@field ionization_energy number|nil -- eV
+---@field melting_point number|nil -- kelvin
 ---@field boiling_point number|nil -- kelvin
+---@field density number|nil  -- g/cm³
 
 --- Constructor for Element objects. Parameters are validated making sure
 --- they're valid element properties according to this lua module. For instance
