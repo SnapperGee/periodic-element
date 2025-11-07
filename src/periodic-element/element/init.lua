@@ -66,7 +66,6 @@ function METATABLE:__eq(other)
         and self_data.electronegativity == other_data.electronegativity
         and self_data.atomic_radius == other_data.atomic_radius
         and self_data.ionization_energy == other_data.ionization_energy
-        and self_data.ionization_energy == other_data.ionization_energy
         and self_data.electron_affinity == other_data.electron_affinity
         and self_data.melting_point == other_data.melting_point
         and self_data.boiling_point == other_data.boiling_point
@@ -450,6 +449,146 @@ function Element.partial(opts)
     }
 
     return obj
+end
+
+local FIELD_ORDER =
+{
+    "name",
+    "symbol",
+    "number",
+    "mass",
+    "group",
+    "family",
+    "period",
+    "block",
+    "oxidation_states",
+    "electron_configuration",
+    "electronegativity",
+    "atomic_radius",
+    "ionization_energy",
+    "electron_affinity",
+    "melting_point",
+    "boiling_point",
+    "density",
+    "standard_state",
+}
+
+--- Returns a string that's formatted to be a little more readable and prettier
+--- than the default tostring string.
+---@param indent? integer|nil -- specify how many spaces each indent should be. Defaults to 4.
+---@return string
+function Element:formatted_string(indent)
+    assert(
+        indent == nil or type(indent) == "number" and indent >= 0 and indent == math.floor(indent),
+        string.format("expected non negative 'indent' integer or nil but got: %s", tostring(indent))
+    )
+
+    indent = indent or 4
+    local self_data = DATA[self]
+    local strings = {}
+
+    for _, key in ipairs(FIELD_ORDER)
+    do
+        local value = self_data[key]
+
+        if key == "name" then
+            strings[#strings + 1] = string.format('name = "%s"', value)
+
+        elseif key == "symbol" then
+            strings[#strings + 1] = string.format('symbol = "%s"', value)
+
+        elseif key == "number" then
+            strings[#strings + 1] = string.format("number = %d", value)
+
+        elseif key == "mass" then
+            strings[#strings + 1] = string.format("mass = %g u", value)
+
+        elseif key == "group" then
+            strings[#strings + 1] = string.format(
+                "group = %s",
+                value or tostring(value)
+            )
+
+        elseif key == "family" then
+            strings[#strings + 1] = string.format('family = "%s"', value)
+
+        elseif key == "period" then
+            strings[#strings + 1] = string.format("period = %d", value)
+
+        elseif key == "block" then
+            strings[#strings + 1] = string.format("block = '%s'", value)
+
+        elseif key == "oxidation_states" then
+            strings[#strings + 1] = string.format(
+                "oxidation_states = {%s}",
+                value:formatted_string()
+            )
+
+        elseif key == "electron_configuration" then
+            strings[#strings + 1] = string.format(
+                "electron_configuration = %s",
+                value.canonical_string
+            )
+
+        elseif key == "electronegativity" then
+            strings[#strings + 1] = string.format(
+                "electronegativity = %s",
+                value and string.format("%g", value) or tostring(value)
+            )
+
+        elseif key == "atomic_radius" then
+            strings[#strings + 1] = string.format(
+                "atomic_radius = %s%s",
+                value and string.format("%g", value) or tostring(value),
+                value and " pm" or ""
+            )
+
+        elseif key == "ionization_energy" then
+            strings[#strings + 1] = string.format(
+                "ionization_energy = %s%s",
+                value and string.format("%g", value) or tostring(value),
+                value and " eV" or ""
+            )
+
+        elseif key == "electron_affinity" then
+            strings[#strings + 1] = string.format(
+                "electron_affinity = %s%s",
+                value and string.format("%g", value) or tostring(value),
+                value and " eV" or ""
+            )
+
+        elseif key == "melting_point" then
+            strings[#strings + 1] = string.format(
+                "melting_point = %s%s",
+                value and string.format("%d", value) or tostring(value),
+                value and " K" or ""
+            )
+
+        elseif key == "boiling_point" then
+            strings[#strings + 1] = string.format(
+                "boiling_point = %s%s",
+                value and string.format("%d", value) or tostring(value),
+                value and " K" or ""
+            )
+
+        elseif key == "density" then
+            strings[#strings + 1] = string.format(
+                "density = %s%s",
+                value and string.format("%g", value) or tostring(value),
+                value and " g/cm³" or ""
+            )
+
+        elseif key == "standard_state" then
+            strings[#strings + 1] = string.format('standard_state = "%s"', value)
+
+        else
+            error("Unrecognized key encountered in FIELD_ORDER: " .. tostring(key))
+        end
+    end
+
+    local pad = string.rep(" ", indent)
+
+    return string.format("Element{\n%s%s\n}", pad, table.concat(strings, "\n" .. pad))
 end
 
 return Element
