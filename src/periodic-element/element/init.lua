@@ -92,7 +92,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%g, atomic_radius=%d, ionization_energy=%g, electron_affinity=%s, melting_point=%d, boiling_point=%s, density=%g, standard_state=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%d, ionization_energy=%g, electron_affinity=%s, melting_point=%d, boiling_point=%s, density=%s, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
@@ -102,13 +102,13 @@ function METATABLE:__tostring()
         self_data.block,
         self_data.oxidation_states:formatted_string(),
         self_data.electron_configuration.canonical_string,
-        self_data.electronegativity,
+        self_data.electronegativity and string.format("%g", self_data.electronegativity) or tostring(self_data.electronegativity),
         self_data.atomic_radius,
         self_data.ionization_energy,
         self_data.electron_affinity and string.format("%g", self_data.electron_affinity) or tostring(self_data.electron_affinity),
         self_data.melting_point,
         self_data.boiling_point and string.format("%g", self_data.boiling_point) or tostring(self_data.boiling_point),
-        self_data.density,
+        self_data.density and string.format("%g", self_data.density) or tostring(self_data.density),
         self_data.standard_state
     )
 end
@@ -387,7 +387,7 @@ function Element.partial(opts)
     )
 
     assert(
-        type(opts.electronegativity) == "number" and opts.electronegativity >= 0,
+        opts.electronegativity == nil or type(opts.electronegativity) == "number" and opts.electronegativity >= 0,
         string.format("non negative 'electronegativity' number expected but got: %s", tostring(opts.electronegativity))
     )
 
