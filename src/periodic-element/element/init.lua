@@ -292,11 +292,13 @@ end
 ---@class PartialElement: Element
 ---@field electronegativity number|nil -- Pauling Scale
 ---@field electron_affinity number|nil -- eV
+---@field density number|nil  -- g/cm³
 ---@field boiling_point number|nil -- kelvin
 
 ---@class PartialElementOpts: ElementOpts
 ---@field electronegativity number|nil -- Pauling Scale
 ---@field electron_affinity number|nil -- eV
+---@field density number|nil  -- g/cm³
 ---@field boiling_point number|nil -- kelvin
 
 --- Constructor for Element objects. Parameters are validated making sure
@@ -415,8 +417,8 @@ function Element.partial(opts)
     )
 
     assert(
-        type(opts.density) == "number" and opts.density > 0,
-        string.format("'density' number greater than 0 expected but got: %s", tostring(opts.density))
+        opts.density == nil or type(opts.density) == "number" and opts.density > 0,
+        string.format("'density' number greater than 0 or nil expected but got: %s", tostring(opts.density))
     )
 
     assert(
