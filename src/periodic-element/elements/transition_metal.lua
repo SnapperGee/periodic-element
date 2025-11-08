@@ -1106,11 +1106,363 @@ local gold = Element.new{
     standard_state = "solid"
 }
 
+local rutherfordium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local rutherfordium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 2
+}
+
+local rutherfordium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local rutherfordium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        rutherfordium_subshell_occupancy1,
+        rutherfordium_subshell_occupancy2,
+        rutherfordium_subshell_occupancy3
+    }
+}
+
+local rutherfordium = Element.partial{
+    name = "Rutherfordium",
+    symbol = "Rf",
+    number = 104,
+    mass = 267.122,
+    group = 4,
+    period = 7,
+    oxidation_states = {4},
+    electron_configuration = rutherfordium_electron_configuration,
+    standard_state = "solid"
+}
+
+local dubnium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local dubnium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 3
+}
+
+local dubnium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local dubnium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        dubnium_subshell_occupancy1,
+        dubnium_subshell_occupancy2,
+        dubnium_subshell_occupancy3
+    }
+}
+
+local dubnium = Element.partial{
+    name = "Dubnium",
+    symbol = "Db",
+    number = 105,
+    mass = 268.126,
+    group = 5,
+    period = 7,
+    oxidation_states = {3, 4, 5},
+    electron_configuration = dubnium_electron_configuration,
+    standard_state = "solid"
+}
+
+local seaborgium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local seaborgium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 4
+}
+
+local seaborgium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local seaborgium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        seaborgium_subshell_occupancy1,
+        seaborgium_subshell_occupancy2,
+        seaborgium_subshell_occupancy3
+    }
+}
+
+local seaborgium = Element.partial{
+    name = "Seaborgium",
+    symbol = "Sg",
+    number = 106,
+    mass = 269.128,
+    group = 6,
+    period = 7,
+    oxidation_states = {0, 3, 4, 5, 6},
+    electron_configuration = seaborgium_electron_configuration,
+    standard_state = "solid"
+}
+
+local bohrium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local bohrium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 5
+}
+
+local bohrium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local bohrium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        bohrium_subshell_occupancy1,
+        bohrium_subshell_occupancy2,
+        bohrium_subshell_occupancy3
+    }
+}
+
+local bohrium = Element.partial{
+    name = "Bohrium",
+    symbol = "Bh",
+    number = 107,
+    mass = 270.133,
+    group = 7,
+    period = 7,
+    oxidation_states = {3, 4, 5, 7},
+    electron_configuration = bohrium_electron_configuration,
+    standard_state = "solid"
+}
+
+local hassium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local hassium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 6
+}
+
+local hassium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local hassium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        hassium_subshell_occupancy1,
+        hassium_subshell_occupancy2,
+        hassium_subshell_occupancy3
+    }
+}
+
+local hassium = Element.partial{
+    name = "Hassium",
+    symbol = "Hs",
+    number = 108,
+    mass = 269.1336,
+    group = 8,
+    period = 7,
+    oxidation_states = {2, 3, 4, 5, 6, 8},
+    electron_configuration = hassium_electron_configuration,
+    standard_state = "solid"
+}
+
+local meitnerium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local meitnerium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 7
+}
+
+local meitnerium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local meitnerium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        meitnerium_subshell_occupancy1,
+        meitnerium_subshell_occupancy2,
+        meitnerium_subshell_occupancy3
+    }
+}
+
+local meitnerium = Element.partial{
+    name = "Meitnerium",
+    symbol = "Mt",
+    number = 109,
+    mass = 277.154,
+    group = 9,
+    period = 7,
+    oxidation_states = {1, 3, 4, 6, 8, 9},
+    electron_configuration = meitnerium_electron_configuration,
+    standard_state = "solid"
+}
+
+local darmstadtium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local darmstadtium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 8
+}
+
+local darmstadtium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local darmstadtium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        darmstadtium_subshell_occupancy1,
+        darmstadtium_subshell_occupancy2,
+        darmstadtium_subshell_occupancy3
+    }
+}
+
+local darmstadtium = Element.partial{
+    name = "Darmstadtium",
+    symbol = "Ds",
+    number = 110,
+    mass = 282.166,
+    group = 10,
+    period = 7,
+    oxidation_states = {0, 2, 4, 6, 8},
+    electron_configuration = darmstadtium_electron_configuration,
+    standard_state = "solid"
+}
+
+local roentgenium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local roentgenium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 9
+}
+
+local roentgenium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local roentgenium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        roentgenium_subshell_occupancy1,
+        roentgenium_subshell_occupancy2,
+        roentgenium_subshell_occupancy3
+    }
+}
+
+local roentgenium = Element.partial{
+    name = "Roentgenium",
+    symbol = "Rg",
+    number = 111,
+    mass = 282.169,
+    group = 11,
+    period = 7,
+    oxidation_states = {-1, 1, 3, 5},
+    electron_configuration = roentgenium_electron_configuration,
+    standard_state = "solid"
+}
+
+local copernicium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local copernicium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 9
+}
+
+local copernicium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local copernicium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        copernicium_subshell_occupancy1,
+        copernicium_subshell_occupancy2,
+        copernicium_subshell_occupancy3
+    }
+}
+
+local copernicium = Element.partial{
+    name = "Copernicium",
+    symbol = "Cn",
+    number = 112,
+    mass = 286.179,
+    group = 12,
+    period = 7,
+    oxidation_states = {0, 1, 2},
+    electron_configuration = copernicium_electron_configuration,
+    standard_state = "solid"
+}
+
 local transition_metals = ElementSet.new{
     scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium,ruthenium,
     rhodium, palladium, silver, lutetium,hafnium, tantalum, tungsten, rhenium,
-    osmium, iridium, platinum, gold
+    osmium, iridium, platinum, gold, rutherfordium, dubnium, seaborgium,
+    bohrium, hassium, meitnerium, darmstadtium, roentgenium, copernicium
 }
 
 return transition_metals
