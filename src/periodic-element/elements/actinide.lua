@@ -371,9 +371,228 @@ local berkelium = Element.partial{
     standard_state = "solid"
 }
 
+local californium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 10
+}
+
+local californium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local californium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        californium_subshell_occupancy1,
+        californium_subshell_occupancy2
+    }
+}
+
+local californium = Element.partial{
+    name = "Californium",
+    symbol = "Cf",
+    number = 98,
+    mass = 251.07959,
+    group = nil,
+    period = 7,
+    oxidation_states = {3},
+    electron_configuration = californium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 245,
+    ionization_energy = 6.3,
+    melting_point = 1173,
+    standard_state = "solid"
+}
+
+local einsteinium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 11
+}
+
+local einsteinium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local einsteinium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        einsteinium_subshell_occupancy1,
+        einsteinium_subshell_occupancy2
+    }
+}
+
+local einsteinium = Element.partial{
+    name = "Einsteinium",
+    symbol = "Es",
+    number = 99,
+    mass = 252.083,
+    group = nil,
+    period = 7,
+    oxidation_states = {3},
+    electron_configuration = einsteinium_electron_configuration,
+    electronegativity = 1.3,
+    atomic_radius = 245,
+    ionization_energy = 6.42,
+    melting_point = 1133,
+    standard_state = "solid"
+}
+
+local fermium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 12
+}
+
+local fermium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local fermium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        fermium_subshell_occupancy1,
+        fermium_subshell_occupancy2
+    }
+}
+
+local fermium = Element.partial{
+    name = "Fermium",
+    symbol = "Fm",
+    number = 100,
+    mass = 257.09511,
+    group = nil,
+    period = 7,
+    oxidation_states = {3},
+    electron_configuration = fermium_electron_configuration,
+    electronegativity = 1.3,
+    ionization_energy = 6.5,
+    melting_point = 1800,
+    standard_state = "solid"
+}
+
+local mendelevium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 13
+}
+
+local mendelevium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local mendelevium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        mendelevium_subshell_occupancy1,
+        mendelevium_subshell_occupancy2
+    }
+}
+
+local mendelevium = Element.partial{
+    name = "Mendelevium",
+    symbol = "Md",
+    number = 101,
+    mass = 258.09843,
+    group = nil,
+    period = 7,
+    oxidation_states = {2, 3},
+    electron_configuration = mendelevium_electron_configuration,
+    electronegativity = 1.3,
+    ionization_energy = 6.58,
+    melting_point = 1100,
+    standard_state = "solid"
+}
+
+local nobelium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 13
+}
+
+local nobelium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local nobelium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        nobelium_subshell_occupancy1,
+        nobelium_subshell_occupancy2
+    }
+}
+
+local nobelium = Element.partial{
+    name = "Nobelium",
+    symbol = "No",
+    number = 102,
+    mass = 259.101,
+    group = nil,
+    period = 7,
+    oxidation_states = {2, 3},
+    electron_configuration = nobelium_electron_configuration,
+    electronegativity = 1.3,
+    ionization_energy = 6.65,
+    melting_point = 1100,
+    standard_state = "solid"
+}
+
+local lawrencium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local lawrencium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local lawrencium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 1
+}
+
+local lawrencium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        lawrencium_subshell_occupancy1,
+        lawrencium_subshell_occupancy2,
+        lawrencium_subshell_occupancy3
+    }
+}
+
+local lawrencium = Element.partial{
+    name = "Lawrencium",
+    symbol = "Lr",
+    number = 103,
+    mass = 266.12,
+    group = nil,
+    period = 7,
+    oxidation_states = {3},
+    electron_configuration = lawrencium_electron_configuration,
+    electronegativity = 1.3,
+    melting_point = 1900,
+    standard_state = "solid"
+}
+
 local actinides = ElementSet.new{
     actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
-    curium, berkelium
+    curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium,
+    lawrencium
 }
 
 return actinides
