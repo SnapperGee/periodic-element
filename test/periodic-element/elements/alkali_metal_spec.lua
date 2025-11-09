@@ -14,6 +14,27 @@ describe("alkali_metals", function ()
             assert.is_not_nil(lithium, message)
         end)
 
+        test("alkali_metals.lithium equals alkali_metals[3]", function ()
+            local lithium = alkali_metals.lithium
+            local lithium_via_index = alkali_metals[3]
+            local message = "alkali_metals.lithium doesn't equal alkali_metals[3]"
+            assert.are.equal(lithium, lithium_via_index, message)
+        end)
+
+        test('alkali_metals.lithium equals alkali_metals["lithium"]', function ()
+            local lithium = alkali_metals.lithium
+            local lithium_via_name = alkali_metals["lithium"]
+            local message = 'alkali_metals.lithium doesn\'t equal alkali_metals["lithium"]'
+            assert.are.equal(lithium, lithium_via_name, message)
+        end)
+
+        test('alkali_metals.lithium equals alkali_metals["li"]', function ()
+            local lithium = alkali_metals.lithium
+            local lithium_via_symbol = alkali_metals["li"]
+            local message = 'alkali_metals.lithium doesn\'t equal alkali_metals["li"]'
+            assert.are.equal(lithium, lithium_via_symbol, message)
+        end)
+
         test('alkali_metals.lithium.name returns "Lithium"', function ()
             local lithium_name = alkali_metals.lithium.name
             local message = 'alkali_metals.lithium.name did not return "Lithium"'
