@@ -132,6 +132,12 @@ describe("alkali_metals", function ()
             local message = "alkali_metals.lithium.density did not return 0.534"
             assert.are.equal(0.534, lithium_density, message)
         end)
+
+        test('alkali_metals.lithium.standard_state returns "Solid"', function ()
+            local lithium_standard_state = alkali_metals.lithium.standard_state
+            local message = 'alkali_metals.lithium.standard_state did not return "Solid"'
+            assert.are.equal("Solid", lithium_standard_state, message)
+        end)
     end)
 
     describe("sodium", function()
@@ -257,6 +263,12 @@ describe("alkali_metals", function ()
             local sodium_density = alkali_metals.sodium.density
             local message = "alkali_metals.sodium.density did not return 0.97"
             assert.are.equal(0.97, sodium_density, message)
+        end)
+
+        test('alkali_metals.sodium.standard_state returns "Solid"', function ()
+            local sodium_standard_state = alkali_metals.sodium.standard_state
+            local message = 'alkali_metals.sodium.standard_state did not return "Solid"'
+            assert.are.equal("Solid", sodium_standard_state, message)
         end)
     end)
 
@@ -384,6 +396,12 @@ describe("alkali_metals", function ()
             local message = "alkali_metals.potassium.density did not return 0.89"
             assert.are.equal(0.89, potassium_density, message)
         end)
+
+        test('alkali_metals.potassium.standard_state returns "Solid"', function ()
+            local potassium_standard_state = alkali_metals.potassium.standard_state
+            local message = 'alkali_metals.potassium.standard_state did not return "Solid"'
+            assert.are.equal("Solid", potassium_standard_state, message)
+        end)
     end)
 
     describe("rubidium", function()
@@ -509,6 +527,12 @@ describe("alkali_metals", function ()
             local rubidium_density = alkali_metals.rubidium.density
             local message = "alkali_metals.rubidium.density did not return 1.53"
             assert.are.equal(1.53, rubidium_density, message)
+        end)
+
+        test('alkali_metals.rubidium.standard_state returns "Solid"', function ()
+            local rubidium_standard_state = alkali_metals.rubidium.standard_state
+            local message = 'alkali_metals.rubidium.standard_state did not return "Solid"'
+            assert.are.equal("Solid", rubidium_standard_state, message)
         end)
     end)
 
@@ -636,6 +660,12 @@ describe("alkali_metals", function ()
             local message = "alkali_metals.cesium.density did not return 1.93"
             assert.are.equal(1.93, cesium_density, message)
         end)
+
+        test('alkali_metals.cesium.standard_state returns "Solid"', function ()
+            local cesium_standard_state = alkali_metals.cesium.standard_state
+            local message = 'alkali_metals.cesium.standard_state did not return "Solid"'
+            assert.are.equal("Solid", cesium_standard_state, message)
+        end)
     end)
 
     describe("francium", function()
@@ -761,6 +791,12 @@ describe("alkali_metals", function ()
             local francium_density = alkali_metals.francium.density
             local message = "alkali_metals.francium.density isn't nil"
             assert.is_nil(francium_density, message)
+        end)
+
+        test('alkali_metals.francium.standard_state returns "Solid"', function ()
+            local francium_standard_state = alkali_metals.francium.standard_state
+            local message = 'alkali_metals.francium.standard_state did not return "Solid"'
+            assert.are.equal("Solid", francium_standard_state, message)
         end)
     end)
 end)
