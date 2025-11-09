@@ -17,7 +17,7 @@ local helium = Element.partial{
     name = "Helium",
     symbol = "He",
     number = 2,
-    mass = 4.003,
+    mass = 4.0026,
     group = 18,
     period = 1,
     oxidation_states = {0},
@@ -292,7 +292,7 @@ local oganesson = Element.partial{
 }
 
 --- Elements of the Noble Gas family (group 8).
----@class NobleHases: ElementSet
+---@class NobleGas: ElementSet
 ---@field helium Element
 ---@field neon Element
 ---@field argon Element
@@ -300,8 +300,8 @@ local oganesson = Element.partial{
 ---@field xenon Element
 ---@field radon Element
 ---@field oganesson Element
-local noble_gases = ElementSet.new{
+local noble_gas = ElementSet.new{
     helium, neon, argon, krypton, xenon, radon, oganesson
 }
 
-return noble_gases
+return noble_gas
