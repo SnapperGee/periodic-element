@@ -15,6 +15,8 @@ it = function(desc, func) end
 function equal(expected, actual, message) end
 
 assert = {
+    is_not_nil = function(arg, message) end,
+    is_nil = function(arg, message) end,
     are = {
         equal = equal
     }

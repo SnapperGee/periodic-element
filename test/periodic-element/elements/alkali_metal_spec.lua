@@ -6,4 +6,10 @@ describe("alkali_metals", function ()
         local message = "Expected alkali_metals:length() to return  6, but got size: " .. tostring(alkali_metals_length)
         assert.are.equal(6, alkali_metals_length, message)
     end)
+
+    it("should return non nil when when accessed via index 3", function ()
+        local lithium = alkali_metals[3]
+        local message = "alkali_metals[3] returned nil"
+        assert.is_not_nil(lithium, message)
+    end)
 end)
