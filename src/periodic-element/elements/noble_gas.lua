@@ -99,7 +99,7 @@ local argon = Element.partial{
     atomic_radius = 188,
     ionization_energy = 15.76,
     melting_point = 83.8,
-    87.3,
+    boiling_point = 87.3,
     density = 0.0017837,
     standard_state = "gas"
 }
