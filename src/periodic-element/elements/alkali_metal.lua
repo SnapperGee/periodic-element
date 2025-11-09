@@ -181,6 +181,14 @@ local francium = Element.partial{
     standard_state = "solid"
 }
 
+--- Elements of the Alkali Metals family (group 1).
+---@class AlkaliMetals: ElementSet
+---@field lithium Element
+---@field sodium Element
+---@field potassium Element
+---@field rubidium Element
+---@field cesium Element
+---@field francium Element
 local alkali_metals = ElementSet.new{
     lithium, sodium, potassium, rubidium, cesium, francium
 }

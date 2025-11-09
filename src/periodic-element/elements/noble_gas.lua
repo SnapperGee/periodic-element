@@ -291,6 +291,15 @@ local oganesson = Element.partial{
     standard_state = "gas"
 }
 
+--- Elements of the Noble Gas family (group 8).
+---@class NobleHases: ElementSet
+---@field helium Element
+---@field neon Element
+---@field argon Element
+---@field krypton Element
+---@field xenon Element
+---@field radon Element
+---@field oganesson Element
 local noble_gases = ElementSet.new{
     helium, neon, argon, krypton, xenon, radon, oganesson
 }

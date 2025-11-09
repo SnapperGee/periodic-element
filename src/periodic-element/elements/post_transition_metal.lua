@@ -513,6 +513,19 @@ local polonium = Element.new{
     standard_state = "solid"
 }
 
+--- Elements of the Post-transition Metals family.
+---@class PostTransitionMetals: ElementSet
+---@field aluminum Element
+---@field zinc Element
+---@field gallium Element
+---@field cadmium Element
+---@field indium Element
+---@field tin Element
+---@field mercury Element
+---@field thallium Element
+---@field lead Element
+---@field bismuth Element
+---@field polonium Element
 local post_transition_metals = ElementSet.new{
     aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
     bismuth, polonium

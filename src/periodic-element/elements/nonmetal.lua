@@ -273,6 +273,15 @@ local selenium = Element.new{
     standard_state = "solid"
 }
 
+--- Elements of the Nonmetal group.
+---@class Nonmetals: ElementSet
+---@field hydrogen Element
+---@field carbon Element
+---@field nitrogen Element
+---@field oxygen Element
+---@field phosphorus Element
+---@field sulfur Element
+---@field selenium Element
 local nonmetals = ElementSet.new{
     hydrogen, carbon, nitrogen, oxygen, phosphorus, sulfur, selenium
 }

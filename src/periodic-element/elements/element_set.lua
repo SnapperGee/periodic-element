@@ -1,7 +1,7 @@
 local Element = require("periodic-element.element")
 local is_array = require("periodic-element.util.is_array")
 
----@class ElementSet
+---@class ElementSet: table<string|number, Element|nil>
 local ElementSet = {}
 
 local DATA = setmetatable({}, { __mode = "k" })

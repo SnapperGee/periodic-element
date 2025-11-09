@@ -1457,10 +1457,48 @@ local copernicium = Element.partial{
     standard_state = "solid"
 }
 
+--- Elements of the TransitionMetal Metals family (group 3-12).
+---@class TransitionMetals: ElementSet
+---@field scandium Element
+---@field titanium Element
+---@field vanadium Element
+---@field chromium Element
+---@field manganese Element
+---@field iron Element
+---@field cobalt Element
+---@field nickel Element
+---@field copper Element
+---@field yttrium Element
+---@field zirconium Element
+---@field niobium Element
+---@field molybdenum Element
+---@field technetium Element
+---@field ruthenium Element
+---@field rhodium Element
+---@field palladium Element
+---@field silver Element
+---@field lutetium Element
+---@field hafnium Element
+---@field tantalum Element
+---@field tungsten Element
+---@field rhenium Element
+---@field osmium Element
+---@field iridium Element
+---@field platinum Element
+---@field gold Element
+---@field rutherfordium Element
+---@field dubnium Element
+---@field seaborgium Element
+---@field bohrium Element
+---@field hassium Element
+---@field meitnerium Element
+---@field darmstadtium Element
+---@field roentgenium Element
+---@field copernicium Element
 local transition_metals = ElementSet.new{
     scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
-    copper, yttrium, zirconium, niobium, molybdenum, technetium,ruthenium,
-    rhodium, palladium, silver, lutetium,hafnium, tantalum, tungsten, rhenium,
+    copper, yttrium, zirconium, niobium, molybdenum, technetium, ruthenium,
+    rhodium, palladium, silver, lutetium, hafnium, tantalum, tungsten, rhenium,
     osmium, iridium, platinum, gold, rutherfordium, dubnium, seaborgium,
     bohrium, hassium, meitnerium, darmstadtium, roentgenium, copernicium
 }

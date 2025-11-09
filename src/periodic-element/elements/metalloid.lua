@@ -265,6 +265,14 @@ local tellurium = Element.new{
     standard_state = "solid"
 }
 
+--- Elements of the Metalloid family.
+---@class Metalloids: ElementSet
+---@field boron Element
+---@field silicon Element
+---@field germanium Element
+---@field arsenic Element
+---@field antimony Element
+---@field tellurium Element
 local metalloids = ElementSet.new{
     boron, silicon, germanium, arsenic, antimony, tellurium
 }

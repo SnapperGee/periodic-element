@@ -589,6 +589,23 @@ local lawrencium = Element.partial{
     standard_state = "solid"
 }
 
+--- Elements of the Actinide family.
+---@class Actinides: ElementSet
+---@field actinium Element
+---@field thorium Element
+---@field protactinium Element
+---@field uranium Element
+---@field neptunium Element
+---@field plutonium Element
+---@field americium Element
+---@field curium Element
+---@field berkelium Element
+---@field californium Element
+---@field einsteinium Element
+---@field fermium Element
+---@field mendelevium Element
+---@field nobelium Element
+---@field lawrencium Element
 local actinides = ElementSet.new{
     actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
     curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium,
