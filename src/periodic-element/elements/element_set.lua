@@ -8,11 +8,24 @@ local DATA = setmetatable({}, { __mode = "k" })
 
 local METATABLE = {
     __index = function(self, k)
+        local self_data = DATA[self]
+
         if type(k) == "number" then
-            local elements = DATA[self].elements
-            return elements[k]
+            return self_data.elements[k]
         end
-        return ElementSet[k]
+
+        local class_member = ElementSet[k]
+
+        if class_member ~= nil then
+            return class_member
+        end
+
+        if type(k) == "string" then
+            local normalized_symbol_or_name = k:sub(1, 1):upper() .. k:sub(2):lower()
+
+            return self_data.name_index[normalized_symbol_or_name]
+                or self_data.symbol_index[normalized_symbol_or_name]
+        end
     end,
     __newindex = function(self, k, v)
         error("ElementSet objects are immutable", 2)
