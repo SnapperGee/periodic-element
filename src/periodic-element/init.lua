@@ -58,7 +58,7 @@ end
 
 if #unrecognized_element_args ~= 0 then
     local unrecognized_elements_string = string.format(
-        'the following are unrecognized element atomic numbers, symbols, and/or names: "%s"\n\n',
+        'unrecognized element atomic numbers, symbols, and/or names: "%s"\n',
         table.concat(unrecognized_element_args, '", "')
     )
 
