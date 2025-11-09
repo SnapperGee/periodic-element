@@ -493,85 +493,62 @@ function Element:formatted_string(indent)
 
         if key == "name" then
             strings[#strings + 1] = string.format('name = "%s"', value)
-
         elseif key == "symbol" then
             strings[#strings + 1] = string.format('symbol = "%s"', value)
-
         elseif key == "number" then
             strings[#strings + 1] = string.format("number = %d", value)
-
         elseif key == "mass" then
             strings[#strings + 1] = string.format("mass = %g u", value)
-
         elseif key == "group" then
             strings[#strings + 1] = string.format(
                 "group = %s",
                 value or tostring(value)
             )
-
         elseif key == "family" then
             strings[#strings + 1] = string.format('family = "%s"', value)
-
         elseif key == "period" then
             strings[#strings + 1] = string.format("period = %d", value)
-
         elseif key == "block" then
             strings[#strings + 1] = string.format("block = '%s'", value)
-
         elseif key == "oxidation_states" then
             strings[#strings + 1] = string.format(
                 "oxidation_states = {%s}",
                 value:formatted_string()
             )
-
         elseif key == "electron_configuration" then
             strings[#strings + 1] = string.format(
                 "electron_configuration = %s",
                 value.canonical_string
             )
-
         elseif key == "electronegativity" then
-            strings[#strings + 1] = string.format(
-                "electronegativity = %s",
-                value and string.format("%g", value) or tostring(value)
-            )
-
+            if value then
+                strings[#strings + 1] = string.format("electronegativity = %g", value)
+            end
         elseif key == "atomic_radius" then
-            strings[#strings + 1] = string.format(
-                "atomic_radius = %s",
-                value and string.format("%g pm", value) or tostring(value)
-            )
-
+            if value then
+                strings[#strings + 1] = string.format("atomic_radius = %g pm", value)
+            end
         elseif key == "ionization_energy" then
-            strings[#strings + 1] = string.format(
-                "ionization_energy = %s",
-                value and string.format("%g eV", value) or tostring(value)
-            )
-
+            if value then
+                strings[#strings + 1] = string.format("ionization_energy = %g eV", value)
+            end
         elseif key == "electron_affinity" then
-            strings[#strings + 1] = string.format(
-                "electron_affinity = %s",
-                value and string.format("%g eV", value) or tostring(value)
-            )
+            if value then
+                strings[#strings + 1] = string.format("electron_affinity = %g eV", value)
+            end
 
         elseif key == "melting_point" then
-            strings[#strings + 1] = string.format(
-                "melting_point = %s",
-                value and string.format("%d K", value) or tostring(value)
-            )
-
+            if value then
+                strings[#strings + 1] = string.format("melting_point = %d K", value)
+            end
         elseif key == "boiling_point" then
-            strings[#strings + 1] = string.format(
-                "boiling_point = %s",
-                value and string.format("%d K", value) or tostring(value)
-            )
-
+            if value then
+                strings[#strings + 1] = string.format("boiling_point = %d K", value)
+            end
         elseif key == "density" then
-            strings[#strings + 1] = string.format(
-                "density = %s",
-                value and string.format("%g g/cm³", value) or tostring(value)
-            )
-
+            if value then
+                strings[#strings + 1] = string.format("density = %g g/cm³", value)
+            end
         elseif key == "standard_state" then
             strings[#strings + 1] = string.format('standard_state = "%s"', value)
 
