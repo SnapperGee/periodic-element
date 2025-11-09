@@ -30,35 +30,6 @@ local METATABLE = {
     __newindex = function(self, k, v)
         error("ElementSet objects are immutable", 2)
     end,
-    __call = function(self, atomic_number_or_symbol_or_name)
-        local self_data = DATA[self]
-
-        if type(atomic_number_or_symbol_or_name) == "number" then
-            assert(
-                atomic_number_or_symbol_or_name == math.floor(atomic_number_or_symbol_or_name) and atomic_number_or_symbol_or_name >= 1 and atomic_number_or_symbol_or_name <= 118,
-                "Atomic number integer in [1, 118] expected but got: " .. tostring(atomic_number_or_symbol_or_name)
-            )
-
-            return self_data.atomic_number_index[atomic_number_or_symbol_or_name]
-        end
-
-        if type(atomic_number_or_symbol_or_name) == "string" then
-            assert(
-                #atomic_number_or_symbol_or_name ~= 0,
-                "non empty symbol or name string required"
-            )
-
-            local normalized_symbol_or_name = atomic_number_or_symbol_or_name:sub(1,1):upper() .. atomic_number_or_symbol_or_name:sub(2):lower()
-
-            if #normalized_symbol_or_name <= 2 then
-                return self_data.symbol_index[normalized_symbol_or_name]
-            else
-                return self_data.name_index[normalized_symbol_or_name]
-            end
-        end
-
-        error("element string symbol or name or integer atomic number expected but got: " .. tostring(type(atomic_number_or_symbol_or_name)), 2)
-    end,
     __tostring = function(self)
 
         local elements = DATA[self].elements

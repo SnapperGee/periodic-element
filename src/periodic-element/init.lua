@@ -8,7 +8,7 @@ local element_strings = {}
 
 for i = 1, #args.element do
     local element_arg = args.element[i]
-    local element = elements(element_arg) or elements[tonumber(element_arg)]
+    local element = elements[element_arg] or elements[tonumber(element_arg)]
 
     if element then
         element_strings[#element_strings+1] = element:formatted_string()
@@ -33,7 +33,7 @@ end
 if args.symbol then
     for i = 1, #args.symbol do
         local symbol_arg = args.symbol[i]
-        local element = elements(symbol_arg)
+        local element = elements[symbol_arg]
 
         if element then
             element_strings[#element_strings+1] = element:formatted_string()
@@ -46,7 +46,7 @@ end
 if args.name then
     for i = 1, #args.name do
         local name_arg = args.name[i]
-        local element = elements(name_arg)
+        local element = elements[name_arg]
 
         if element then
             element_strings[#element_strings+1] = element:formatted_string()
