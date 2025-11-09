@@ -2,22 +2,29 @@
 
 ---@param desc string
 ---@param func fun()
-describe = function(desc, func) end
+local function string_and_callback(desc, func) end
 
----@param desc string
----@param func fun()
-it = function(desc, func) end
+describe = string_and_callback
+
+it = string_and_callback
+
+test = string_and_callback
+
+---@param arg any
+---@param message? string|nil
+local function single_arg(arg, message) end
 
 ---@generic T
 ---@param expected T
 ---@param actual T
 ---@param message? string|nil
-function equal(expected, actual, message) end
+local function two_arg(expected, actual, message) end
 
 assert = {
-    is_not_nil = function(arg, message) end,
-    is_nil = function(arg, message) end,
+    is_not_nil = single_arg,
+    is_nil = single_arg,
     are = {
-        equal = equal
+        equal = two_arg,
+        equals = two_arg
     }
 }
