@@ -1,4 +1,5 @@
 local alkali_metals = require("periodic-element.elements.alkali_metal")
+local OxidationStates = require("src.periodic-element.element.oxidation_states")
 
 describe("alkali_metals", function ()
     test("alkali_metals:length() should return 6", function ()
@@ -51,6 +52,13 @@ describe("alkali_metals", function ()
             local lithium_number = alkali_metals.lithium.number
             local message = "alkali_metals.lithium.number did not return 3"
             assert.are.equal(3, lithium_number, message)
+        end)
+
+        test("alkali_metals.lithium.oxidation_states returns {+1}", function ()
+            local lithium_oxidation_states = alkali_metals.lithium.oxidation_states
+            local expected_oxidation_sates = OxidationStates.new{1}
+            local message = "alkali_metals.lithium.oxidation_states did not return {+1}"
+            assert.are.same(expected_oxidation_sates, lithium_oxidation_states, message)
         end)
 
         test("alkali_metals.lithium.mass returns 6.94", function ()
@@ -170,6 +178,13 @@ describe("alkali_metals", function ()
             local sodium_number = alkali_metals.sodium.number
             local message = "alkali_metals.sodium.number did not return 11"
             assert.are.equal(11, sodium_number, message)
+        end)
+
+        test("alkali_metals.sodium.oxidation_states returns {+1}", function ()
+            local sodium_oxidation_states = alkali_metals.sodium.oxidation_states
+            local expected_oxidation_sates = OxidationStates.new{1}
+            local message = "alkali_metals.sodium.oxidation_states did not return {+1}"
+            assert.are.same(expected_oxidation_sates, sodium_oxidation_states, message)
         end)
 
         test("alkali_metals.sodium.mass returns 22.9897693", function ()

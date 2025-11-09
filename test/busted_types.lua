@@ -24,6 +24,7 @@ assert = {
     is_not_nil = single_arg,
     is_nil = single_arg,
     are = {
+        same = two_arg,
         equal = two_arg,
         equals = two_arg
     }
