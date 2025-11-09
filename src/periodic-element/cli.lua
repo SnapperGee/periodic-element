@@ -12,6 +12,8 @@ local parser = argparse("periodic-element", "Element of the periodic table of el
 parser:argument("element", "An element's atomic number, symbol, or name.")
     :args("*")
 
+parser:flag("-v --version", "Print version of currently installed script and exit.")
+
 parser:option("-a --atomic", "Use an element's atomic number to identify it.")
     :args("+")
     :convert(tonumber)

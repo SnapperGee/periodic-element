@@ -3,6 +3,11 @@ local elements = require("periodic-element.elements")
 
 local args = parser:parse()
 
+if args.version then
+    print("periodic-element 1.3.0")
+    os.exit()
+end
+
 local unrecognized_element_args = {}
 local element_strings = {}
 
