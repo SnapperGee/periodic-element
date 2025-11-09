@@ -513,33 +513,6 @@ local polonium = Element.new{
     standard_state = "solid"
 }
 
-local copernicium_subshell_occupancy1 = SubshellOccupancy.new{
-    n = 5,
-    l = "f",
-    electron_count = 14
-}
-
-local copernicium_subshell_occupancy2 = SubshellOccupancy.new{
-    n = 6,
-    l = "d",
-    electron_count = 10
-}
-
-local copernicium_subshell_occupancy3 = SubshellOccupancy.new{
-    n = 7,
-    l = "s",
-    electron_count = 2
-}
-
-local copernicium_electron_configuration = ElectronConfiguration.new{
-    core = "Rn",
-    subshell_occupancy = {
-        copernicium_subshell_occupancy1,
-        copernicium_subshell_occupancy2,
-        copernicium_subshell_occupancy3
-    }
-}
-
 local post_transition_metals = ElementSet.new{
     aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
     bismuth, polonium
