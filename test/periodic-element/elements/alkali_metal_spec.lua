@@ -1,5 +1,5 @@
 local alkali_metals = require("periodic-element.elements.alkali_metal")
-local OxidationStates = require("src.periodic-element.element.oxidation_states")
+local OxidationStates = require("periodic-element.element.oxidation_states")
 
 describe("alkali_metals", function ()
     test("alkali_metals:length() should return 6", function ()
@@ -383,6 +383,132 @@ describe("alkali_metals", function ()
             local potassium_density = alkali_metals.potassium.density
             local message = "alkali_metals.potassium.density did not return 0.89"
             assert.are.equal(0.89, potassium_density, message)
+        end)
+    end)
+
+    describe("rubidium", function()
+        test("alkali_metals.rubidium returns non nil", function ()
+            local rubidium = alkali_metals.rubidium
+            local message = "alkali_metals.rubidium returned nil"
+            assert.is_not_nil(rubidium, message)
+        end)
+
+        test("alkali_metals.rubidium equals alkali_metals[37]", function ()
+            local rubidium = alkali_metals.rubidium
+            local rubidium_via_index = alkali_metals[37]
+            local message = "alkali_metals.rubidium doesn't equal alkali_metals[37]"
+            assert.are.equal(rubidium, rubidium_via_index, message)
+        end)
+
+        test('alkali_metals.rubidium equals alkali_metals["rubidium"]', function ()
+            local rubidium = alkali_metals.rubidium
+            local rubidium_via_name = alkali_metals["rubidium"]
+            local message = 'alkali_metals.rubidium doesn\'t equal alkali_metals["rubidium"]'
+            assert.are.equal(rubidium, rubidium_via_name, message)
+        end)
+
+        test('alkali_metals.rubidium equals alkali_metals["rb"]', function ()
+            local rubidium = alkali_metals.rubidium
+            local rubidium_via_symbol = alkali_metals["rb"]
+            local message = 'alkali_metals.rubidium doesn\'t equal alkali_metals["rb"]'
+            assert.are.equal(rubidium, rubidium_via_symbol, message)
+        end)
+
+        test('alkali_metals.rubidium.name returns "Rubidium"', function ()
+            local rubidium_name = alkali_metals.rubidium.name
+            local message = 'alkali_metals.rubidium.name did not return "Rubidium"'
+            assert.are.equal("Rubidium", rubidium_name, message)
+        end)
+
+        test('alkali_metals.rubidium.symbol returns "Rb"', function ()
+            local rubidium_symbol = alkali_metals.rubidium.symbol
+            local message = 'alkali_metals.rubidium.symbol did not return "Rb"'
+            assert.are.equal("Rb", rubidium_symbol, message)
+        end)
+
+        test("alkali_metals.rubidium.number returns 37", function ()
+            local rubidium_number = alkali_metals.rubidium.number
+            local message = "alkali_metals.rubidium.number did not return 37"
+            assert.are.equal(37, rubidium_number, message)
+        end)
+
+        test("alkali_metals.rubidium.oxidation_states returns {+1}", function ()
+            local rubidium_oxidation_states = alkali_metals.rubidium.oxidation_states
+            local expected_oxidation_sates = OxidationStates.new{1}
+            local message = "alkali_metals.rubidium.oxidation_states did not return {+1}"
+            assert.are.same(expected_oxidation_sates, rubidium_oxidation_states, message)
+        end)
+
+        test("alkali_metals.rubidium.mass returns 85.468", function ()
+            local rubidium_mass = alkali_metals.rubidium.mass
+            local message = "alkali_metals.rubidium.mass did not return 85.468"
+            assert.are.equal(85.468, rubidium_mass, message)
+        end)
+
+        test("alkali_metals.rubidium.group returns 1", function ()
+            local rubidium_group = alkali_metals.rubidium.group
+            local message = "alkali_metals.rubidium.group did not return 1"
+            assert.are.equal(1, rubidium_group, message)
+        end)
+
+        test('alkali_metals.rubidium.family returns "Alkali Metal"', function ()
+            local rubidium_family = alkali_metals.rubidium.family
+            local message = 'alkali_metals.rubidium.family did not return "Alkali Metal"'
+            assert.are.equal("Alkali Metal", rubidium_family, message)
+        end)
+
+        test("alkali_metals.rubidium.period returns 5", function ()
+            local rubidium_period = alkali_metals.rubidium.period
+            local message = "alkali_metals.rubidium.period did not return 5"
+            assert.are.equal(5, rubidium_period, message)
+        end)
+
+        test("alkali_metals.rubidium.block returns 's'", function ()
+            local rubidium_block = alkali_metals.rubidium.block
+            local message = "alkali_metals.rubidium.block did not return 's'"
+            assert.are.equal('s', rubidium_block, message)
+        end)
+
+        test("alkali_metals.rubidium.electronegativity returns 0.82", function ()
+            local rubidium_electronegativity = alkali_metals.rubidium.electronegativity
+            local message = "alkali_metals.rubidium.electronegativity did not return 0.82"
+            assert.are.equal(0.82, rubidium_electronegativity, message)
+        end)
+
+        test("alkali_metals.rubidium.atomic_radius returns 303", function ()
+            local rubidium_atomic_radius = alkali_metals.rubidium.atomic_radius
+            local message = "alkali_metals.rubidium.atomic_radius did not return 303"
+            assert.are.equal(303, rubidium_atomic_radius, message)
+        end)
+
+        test("alkali_metals.rubidium.ionization_energy returns 4.177", function ()
+            local rubidium_ionization_energy = alkali_metals.rubidium.ionization_energy
+            local message = "alkali_metals.rubidium.ionization_energy did not return 4.177"
+            assert.are.equal(4.177, rubidium_ionization_energy, message)
+        end)
+
+        test("alkali_metals.rubidium.electron_affinity returns 0.468", function ()
+            local rubidium_electron_affinity = alkali_metals.rubidium.electron_affinity
+            local message = "alkali_metals.rubidium.electron_affinity did not return 0.468"
+            assert.are.equal(0.468, rubidium_electron_affinity, message)
+        end)
+
+        test("alkali_metals.rubidium.melting_point returns 312.46", function ()
+            local rubidium_melting_point = alkali_metals.rubidium.melting_point
+            local message = "alkali_metals.rubidium.melting_point did not return 312.46"
+            assert.are.equal(312.46, rubidium_melting_point, message)
+        end)
+
+        test("alkali_metals.rubidium.boiling_point returns 961", function ()
+            local rubidium_boiling_point = alkali_metals.rubidium.boiling_point
+            local message = "alkali_metals.rubidium.boiling_point did not return 961"
+            assert.are.equal(961, rubidium_boiling_point, message)
+        end)
+
+        test("alkali_metals.rubidium.density returns 1.53", function ()
+            local rubidium_density = alkali_metals.rubidium.density
+            local message = "alkali_metals.rubidium.density did not return 1.53"
+            assert.are.equal(1.53, rubidium_density, message)
         end)
     end)
 end)
