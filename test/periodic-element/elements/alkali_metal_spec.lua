@@ -1,6 +1,30 @@
 local alkali_metals = require("periodic-element.elements.alkali_metal")
 local OxidationStates = require("periodic-element.element.oxidation_states")
 
+local lithium_identifiers = {
+    {"lithium", 3},
+    {"li", 3}
+}
+
+local lithium_properties = {
+    {"name", "Lithium"},
+    {"symbol", "Li"},
+    {"number", 3},
+    {"oxidation_states", OxidationStates.new{1}},
+    {"mass", 6.94},
+    {"group", 1},
+    {"family", "Alkali Metals"},
+    {"period", 2},
+    {"block", 's'},
+    {"electronegativity", 0.98},
+    {"atomic_radius", 182},
+    {"ionization_energy", 5.392},
+    {"melting_point", 453.65},
+    {"boiling_point", 1615},
+    {"density", 0.534},
+    {"standard_state", "Solid"},
+}
+
 describe("alkali_metals", function ()
     test("alkali_metals:length() returns 6", function ()
         local alkali_metals_length = alkali_metals:length()
