@@ -637,4 +637,130 @@ describe("alkali_metals", function ()
             assert.are.equal(1.93, cesium_density, message)
         end)
     end)
+
+    describe("francium", function()
+        test("alkali_metals.francium returns non nil", function ()
+            local francium = alkali_metals.francium
+            local message = "alkali_metals.francium returned nil"
+            assert.is_not_nil(francium, message)
+        end)
+
+        test("alkali_metals.francium equals alkali_metals[87]", function ()
+            local francium = alkali_metals.francium
+            local francium_via_index = alkali_metals[87]
+            local message = "alkali_metals.francium doesn't equal alkali_metals[87]"
+            assert.are.equal(francium, francium_via_index, message)
+        end)
+
+        test('alkali_metals.francium equals alkali_metals["francium"]', function ()
+            local francium = alkali_metals.francium
+            local francium_via_name = alkali_metals["francium"]
+            local message = 'alkali_metals.francium doesn\'t equal alkali_metals["francium"]'
+            assert.are.equal(francium, francium_via_name, message)
+        end)
+
+        test('alkali_metals.francium equals alkali_metals["fr"]', function ()
+            local francium = alkali_metals.francium
+            local francium_via_symbol = alkali_metals["fr"]
+            local message = 'alkali_metals.francium doesn\'t equal alkali_metals["fr"]'
+            assert.are.equal(francium, francium_via_symbol, message)
+        end)
+
+        test('alkali_metals.francium.name returns "Francium"', function ()
+            local francium_name = alkali_metals.francium.name
+            local message = 'alkali_metals.francium.name did not return "Francium"'
+            assert.are.equal("Francium", francium_name, message)
+        end)
+
+        test('alkali_metals.francium.symbol returns "Fr"', function ()
+            local francium_symbol = alkali_metals.francium.symbol
+            local message = 'alkali_metals.francium.symbol did not return "Fr"'
+            assert.are.equal("Fr", francium_symbol, message)
+        end)
+
+        test("alkali_metals.francium.number returns 87", function ()
+            local francium_number = alkali_metals.francium.number
+            local message = "alkali_metals.francium.number did not return 87"
+            assert.are.equal(87, francium_number, message)
+        end)
+
+        test("alkali_metals.francium.oxidation_states returns {+1}", function ()
+            local francium_oxidation_states = alkali_metals.francium.oxidation_states
+            local expected_oxidation_sates = OxidationStates.new{1}
+            local message = "alkali_metals.francium.oxidation_states did not return {+1}"
+            assert.are.same(expected_oxidation_sates, francium_oxidation_states, message)
+        end)
+
+        test("alkali_metals.francium.mass returns 223.01973", function ()
+            local francium_mass = alkali_metals.francium.mass
+            local message = "alkali_metals.francium.mass did not return 223.01973"
+            assert.are.equal(223.01973, francium_mass, message)
+        end)
+
+        test("alkali_metals.francium.group returns 1", function ()
+            local francium_group = alkali_metals.francium.group
+            local message = "alkali_metals.francium.group did not return 1"
+            assert.are.equal(1, francium_group, message)
+        end)
+
+        test('alkali_metals.francium.family returns "Alkali Metal"', function ()
+            local francium_family = alkali_metals.francium.family
+            local message = 'alkali_metals.francium.family did not return "Alkali Metal"'
+            assert.are.equal("Alkali Metal", francium_family, message)
+        end)
+
+        test("alkali_metals.francium.period returns 7", function ()
+            local francium_period = alkali_metals.francium.period
+            local message = "alkali_metals.francium.period did not return 7"
+            assert.are.equal(7, francium_period, message)
+        end)
+
+        test("alkali_metals.francium.block returns 's'", function ()
+            local francium_block = alkali_metals.francium.block
+            local message = "alkali_metals.francium.block did not return 's'"
+            assert.are.equal('s', francium_block, message)
+        end)
+
+        test("alkali_metals.francium.electronegativity returns 0.7", function ()
+            local francium_electronegativity = alkali_metals.francium.electronegativity
+            local message = "alkali_metals.francium.electronegativity did not return 0.7"
+            assert.are.equal(0.7, francium_electronegativity, message)
+        end)
+
+        test("alkali_metals.francium.atomic_radius returns 348", function ()
+            local francium_atomic_radius = alkali_metals.francium.atomic_radius
+            local message = "alkali_metals.francium.atomic_radius did not return 348"
+            assert.are.equal(348, francium_atomic_radius, message)
+        end)
+
+        test("alkali_metals.francium.ionization_energy returns 3.9", function ()
+            local francium_ionization_energy = alkali_metals.francium.ionization_energy
+            local message = "alkali_metals.francium.ionization_energy did not return 3.9"
+            assert.are.equal(3.9, francium_ionization_energy, message)
+        end)
+
+        test("alkali_metals.francium.electron_affinity returns 0.47", function ()
+            local francium_electron_affinity = alkali_metals.francium.electron_affinity
+            local message = "alkali_metals.francium.electron_affinity did not return 0.47"
+            assert.are.equal(0.47, francium_electron_affinity, message)
+        end)
+
+        test("alkali_metals.francium.melting_point returns 300", function ()
+            local francium_melting_point = alkali_metals.francium.melting_point
+            local message = "alkali_metals.francium.melting_point did not return 300"
+            assert.are.equal(300, francium_melting_point, message)
+        end)
+
+        test("alkali_metals.francium.boiling_point is nil", function ()
+            local francium_boiling_point = alkali_metals.francium.boiling_point
+            local message = "alkali_metals.francium.boiling_point isn't nil"
+            assert.is_nil(francium_boiling_point, message)
+        end)
+
+        test("alkali_metals.francium.density is nil", function ()
+            local francium_density = alkali_metals.francium.density
+            local message = "alkali_metals.francium.density isn't nil"
+            assert.is_nil(francium_density, message)
+        end)
+    end)
 end)
