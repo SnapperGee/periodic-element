@@ -511,4 +511,130 @@ describe("alkali_metals", function ()
             assert.are.equal(1.53, rubidium_density, message)
         end)
     end)
+
+    describe("cesium", function()
+        test("alkali_metals.cesium returns non nil", function ()
+            local cesium = alkali_metals.cesium
+            local message = "alkali_metals.cesium returned nil"
+            assert.is_not_nil(cesium, message)
+        end)
+
+        test("alkali_metals.cesium equals alkali_metals[55]", function ()
+            local cesium = alkali_metals.cesium
+            local cesium_via_index = alkali_metals[55]
+            local message = "alkali_metals.cesium doesn't equal alkali_metals[55]"
+            assert.are.equal(cesium, cesium_via_index, message)
+        end)
+
+        test('alkali_metals.cesium equals alkali_metals["cesium"]', function ()
+            local cesium = alkali_metals.cesium
+            local cesium_via_name = alkali_metals["cesium"]
+            local message = 'alkali_metals.cesium doesn\'t equal alkali_metals["cesium"]'
+            assert.are.equal(cesium, cesium_via_name, message)
+        end)
+
+        test('alkali_metals.cesium equals alkali_metals["cs"]', function ()
+            local cesium = alkali_metals.cesium
+            local cesium_via_symbol = alkali_metals["cs"]
+            local message = 'alkali_metals.cesium doesn\'t equal alkali_metals["cs"]'
+            assert.are.equal(cesium, cesium_via_symbol, message)
+        end)
+
+        test('alkali_metals.cesium.name returns "Cesium"', function ()
+            local cesium_name = alkali_metals.cesium.name
+            local message = 'alkali_metals.cesium.name did not return "Cesium"'
+            assert.are.equal("Cesium", cesium_name, message)
+        end)
+
+        test('alkali_metals.cesium.symbol returns "Cs"', function ()
+            local cesium_symbol = alkali_metals.cesium.symbol
+            local message = 'alkali_metals.cesium.symbol did not return "Cs"'
+            assert.are.equal("Cs", cesium_symbol, message)
+        end)
+
+        test("alkali_metals.cesium.number returns 55", function ()
+            local cesium_number = alkali_metals.cesium.number
+            local message = "alkali_metals.cesium.number did not return 55"
+            assert.are.equal(55, cesium_number, message)
+        end)
+
+        test("alkali_metals.cesium.oxidation_states returns {+1}", function ()
+            local cesium_oxidation_states = alkali_metals.cesium.oxidation_states
+            local expected_oxidation_sates = OxidationStates.new{1}
+            local message = "alkali_metals.cesium.oxidation_states did not return {+1}"
+            assert.are.same(expected_oxidation_sates, cesium_oxidation_states, message)
+        end)
+
+        test("alkali_metals.cesium.mass returns 132.90545196", function ()
+            local cesium_mass = alkali_metals.cesium.mass
+            local message = "alkali_metals.cesium.mass did not return 132.90545196"
+            assert.are.equal(132.90545196, cesium_mass, message)
+        end)
+
+        test("alkali_metals.cesium.group returns 1", function ()
+            local cesium_group = alkali_metals.cesium.group
+            local message = "alkali_metals.cesium.group did not return 1"
+            assert.are.equal(1, cesium_group, message)
+        end)
+
+        test('alkali_metals.cesium.family returns "Alkali Metal"', function ()
+            local cesium_family = alkali_metals.cesium.family
+            local message = 'alkali_metals.cesium.family did not return "Alkali Metal"'
+            assert.are.equal("Alkali Metal", cesium_family, message)
+        end)
+
+        test("alkali_metals.cesium.period returns 6", function ()
+            local cesium_period = alkali_metals.cesium.period
+            local message = "alkali_metals.cesium.period did not return 6"
+            assert.are.equal(6, cesium_period, message)
+        end)
+
+        test("alkali_metals.cesium.block returns 's'", function ()
+            local cesium_block = alkali_metals.cesium.block
+            local message = "alkali_metals.cesium.block did not return 's'"
+            assert.are.equal('s', cesium_block, message)
+        end)
+
+        test("alkali_metals.cesium.electronegativity returns 0.79", function ()
+            local cesium_electronegativity = alkali_metals.cesium.electronegativity
+            local message = "alkali_metals.cesium.electronegativity did not return 0.79"
+            assert.are.equal(0.79, cesium_electronegativity, message)
+        end)
+
+        test("alkali_metals.cesium.atomic_radius returns 343", function ()
+            local cesium_atomic_radius = alkali_metals.cesium.atomic_radius
+            local message = "alkali_metals.cesium.atomic_radius did not return 343"
+            assert.are.equal(343, cesium_atomic_radius, message)
+        end)
+
+        test("alkali_metals.cesium.ionization_energy returns 3.894", function ()
+            local cesium_ionization_energy = alkali_metals.cesium.ionization_energy
+            local message = "alkali_metals.cesium.ionization_energy did not return 3.894"
+            assert.are.equal(3.894, cesium_ionization_energy, message)
+        end)
+
+        test("alkali_metals.cesium.electron_affinity returns 0.472", function ()
+            local cesium_electron_affinity = alkali_metals.cesium.electron_affinity
+            local message = "alkali_metals.cesium.electron_affinity did not return 0.472"
+            assert.are.equal(0.472, cesium_electron_affinity, message)
+        end)
+
+        test("alkali_metals.cesium.melting_point returns 301.59", function ()
+            local cesium_melting_point = alkali_metals.cesium.melting_point
+            local message = "alkali_metals.cesium.melting_point did not return 301.59"
+            assert.are.equal(301.59, cesium_melting_point, message)
+        end)
+
+        test("alkali_metals.cesium.boiling_point returns 944", function ()
+            local cesium_boiling_point = alkali_metals.cesium.boiling_point
+            local message = "alkali_metals.cesium.boiling_point did not return 944"
+            assert.are.equal(944, cesium_boiling_point, message)
+        end)
+
+        test("alkali_metals.cesium.density returns 1.93", function ()
+            local cesium_density = alkali_metals.cesium.density
+            local message = "alkali_metals.cesium.density did not return 1.93"
+            assert.are.equal(1.93, cesium_density, message)
+        end)
+    end)
 end)
