@@ -11,7 +11,7 @@ local METATABLE = {
         local self_data = DATA[self]
 
         if type(k) == "number" then
-            return self_data.elements[k]
+            return self_data.atomic_number_index[k]
         end
 
         local class_member = ElementSet[k]
