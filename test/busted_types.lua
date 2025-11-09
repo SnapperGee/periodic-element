@@ -8,6 +8,14 @@ describe = function(desc, func) end
 ---@param func fun()
 it = function(desc, func) end
 
+---@generic T
+---@param expected T
+---@param actual T
+---@param message? string|nil
+function equal(expected, actual, message) end
+
 assert = {
-    is_truthy = function(arg) end
+    are = {
+        equal = equal
+    }
 }
