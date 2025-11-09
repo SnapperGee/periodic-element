@@ -1,11 +1,6 @@
 local alkali_metals = require("periodic-element.elements.alkali_metal")
 local OxidationStates = require("periodic-element.element.oxidation_states")
 
-local lithium_identifiers = {
-    {"lithium", 3},
-    {"li", 3}
-}
-
 local lithium_properties = {
     {"name", "Lithium"},
     {"symbol", "Li"},
@@ -13,7 +8,7 @@ local lithium_properties = {
     {"oxidation_states", OxidationStates.new{1}},
     {"mass", 6.94},
     {"group", 1},
-    {"family", "Alkali Metals"},
+    {"family", "Alkali Metal"},
     {"period", 2},
     {"block", 's'},
     {"electronegativity", 0.98},
@@ -22,6 +17,25 @@ local lithium_properties = {
     {"melting_point", 453.65},
     {"boiling_point", 1615},
     {"density", 0.534},
+    {"standard_state", "Solid"},
+}
+
+local sodium_properties = {
+    {"name", "Sodium"},
+    {"symbol", "Na"},
+    {"number", 11},
+    {"oxidation_states", OxidationStates.new{1}},
+    {"mass", 22.9897693},
+    {"group", 1},
+    {"family", "Alkali Metal"},
+    {"period", 3},
+    {"block", 's'},
+    {"electronegativity", 0.93},
+    {"atomic_radius", 227},
+    {"ionization_energy", 5.139},
+    {"melting_point", 370.95},
+    {"boiling_point", 1156},
+    {"density", 0.97},
     {"standard_state", "Solid"},
 }
 
@@ -60,108 +74,18 @@ describe("alkali_metals", function ()
             assert.are.equal(lithium, lithium_via_symbol, message)
         end)
 
-        test('alkali_metals.lithium.name equals "Lithium"', function ()
-            local lithium_name = alkali_metals.lithium.name
-            local message = 'alkali_metals.lithium.name did not return "Lithium"'
-            assert.are.equal("Lithium", lithium_name, message)
-        end)
-
-        test('alkali_metals.lithium.symbol equals "Li"', function ()
-            local lithium_symbol = alkali_metals.lithium.symbol
-            local message = 'alkali_metals.lithium.symbol did not return "Li"'
-            assert.are.equal("Li", lithium_symbol, message)
-        end)
-
-        test("alkali_metals.lithium.number equals 3", function ()
-            local lithium_number = alkali_metals.lithium.number
-            local message = "alkali_metals.lithium.number did not return 3"
-            assert.are.equal(3, lithium_number, message)
-        end)
-
-        test("alkali_metals.lithium.oxidation_states equals {+1}", function ()
-            local lithium_oxidation_states = alkali_metals.lithium.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{1}
-            local message = "alkali_metals.lithium.oxidation_states did not return {+1}"
-            assert.are.same(expected_oxidation_sates, lithium_oxidation_states, message)
-        end)
-
-        test("alkali_metals.lithium.mass equals 6.94", function ()
-            local lithium_mass = alkali_metals.lithium.mass
-            local message = "alkali_metals.lithium.mass did not return 6.94"
-            assert.are.equal(6.94, lithium_mass, message)
-        end)
-
-        test("alkali_metals.lithium.group equals 1", function ()
-            local lithium_group = alkali_metals.lithium.group
-            local message = "alkali_metals.lithium.group did not return 1"
-            assert.are.equal(1, lithium_group, message)
-        end)
-
-        test('alkali_metals.lithium.family equals "Alkali Metal"', function ()
-            local lithium_family = alkali_metals.lithium.family
-            local message = 'alkali_metals.lithium.family did not return "Alkali Metal"'
-            assert.are.equal("Alkali Metal", lithium_family, message)
-        end)
-
-        test("alkali_metals.lithium.period equals 2", function ()
-            local lithium_period = alkali_metals.lithium.period
-            local message = "alkali_metals.lithium.period did not return 2"
-            assert.are.equal(2, lithium_period, message)
-        end)
-
-        test("alkali_metals.lithium.block equals 's'", function ()
-            local lithium_block = alkali_metals.lithium.block
-            local message = "alkali_metals.lithium.block did not return 's'"
-            assert.are.equal('s', lithium_block, message)
-        end)
-
-        test("alkali_metals.lithium.electronegativity equals 0.98", function ()
-            local lithium_electronegativity = alkali_metals.lithium.electronegativity
-            local message = "alkali_metals.lithium.electronegativity did not return 0.98"
-            assert.are.equal(0.98, lithium_electronegativity, message)
-        end)
-
-        test("alkali_metals.lithium.atomic_radius equals 182", function ()
-            local lithium_atomic_radius = alkali_metals.lithium.atomic_radius
-            local message = "alkali_metals.lithium.atomic_radius did not return 182"
-            assert.are.equal(182, lithium_atomic_radius, message)
-        end)
-
-        test("alkali_metals.lithium.ionization_energy equals 5.392", function ()
-            local lithium_ionization_energy = alkali_metals.lithium.ionization_energy
-            local message = "alkali_metals.lithium.ionization_energy did not return 5.392"
-            assert.are.equal(5.392, lithium_ionization_energy, message)
-        end)
-
-        test("alkali_metals.lithium.electron_affinity equals 0.618", function ()
-            local lithium_electron_affinity = alkali_metals.lithium.electron_affinity
-            local message = "alkali_metals.lithium.electron_affinity did not return 0.618"
-            assert.are.equal(0.618, lithium_electron_affinity, message)
-        end)
-
-        test("alkali_metals.lithium.melting_point equals 453.65", function ()
-            local lithium_melting_point = alkali_metals.lithium.melting_point
-            local message = "alkali_metals.lithium.melting_point did not return 453.65"
-            assert.are.equal(453.65, lithium_melting_point, message)
-        end)
-
-        test("alkali_metals.lithium.boiling_point equals 1615", function ()
-            local lithium_boiling_point = alkali_metals.lithium.boiling_point
-            local message = "alkali_metals.lithium.boiling_point did not return 1615"
-            assert.are.equal(1615, lithium_boiling_point, message)
-        end)
-
-        test("alkali_metals.lithium.density equals 0.534", function ()
-            local lithium_density = alkali_metals.lithium.density
-            local message = "alkali_metals.lithium.density did not return 0.534"
-            assert.are.equal(0.534, lithium_density, message)
-        end)
-
-        test('alkali_metals.lithium.standard_state equals "Solid"', function ()
-            local lithium_standard_state = alkali_metals.lithium.standard_state
-            local message = 'alkali_metals.lithium.standard_state did not return "Solid"'
-            assert.are.equal("Solid", lithium_standard_state, message)
-        end)
+        for i = 1, #lithium_properties do
+            local lithium_test_parameters = lithium_properties[i]
+            local property_key = lithium_test_parameters[1]
+            local expected_lithium_property_value = lithium_test_parameters[2]
+            local lithium_test_string = string.format("alkali_metals.lithium.%s equals %s", property_key, tostring(expected_lithium_property_value))
+            local function lithium_test_function()
+                local actual_lithium_property_value = alkali_metals.lithium[property_key]
+                local lithium_message = string.format("alkali_metals.lithium.%s doesn't equal %s", property_key, tostring(expected_lithium_property_value))
+                assert.are.equal(actual_lithium_property_value, expected_lithium_property_value, lithium_message)
+            end
+            test(lithium_test_string, lithium_test_function)
+        end
     end)
 
     describe("sodium", function()
@@ -192,108 +116,18 @@ describe("alkali_metals", function ()
             assert.are.equal(sodium, sodium_via_symbol, message)
         end)
 
-        test('alkali_metals.sodium.name equals "Sodium"', function ()
-            local sodium_name = alkali_metals.sodium.name
-            local message = 'alkali_metals.sodium.name did not return "Sodium"'
-            assert.are.equal("Sodium", sodium_name, message)
-        end)
-
-        test('alkali_metals.sodium.symbol equals "Na"', function ()
-            local sodium_symbol = alkali_metals.sodium.symbol
-            local message = 'alkali_metals.sodium.symbol did not return "Na"'
-            assert.are.equal("Na", sodium_symbol, message)
-        end)
-
-        test("alkali_metals.sodium.number equals 11", function ()
-            local sodium_number = alkali_metals.sodium.number
-            local message = "alkali_metals.sodium.number did not return 11"
-            assert.are.equal(11, sodium_number, message)
-        end)
-
-        test("alkali_metals.sodium.oxidation_states equals {+1}", function ()
-            local sodium_oxidation_states = alkali_metals.sodium.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{1}
-            local message = "alkali_metals.sodium.oxidation_states did not return {+1}"
-            assert.are.same(expected_oxidation_sates, sodium_oxidation_states, message)
-        end)
-
-        test("alkali_metals.sodium.mass equals 22.9897693", function ()
-            local sodium_mass = alkali_metals.sodium.mass
-            local message = "alkali_metals.sodium.mass did not return 22.9897693"
-            assert.are.equal(22.9897693, sodium_mass, message)
-        end)
-
-        test("alkali_metals.sodium.group equals 1", function ()
-            local sodium_group = alkali_metals.sodium.group
-            local message = "alkali_metals.sodium.group did not return 1"
-            assert.are.equal(1, sodium_group, message)
-        end)
-
-        test('alkali_metals.sodium.family equals "Alkali Metal"', function ()
-            local sodium_family = alkali_metals.sodium.family
-            local message = 'alkali_metals.sodium.family did not return "Alkali Metal"'
-            assert.are.equal("Alkali Metal", sodium_family, message)
-        end)
-
-        test("alkali_metals.sodium.period equals 3", function ()
-            local sodium_period = alkali_metals.sodium.period
-            local message = "alkali_metals.sodium.period did not return 3"
-            assert.are.equal(3, sodium_period, message)
-        end)
-
-        test("alkali_metals.sodium.block equals 's'", function ()
-            local sodium_block = alkali_metals.sodium.block
-            local message = "alkali_metals.sodium.block did not return 's'"
-            assert.are.equal('s', sodium_block, message)
-        end)
-
-        test("alkali_metals.sodium.electronegativity equals 0.93", function ()
-            local sodium_electronegativity = alkali_metals.sodium.electronegativity
-            local message = "alkali_metals.sodium.electronegativity did not return 0.93"
-            assert.are.equal(0.93, sodium_electronegativity, message)
-        end)
-
-        test("alkali_metals.sodium.atomic_radius equals 227", function ()
-            local sodium_atomic_radius = alkali_metals.sodium.atomic_radius
-            local message = "alkali_metals.sodium.atomic_radius did not return 227"
-            assert.are.equal(227, sodium_atomic_radius, message)
-        end)
-
-        test("alkali_metals.sodium.ionization_energy equals 5.139", function ()
-            local sodium_ionization_energy = alkali_metals.sodium.ionization_energy
-            local message = "alkali_metals.sodium.ionization_energy did not return 5.139"
-            assert.are.equal(5.139, sodium_ionization_energy, message)
-        end)
-
-        test("alkali_metals.sodium.electron_affinity equals 0.548", function ()
-            local sodium_electron_affinity = alkali_metals.sodium.electron_affinity
-            local message = "alkali_metals.sodium.electron_affinity did not return 0.548"
-            assert.are.equal(0.548, sodium_electron_affinity, message)
-        end)
-
-        test("alkali_metals.sodium.melting_point equals 370.95", function ()
-            local sodium_melting_point = alkali_metals.sodium.melting_point
-            local message = "alkali_metals.sodium.melting_point did not return 370.95"
-            assert.are.equal(370.95, sodium_melting_point, message)
-        end)
-
-        test("alkali_metals.sodium.boiling_point equals 1156", function ()
-            local sodium_boiling_point = alkali_metals.sodium.boiling_point
-            local message = "alkali_metals.sodium.boiling_point did not return 1156"
-            assert.are.equal(1156, sodium_boiling_point, message)
-        end)
-
-        test("alkali_metals.sodium.density equals 0.97", function ()
-            local sodium_density = alkali_metals.sodium.density
-            local message = "alkali_metals.sodium.density did not return 0.97"
-            assert.are.equal(0.97, sodium_density, message)
-        end)
-
-        test('alkali_metals.sodium.standard_state equals "Solid"', function ()
-            local sodium_standard_state = alkali_metals.sodium.standard_state
-            local message = 'alkali_metals.sodium.standard_state did not return "Solid"'
-            assert.are.equal("Solid", sodium_standard_state, message)
-        end)
+        for i = 1, #lithium_properties do
+            local sodium_test_parameters = sodium_properties[i]
+            local sodium_property_key = sodium_test_parameters[1]
+            local expected_sodium_property_value = sodium_test_parameters[2]
+            local sodium_test_string = string.format("alkali_metals.sodium.%s equals %s", sodium_property_key, tostring(expected_sodium_property_value))
+            local function sodium_test_function()
+                local actual_sodium_property_value = alkali_metals.sodium[sodium_property_key]
+                local sodium_test_message = string.format("alkali_metals.sodium.%s doesn't equal %s", sodium_property_key, tostring(expected_sodium_property_value))
+                assert.are.equal(actual_sodium_property_value, expected_sodium_property_value, sodium_test_message)
+            end
+            test(sodium_test_string, sodium_test_function)
+        end
     end)
 
     describe("potassium", function()
