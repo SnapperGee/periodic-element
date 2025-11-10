@@ -1,7 +1,8 @@
 local Element = require("periodic-element.element")
 local is_array = require("periodic-element.util.is_array")
 
----@class ElementSet: table<string|number, Element|nil>
+---@class ElementSet
+---@field _name string|nil
 local ElementSet = {}
 
 local DATA = setmetatable({}, { __mode = "k" })
@@ -46,8 +47,9 @@ local METATABLE = {
 }
 
 ---@param elements Element[]
+---@param name? string|nil
 ---@return ElementSet
-function ElementSet.new(elements)
+function ElementSet.new(elements, name)
 
     assert(type(elements) == "table", "elements table required")
 
@@ -95,7 +97,8 @@ function ElementSet.new(elements)
         elements = elements_copy,
         atomic_number_index = atomic_number_index,
         symbol_index = symbol_index,
-        name_index = name_index
+        name_index = name_index,
+        _name = name
     }
 
     return obj
@@ -104,6 +107,11 @@ end
 ---@return integer
 function ElementSet:length()
     return #DATA[self].elements
+end
+
+---@return string
+function ElementSet:name()
+    return DATA[self]._name or ""
 end
 
 ---@return fun(): integer?, Element?
