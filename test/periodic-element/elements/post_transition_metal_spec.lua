@@ -244,10 +244,10 @@ local copernicium_properties = {
 
 describe(post_transition_metal:name(), function ()
 
-    test(string.format("%s:length() returns 12", post_transition_metal:name()), function ()
+    test(string.format("%s:length() returns 16", post_transition_metal:name()), function ()
         local alkali_metal_length = post_transition_metal:length()
-        local message = string.format("%s:length() did not return 12", post_transition_metal:name())
-        assert.are.equal(12, alkali_metal_length, message)
+        local message = string.format("%s:length() did not return 16", post_transition_metal:name())
+        assert.are.equal(16, alkali_metal_length, message)
     end)
 
     test_elements(post_transition_metal.aluminum, post_transition_metal, aluminum_properties, describe, test, assert)

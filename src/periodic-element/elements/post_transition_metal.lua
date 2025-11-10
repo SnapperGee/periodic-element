@@ -552,6 +552,189 @@ local copernicium = Element.partial{
     standard_state = "solid"
 }
 
+local nihonium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local nihonium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 10
+}
+
+local nihonium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local nihonium_subshell_occupancy4 = SubshellOccupancy.new{
+    n = 7,
+    l = "p",
+    electron_count = 1
+}
+
+local nihonium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        nihonium_subshell_occupancy1,
+        nihonium_subshell_occupancy2,
+        nihonium_subshell_occupancy3,
+        nihonium_subshell_occupancy4
+    }
+}
+
+local nihonium = Element.partial{
+    name = "Nihonium",
+    symbol = "Nh",
+    number = 113,
+    mass = 286.182,
+    group = 13,
+    period = 7,
+    electron_configuration = nihonium_electron_configuration,
+    standard_state = "solid"
+}
+
+local flerovium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local flerovium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 10
+}
+
+local flerovium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local flerovium_subshell_occupancy4 = SubshellOccupancy.new{
+    n = 7,
+    l = "p",
+    electron_count = 2
+}
+
+local flerovium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        flerovium_subshell_occupancy1,
+        flerovium_subshell_occupancy2,
+        flerovium_subshell_occupancy3,
+        flerovium_subshell_occupancy4
+    }
+}
+
+local flerovium = Element.partial{
+    name = "Flerovium",
+    symbol = "Fl",
+    number = 114,
+    mass = 290.192,
+    group = 14,
+    period = 7,
+    oxidation_states = {0, 1, 2, 4, 6},
+    electron_configuration = flerovium_electron_configuration,
+    standard_state = "solid"
+}
+
+local moscovium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local moscovium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 10
+}
+
+local moscovium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local moscovium_subshell_occupancy4 = SubshellOccupancy.new{
+    n = 7,
+    l = "p",
+    electron_count = 3
+}
+
+local moscovium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        moscovium_subshell_occupancy1,
+        moscovium_subshell_occupancy2,
+        moscovium_subshell_occupancy3,
+        moscovium_subshell_occupancy4
+    }
+}
+
+local moscovium = Element.partial{
+    name = "Moscovium",
+    symbol = "Mc",
+    number = 115,
+    mass = 290.196,
+    group = 15,
+    period = 7,
+    oxidation_states = {1, 3},
+    electron_configuration = moscovium_electron_configuration,
+    standard_state = "solid"
+}
+
+local livermorium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local livermorium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 10
+}
+
+local livermorium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local livermorium_subshell_occupancy4 = SubshellOccupancy.new{
+    n = 7,
+    l = "p",
+    electron_count = 4
+}
+
+local livermorium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        livermorium_subshell_occupancy1,
+        livermorium_subshell_occupancy2,
+        livermorium_subshell_occupancy3,
+        livermorium_subshell_occupancy4
+    }
+}
+
+local livermorium = Element.partial{
+    name = "Livermorium",
+    symbol = "Lv",
+    number = 116,
+    mass = 293.205,
+    group = 16,
+    period = 7,
+    oxidation_states = {-2, 2, 4},
+    electron_configuration = livermorium_electron_configuration,
+    standard_state = "solid"
+}
+
 --- Elements of the Post-transition Metals family.
 ---@class PostTransitionMetal: ElementSet
 ---@field aluminum Element
@@ -566,9 +749,13 @@ local copernicium = Element.partial{
 ---@field bismuth Element
 ---@field polonium Element
 ---@field copernicium Element
+---@field nihonium Element
+---@field flerovium Element
+---@field moscovium Element
+---@field livermorium Element
 local post_transition_metal = ElementSet.new(
     {aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
-    bismuth, polonium, copernicium},
+    bismuth, polonium, copernicium, nihonium, flerovium, moscovium, livermorium},
     "PostTransitionMetal"
 )
 
