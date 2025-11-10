@@ -1,6 +1,26 @@
 local noble_gas = require("periodic-element.elements.noble_gas")
 local OxidationStates = require("periodic-element.element.oxidation_states")
 
+local helium_properties = {
+    {"name", "Helium"},
+    {"symbol", "He"},
+    {"number", 2},
+    {"oxidation_states", OxidationStates.new{0}},
+    {"mass", 4.0026},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 1},
+    {"block", 's'},
+    {"electronegativity", nil},
+    {"atomic_radius", 140},
+    {"ionization_energy", 24.587},
+    {"electron_affinity", nil},
+    {"melting_point", 0.95},
+    {"boiling_point", 4.22},
+    {"density", 0.0001785},
+    {"standard_state", "Gas"},
+}
+
 describe("noble_gases", function ()
     test("noble_gases:length() should return 7", function ()
         local noble_gases_length = noble_gas:length()
@@ -36,108 +56,23 @@ describe("noble_gases", function ()
             assert.are.equal(helium, helium_via_symbol, message)
         end)
 
-        test('noble_gases.helium.name equals "Helium"', function ()
-            local helium_name = noble_gas.helium.name
-            local message = 'noble_gases.helium.name doesn\'t "Helium"'
-            assert.are.equal("Helium", helium_name, message)
-        end)
-
-        test('noble_gases.helium.symbol equals "He"', function ()
-            local helium_symbol = noble_gas.helium.symbol
-            local message = 'noble_gases.helium.symbol doesn\'t "He"'
-            assert.are.equal("He", helium_symbol, message)
-        end)
-
-        test("noble_gases.helium.number equals 2", function ()
-            local helium_number = noble_gas.helium.number
-            local message = "noble_gases.helium.number doesn\'t 2"
-            assert.are.equal(2, helium_number, message)
-        end)
-
-        test("noble_gases.helium.oxidation_states equals {0}", function ()
-            local helium_oxidation_states = noble_gas.helium.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{0}
-            local message = "noble_gases.helium.oxidation_states doesn\'t {0}"
-            assert.are.same(expected_oxidation_sates, helium_oxidation_states, message)
-        end)
-
-        test("noble_gases.helium.mass equals 4.0026", function ()
-            local helium_mass = noble_gas.helium.mass
-            local message = "noble_gases.helium.mass doesn\'t equal 4.0026"
-            assert.are.equal(4.0026, helium_mass, message)
-        end)
-
-        test("noble_gases.helium.group equals 18", function ()
-            local helium_group = noble_gas.helium.group
-            local message = "noble_gases.helium.group doesn\'t equal 18"
-            assert.are.equal(18, helium_group, message)
-        end)
-
-        test('noble_gases.helium.family equals "Noble Gas"', function ()
-            local helium_family = noble_gas.helium.family
-            local message = 'noble_gases.helium.family doesn\'t "Noble Gas"'
-            assert.are.equal("Noble Gas", helium_family, message)
-        end)
-
-        test("noble_gases.helium.period equals 1", function ()
-            local helium_period = noble_gas.helium.period
-            local message = "noble_gases.helium.period doesn\'t 1"
-            assert.are.equal(1, helium_period, message)
-        end)
-
-        test("noble_gases.helium.block equals 's'", function ()
-            local helium_block = noble_gas.helium.block
-            local message = "noble_gases.helium.block doesn\'t 's'"
-            assert.are.equal('s', helium_block, message)
-        end)
-
-        test("noble_gases.helium.electronegativity is nil", function ()
-            local helium_electronegativity = noble_gas.helium.electronegativity
-            local message = "noble_gases.helium.electronegativity isn't nil"
-            assert.is_nil(helium_electronegativity, message)
-        end)
-
-        test("noble_gases.helium.atomic_radius equals 140", function ()
-            local helium_atomic_radius = noble_gas.helium.atomic_radius
-            local message = "noble_gases.helium.atomic_radius does not equal 140"
-            assert.are.equal(140, helium_atomic_radius, message)
-        end)
-
-        test("noble_gases.helium.ionization_energy equals 24.587", function ()
-            local helium_ionization_energy = noble_gas.helium.ionization_energy
-            local message = "noble_gases.helium.ionization_energy doesn\'t equal 24.587"
-            assert.are.equal(24.587, helium_ionization_energy, message)
-        end)
-
-        test("noble_gases.helium.electron_affinity is nil", function ()
-            local helium_electron_affinity = noble_gas.helium.electron_affinity
-            local message = "noble_gases.helium.electron_affinity isn't nil"
-            assert.is_nil(helium_electron_affinity, message)
-        end)
-
-        test("noble_gases.helium.melting_point equals 0.95", function ()
-            local helium_melting_point = noble_gas.helium.melting_point
-            local message = "noble_gases.helium.melting_point doesn\'t equal 0.95"
-            assert.are.equal(0.95, helium_melting_point, message)
-        end)
-
-        test("noble_gases.helium.boiling_point equals 4.22", function ()
-            local helium_boiling_point = noble_gas.helium.boiling_point
-            local message = "noble_gases.helium.boiling_point doesn\'t equal 4.22"
-            assert.are.equal(4.22, helium_boiling_point, message)
-        end)
-
-        test("noble_gases.helium.density equals 0.0001785", function ()
-            local helium_density = noble_gas.helium.density
-            local message = "noble_gases.helium.density doesn\'t 0.0001785"
-            assert.are.equal(0.0001785, helium_density, message)
-        end)
-
-        test('noble_gases.helium.standard_state equals "Gas"', function ()
-            local helium_standard_state = noble_gas.helium.standard_state
-            local message = 'noble_gases.helium.standard_state doesn\'t equal "Gas"'
-            assert.are.equal("Gas", helium_standard_state, message)
-        end)
+        for i = 1, #helium_properties do
+            local helium_test_parameters = helium_properties[i]
+            local helium_property_key = helium_test_parameters[1]
+            local expected_helium_property_value = helium_test_parameters[2]
+            local helium_test_string = string.format("noble_gas.helium.%s equals %s", helium_property_key, tostring(expected_helium_property_value))
+            local function helium_test_function()
+                local actual_helium_property_value = noble_gas.helium[helium_property_key]
+                if expected_helium_property_value ~= nil then
+                    local helium_message = string.format("noble_gas.helium.%s doesn't equal %s", helium_property_key, tostring(expected_helium_property_value))
+                    assert.are.equal(actual_helium_property_value, expected_helium_property_value, helium_message)
+                else
+                    local helium_message = string.format("noble_gas.helium.%s isn't nil", helium_property_key)
+                    assert.is_nil(actual_helium_property_value, helium_message)
+                end
+            end
+            test(helium_test_string, helium_test_function)
+        end
     end)
 
     describe("neon", function()
