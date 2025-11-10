@@ -242,6 +242,86 @@ local copernicium_properties = {
     {"standard_state", "Solid"},
 }
 
+local nihonium_properties = {
+    {"name", "Nihonium"},
+    {"symbol", "Nh"},
+    {"number", 113},
+    {"oxidation_states", nil},
+    {"mass", 286.182},
+    {"group", 13},
+    {"family", "Post-transition Metal"},
+    {"period", 7},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", nil},
+    {"ionization_energy", nil},
+    {"electron_affinity", nil},
+    {"melting_point", nil},
+    {"boiling_point", nil},
+    {"density", nil},
+    {"standard_state", "Solid"},
+}
+
+local flerovium_properties = {
+    {"name", "Flerovium"},
+    {"symbol", "Fl"},
+    {"number", 114},
+    {"oxidation_states", OxidationStates.new{0, 1, 2, 4, 6}},
+    {"mass", 290.192},
+    {"group", 14},
+    {"family", "Post-transition Metal"},
+    {"period", 7},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", nil},
+    {"ionization_energy", nil},
+    {"electron_affinity", nil},
+    {"melting_point", nil},
+    {"boiling_point", nil},
+    {"density", nil},
+    {"standard_state", "Solid"},
+}
+
+local moscovium_properties = {
+    {"name", "Moscovium"},
+    {"symbol", "Mc"},
+    {"number", 115},
+    {"oxidation_states", OxidationStates.new{1, 3}},
+    {"mass", 290.196},
+    {"group", 15},
+    {"family", "Post-transition Metal"},
+    {"period", 7},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", nil},
+    {"ionization_energy", nil},
+    {"electron_affinity", nil},
+    {"melting_point", nil},
+    {"boiling_point", nil},
+    {"density", nil},
+    {"standard_state", "Solid"},
+}
+
+local livermorium_properties = {
+    {"name", "Livermorium"},
+    {"symbol", "Lv"},
+    {"number", 116},
+    {"oxidation_states", OxidationStates.new{-2, 2, 4}},
+    {"mass", 293.205},
+    {"group", 16},
+    {"family", "Post-transition Metal"},
+    {"period", 7},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", nil},
+    {"ionization_energy", nil},
+    {"electron_affinity", nil},
+    {"melting_point", nil},
+    {"boiling_point", nil},
+    {"density", nil},
+    {"standard_state", "Solid"},
+}
+
 describe(post_transition_metal:name(), function ()
 
     test(string.format("%s:length() returns 16", post_transition_metal:name()), function ()
@@ -262,4 +342,8 @@ describe(post_transition_metal:name(), function ()
     test_elements(post_transition_metal.bismuth, post_transition_metal, bismuth_properties, describe, test, assert)
     test_elements(post_transition_metal.polonium, post_transition_metal, polonium_properties, describe, test, assert)
     test_elements(post_transition_metal.copernicium, post_transition_metal, copernicium_properties, describe, test, assert)
+    test_elements(post_transition_metal.nihonium, post_transition_metal, nihonium_properties, describe, test, assert)
+    test_elements(post_transition_metal.flerovium, post_transition_metal, flerovium_properties, describe, test, assert)
+    test_elements(post_transition_metal.moscovium, post_transition_metal, moscovium_properties, describe, test, assert)
+    test_elements(post_transition_metal.livermorium, post_transition_metal, livermorium_properties, describe, test, assert)
 end)
