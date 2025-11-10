@@ -41,6 +41,26 @@ local neon_properties = {
     {"standard_state", "Gas"},
 }
 
+local argon_properties = {
+    {"name", "Argon"},
+    {"symbol", "Ar"},
+    {"number", 18},
+    {"oxidation_states", OxidationStates.new{0}},
+    {"mass", 39.948},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 3},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", 188},
+    {"ionization_energy", 15.76},
+    {"electron_affinity", nil},
+    {"melting_point", 83.8},
+    {"boiling_point", 87.3},
+    {"density", 0.0017837},
+    {"standard_state", "Gas"},
+}
+
 describe("noble_gases", function ()
     test("noble_gases:length() should return 7", function ()
         local noble_gases_length = noble_gas:length()
@@ -170,108 +190,23 @@ describe("noble_gases", function ()
             assert.are.equal(argon, argon_via_symbol, message)
         end)
 
-        test('noble_gases.argon.name equals "Argon"', function ()
-            local argon_name = noble_gas.argon.name
-            local message = 'noble_gases.argon.name doesn\'t "Argon"'
-            assert.are.equal("Argon", argon_name, message)
-        end)
-
-        test('noble_gases.argon.symbol equals "Ar"', function ()
-            local argon_symbol = noble_gas.argon.symbol
-            local message = 'noble_gases.argon.symbol doesn\'t "Ar"'
-            assert.are.equal("Ar", argon_symbol, message)
-        end)
-
-        test("noble_gases.argon.number equals 18", function ()
-            local argon_number = noble_gas.argon.number
-            local message = "noble_gases.argon.number doesn\'t 18"
-            assert.are.equal(18, argon_number, message)
-        end)
-
-        test("noble_gases.argon.oxidation_states equals {0}", function ()
-            local argon_oxidation_states = noble_gas.argon.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{0}
-            local message = "noble_gases.argon.oxidation_states doesn\'t {0}"
-            assert.are.same(expected_oxidation_sates, argon_oxidation_states, message)
-        end)
-
-        test("noble_gases.argon.mass equals 39.948", function ()
-            local argon_mass = noble_gas.argon.mass
-            local message = "noble_gases.argon.mass doesn\'t equal 39.948"
-            assert.are.equal(39.948, argon_mass, message)
-        end)
-
-        test("noble_gases.argon.group equals 18", function ()
-            local argon_group = noble_gas.argon.group
-            local message = "noble_gases.argon.group doesn\'t equal 18"
-            assert.are.equal(18, argon_group, message)
-        end)
-
-        test('noble_gases.argon.family equals "Noble Gas"', function ()
-            local argon_family = noble_gas.argon.family
-            local message = 'noble_gases.argon.family doesn\'t "Noble Gas"'
-            assert.are.equal("Noble Gas", argon_family, message)
-        end)
-
-        test("noble_gases.argon.period equals 3", function ()
-            local argon_period = noble_gas.argon.period
-            local message = "noble_gases.argon.period doesn\'t 3"
-            assert.are.equal(3, argon_period, message)
-        end)
-
-        test("noble_gases.argon.block equals 'p'", function ()
-            local argon_block = noble_gas.argon.block
-            local message = "noble_gases.argon.block doesn\'t 'p'"
-            assert.are.equal('p', argon_block, message)
-        end)
-
-        test("noble_gases.argon.electronegativity is nil", function ()
-            local argon_electronegativity = noble_gas.argon.electronegativity
-            local message = "noble_gases.argon.electronegativity isn\'t nil"
-            assert.is_nil(argon_electronegativity, message)
-        end)
-
-        test("noble_gases.argon.atomic_radius equals 188", function ()
-            local argon_atomic_radius = noble_gas.argon.atomic_radius
-            local message = "noble_gases.argon.atomic_radius does not equal 188"
-            assert.are.equal(188, argon_atomic_radius, message)
-        end)
-
-        test("noble_gases.argon.ionization_energy equals 15.76", function ()
-            local argon_ionization_energy = noble_gas.argon.ionization_energy
-            local message = "noble_gases.argon.ionization_energy doesn\'t equal 15.76"
-            assert.are.equal(15.76, argon_ionization_energy, message)
-        end)
-
-        test("noble_gases.argon.electron_affinity is nil", function ()
-            local argon_electron_affinity = noble_gas.argon.electron_affinity
-            local message = "noble_gases.argon.electron_affinity isn\'t nil"
-            assert.is_nil(argon_electron_affinity, message)
-        end)
-
-        test("noble_gases.argon.melting_point equals 83.8", function ()
-            local argon_melting_point = noble_gas.argon.melting_point
-            local message = "noble_gases.argon.melting_point doesn\'t equal 83.8"
-            assert.are.equal(83.8, argon_melting_point, message)
-        end)
-
-        test("noble_gases.argon.boiling_point equals 87.3", function ()
-            local argon_boiling_point = noble_gas.argon.boiling_point
-            local message = "noble_gases.argon.boiling_point doesn\'t equal 87.3"
-            assert.are.equal(87.3, argon_boiling_point, message)
-        end)
-
-        test("noble_gases.argon.density equals 0.0017837", function ()
-            local argon_density = noble_gas.argon.density
-            local message = "noble_gases.argon.density doesn\'t 0.0017837"
-            assert.are.equal(0.0017837, argon_density, message)
-        end)
-
-        test('noble_gases.argon.standard_state equals "Gas"', function ()
-            local argon_standard_state = noble_gas.argon.standard_state
-            local message = 'noble_gases.argon.standard_state doesn\'t "Gas"'
-            assert.are.equal("Gas", argon_standard_state, message)
-        end)
+        for i = 1, #argon_properties do
+            local argon_test_parameters = argon_properties[i]
+            local argon_property_key = argon_test_parameters[1]
+            local expected_argon_property_value = argon_test_parameters[2]
+            local argon_test_string = expected_argon_property_value ~= nil and string.format("noble_gas.neon.%s equals %s", argon_property_key, tostring(expected_argon_property_value)) or string.format("noble_gas.argon.%s is nil", argon_property_key)
+            local function argon_test_function()
+                local actual_argon_property_value = noble_gas.argon[argon_property_key]
+                if expected_argon_property_value ~= nil then
+                    local argon_message = string.format("noble_gas.argon.%s doesn't equal %s", argon_property_key, tostring(expected_argon_property_value))
+                    assert.are.equal(actual_argon_property_value, expected_argon_property_value, argon_message)
+                else
+                    local argon_message = string.format("noble_gas.argon.%s isn't nil", argon_property_key)
+                    assert.is_nil(actual_argon_property_value, argon_message)
+                end
+            end
+            test(argon_test_string, argon_test_function)
+        end
     end)
 
     -- describe("rubidium", function()
