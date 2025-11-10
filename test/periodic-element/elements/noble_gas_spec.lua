@@ -21,6 +21,26 @@ local helium_properties = {
     {"standard_state", "Gas"},
 }
 
+local neon_properties = {
+    {"name", "Neon"},
+    {"symbol", "Ne"},
+    {"number", 10},
+    {"oxidation_states", OxidationStates.new{0}},
+    {"mass", 20.18},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 2},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", 154},
+    {"ionization_energy", 21.565},
+    {"electron_affinity", nil},
+    {"melting_point", 24.56},
+    {"boiling_point", 27.07},
+    {"density", 0.0008999},
+    {"standard_state", "Gas"},
+}
+
 describe("noble_gases", function ()
     test("noble_gases:length() should return 7", function ()
         local noble_gases_length = noble_gas:length()
@@ -60,7 +80,7 @@ describe("noble_gases", function ()
             local helium_test_parameters = helium_properties[i]
             local helium_property_key = helium_test_parameters[1]
             local expected_helium_property_value = helium_test_parameters[2]
-            local helium_test_string = string.format("noble_gas.helium.%s equals %s", helium_property_key, tostring(expected_helium_property_value))
+            local helium_test_string = expected_helium_property_value ~= nil and string.format("noble_gas.neon.%s equals %s", helium_property_key, tostring(expected_helium_property_value)) or string.format("noble_gas.helium.%s is nil", helium_property_key)
             local function helium_test_function()
                 local actual_helium_property_value = noble_gas.helium[helium_property_key]
                 if expected_helium_property_value ~= nil then
@@ -103,108 +123,23 @@ describe("noble_gases", function ()
             assert.are.equal(neon, neon_via_symbol, message)
         end)
 
-        test('noble_gases.neon.name equals "Neon"', function ()
-            local neon_name = noble_gas.neon.name
-            local message = 'noble_gases.neon.name doesn\'t "Neon"'
-            assert.are.equal("Neon", neon_name, message)
-        end)
-
-        test('noble_gases.neon.symbol equals "Ne"', function ()
-            local neon_symbol = noble_gas.neon.symbol
-            local message = 'noble_gases.neon.symbol doesn\'t "Ne"'
-            assert.are.equal("Ne", neon_symbol, message)
-        end)
-
-        test("noble_gases.neon.number equals 10", function ()
-            local neon_number = noble_gas.neon.number
-            local message = "noble_gases.neon.number doesn\'t 10"
-            assert.are.equal(10, neon_number, message)
-        end)
-
-        test("noble_gases.neon.oxidation_states equals {0}", function ()
-            local neon_oxidation_states = noble_gas.neon.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{0}
-            local message = "noble_gases.neon.oxidation_states doesn\'t {0}"
-            assert.are.same(expected_oxidation_sates, neon_oxidation_states, message)
-        end)
-
-        test("noble_gases.neon.mass equals 20.18", function ()
-            local neon_mass = noble_gas.neon.mass
-            local message = "noble_gases.neon.mass doesn\'t equal 20.18"
-            assert.are.equal(20.18, neon_mass, message)
-        end)
-
-        test("noble_gases.neon.group equals 18", function ()
-            local neon_group = noble_gas.neon.group
-            local message = "noble_gases.neon.group doesn\'t equal 18"
-            assert.are.equal(18, neon_group, message)
-        end)
-
-        test('noble_gases.neon.family equals "Noble Gas"', function ()
-            local neon_family = noble_gas.neon.family
-            local message = 'noble_gases.neon.family doesn\'t "Noble Gas"'
-            assert.are.equal("Noble Gas", neon_family, message)
-        end)
-
-        test("noble_gases.neon.period equals 2", function ()
-            local neon_period = noble_gas.neon.period
-            local message = "noble_gases.neon.period doesn\'t 2"
-            assert.are.equal(2, neon_period, message)
-        end)
-
-        test("noble_gases.neon.block equals 'p'", function ()
-            local neon_block = noble_gas.neon.block
-            local message = "noble_gases.neon.block doesn\'t 'p'"
-            assert.are.equal('p', neon_block, message)
-        end)
-
-        test("noble_gases.neon.electronegativity is nil", function ()
-            local neon_electronegativity = noble_gas.neon.electronegativity
-            local message = "noble_gases.neon.electronegativity isn't nil"
-            assert.is_nil(neon_electronegativity, message)
-        end)
-
-        test("noble_gases.neon.atomic_radius equals 154", function ()
-            local neon_atomic_radius = noble_gas.neon.atomic_radius
-            local message = "noble_gases.neon.atomic_radius does not equal 154"
-            assert.are.equal(154, neon_atomic_radius, message)
-        end)
-
-        test("noble_gases.neon.ionization_energy equals 21.565", function ()
-            local neon_ionization_energy = noble_gas.neon.ionization_energy
-            local message = "noble_gases.neon.ionization_energy doesn\'t equal 21.565"
-            assert.are.equal(21.565, neon_ionization_energy, message)
-        end)
-
-        test("noble_gases.neon.electron_affinity is nil", function ()
-            local neon_electron_affinity = noble_gas.neon.electron_affinity
-            local message = "noble_gases.neon.electron_affinity isn\'t nil"
-            assert.is_nil(neon_electron_affinity, message)
-        end)
-
-        test("noble_gases.neon.melting_point equals 24.56", function ()
-            local neon_melting_point = noble_gas.neon.melting_point
-            local message = "noble_gases.neon.melting_point doesn\'t equal 24.56"
-            assert.are.equal(24.56, neon_melting_point, message)
-        end)
-
-        test("noble_gases.neon.boiling_point equals 27.07", function ()
-            local neon_boiling_point = noble_gas.neon.boiling_point
-            local message = "noble_gases.neon.boiling_point doesn\'t equal 27.07"
-            assert.are.equal(27.07, neon_boiling_point, message)
-        end)
-
-        test("noble_gases.neon.density equals 0.0008999", function ()
-            local neon_density = noble_gas.neon.density
-            local message = "noble_gases.neon.density doesn\'t 0.0008999"
-            assert.are.equal(0.0008999, neon_density, message)
-        end)
-
-        test('noble_gases.neon.standard_state equals "Gas"', function ()
-            local neon_standard_state = noble_gas.neon.standard_state
-            local message = 'noble_gases.neon.standard_state doesn\'t "Gas"'
-            assert.are.equal("Gas", neon_standard_state, message)
-        end)
+        for i = 1, #neon_properties do
+            local neon_test_parameters = neon_properties[i]
+            local neon_property_key = neon_test_parameters[1]
+            local expected_neon_property_value = neon_test_parameters[2]
+            local neon_test_string = expected_neon_property_value ~= nil and string.format("noble_gas.neon.%s equals %s", neon_property_key, tostring(expected_neon_property_value)) or string.format("noble_gas.neon.%s is nil", neon_property_key)
+            local function neon_test_function()
+                local actual_neon_property_value = noble_gas.neon[neon_property_key]
+                if expected_neon_property_value ~= nil then
+                    local neon_message = string.format("noble_gas.neon.%s doesn't equal %s", neon_property_key, tostring(expected_neon_property_value))
+                    assert.are.equal(actual_neon_property_value, expected_neon_property_value, neon_message)
+                else
+                    local neon_message = string.format("noble_gas.neon.%s isn't nil", neon_property_key)
+                    assert.is_nil(actual_neon_property_value, neon_message)
+                end
+            end
+            test(neon_test_string, neon_test_function)
+        end
     end)
 
     describe("argon", function()
