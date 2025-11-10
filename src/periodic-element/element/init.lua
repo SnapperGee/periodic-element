@@ -91,7 +91,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states={%s}, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%s, ionization_energy=%s, electron_affinity=%s, melting_point=%s, boiling_point=%s, density=%s, standard_state=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states=%s, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%s, ionization_energy=%s, electron_affinity=%s, melting_point=%s, boiling_point=%s, density=%s, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
@@ -99,7 +99,7 @@ function METATABLE:__tostring()
         tostring(self_data.group),
         self_data.period,
         self_data.block,
-        self_data.oxidation_states:formatted_string(),
+        self_data.oxidation_states and string.format("{%s}", self_data.oxidation_states:formatted_string()) or tostring(self_data.oxidation_states),
         self_data.electron_configuration.canonical_string,
         self_data.electronegativity and string.format("%g", self_data.electronegativity) or tostring(self_data.electronegativity),
         self_data.atomic_radius and string.format("%d", self_data.atomic_radius) or tostring(self_data.atomic_radius),
@@ -285,6 +285,7 @@ function Element.new(opts)
 end
 
 ---@class PartialElement: Element
+---@field oxidation_states OxidationStates|nil
 ---@field electronegativity number|nil -- Pauling Scale
 ---@field atomic_radius integer|nil -- van der Waals
 ---@field ionization_energy number|nil -- eV
@@ -294,6 +295,7 @@ end
 ---@field density number|nil  -- g/cm³
 
 ---@class PartialElementOpts: ElementOpts
+---@field oxidation_states OxidationStates|nil
 ---@field electronegativity number|nil -- Pauling Scale
 ---@field electron_affinity number|nil -- eV
 ---@field atomic_radius integer|nil -- van der Waals
@@ -339,15 +341,16 @@ function Element.partial(opts)
     local block = block_of_atomic_number(opts.number)
 
     assert(
-        getmetatable(opts.oxidation_states) == OxidationStates
+        opts.oxidation_states == nil
+        or getmetatable(opts.oxidation_states) == OxidationStates
         or is_array(opts.oxidation_states, function(v) return type(v) == "number" and v == math.floor(v) end)
         and #opts.oxidation_states > 0,
-        string.format("'oxidation_states' must be OxidationStates object or non empty integer array but got: %s", tostring(opts.oxidation_states))
+        string.format("'oxidation_states' must be nil, OxidationStates object, or non empty integer array but got: %s", tostring(opts.oxidation_states))
     )
 
-    local oxidation_states = getmetatable(opts.oxidation_states) == OxidationStates
-        and opts.oxidation_states
-        or OxidationStates.new(opts.oxidation_states)
+    local oxidation_states = opts.oxidation_states
+        and (getmetatable(opts.oxidation_states) == OxidationStates and opts.oxidation_states
+        or OxidationStates.new(opts.oxidation_states))
 
     if block == "f" then
         assert(
@@ -510,7 +513,7 @@ function Element:formatted_string(indent)
             strings[#strings + 1] = string.format("period = %d", value)
         elseif key == "block" then
             strings[#strings + 1] = string.format("block = '%s'", value)
-        elseif key == "oxidation_states" then
+        elseif key == "oxidation_states" and value then
             strings[#strings + 1] = string.format(
                 "oxidation_states = {%s}",
                 value:formatted_string()
@@ -520,38 +523,22 @@ function Element:formatted_string(indent)
                 "electron_configuration = %s",
                 value.canonical_string
             )
-        elseif key == "electronegativity" then
-            if value then
-                strings[#strings + 1] = string.format("electronegativity = %g", value)
-            end
-        elseif key == "atomic_radius" then
-            if value then
-                strings[#strings + 1] = string.format("atomic_radius = %g pm", value)
-            end
-        elseif key == "ionization_energy" then
-            if value then
-                strings[#strings + 1] = string.format("ionization_energy = %g eV", value)
-            end
-        elseif key == "electron_affinity" then
-            if value then
-                strings[#strings + 1] = string.format("electron_affinity = %g eV", value)
-            end
-
-        elseif key == "melting_point" then
-            if value then
-                strings[#strings + 1] = string.format("melting_point = %d K", value)
-            end
-        elseif key == "boiling_point" then
-            if value then
-                strings[#strings + 1] = string.format("boiling_point = %d K", value)
-            end
-        elseif key == "density" then
-            if value then
-                strings[#strings + 1] = string.format("density = %g g/cm³", value)
-            end
+        elseif key == "electronegativity" and value then
+            strings[#strings + 1] = string.format("electronegativity = %g", value)
+        elseif key == "atomic_radius" and value then
+            strings[#strings + 1] = string.format("atomic_radius = %g pm", value)
+        elseif key == "ionization_energy" and value then
+            strings[#strings + 1] = string.format("ionization_energy = %g eV", value)
+        elseif key == "electron_affinity" and value then
+            strings[#strings + 1] = string.format("electron_affinity = %g eV", value)
+        elseif key == "melting_point" and value then
+            strings[#strings + 1] = string.format("melting_point = %d K", value)
+        elseif key == "boiling_point" and value then
+            strings[#strings + 1] = string.format("boiling_point = %d K", value)
+        elseif key == "density" and value then
+            strings[#strings + 1] = string.format("density = %g g/cm³", value)
         elseif key == "standard_state" then
             strings[#strings + 1] = string.format('standard_state = "%s"', value)
-
         else
             error("Unrecognized key encountered in FIELD_ORDER: " .. tostring(key))
         end
