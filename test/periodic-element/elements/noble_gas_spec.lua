@@ -143,6 +143,13 @@ local oganesson_properties = {
 }
 
 describe(noble_gas:name(), function ()
+
+    test(string.format("%s:length() returns 7", noble_gas:name()), function ()
+        local noble_gas_length = noble_gas:length()
+        local message = string.format("%s:length() did not return 7", noble_gas:name())
+        assert.are.equal(7, noble_gas_length, message)
+    end)
+
     test_elements(noble_gas.helium, noble_gas, helium_properties, describe, test, assert)
     test_elements(noble_gas.neon, noble_gas, neon_properties, describe, test, assert)
     test_elements(noble_gas.argon, noble_gas, argon_properties, describe, test, assert)

@@ -123,6 +123,13 @@ local francium_properties = {
 }
 
 describe(alkali_metal:name(), function ()
+
+    test(string.format("%s:length() returns 6", alkali_metal:name()), function ()
+        local alkali_metal_length = alkali_metal:length()
+        local message = string.format("%s:length() did not return 6", alkali_metal:name())
+        assert.are.equal(6, alkali_metal_length, message)
+    end)
+
     test_elements(alkali_metal.lithium, alkali_metal, lithium_properties, describe, test, assert)
     test_elements(alkali_metal.sodium, alkali_metal, sodium_properties, describe, test, assert)
     test_elements(alkali_metal.potassium, alkali_metal, potassium_properties, describe, test, assert)
