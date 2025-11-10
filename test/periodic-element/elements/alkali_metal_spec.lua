@@ -1,5 +1,6 @@
 local alkali_metals = require("periodic-element.elements.alkali_metal")
 local OxidationStates = require("periodic-element.element.oxidation_states")
+local test_elements = require("test.periodic-element.elements.test_elements")
 
 local lithium_properties = {
     {"name", "Lithium"},
@@ -156,23 +157,7 @@ describe("alkali_metals", function ()
             assert.are.equal(lithium, lithium_via_symbol, message)
         end)
 
-        for i = 1, #lithium_properties do
-            local lithium_test_parameters = lithium_properties[i]
-            local lithium_property_key = lithium_test_parameters[1]
-            local expected_lithium_property_value = lithium_test_parameters[2]
-            local lithium_test_string = string.format("alkali_metals.lithium.%s equals %s", lithium_property_key, tostring(expected_lithium_property_value))
-            local function lithium_test_function()
-                local actual_lithium_property_value = alkali_metals.lithium[lithium_property_key]
-                if expected_lithium_property_value ~= nil then
-                    local lithium_message = string.format("alkali_metals.lithium.%s doesn't equal %s", lithium_property_key, tostring(expected_lithium_property_value))
-                    assert.are.equal(actual_lithium_property_value, expected_lithium_property_value, lithium_message)
-                else
-                    local lithium_message = string.format("alkali_metals.lithium.%s isn't nil", lithium_property_key)
-                    assert.is_nil(actual_lithium_property_value, lithium_message)
-                end
-            end
-            test(lithium_test_string, lithium_test_function)
-        end
+        test_elements(alkali_metals.lithium, alkali_metals, lithium_properties, assert, test)
     end)
 
     describe("sodium", function()
@@ -203,23 +188,7 @@ describe("alkali_metals", function ()
             assert.are.equal(sodium, sodium_via_symbol, message)
         end)
 
-        for i = 1, #sodium_properties do
-            local sodium_test_parameters = sodium_properties[i]
-            local sodium_property_key = sodium_test_parameters[1]
-            local expected_sodium_property_value = sodium_test_parameters[2]
-            local sodium_test_string = string.format("alkali_metals.sodium.%s equals %s", sodium_property_key, tostring(expected_sodium_property_value))
-            local function sodium_test_function()
-                local actual_sodium_property_value = alkali_metals.sodium[sodium_property_key]
-                if expected_sodium_property_value ~= nil then
-                    local sodium_message = string.format("alkali_metals.sodium.%s doesn't equal %s", sodium_property_key, tostring(expected_sodium_property_value))
-                    assert.are.equal(actual_sodium_property_value, expected_sodium_property_value, sodium_message)
-                else
-                    local sodium_message = string.format("alkali_metals.sodium.%s isn't nil", sodium_property_key)
-                    assert.is_nil(actual_sodium_property_value, sodium_message)
-                end
-            end
-            test(sodium_test_string, sodium_test_function)
-        end
+        test_elements(alkali_metals.sodium, alkali_metals, sodium_properties, assert, test)
     end)
 
     describe("potassium", function()
@@ -250,23 +219,7 @@ describe("alkali_metals", function ()
             assert.are.equal(potassium, potassium_via_symbol, message)
         end)
 
-        for i = 1, #potassium_properties do
-            local potassium_test_parameters = potassium_properties[i]
-            local potassium_property_key = potassium_test_parameters[1]
-            local expected_potassium_property_value = potassium_test_parameters[2]
-            local potassium_test_string = string.format("alkali_metals.potassium.%s equals %s", potassium_property_key, tostring(expected_potassium_property_value))
-            local function potassium_test_function()
-                local actual_potassium_property_value = alkali_metals.potassium[potassium_property_key]
-                if expected_potassium_property_value ~= nil then
-                    local potassium_message = string.format("alkali_metals.potassium.%s doesn't equal %s", potassium_property_key, tostring(expected_potassium_property_value))
-                    assert.are.equal(actual_potassium_property_value, expected_potassium_property_value, potassium_message)
-                else
-                    local potassium_message = string.format("alkali_metals.potassium.%s isn't nil", potassium_property_key)
-                    assert.is_nil(actual_potassium_property_value, potassium_message)
-                end
-            end
-            test(potassium_test_string, potassium_test_function)
-        end
+        test_elements(alkali_metals.potassium, alkali_metals, potassium_properties, assert, test)
     end)
 
     describe("rubidium", function()
@@ -297,23 +250,7 @@ describe("alkali_metals", function ()
             assert.are.equal(rubidium, rubidium_via_symbol, message)
         end)
 
-        for i = 1, #rubidium_properties do
-            local rubidium_test_parameters = rubidium_properties[i]
-            local rubidium_property_key = rubidium_test_parameters[1]
-            local expected_rubidium_property_value = rubidium_test_parameters[2]
-            local rubidium_test_string = string.format("alkali_metals.rubidium.%s equals %s", rubidium_property_key, tostring(expected_rubidium_property_value))
-            local function rubidium_test_function()
-                local actual_rubidium_property_value = alkali_metals.rubidium[rubidium_property_key]
-                if expected_rubidium_property_value ~= nil then
-                    local rubidium_message = string.format("alkali_metals.rubidium.%s doesn't equal %s", rubidium_property_key, tostring(expected_rubidium_property_value))
-                    assert.are.equal(actual_rubidium_property_value, expected_rubidium_property_value, rubidium_message)
-                else
-                    local rubidium_message = string.format("alkali_metals.rubidium.%s isn't nil", rubidium_property_key)
-                    assert.is_nil(actual_rubidium_property_value, rubidium_message)
-                end
-            end
-            test(rubidium_test_string, rubidium_test_function)
-        end
+        test_elements(alkali_metals.rubidium, alkali_metals, rubidium_properties, assert, test)
     end)
 
     describe("cesium", function()
@@ -344,23 +281,7 @@ describe("alkali_metals", function ()
             assert.are.equal(cesium, cesium_via_symbol, message)
         end)
 
-        for i = 1, #cesium_properties do
-            local cesium_test_parameters = cesium_properties[i]
-            local cesium_property_key = cesium_test_parameters[1]
-            local expected_cesium_property_value = cesium_test_parameters[2]
-            local cesium_test_string = string.format("alkali_metals.cesium.%s equals %s", cesium_property_key, tostring(expected_cesium_property_value))
-            local function cesium_test_function()
-                local actual_cesium_property_value = alkali_metals.cesium[cesium_property_key]
-                if expected_cesium_property_value ~= nil then
-                    local cesium_message = string.format("alkali_metals.cesium.%s doesn't equal %s", cesium_property_key, tostring(expected_cesium_property_value))
-                    assert.are.equal(actual_cesium_property_value, expected_cesium_property_value, cesium_message)
-                else
-                    local cesium_message = string.format("alkali_metals.cesium.%s isn't nil", cesium_property_key)
-                    assert.is_nil(actual_cesium_property_value, cesium_message)
-                end
-            end
-            test(cesium_test_string, cesium_test_function)
-        end
+        test_elements(alkali_metals.cesium, alkali_metals, cesium_properties, assert, test)
     end)
 
     describe("francium", function()
@@ -391,22 +312,6 @@ describe("alkali_metals", function ()
             assert.are.equal(francium, francium_via_symbol, message)
         end)
 
-        for i = 1, #francium_properties do
-            local francium_test_parameters = francium_properties[i]
-            local francium_property_key = francium_test_parameters[1]
-            local expected_francium_property_value = francium_test_parameters[2]
-            local francium_test_string = string.format("alkali_metals.francium.%s equals %s", francium_property_key, tostring(expected_francium_property_value))
-            local function francium_test_function()
-                local actual_francium_property_value = alkali_metals.francium[francium_property_key]
-                if expected_francium_property_value ~= nil then
-                    local francium_message = string.format("alkali_metals.francium.%s doesn't equal %s", francium_property_key, tostring(expected_francium_property_value))
-                    assert.are.equal(actual_francium_property_value, expected_francium_property_value, francium_message)
-                else
-                    local francium_message = string.format("alkali_metals.francium.%s isn't nil", francium_property_key)
-                    assert.is_nil(actual_francium_property_value, francium_message)
-                end
-            end
-            test(francium_test_string, francium_test_function)
-        end
+        test_elements(alkali_metals.francium, alkali_metals, francium_properties, assert, test)
     end)
 end)

@@ -1,5 +1,6 @@
 local noble_gas = require("periodic-element.elements.noble_gas")
 local OxidationStates = require("periodic-element.element.oxidation_states")
+local test_elements = require("test.periodic-element.elements.test_elements")
 
 local helium_properties = {
     {"name", "Helium"},
@@ -96,23 +97,7 @@ describe("noble_gases", function ()
             assert.are.equal(helium, helium_via_symbol, message)
         end)
 
-        for i = 1, #helium_properties do
-            local helium_test_parameters = helium_properties[i]
-            local helium_property_key = helium_test_parameters[1]
-            local expected_helium_property_value = helium_test_parameters[2]
-            local helium_test_string = expected_helium_property_value ~= nil and string.format("noble_gas.neon.%s equals %s", helium_property_key, tostring(expected_helium_property_value)) or string.format("noble_gas.helium.%s is nil", helium_property_key)
-            local function helium_test_function()
-                local actual_helium_property_value = noble_gas.helium[helium_property_key]
-                if expected_helium_property_value ~= nil then
-                    local helium_message = string.format("noble_gas.helium.%s doesn't equal %s", helium_property_key, tostring(expected_helium_property_value))
-                    assert.are.equal(actual_helium_property_value, expected_helium_property_value, helium_message)
-                else
-                    local helium_message = string.format("noble_gas.helium.%s isn't nil", helium_property_key)
-                    assert.is_nil(actual_helium_property_value, helium_message)
-                end
-            end
-            test(helium_test_string, helium_test_function)
-        end
+        test_elements(noble_gas.helium, noble_gas, helium_properties, assert, test)
     end)
 
     describe("neon", function()
@@ -143,23 +128,7 @@ describe("noble_gases", function ()
             assert.are.equal(neon, neon_via_symbol, message)
         end)
 
-        for i = 1, #neon_properties do
-            local neon_test_parameters = neon_properties[i]
-            local neon_property_key = neon_test_parameters[1]
-            local expected_neon_property_value = neon_test_parameters[2]
-            local neon_test_string = expected_neon_property_value ~= nil and string.format("noble_gas.neon.%s equals %s", neon_property_key, tostring(expected_neon_property_value)) or string.format("noble_gas.neon.%s is nil", neon_property_key)
-            local function neon_test_function()
-                local actual_neon_property_value = noble_gas.neon[neon_property_key]
-                if expected_neon_property_value ~= nil then
-                    local neon_message = string.format("noble_gas.neon.%s doesn't equal %s", neon_property_key, tostring(expected_neon_property_value))
-                    assert.are.equal(actual_neon_property_value, expected_neon_property_value, neon_message)
-                else
-                    local neon_message = string.format("noble_gas.neon.%s isn't nil", neon_property_key)
-                    assert.is_nil(actual_neon_property_value, neon_message)
-                end
-            end
-            test(neon_test_string, neon_test_function)
-        end
+        test_elements(noble_gas.neon, noble_gas, neon_properties, assert, test)
     end)
 
     describe("argon", function()
@@ -190,23 +159,7 @@ describe("noble_gases", function ()
             assert.are.equal(argon, argon_via_symbol, message)
         end)
 
-        for i = 1, #argon_properties do
-            local argon_test_parameters = argon_properties[i]
-            local argon_property_key = argon_test_parameters[1]
-            local expected_argon_property_value = argon_test_parameters[2]
-            local argon_test_string = expected_argon_property_value ~= nil and string.format("noble_gas.neon.%s equals %s", argon_property_key, tostring(expected_argon_property_value)) or string.format("noble_gas.argon.%s is nil", argon_property_key)
-            local function argon_test_function()
-                local actual_argon_property_value = noble_gas.argon[argon_property_key]
-                if expected_argon_property_value ~= nil then
-                    local argon_message = string.format("noble_gas.argon.%s doesn't equal %s", argon_property_key, tostring(expected_argon_property_value))
-                    assert.are.equal(actual_argon_property_value, expected_argon_property_value, argon_message)
-                else
-                    local argon_message = string.format("noble_gas.argon.%s isn't nil", argon_property_key)
-                    assert.is_nil(actual_argon_property_value, argon_message)
-                end
-            end
-            test(argon_test_string, argon_test_function)
-        end
+        test_elements(noble_gas.argon, noble_gas, argon_properties, assert, test)
     end)
 
     -- describe("rubidium", function()
