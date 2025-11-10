@@ -274,7 +274,7 @@ local selenium = Element.new{
 }
 
 --- Elements of the Nonmetal group.
----@class Nonmetals: ElementSet
+---@class Nonmetal: ElementSet
 ---@field hydrogen Element
 ---@field carbon Element
 ---@field nitrogen Element
@@ -282,8 +282,9 @@ local selenium = Element.new{
 ---@field phosphorus Element
 ---@field sulfur Element
 ---@field selenium Element
-local nonmetals = ElementSet.new{
-    hydrogen, carbon, nitrogen, oxygen, phosphorus, sulfur, selenium
-}
+local nonmetal = ElementSet.new(
+    {hydrogen, carbon, nitrogen, oxygen, phosphorus, sulfur, selenium},
+    "Nonmetal"
+)
 
-return nonmetals
+return nonmetal

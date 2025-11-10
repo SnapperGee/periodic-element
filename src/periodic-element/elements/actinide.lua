@@ -606,10 +606,11 @@ local lawrencium = Element.partial{
 ---@field mendelevium Element
 ---@field nobelium Element
 ---@field lawrencium Element
-local actinides = ElementSet.new{
-    actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
+local actinide = ElementSet.new(
+    { actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
     curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium,
-    lawrencium
-}
+    lawrencium},
+    "Actinide"
+)
 
-return actinides
+return actinide

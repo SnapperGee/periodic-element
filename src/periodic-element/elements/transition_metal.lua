@@ -1458,7 +1458,7 @@ local copernicium = Element.partial{
 }
 
 --- Elements of the TransitionMetal Metals family (group 3-12).
----@class TransitionMetals: ElementSet
+---@class TransitionMetal: ElementSet
 ---@field scandium Element
 ---@field titanium Element
 ---@field vanadium Element
@@ -1495,12 +1495,12 @@ local copernicium = Element.partial{
 ---@field darmstadtium Element
 ---@field roentgenium Element
 ---@field copernicium Element
-local transition_metals = ElementSet.new{
-    scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
+local transition_metal = ElementSet.new(
+    {scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium, ruthenium,
     rhodium, palladium, silver, lutetium, hafnium, tantalum, tungsten, rhenium,
     osmium, iridium, platinum, gold, rutherfordium, dubnium, seaborgium,
-    bohrium, hassium, meitnerium, darmstadtium, roentgenium, copernicium
-}
-
-return transition_metals
+    bohrium, hassium, meitnerium, darmstadtium, roentgenium, copernicium},
+    "TransitionMetal"
+)
+return transition_metal

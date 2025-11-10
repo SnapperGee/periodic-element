@@ -548,7 +548,7 @@ local ytterbium = Element.partial{
 }
 
 --- Elements of the Lanthanide family.
----@class Lanthanides: ElementSet
+---@class Lanthanide: ElementSet
 ---@field lanthanum Element
 ---@field cerium Element
 ---@field praseodymium Element
@@ -563,9 +563,10 @@ local ytterbium = Element.partial{
 ---@field erbium Element
 ---@field thulium Element
 ---@field ytterbium Element
-local lanthanides = ElementSet.new{
-    lanthanum, cerium, praseodymium, neodymium, promethium, samarium, europium,
-    gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium
-}
+local lanthanide = ElementSet.new(
+    {lanthanum, cerium, praseodymium, neodymium, promethium, samarium, europium,
+    gadolinium, terbium, dysprosium, holmium, erbium, thulium, ytterbium},
+    "Lanthanide"
+)
 
-return lanthanides
+return lanthanide

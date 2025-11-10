@@ -272,15 +272,16 @@ local tennessine = Element.partial{
 }
 
 --- Elements of the Halogens family (group 7).
----@class Halogens: ElementSet
+---@class Halogen: ElementSet
 ---@field fluorine Element
 ---@field chlorine Element
 ---@field bromine Element
 ---@field iodine Element
 ---@field astatine Element
 ---@field tennessine Element
-local halogens = ElementSet.new{
-    fluorine, chlorine, bromine, iodine, astatine, tennessine
-}
+local halogen = ElementSet.new(
+    {fluorine, chlorine, bromine, iodine, astatine, tennessine},
+    "Halogen"
+)
 
-return halogens
+return halogen

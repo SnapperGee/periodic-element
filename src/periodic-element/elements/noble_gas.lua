@@ -300,8 +300,9 @@ local oganesson = Element.partial{
 ---@field xenon Element
 ---@field radon Element
 ---@field oganesson Element
-local noble_gas = ElementSet.new{
-    helium, neon, argon, krypton, xenon, radon, oganesson
-}
+local noble_gas = ElementSet.new(
+    {helium, neon, argon, krypton, xenon, radon, oganesson},
+    "NobleGas"
+)
 
 return noble_gas

@@ -178,15 +178,16 @@ local radium = Element.partial{
 }
 
 --- Elements of the Alkaline Earth Metals family (group 2).
----@class AlkalineEarthMetals: ElementSet
+---@class AlkalineEarth: ElementSet
 ---@field beryllium Element
 ---@field magnesium Element
 ---@field calcium Element
 ---@field strontium Element
 ---@field barium Element
 ---@field radium Element
-local alkaline_earth_elements = ElementSet.new{
-    beryllium, magnesium, calcium, strontium, barium, radium
-}
+local alkaline_earth = ElementSet.new(
+    {beryllium, magnesium, calcium, strontium, barium, radium},
+    "AlkalineEarth"
+)
 
-return alkaline_earth_elements
+return alkaline_earth

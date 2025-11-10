@@ -189,8 +189,9 @@ local francium = Element.partial{
 ---@field rubidium Element
 ---@field cesium Element
 ---@field francium Element
-local alkali_metals = ElementSet.new{
-    lithium, sodium, potassium, rubidium, cesium, francium
-}
+local alkali_metal = ElementSet.new(
+    {lithium, sodium, potassium, rubidium, cesium, francium},
+    "AlkaliMetal"
+)
 
-return alkali_metals
+return alkali_metal
