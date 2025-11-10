@@ -118,7 +118,7 @@ describe("alkali_metals", function ()
             assert.are.equal(sodium, sodium_via_symbol, message)
         end)
 
-        for i = 1, #lithium_properties do
+        for i = 1, #sodium_properties do
             local sodium_test_parameters = sodium_properties[i]
             local sodium_property_key = sodium_test_parameters[1]
             local expected_sodium_property_value = sodium_test_parameters[2]
