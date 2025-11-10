@@ -62,6 +62,26 @@ local argon_properties = {
     {"standard_state", "Gas"},
 }
 
+local krypton_properties = {
+    {"name", "Krypton"},
+    {"symbol", "Kr"},
+    {"number", 36},
+    {"oxidation_states", OxidationStates.new{0}},
+    {"mass", 83.798},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 4},
+    {"block", 'p'},
+    {"electronegativity", 3},
+    {"atomic_radius", 202},
+    {"ionization_energy", 14},
+    {"electron_affinity", nil},
+    {"melting_point", 115.79},
+    {"boiling_point", 119.93},
+    {"density", 0.003733},
+    {"standard_state", "Gas"},
+}
+
 describe("noble_gases", function ()
     test("noble_gases:length() should return 7", function ()
         local noble_gases_length = noble_gas:length()
@@ -162,137 +182,36 @@ describe("noble_gases", function ()
         test_elements(noble_gas.argon, noble_gas, argon_properties, assert, test)
     end)
 
-    -- describe("rubidium", function()
-    --     test("noble_gases.rubidium equals non nil", function ()
-    --         local rubidium = noble_gas.rubidium
-    --         local message = "noble_gases.rubidium equals nil"
-    --         assert.is_not_nil(rubidium, message)
-    --     end)
+    describe("krypton", function()
+        test("noble_gases.krypton equals non nil", function ()
+            local krypton = noble_gas.krypton
+            local message = "noble_gases.krypton equals nil"
+            assert.is_not_nil(krypton, message)
+        end)
 
-    --     test("noble_gases.rubidium equals noble_gases[37]", function ()
-    --         local rubidium = noble_gas.rubidium
-    --         local rubidium_via_index = noble_gas[37]
-    --         local message = "noble_gases.rubidium doesn't equal noble_gases[37]"
-    --         assert.are.equal(rubidium, rubidium_via_index, message)
-    --     end)
+        test("noble_gases.krypton equals noble_gases[36]", function ()
+            local krypton = noble_gas.krypton
+            local krypton_via_index = noble_gas[36]
+            local message = "noble_gases.krypton doesn't equal noble_gases[36]"
+            assert.are.equal(krypton, krypton_via_index, message)
+        end)
 
-    --     test('noble_gases.rubidium equals noble_gases["rubidium"]', function ()
-    --         local rubidium = noble_gas.rubidium
-    --         local rubidium_via_name = noble_gas["rubidium"]
-    --         local message = 'noble_gases.rubidium doesn\'t equal noble_gases["rubidium"]'
-    --         assert.are.equal(rubidium, rubidium_via_name, message)
-    --     end)
+        test('noble_gases.krypton equals noble_gases["krypton"]', function ()
+            local krypton = noble_gas.krypton
+            local krypton_via_name = noble_gas["krypton"]
+            local message = 'noble_gases.krypton doesn\'t equal noble_gases["krypton"]'
+            assert.are.equal(krypton, krypton_via_name, message)
+        end)
 
-    --     test('noble_gases.rubidium equals noble_gases["rb"]', function ()
-    --         local rubidium = noble_gas.rubidium
-    --         local rubidium_via_symbol = noble_gas["rb"]
-    --         local message = 'noble_gases.rubidium doesn\'t equal noble_gases["rb"]'
-    --         assert.are.equal(rubidium, rubidium_via_symbol, message)
-    --     end)
+        test('noble_gases.krypton equals noble_gases["Kr"]', function ()
+            local krypton = noble_gas.krypton
+            local krypton_via_symbol = noble_gas["Kr"]
+            local message = 'noble_gases.krypton doesn\'t equal noble_gases["Kr"]'
+            assert.are.equal(krypton, krypton_via_symbol, message)
+        end)
 
-    --     test('noble_gases.rubidium.name equals "Rubidium"', function ()
-    --         local rubidium_name = noble_gas.rubidium.name
-    --         local message = 'noble_gases.rubidium.name doesn\'t "Rubidium"'
-    --         assert.are.equal("Rubidium", rubidium_name, message)
-    --     end)
-
-    --     test('noble_gases.rubidium.symbol equals "Rb"', function ()
-    --         local rubidium_symbol = noble_gas.rubidium.symbol
-    --         local message = 'noble_gases.rubidium.symbol doesn\'t "Rb"'
-    --         assert.are.equal("Rb", rubidium_symbol, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.number equals 37", function ()
-    --         local rubidium_number = noble_gas.rubidium.number
-    --         local message = "noble_gases.rubidium.number doesn\'t 37"
-    --         assert.are.equal(37, rubidium_number, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.oxidation_states equals {0}", function ()
-    --         local rubidium_oxidation_states = noble_gas.rubidium.oxidation_states
-    --         local expected_oxidation_sates = OxidationStates.new{0}
-    --         local message = "noble_gases.rubidium.oxidation_states doesn\'t {0}"
-    --         assert.are.same(expected_oxidation_sates, rubidium_oxidation_states, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.mass equals 85.468", function ()
-    --         local rubidium_mass = noble_gas.rubidium.mass
-    --         local message = "noble_gases.rubidium.mass doesn\'t equal 85.468"
-    --         assert.are.equal(85.468, rubidium_mass, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.group equals 1", function ()
-    --         local rubidium_group = noble_gas.rubidium.group
-    --         local message = "noble_gases.rubidium.group doesn\'t equal 1"
-    --         assert.are.equal(1, rubidium_group, message)
-    --     end)
-
-    --     test('noble_gases.rubidium.family equals "Noble Gas"', function ()
-    --         local rubidium_family = noble_gas.rubidium.family
-    --         local message = 'noble_gases.rubidium.family doesn\'t "Noble Gas"'
-    --         assert.are.equal("Noble Gas", rubidium_family, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.period equals 5", function ()
-    --         local rubidium_period = noble_gas.rubidium.period
-    --         local message = "noble_gases.rubidium.period doesn\'t 5"
-    --         assert.are.equal(5, rubidium_period, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.block equals 'p'", function ()
-    --         local rubidium_block = noble_gas.rubidium.block
-    --         local message = "noble_gases.rubidium.block doesn\'t 'p'"
-    --         assert.are.equal('p', rubidium_block, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.electronegativity is nil", function ()
-    --         local rubidium_electronegativity = noble_gas.rubidium.electronegativity
-    --         local message = "noble_gases.rubidium.electronegativity isn\'t nil"
-    --         assert.are.equal(0.82, rubidium_electronegativity, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.atomic_radius equals 303", function ()
-    --         local rubidium_atomic_radius = noble_gas.rubidium.atomic_radius
-    --         local message = "noble_gases.rubidium.atomic_radius does not equal 303"
-    --         assert.are.equal(303, rubidium_atomic_radius, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.ionization_energy equals 4.177", function ()
-    --         local rubidium_ionization_energy = noble_gas.rubidium.ionization_energy
-    --         local message = "noble_gases.rubidium.ionization_energy doesn\'t equal 4.177"
-    --         assert.are.equal(4.177, rubidium_ionization_energy, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.electron_affinity is nil", function ()
-    --         local rubidium_electron_affinity = noble_gas.rubidium.electron_affinity
-    --         local message = "noble_gases.rubidium.electron_affinity isn\'t nil"
-    --         assert.are.equal(0.468, rubidium_electron_affinity, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.melting_point equals 312.46", function ()
-    --         local rubidium_melting_point = noble_gas.rubidium.melting_point
-    --         local message = "noble_gases.rubidium.melting_point doesn\'t equal 312.46"
-    --         assert.are.equal(312.46, rubidium_melting_point, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.boiling_point equals 961", function ()
-    --         local rubidium_boiling_point = noble_gas.rubidium.boiling_point
-    --         local message = "noble_gases.rubidium.boiling_point doesn\'t equal 961"
-    --         assert.are.equal(961, rubidium_boiling_point, message)
-    --     end)
-
-    --     test("noble_gases.rubidium.density equals 1.53", function ()
-    --         local rubidium_density = noble_gas.rubidium.density
-    --         local message = "noble_gases.rubidium.density doesn\'t 1.53"
-    --         assert.are.equal(1.53, rubidium_density, message)
-    --     end)
-
-    --     test('noble_gases.rubidium.standard_state equals "Gas"', function ()
-    --         local rubidium_standard_state = noble_gas.rubidium.standard_state
-    --         local message = 'noble_gases.rubidium.standard_state doesn\'t "Gas"'
-    --         assert.are.equal("Gas", rubidium_standard_state, message)
-    --     end)
-    -- end)
+        test_elements(noble_gas.krypton, noble_gas, krypton_properties, assert, test)
+    end)
 
     -- describe("cesium", function()
     --     test("noble_gases.cesium equals non nil", function ()
