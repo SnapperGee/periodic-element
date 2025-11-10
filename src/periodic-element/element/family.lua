@@ -6,12 +6,12 @@ local family = {
     [55]="Alkali Metal",
     [87]="Alkali Metal",
 
-    [4]="Alkaline Earth",
-    [12]="Alkaline Earth",
-    [20]="Alkaline Earth",
-    [38]="Alkaline Earth",
-    [56]="Alkaline Earth",
-    [88]="Alkaline Earth",
+    [4]="Alkaline Earth Metal",
+    [12]="Alkaline Earth Metal",
+    [20]="Alkaline Earth Metal",
+    [38]="Alkaline Earth Metal",
+    [56]="Alkaline Earth Metal",
+    [88]="Alkaline Earth Metal",
 
     [13]="Post-transition Metal",
     [30]="Post-transition Metal",

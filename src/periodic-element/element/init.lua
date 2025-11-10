@@ -1,5 +1,5 @@
 local Family = require("periodic-element.element.family")
-local block_of_atomic_number = require("src.periodic-element.element.block")
+local block_of_atomic_number = require("periodic-element.element.block")
 local is_array = require("periodic-element.util.is_array")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local OxidationStates = require("periodic-element.element.oxidation_states")

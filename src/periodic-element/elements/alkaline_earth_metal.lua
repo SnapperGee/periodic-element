@@ -1,5 +1,5 @@
 local Element = require("periodic-element.element")
-local ElementSet = require("src.periodic-element.elements.element_set")
+local ElementSet = require("periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
@@ -178,16 +178,16 @@ local radium = Element.partial{
 }
 
 --- Elements of the Alkaline Earth Metals family (group 2).
----@class AlkalineEarth: ElementSet
+---@class AlkalineEarthMetal: ElementSet
 ---@field beryllium Element
 ---@field magnesium Element
 ---@field calcium Element
 ---@field strontium Element
 ---@field barium Element
 ---@field radium Element
-local alkaline_earth = ElementSet.new(
+local alkaline_earth_metal = ElementSet.new(
     {beryllium, magnesium, calcium, strontium, barium, radium},
-    "AlkalineEarth"
+    "AlkalineEarthMetal"
 )
 
-return alkaline_earth
+return alkaline_earth_metal

@@ -1,5 +1,5 @@
 local Element = require("periodic-element.element")
-local ElementSet = require("src.periodic-element.elements.element_set")
+local ElementSet = require("periodic-element.elements.element_set")
 local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
 
