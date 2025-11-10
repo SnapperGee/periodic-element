@@ -41,6 +41,26 @@ local sodium_properties = {
     {"standard_state", "Solid"},
 }
 
+local potassium_properties = {
+    {"name", "Potassium"},
+    {"symbol", "K"},
+    {"number", 19},
+    {"oxidation_states", OxidationStates.new{1}},
+    {"mass", 39.0983},
+    {"group", 1},
+    {"family", "Alkali Metal"},
+    {"period", 4},
+    {"block", 's'},
+    {"electronegativity", 0.82},
+    {"atomic_radius", 275},
+    {"ionization_energy", 4.341},
+    {"electron_affinity", 0.501},
+    {"melting_point", 336.53},
+    {"boiling_point", 1032},
+    {"density", 0.89},
+    {"standard_state", "Solid"},
+}
+
 describe("alkali_metals", function ()
     test("alkali_metals:length() returns 6", function ()
         local alkali_metals_length = alkali_metals:length()
@@ -160,108 +180,18 @@ describe("alkali_metals", function ()
             assert.are.equal(potassium, potassium_via_symbol, message)
         end)
 
-        test('alkali_metals.potassium.name equals "Potassium"', function ()
-            local potassium_name = alkali_metals.potassium.name
-            local message = 'alkali_metals.potassium.name did not return "Potassium"'
-            assert.are.equal("Potassium", potassium_name, message)
-        end)
-
-        test('alkali_metals.potassium.symbol equals "K"', function ()
-            local potassium_symbol = alkali_metals.potassium.symbol
-            local message = 'alkali_metals.potassium.symbol did not return "K"'
-            assert.are.equal("K", potassium_symbol, message)
-        end)
-
-        test("alkali_metals.potassium.number equals 19", function ()
-            local potassium_number = alkali_metals.potassium.number
-            local message = "alkali_metals.potassium.number did not return 19"
-            assert.are.equal(19, potassium_number, message)
-        end)
-
-        test("alkali_metals.potassium.oxidation_states equals {+1}", function ()
-            local potassium_oxidation_states = alkali_metals.potassium.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{1}
-            local message = "alkali_metals.potassium.oxidation_states did not return {+1}"
-            assert.are.same(expected_oxidation_sates, potassium_oxidation_states, message)
-        end)
-
-        test("alkali_metals.potassium.mass equals 39.0983", function ()
-            local potassium_mass = alkali_metals.potassium.mass
-            local message = "alkali_metals.potassium.mass did not return 39.0983"
-            assert.are.equal(39.0983, potassium_mass, message)
-        end)
-
-        test("alkali_metals.potassium.group equals 1", function ()
-            local potassium_group = alkali_metals.potassium.group
-            local message = "alkali_metals.potassium.group did not return 1"
-            assert.are.equal(1, potassium_group, message)
-        end)
-
-        test('alkali_metals.potassium.family equals "Alkali Metal"', function ()
-            local potassium_family = alkali_metals.potassium.family
-            local message = 'alkali_metals.potassium.family did not return "Alkali Metal"'
-            assert.are.equal("Alkali Metal", potassium_family, message)
-        end)
-
-        test("alkali_metals.potassium.period equals 4", function ()
-            local potassium_period = alkali_metals.potassium.period
-            local message = "alkali_metals.potassium.period did not return 4"
-            assert.are.equal(4, potassium_period, message)
-        end)
-
-        test("alkali_metals.potassium.block equals 's'", function ()
-            local potassium_block = alkali_metals.potassium.block
-            local message = "alkali_metals.potassium.block did not return 's'"
-            assert.are.equal('s', potassium_block, message)
-        end)
-
-        test("alkali_metals.potassium.electronegativity equals 0.82", function ()
-            local potassium_electronegativity = alkali_metals.potassium.electronegativity
-            local message = "alkali_metals.potassium.electronegativity did not return 0.82"
-            assert.are.equal(0.82, potassium_electronegativity, message)
-        end)
-
-        test("alkali_metals.potassium.atomic_radius equals 275", function ()
-            local potassium_atomic_radius = alkali_metals.potassium.atomic_radius
-            local message = "alkali_metals.potassium.atomic_radius did not return 275"
-            assert.are.equal(275, potassium_atomic_radius, message)
-        end)
-
-        test("alkali_metals.potassium.ionization_energy equals 4.341", function ()
-            local potassium_ionization_energy = alkali_metals.potassium.ionization_energy
-            local message = "alkali_metals.potassium.ionization_energy did not return 4.341"
-            assert.are.equal(4.341, potassium_ionization_energy, message)
-        end)
-
-        test("alkali_metals.potassium.electron_affinity equals 0.501", function ()
-            local potassium_electron_affinity = alkali_metals.potassium.electron_affinity
-            local message = "alkali_metals.potassium.electron_affinity did not return 0.501"
-            assert.are.equal(0.501, potassium_electron_affinity, message)
-        end)
-
-        test("alkali_metals.potassium.melting_point equals 336.53", function ()
-            local potassium_melting_point = alkali_metals.potassium.melting_point
-            local message = "alkali_metals.potassium.melting_point did not return 336.53"
-            assert.are.equal(336.53, potassium_melting_point, message)
-        end)
-
-        test("alkali_metals.potassium.boiling_point equals 1032", function ()
-            local potassium_boiling_point = alkali_metals.potassium.boiling_point
-            local message = "alkali_metals.potassium.boiling_point did not return 1032"
-            assert.are.equal(1032, potassium_boiling_point, message)
-        end)
-
-        test("alkali_metals.potassium.density equals 0.89", function ()
-            local potassium_density = alkali_metals.potassium.density
-            local message = "alkali_metals.potassium.density did not return 0.89"
-            assert.are.equal(0.89, potassium_density, message)
-        end)
-
-        test('alkali_metals.potassium.standard_state equals "Solid"', function ()
-            local potassium_standard_state = alkali_metals.potassium.standard_state
-            local message = 'alkali_metals.potassium.standard_state did not return "Solid"'
-            assert.are.equal("Solid", potassium_standard_state, message)
-        end)
+        for i = 1, #potassium_properties do
+            local potassium_test_parameters = potassium_properties[i]
+            local property_key = potassium_test_parameters[1]
+            local expected_potassium_property_value = potassium_test_parameters[2]
+            local potassium_test_string = string.format("alkali_metals.potassium.%s equals %s", property_key, tostring(expected_potassium_property_value))
+            local function potassium_test_function()
+                local actual_potassium_property_value = alkali_metals.potassium[property_key]
+                local potassium_message = string.format("alkali_metals.potassium.%s doesn't equal %s", property_key, tostring(expected_potassium_property_value))
+                assert.are.equal(actual_potassium_property_value, expected_potassium_property_value, potassium_message)
+            end
+            test(potassium_test_string, potassium_test_function)
+        end
     end)
 
     describe("rubidium", function()
