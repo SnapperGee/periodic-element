@@ -81,6 +81,26 @@ local rubidium_properties = {
     {"standard_state", "Solid"},
 }
 
+local cesium_properties = {
+    {"name", "Cesium"},
+    {"symbol", "Cs"},
+    {"number", 55},
+    {"oxidation_states", OxidationStates.new{1}},
+    {"mass", 132.90545196},
+    {"group", 1},
+    {"family", "Alkali Metal"},
+    {"period", 6},
+    {"block", 's'},
+    {"electronegativity", 0.79},
+    {"atomic_radius", 343},
+    {"ionization_energy", 3.894},
+    {"electron_affinity", 0.472},
+    {"melting_point", 301.59},
+    {"boiling_point", 944},
+    {"density", 1.93},
+    {"standard_state", "Solid"},
+}
+
 describe("alkali_metals", function ()
     test("alkali_metals:length() returns 6", function ()
         local alkali_metals_length = alkali_metals:length()
@@ -284,108 +304,18 @@ describe("alkali_metals", function ()
             assert.are.equal(cesium, cesium_via_symbol, message)
         end)
 
-        test('alkali_metals.cesium.name equals "Cesium"', function ()
-            local cesium_name = alkali_metals.cesium.name
-            local message = 'alkali_metals.cesium.name did not return "Cesium"'
-            assert.are.equal("Cesium", cesium_name, message)
-        end)
-
-        test('alkali_metals.cesium.symbol equals "Cs"', function ()
-            local cesium_symbol = alkali_metals.cesium.symbol
-            local message = 'alkali_metals.cesium.symbol did not return "Cs"'
-            assert.are.equal("Cs", cesium_symbol, message)
-        end)
-
-        test("alkali_metals.cesium.number equals 55", function ()
-            local cesium_number = alkali_metals.cesium.number
-            local message = "alkali_metals.cesium.number did not return 55"
-            assert.are.equal(55, cesium_number, message)
-        end)
-
-        test("alkali_metals.cesium.oxidation_states equals {+1}", function ()
-            local cesium_oxidation_states = alkali_metals.cesium.oxidation_states
-            local expected_oxidation_sates = OxidationStates.new{1}
-            local message = "alkali_metals.cesium.oxidation_states did not return {+1}"
-            assert.are.same(expected_oxidation_sates, cesium_oxidation_states, message)
-        end)
-
-        test("alkali_metals.cesium.mass equals 132.90545196", function ()
-            local cesium_mass = alkali_metals.cesium.mass
-            local message = "alkali_metals.cesium.mass did not return 132.90545196"
-            assert.are.equal(132.90545196, cesium_mass, message)
-        end)
-
-        test("alkali_metals.cesium.group equals 1", function ()
-            local cesium_group = alkali_metals.cesium.group
-            local message = "alkali_metals.cesium.group did not return 1"
-            assert.are.equal(1, cesium_group, message)
-        end)
-
-        test('alkali_metals.cesium.family equals "Alkali Metal"', function ()
-            local cesium_family = alkali_metals.cesium.family
-            local message = 'alkali_metals.cesium.family did not return "Alkali Metal"'
-            assert.are.equal("Alkali Metal", cesium_family, message)
-        end)
-
-        test("alkali_metals.cesium.period equals 6", function ()
-            local cesium_period = alkali_metals.cesium.period
-            local message = "alkali_metals.cesium.period did not return 6"
-            assert.are.equal(6, cesium_period, message)
-        end)
-
-        test("alkali_metals.cesium.block equals 's'", function ()
-            local cesium_block = alkali_metals.cesium.block
-            local message = "alkali_metals.cesium.block did not return 's'"
-            assert.are.equal('s', cesium_block, message)
-        end)
-
-        test("alkali_metals.cesium.electronegativity equals 0.79", function ()
-            local cesium_electronegativity = alkali_metals.cesium.electronegativity
-            local message = "alkali_metals.cesium.electronegativity did not return 0.79"
-            assert.are.equal(0.79, cesium_electronegativity, message)
-        end)
-
-        test("alkali_metals.cesium.atomic_radius equals 343", function ()
-            local cesium_atomic_radius = alkali_metals.cesium.atomic_radius
-            local message = "alkali_metals.cesium.atomic_radius did not return 343"
-            assert.are.equal(343, cesium_atomic_radius, message)
-        end)
-
-        test("alkali_metals.cesium.ionization_energy equals 3.894", function ()
-            local cesium_ionization_energy = alkali_metals.cesium.ionization_energy
-            local message = "alkali_metals.cesium.ionization_energy did not return 3.894"
-            assert.are.equal(3.894, cesium_ionization_energy, message)
-        end)
-
-        test("alkali_metals.cesium.electron_affinity equals 0.472", function ()
-            local cesium_electron_affinity = alkali_metals.cesium.electron_affinity
-            local message = "alkali_metals.cesium.electron_affinity did not return 0.472"
-            assert.are.equal(0.472, cesium_electron_affinity, message)
-        end)
-
-        test("alkali_metals.cesium.melting_point equals 301.59", function ()
-            local cesium_melting_point = alkali_metals.cesium.melting_point
-            local message = "alkali_metals.cesium.melting_point did not return 301.59"
-            assert.are.equal(301.59, cesium_melting_point, message)
-        end)
-
-        test("alkali_metals.cesium.boiling_point equals 944", function ()
-            local cesium_boiling_point = alkali_metals.cesium.boiling_point
-            local message = "alkali_metals.cesium.boiling_point did not return 944"
-            assert.are.equal(944, cesium_boiling_point, message)
-        end)
-
-        test("alkali_metals.cesium.density equals 1.93", function ()
-            local cesium_density = alkali_metals.cesium.density
-            local message = "alkali_metals.cesium.density did not return 1.93"
-            assert.are.equal(1.93, cesium_density, message)
-        end)
-
-        test('alkali_metals.cesium.standard_state equals "Solid"', function ()
-            local cesium_standard_state = alkali_metals.cesium.standard_state
-            local message = 'alkali_metals.cesium.standard_state did not return "Solid"'
-            assert.are.equal("Solid", cesium_standard_state, message)
-        end)
+        for i = 1, #cesium_properties do
+            local cesium_test_parameters = cesium_properties[i]
+            local property_key = cesium_test_parameters[1]
+            local expected_cesium__property_value = cesium_test_parameters[2]
+            local cesium__test_string = string.format("alkali_metals.cesium_.%s equals %s", property_key, tostring(expected_cesium__property_value))
+            local function cesium__test_function()
+                local actual_cesium__property_value = alkali_metals.cesium[property_key]
+                local cesium__message = string.format("alkali_metals.cesium_.%s doesn't equal %s", property_key, tostring(expected_cesium__property_value))
+                assert.are.equal(actual_cesium__property_value, expected_cesium__property_value, cesium__message)
+            end
+            test(cesium__test_string, cesium__test_function)
+        end
     end)
 
     describe("francium", function()
