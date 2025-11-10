@@ -513,6 +513,45 @@ local polonium = Element.new{
     standard_state = "solid"
 }
 
+local copernicium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local copernicium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 9
+}
+
+local copernicium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local copernicium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        copernicium_subshell_occupancy1,
+        copernicium_subshell_occupancy2,
+        copernicium_subshell_occupancy3
+    }
+}
+
+local copernicium = Element.partial{
+    name = "Copernicium",
+    symbol = "Cn",
+    number = 112,
+    mass = 286.179,
+    group = 12,
+    period = 7,
+    oxidation_states = {0, 1, 2},
+    electron_configuration = copernicium_electron_configuration,
+    standard_state = "solid"
+}
+
 --- Elements of the Post-transition Metals family.
 ---@class PostTransitionMetal: ElementSet
 ---@field aluminum Element
@@ -526,9 +565,10 @@ local polonium = Element.new{
 ---@field lead Element
 ---@field bismuth Element
 ---@field polonium Element
+---@field copernicium Element
 local post_transition_metal = ElementSet.new(
     {aluminum, zinc, gallium, cadmium, indium, tin, mercury, thallium, lead,
-    bismuth, polonium},
+    bismuth, polonium, copernicium},
     "PostTransitionMetal"
 )
 

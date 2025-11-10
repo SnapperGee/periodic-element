@@ -1418,45 +1418,6 @@ local roentgenium = Element.partial{
     standard_state = "solid"
 }
 
-local copernicium_subshell_occupancy1 = SubshellOccupancy.new{
-    n = 5,
-    l = "f",
-    electron_count = 14
-}
-
-local copernicium_subshell_occupancy2 = SubshellOccupancy.new{
-    n = 6,
-    l = "d",
-    electron_count = 9
-}
-
-local copernicium_subshell_occupancy3 = SubshellOccupancy.new{
-    n = 7,
-    l = "s",
-    electron_count = 2
-}
-
-local copernicium_electron_configuration = ElectronConfiguration.new{
-    core = "Rn",
-    subshell_occupancy = {
-        copernicium_subshell_occupancy1,
-        copernicium_subshell_occupancy2,
-        copernicium_subshell_occupancy3
-    }
-}
-
-local copernicium = Element.partial{
-    name = "Copernicium",
-    symbol = "Cn",
-    number = 112,
-    mass = 286.179,
-    group = 12,
-    period = 7,
-    oxidation_states = {0, 1, 2},
-    electron_configuration = copernicium_electron_configuration,
-    standard_state = "solid"
-}
-
 --- Elements of the TransitionMetal Metals family (group 3-12).
 ---@class TransitionMetal: ElementSet
 ---@field scandium Element
@@ -1494,13 +1455,12 @@ local copernicium = Element.partial{
 ---@field meitnerium Element
 ---@field darmstadtium Element
 ---@field roentgenium Element
----@field copernicium Element
 local transition_metal = ElementSet.new(
     {scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium, ruthenium,
     rhodium, palladium, silver, lutetium, hafnium, tantalum, tungsten, rhenium,
     osmium, iridium, platinum, gold, rutherfordium, dubnium, seaborgium,
-    bohrium, hassium, meitnerium, darmstadtium, roentgenium, copernicium},
+    bohrium, hassium, meitnerium, darmstadtium, roentgenium},
     "TransitionMetal"
 )
 return transition_metal
