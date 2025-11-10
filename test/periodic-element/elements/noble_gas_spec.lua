@@ -102,6 +102,46 @@ local xenon_properties = {
     {"standard_state", "Gas"},
 }
 
+local radon_properties = {
+    {"name", "Radon"},
+    {"symbol", "Rn"},
+    {"number", 86},
+    {"oxidation_states", OxidationStates.new{0}},
+    {"mass", 222.01758},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 6},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", 220},
+    {"ionization_energy", 10.745},
+    {"electron_affinity", nil},
+    {"melting_point", 202},
+    {"boiling_point", 211.45},
+    {"density", 0.00973},
+    {"standard_state", "Gas"},
+}
+
+local oganesson_properties = {
+    {"name", "Oganesson"},
+    {"symbol", "Og"},
+    {"number", 118},
+    {"oxidation_states", OxidationStates.new{-1, 0, 1, 2, 4, 6}},
+    {"mass", 295.216},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 7},
+    {"block", 'p'},
+    {"electronegativity", nil},
+    {"atomic_radius", nil},
+    {"ionization_energy", nil},
+    {"electron_affinity", nil},
+    {"melting_point", nil},
+    {"boiling_point", nil},
+    {"density", nil},
+    {"standard_state", "Gas"},
+}
+
 describe("noble_gases", function ()
     test("noble_gases:length() should return 7", function ()
         local noble_gases_length = noble_gas:length()
@@ -264,135 +304,51 @@ describe("noble_gases", function ()
         test_elements(noble_gas.xenon, noble_gas, xenon_properties, assert, test)
     end)
 
-    -- describe("francium", function()
-    --     test("noble_gases.francium equals non nil", function ()
-    --         local francium = noble_gas.francium
-    --         local message = "noble_gases.francium equals nil"
-    --         assert.is_not_nil(francium, message)
-    --     end)
+    describe("radon", function()
+        test("noble_gases.radon equals non nil", function ()
+            local radon = noble_gas.radon
+            local message = "noble_gases.radon equals nil"
+            assert.is_not_nil(radon, message)
+        end)
 
-    --     test("noble_gases.francium equals noble_gases[87]", function ()
-    --         local francium = noble_gas.francium
-    --         local francium_via_index = noble_gas[87]
-    --         local message = "noble_gases.francium doesn't equal noble_gases[87]"
-    --         assert.are.equal(francium, francium_via_index, message)
-    --     end)
+        test("noble_gases.radon equals noble_gases[86]", function ()
+            local radon = noble_gas.radon
+            local radon_via_index = noble_gas[86]
+            local message = "noble_gases.radon doesn't equal noble_gases[86]"
+            assert.are.equal(radon, radon_via_index, message)
+        end)
 
-    --     test('noble_gases.francium equals noble_gases["francium"]', function ()
-    --         local francium = noble_gas.francium
-    --         local francium_via_name = noble_gas["francium"]
-    --         local message = 'noble_gases.francium doesn\'t equal noble_gases["francium"]'
-    --         assert.are.equal(francium, francium_via_name, message)
-    --     end)
+        test('noble_gases.radon equals noble_gases["radon"]', function ()
+            local radon = noble_gas.radon
+            local radon_via_name = noble_gas["radon"]
+            local message = 'noble_gases.radon doesn\'t equal noble_gases["radon"]'
+            assert.are.equal(radon, radon_via_name, message)
+        end)
 
-    --     test('noble_gases.francium equals noble_gases["fr"]', function ()
-    --         local francium = noble_gas.francium
-    --         local francium_via_symbol = noble_gas["fr"]
-    --         local message = 'noble_gases.francium doesn\'t equal noble_gases["fr"]'
-    --         assert.are.equal(francium, francium_via_symbol, message)
-    --     end)
+        test_elements(noble_gas.radon, noble_gas, radon_properties, assert, test)
+    end)
 
-    --     test('noble_gases.francium.name equals "Francium"', function ()
-    --         local francium_name = noble_gas.francium.name
-    --         local message = 'noble_gases.francium.name doesn\'t "Francium"'
-    --         assert.are.equal("Francium", francium_name, message)
-    --     end)
+    describe("oganesson", function()
+        test("noble_gases.oganesson equals non nil", function ()
+            local oganesson = noble_gas.oganesson
+            local message = "noble_gases.oganesson equals nil"
+            assert.is_not_nil(oganesson, message)
+        end)
 
-    --     test('noble_gases.francium.symbol equals "Fr"', function ()
-    --         local francium_symbol = noble_gas.francium.symbol
-    --         local message = 'noble_gases.francium.symbol doesn\'t "Fr"'
-    --         assert.are.equal("Fr", francium_symbol, message)
-    --     end)
+        test("noble_gases.oganesson equals noble_gases[118]", function ()
+            local oganesson = noble_gas.oganesson
+            local oganesson_via_index = noble_gas[118]
+            local message = "noble_gases.oganesson doesn't equal noble_gases[118]"
+            assert.are.equal(oganesson, oganesson_via_index, message)
+        end)
 
-    --     test("noble_gases.francium.number equals 87", function ()
-    --         local francium_number = noble_gas.francium.number
-    --         local message = "noble_gases.francium.number doesn\'t 87"
-    --         assert.are.equal(87, francium_number, message)
-    --     end)
+        test('noble_gases.oganesson equals noble_gases["oganesson"]', function ()
+            local oganesson = noble_gas.oganesson
+            local oganesson_via_name = noble_gas["oganesson"]
+            local message = 'noble_gases.oganesson doesn\'t equal noble_gases["oganesson"]'
+            assert.are.equal(oganesson, oganesson_via_name, message)
+        end)
 
-    --     test("noble_gases.francium.oxidation_states equals {0}", function ()
-    --         local francium_oxidation_states = noble_gas.francium.oxidation_states
-    --         local expected_oxidation_sates = OxidationStates.new{0}
-    --         local message = "noble_gases.francium.oxidation_states doesn\'t {0}"
-    --         assert.are.same(expected_oxidation_sates, francium_oxidation_states, message)
-    --     end)
-
-    --     test("noble_gases.francium.mass equals 223.01973", function ()
-    --         local francium_mass = noble_gas.francium.mass
-    --         local message = "noble_gases.francium.mass doesn\'t equal 223.01973"
-    --         assert.are.equal(223.01973, francium_mass, message)
-    --     end)
-
-    --     test("noble_gases.francium.group equals 1", function ()
-    --         local francium_group = noble_gas.francium.group
-    --         local message = "noble_gases.francium.group doesn\'t equal 1"
-    --         assert.are.equal(1, francium_group, message)
-    --     end)
-
-    --     test('noble_gases.francium.family equals "Noble Gas"', function ()
-    --         local francium_family = noble_gas.francium.family
-    --         local message = 'noble_gases.francium.family doesn\'t "Noble Gas"'
-    --         assert.are.equal("Noble Gas", francium_family, message)
-    --     end)
-
-    --     test("noble_gases.francium.period equals 7", function ()
-    --         local francium_period = noble_gas.francium.period
-    --         local message = "noble_gases.francium.period doesn\'t 7"
-    --         assert.are.equal(7, francium_period, message)
-    --     end)
-
-    --     test("noble_gases.francium.block equals 'p'", function ()
-    --         local francium_block = noble_gas.francium.block
-    --         local message = "noble_gases.francium.block doesn\'t 'p'"
-    --         assert.are.equal('p', francium_block, message)
-    --     end)
-
-    --     test("noble_gases.francium.electronegativity is nil", function ()
-    --         local francium_electronegativity = noble_gas.francium.electronegativity
-    --         local message = "noble_gases.francium.electronegativity isn\'t nil"
-    --         assert.are.equal(0.7, francium_electronegativity, message)
-    --     end)
-
-    --     test("noble_gases.francium.atomic_radius equals 348", function ()
-    --         local francium_atomic_radius = noble_gas.francium.atomic_radius
-    --         local message = "noble_gases.francium.atomic_radius does not equal 348"
-    --         assert.are.equal(348, francium_atomic_radius, message)
-    --     end)
-
-    --     test("noble_gases.francium.ionization_energy equals 3.9", function ()
-    --         local francium_ionization_energy = noble_gas.francium.ionization_energy
-    --         local message = "noble_gases.francium.ionization_energy doesn\'t equal 3.9"
-    --         assert.are.equal(3.9, francium_ionization_energy, message)
-    --     end)
-
-    --     test("noble_gases.francium.electron_affinity is nil", function ()
-    --         local francium_electron_affinity = noble_gas.francium.electron_affinity
-    --         local message = "noble_gases.francium.electron_affinity isn\'t nil"
-    --         assert.are.equal(0.47, francium_electron_affinity, message)
-    --     end)
-
-    --     test("noble_gases.francium.melting_point equals 300", function ()
-    --         local francium_melting_point = noble_gas.francium.melting_point
-    --         local message = "noble_gases.francium.melting_point doesn\'t equal 300"
-    --         assert.are.equal(300, francium_melting_point, message)
-    --     end)
-
-    --     test("noble_gases.francium.boiling_point is nil", function ()
-    --         local francium_boiling_point = noble_gas.francium.boiling_point
-    --         local message = "noble_gases.francium.boiling_point isn't nil"
-    --         assert.is_nil(francium_boiling_point, message)
-    --     end)
-
-    --     test("noble_gases.francium.density is nil", function ()
-    --         local francium_density = noble_gas.francium.density
-    --         local message = "noble_gases.francium.density isn't nil"
-    --         assert.is_nil(francium_density, message)
-    --     end)
-
-    --     test('noble_gases.francium.standard_state equals "Gas"', function ()
-    --         local francium_standard_state = noble_gas.francium.standard_state
-    --         local message = 'noble_gases.francium.standard_state doesn\'t "Gas"'
-    --         assert.are.equal("Gas", francium_standard_state, message)
-    --     end)
-    -- end)
+        test_elements(noble_gas.oganesson, noble_gas, oganesson_properties, assert, test)
+    end)
 end)
