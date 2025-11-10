@@ -82,6 +82,26 @@ local krypton_properties = {
     {"standard_state", "Gas"},
 }
 
+local xenon_properties = {
+    {"name", "Xenon"},
+    {"symbol", "Xe"},
+    {"number", 54},
+    {"oxidation_states", OxidationStates.new{0}},
+    {"mass", 131.293},
+    {"group", 18},
+    {"family", "Noble Gas"},
+    {"period", 5},
+    {"block", 'p'},
+    {"electronegativity", 2.6},
+    {"atomic_radius", 216},
+    {"ionization_energy", 12.13},
+    {"electron_affinity", nil},
+    {"melting_point", 161.36},
+    {"boiling_point", 165.03},
+    {"density", 0.005887},
+    {"standard_state", "Gas"},
+}
+
 describe("noble_gases", function ()
     test("noble_gases:length() should return 7", function ()
         local noble_gases_length = noble_gas:length()
@@ -213,137 +233,36 @@ describe("noble_gases", function ()
         test_elements(noble_gas.krypton, noble_gas, krypton_properties, assert, test)
     end)
 
-    -- describe("cesium", function()
-    --     test("noble_gases.cesium equals non nil", function ()
-    --         local cesium = noble_gas.cesium
-    --         local message = "noble_gases.cesium equals nil"
-    --         assert.is_not_nil(cesium, message)
-    --     end)
+    describe("xenon", function()
+        test("noble_gases.xenon equals non nil", function ()
+            local xenon = noble_gas.xenon
+            local message = "noble_gases.xenon equals nil"
+            assert.is_not_nil(xenon, message)
+        end)
 
-    --     test("noble_gases.cesium equals noble_gases[55]", function ()
-    --         local cesium = noble_gas.cesium
-    --         local cesium_via_index = noble_gas[55]
-    --         local message = "noble_gases.cesium doesn't equal noble_gases[55]"
-    --         assert.are.equal(cesium, cesium_via_index, message)
-    --     end)
+        test("noble_gases.xenon equals noble_gases[54]", function ()
+            local xenon = noble_gas.xenon
+            local xenon_via_index = noble_gas[54]
+            local message = "noble_gases.xenon doesn't equal noble_gases[54]"
+            assert.are.equal(xenon, xenon_via_index, message)
+        end)
 
-    --     test('noble_gases.cesium equals noble_gases["cesium"]', function ()
-    --         local cesium = noble_gas.cesium
-    --         local cesium_via_name = noble_gas["cesium"]
-    --         local message = 'noble_gases.cesium doesn\'t equal noble_gases["cesium"]'
-    --         assert.are.equal(cesium, cesium_via_name, message)
-    --     end)
+        test('noble_gases.xenon equals noble_gases["xenon"]', function ()
+            local xenon = noble_gas.xenon
+            local xenon_via_name = noble_gas["xenon"]
+            local message = 'noble_gases.xenon doesn\'t equal noble_gases["xenon"]'
+            assert.are.equal(xenon, xenon_via_name, message)
+        end)
 
-    --     test('noble_gases.cesium equals noble_gases["cs"]', function ()
-    --         local cesium = noble_gas.cesium
-    --         local cesium_via_symbol = noble_gas["cs"]
-    --         local message = 'noble_gases.cesium doesn\'t equal noble_gases["cs"]'
-    --         assert.are.equal(cesium, cesium_via_symbol, message)
-    --     end)
+        test('noble_gases.xenon equals noble_gases["xe"]', function ()
+            local xenon = noble_gas.xenon
+            local xenon_via_symbol = noble_gas["xe"]
+            local message = 'noble_gases.xenon doesn\'t equal noble_gases["xe"]'
+            assert.are.equal(xenon, xenon_via_symbol, message)
+        end)
 
-    --     test('noble_gases.cesium.name equals "Cesium"', function ()
-    --         local cesium_name = noble_gas.cesium.name
-    --         local message = 'noble_gases.cesium.name doesn\'t "Cesium"'
-    --         assert.are.equal("Cesium", cesium_name, message)
-    --     end)
-
-    --     test('noble_gases.cesium.symbol equals "Cs"', function ()
-    --         local cesium_symbol = noble_gas.cesium.symbol
-    --         local message = 'noble_gases.cesium.symbol doesn\'t "Cs"'
-    --         assert.are.equal("Cs", cesium_symbol, message)
-    --     end)
-
-    --     test("noble_gases.cesium.number equals 55", function ()
-    --         local cesium_number = noble_gas.cesium.number
-    --         local message = "noble_gases.cesium.number doesn\'t 55"
-    --         assert.are.equal(55, cesium_number, message)
-    --     end)
-
-    --     test("noble_gases.cesium.oxidation_states equals {0}", function ()
-    --         local cesium_oxidation_states = noble_gas.cesium.oxidation_states
-    --         local expected_oxidation_sates = OxidationStates.new{0}
-    --         local message = "noble_gases.cesium.oxidation_states doesn\'t {0}"
-    --         assert.are.same(expected_oxidation_sates, cesium_oxidation_states, message)
-    --     end)
-
-    --     test("noble_gases.cesium.mass equals 132.90545196", function ()
-    --         local cesium_mass = noble_gas.cesium.mass
-    --         local message = "noble_gases.cesium.mass doesn\'t equal 132.90545196"
-    --         assert.are.equal(132.90545196, cesium_mass, message)
-    --     end)
-
-    --     test("noble_gases.cesium.group equals 1", function ()
-    --         local cesium_group = noble_gas.cesium.group
-    --         local message = "noble_gases.cesium.group doesn\'t equal 1"
-    --         assert.are.equal(1, cesium_group, message)
-    --     end)
-
-    --     test('noble_gases.cesium.family equals "Noble Gas"', function ()
-    --         local cesium_family = noble_gas.cesium.family
-    --         local message = 'noble_gases.cesium.family doesn\'t "Noble Gas"'
-    --         assert.are.equal("Noble Gas", cesium_family, message)
-    --     end)
-
-    --     test("noble_gases.cesium.period equals 6", function ()
-    --         local cesium_period = noble_gas.cesium.period
-    --         local message = "noble_gases.cesium.period doesn\'t 6"
-    --         assert.are.equal(6, cesium_period, message)
-    --     end)
-
-    --     test("noble_gases.cesium.block equals 'p'", function ()
-    --         local cesium_block = noble_gas.cesium.block
-    --         local message = "noble_gases.cesium.block doesn\'t 'p'"
-    --         assert.are.equal('p', cesium_block, message)
-    --     end)
-
-    --     test("noble_gases.cesium.electronegativity is nil", function ()
-    --         local cesium_electronegativity = noble_gas.cesium.electronegativity
-    --         local message = "noble_gases.cesium.electronegativity isn\'t nil"
-    --         assert.are.equal(0.79, cesium_electronegativity, message)
-    --     end)
-
-    --     test("noble_gases.cesium.atomic_radius equals 343", function ()
-    --         local cesium_atomic_radius = noble_gas.cesium.atomic_radius
-    --         local message = "noble_gases.cesium.atomic_radius does not equal 343"
-    --         assert.are.equal(343, cesium_atomic_radius, message)
-    --     end)
-
-    --     test("noble_gases.cesium.ionization_energy equals 3.894", function ()
-    --         local cesium_ionization_energy = noble_gas.cesium.ionization_energy
-    --         local message = "noble_gases.cesium.ionization_energy doesn\'t equal 3.894"
-    --         assert.are.equal(3.894, cesium_ionization_energy, message)
-    --     end)
-
-    --     test("noble_gases.cesium.electron_affinity is nil", function ()
-    --         local cesium_electron_affinity = noble_gas.cesium.electron_affinity
-    --         local message = "noble_gases.cesium.electron_affinity isn\'t nil"
-    --         assert.are.equal(0.472, cesium_electron_affinity, message)
-    --     end)
-
-    --     test("noble_gases.cesium.melting_point equals 301.59", function ()
-    --         local cesium_melting_point = noble_gas.cesium.melting_point
-    --         local message = "noble_gases.cesium.melting_point doesn\'t equal 301.59"
-    --         assert.are.equal(301.59, cesium_melting_point, message)
-    --     end)
-
-    --     test("noble_gases.cesium.boiling_point equals 944", function ()
-    --         local cesium_boiling_point = noble_gas.cesium.boiling_point
-    --         local message = "noble_gases.cesium.boiling_point doesn\'t equal 944"
-    --         assert.are.equal(944, cesium_boiling_point, message)
-    --     end)
-
-    --     test("noble_gases.cesium.density equals 1.93", function ()
-    --         local cesium_density = noble_gas.cesium.density
-    --         local message = "noble_gases.cesium.density doesn\'t 1.93"
-    --         assert.are.equal(1.93, cesium_density, message)
-    --     end)
-
-    --     test('noble_gases.cesium.standard_state equals "Gas"', function ()
-    --         local cesium_standard_state = noble_gas.cesium.standard_state
-    --         local message = 'noble_gases.cesium.standard_state doesn\'t "Gas"'
-    --         assert.are.equal("Gas", cesium_standard_state, message)
-    --     end)
-    -- end)
+        test_elements(noble_gas.xenon, noble_gas, xenon_properties, assert, test)
+    end)
 
     -- describe("francium", function()
     --     test("noble_gases.francium equals non nil", function ()
