@@ -19,8 +19,8 @@ Once installed as a dependency it can be imported and used:
 ```lua
 local elements = require("periodic-element.elements")
 
-local carbon = elements("C")
--- elements[6], elements(6), elements("carbon") would also work exactly the same
+local carbon = elements["C"]
+-- elements[6] and elements["carbon"] would also work exactly the same
 
 print(carbon)
 
@@ -29,12 +29,12 @@ Element{name="Carbon", symbol="C", number=6, mass=12.011, group=14, period=2, bl
 ]]
 ```
 
-## Elements Module Object/Table
+## Elements Object
 
-This will most likely be one of the main and most used module objects of this
-module. It contains the `Elements` module object which can be used to get an
-`Element` object via its atomic number, symbol, or name making it very easy and
-convenient to use `Element` objects.
+This will most likely be one of the main and most used objects of this module.
+It contains the `Elements` module object which can be used to get an `Element`
+object via its atomic number, symbol, or name making it very easy and convenient
+to use `Element` objects.
 
 Reference the [example above](#installation--usage) for how it can be used.
 
@@ -53,11 +53,20 @@ properties an element on the periodic table of element has. This includes:
 - period
 - block
 - oxidation states
-- and electron configuration
+- electron configuration
+- electronegativity
+- atomic_radius
+- ionization_energy
+- electron_affinity
+- melting_point
+- boiling_point
+- density
+- standard_state
 
 This is the type of object returned by the exported `Elements` object. Cases of
 this class being used external to this module will probably not be too common,
-but an example of its usage is:
+as this module exports concrete instantiated objects for all elements (as of
+writing this). An example of its usage is:
 
 ```lua
 local Element = require("periodic-element.element")
@@ -94,11 +103,10 @@ local hydrogen = Element.new{
 }
 ```
 
-It should be noted that this class performs numerous validations on its
-constructor arguments to make sure a "valid" (according to this lua module)
-element is created. If any of these validations fail an exception is thrown. For
-instance a `number` property must be between `1` and `118`, a `name` can't be
-blank, a `symbol` can only be 1-2 characters, and a block can only be one of
+This class performs some validations on its constructor arguments to make sure a
+valid element is created. If any of these validations fail, an exception is
+thrown. For instance a `mass` property must be greater than `0`, a `name` can't
+be blank, a `symbol` can only be 1-2 characters, and a block can only be one of
 `'s'`, `'p'`, `'d'`, or `'f'` characters or `nil`.
 
 ## Elements Module
@@ -107,11 +115,12 @@ This package contains instantiated `Element` objects in `elements.*` submodules
 organized by their family for each periodic element. For instance, there's an
 `elements.alkali_metal` submodule that contains `Element` objects for the alkali
 metals. So in most cases it shouldn't be necessary to have to create a new object
-for pre-existing elements. As of writing this, this package contains elements up
-to Oganesson. Some of these element's, particularly more recently discoverd ones,
-properties have yet to be fully quantified and are subject to change and possibly
-being out of date in this package if they're not updated to reflect new/updated
-discoveries. If that's the case feel free to submit an [issue][issues].
+for pre-existing elements.
+
+## Partial Element
+
+A "partial" `Element` objects is identical to a normal `Element` object except
+it has more nil-able properties.
 
 ## Molecule & ElementSet Collections
 
@@ -131,27 +140,23 @@ This package attempts to make things as immutable as possible so if you're
 getting any errors, be sure to check the error messages and that you're not
 attempting to mutate an immutable object.
 
-## Debated Conventions
+## Debated Conventions and this Module's Conventions
 
 There are conventions regarding element classification that can sometimes vary.
 For instance whether to consider elements in group 12 (Zn, Cd, Hg, Cn)
-transition metals or post-transition metals. This package attempts to conform to
-whichever convention is most current and/or accurate. If you feel that it does
-it incorrectly in some regard, feel free to open an [issue][issues].
+transition metals or post-transition metals and whether Lutetium and Lawrencium
+are considered transition metals in group 3 or exclusive to the Lanthanide and
+Actinide families and in no group. This package attempts to conform to
+whichever convention is most current and/or accurate and:
 
-### This module's conventions/opinions
+- considers group 12 elements (Zn, Cd, Hg, Cn) to be Post-transition Metals.
+- considers Lutetium and Lawrencium as part of the Transition Metal family,
+  'd' block, and in positions group 3 and periods 6 and 7.
 
-- Atomic elements Lanthanum 57 and Actinium 89 are considered to be Lanthanides
-  and Actinides respectively and be part of the 'f' block and have no group
-  number.
-
-- Lutetium 71 and Lawrencium 103 are considered to be transition metals in group
-  3 and part of the 'd' block.
+If you feel that it does it incorrectly in some regard, feel free to open an
+[issue][issues].
 
 ## Misc. Package Info
-
-Only elements with relatively known properties are included in this package.
-This means it only includes up to Berkelium 97.
 
 This lua module was written and is intended for lua 5.1. It doesn't have any
 external build dependencies and doesn't use many non standard features so it
