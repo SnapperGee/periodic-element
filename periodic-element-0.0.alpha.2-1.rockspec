@@ -1,9 +1,9 @@
 rockspec_format = "3.1"
 package = "periodic-element"
-version = "0.0.alpha.1-1"
+version = "0.0.alpha.2-1"
 source = {
     url = "git+https://github.com/SnapperGee/periodic-element",
-    tag = "0.0.alpha.1-1"
+    tag = "0.0.alpha.2-1"
 }
 description = {
     summary = "Represent an element from the periodic table of elements.",
@@ -20,8 +20,9 @@ description = {
         This package also provides a Molecule and ElementSet class which offers
         specialized collections for Element objects.
 
-        This package employs an immutable by default architecture so all objects
-        and objects created from its classes are immutable.
+        This module employs an immutable by default architecture so all objects
+        it exports and created from its classes are immutable (or intended to be
+        as immutable as possible).
     ]],
     homepage = "https://github.com/SnapperGee/periodic-element",
     issues_url = "https://github.com/SnapperGee/periodic-element/issues",
