@@ -1106,6 +1106,47 @@ local gold = Element.new{
     standard_state = "solid"
 }
 
+local lawrencium_subshell_occupancy1 = SubshellOccupancy.new{
+    n = 5,
+    l = "f",
+    electron_count = 14
+}
+
+local lawrencium_subshell_occupancy2 = SubshellOccupancy.new{
+    n = 7,
+    l = "s",
+    electron_count = 2
+}
+
+local lawrencium_subshell_occupancy3 = SubshellOccupancy.new{
+    n = 6,
+    l = "d",
+    electron_count = 1
+}
+
+local lawrencium_electron_configuration = ElectronConfiguration.new{
+    core = "Rn",
+    subshell_occupancy = {
+        lawrencium_subshell_occupancy1,
+        lawrencium_subshell_occupancy2,
+        lawrencium_subshell_occupancy3
+    }
+}
+
+local lawrencium = Element.partial{
+    name = "Lawrencium",
+    symbol = "Lr",
+    number = 103,
+    mass = 266.12,
+    group = 3,
+    period = 7,
+    oxidation_states = {3},
+    electron_configuration = lawrencium_electron_configuration,
+    electronegativity = 1.3,
+    melting_point = 1900,
+    standard_state = "solid"
+}
+
 local rutherfordium_subshell_occupancy1 = SubshellOccupancy.new{
     n = 5,
     l = "f",
@@ -1447,6 +1488,7 @@ local roentgenium = Element.partial{
 ---@field iridium Element
 ---@field platinum Element
 ---@field gold Element
+---@field lawrencium Element
 ---@field rutherfordium Element
 ---@field dubnium Element
 ---@field seaborgium Element
@@ -1459,8 +1501,8 @@ local transition_metal = ElementSet.new(
     {scandium, titanium, vanadium, chromium, manganese, iron, cobalt, nickel,
     copper, yttrium, zirconium, niobium, molybdenum, technetium, ruthenium,
     rhodium, palladium, silver, lutetium, hafnium, tantalum, tungsten, rhenium,
-    osmium, iridium, platinum, gold, rutherfordium, dubnium, seaborgium,
-    bohrium, hassium, meitnerium, darmstadtium, roentgenium},
+    osmium, iridium, platinum, gold, lawrencium, rutherfordium, dubnium,
+    seaborgium, bohrium, hassium, meitnerium, darmstadtium, roentgenium},
     "TransitionMetal"
 )
 return transition_metal

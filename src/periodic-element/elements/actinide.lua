@@ -27,7 +27,7 @@ local actinium = Element.partial{
     name = "Actinium",
     symbol = "Ac",
     number = 89,
-    mass = 227.028,
+    mass = 227.02775,
     group = nil,
     period = 7,
     oxidation_states = {3},
@@ -110,7 +110,7 @@ local protactinium = Element.partial{
     name = "Protactinium",
     symbol = "Pa",
     number = 91,
-    mass = 231.036,
+    mass = 231.03588,
     group = nil,
     period = 7,
     oxidation_states = {4, 5},
@@ -154,7 +154,7 @@ local uranium = Element.partial{
     name = "Uranium",
     symbol = "U",
     number = 92,
-    mass = 238.029,
+    mass = 238.0289,
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
@@ -199,7 +199,7 @@ local neptunium = Element.partial{
     name = "Neptunium",
     symbol = "Np",
     number = 93,
-    mass = 237.048,
+    mass = 237.048172,
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
@@ -237,7 +237,7 @@ local plutonium = Element.partial{
     name = "Plutonium",
     symbol = "Pu",
     number = 94,
-    mass = 244.064,
+    mass = 244.0642,
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
@@ -275,7 +275,7 @@ local americium = Element.partial{
     name = "Americium",
     symbol = "Am",
     number = 95,
-    mass = 243.061,
+    mass = 243.06138,
     group = nil,
     period = 7,
     oxidation_states = {3, 4, 5, 6},
@@ -320,7 +320,7 @@ local curium = Element.partial{
     name = "Curium",
     symbol = "Cm",
     number = 96,
-    mass = 247.070,
+    mass = 247.07035,
     group = nil,
     period = 7,
     oxidation_states = {3},
@@ -358,7 +358,7 @@ local berkelium = Element.partial{
     name = "Berkelium",
     symbol = "Bk",
     number = 97,
-    mass = 247.070,
+    mass = 247.07031,
     group = nil,
     period = 7,
     oxidation_states = {3, 4},
@@ -548,47 +548,6 @@ local nobelium = Element.partial{
     standard_state = "solid"
 }
 
-local lawrencium_subshell_occupancy1 = SubshellOccupancy.new{
-    n = 5,
-    l = "f",
-    electron_count = 14
-}
-
-local lawrencium_subshell_occupancy2 = SubshellOccupancy.new{
-    n = 7,
-    l = "s",
-    electron_count = 2
-}
-
-local lawrencium_subshell_occupancy3 = SubshellOccupancy.new{
-    n = 6,
-    l = "d",
-    electron_count = 1
-}
-
-local lawrencium_electron_configuration = ElectronConfiguration.new{
-    core = "Rn",
-    subshell_occupancy = {
-        lawrencium_subshell_occupancy1,
-        lawrencium_subshell_occupancy2,
-        lawrencium_subshell_occupancy3
-    }
-}
-
-local lawrencium = Element.partial{
-    name = "Lawrencium",
-    symbol = "Lr",
-    number = 103,
-    mass = 266.12,
-    group = 3,
-    period = 7,
-    oxidation_states = {3},
-    electron_configuration = lawrencium_electron_configuration,
-    electronegativity = 1.3,
-    melting_point = 1900,
-    standard_state = "solid"
-}
-
 --- Elements of the Actinide family.
 ---@class Actinides: ElementSet
 ---@field actinium Element
@@ -605,11 +564,9 @@ local lawrencium = Element.partial{
 ---@field fermium Element
 ---@field mendelevium Element
 ---@field nobelium Element
----@field lawrencium Element
 local actinide = ElementSet.new(
-    { actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
-    curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium,
-    lawrencium},
+    {actinium, thorium, protactinium, uranium, neptunium, plutonium, americium,
+    curium, berkelium, californium, einsteinium, fermium, mendelevium, nobelium},
     "Actinide"
 )
 
