@@ -102,49 +102,6 @@ function METATABLE:__tostring()
     return string.format("SubshellOccupancy{%s}", key_value_pairs)
 end
 
----@return integer
-function SubshellOccupancy:principal_quantum_number()
-    return self.n
-end
-
----@return Block
-function SubshellOccupancy:subshell_letter()
-    return self.l
-end
-
----@param other SubshellOccupancy
----@return integer
-function SubshellOccupancy:spectroscopic_compare(other)
-    if rawequal(self, other) then return 0 end
-
-    if getmetatable(self) ~= getmetatable(other) then
-        error("comparison of non-SubshellOccupancy", 2)
-    end
-
-    local self_data, other_data = DATA[self], DATA[other]
-
-    assert(self_data and other_data, "nil backing data in SubshellOccupancy")
-
-    if self_data.n ~= other_data.n then
-        return self_data.n < other_data.n and -1 or 1
-    end
-
-    local self_l_rank = L_LETTER_RANK[self_data.l]
-    local other_l_rank = L_LETTER_RANK[other_data.l]
-
-    assert(self_l_rank ~= nil and other_l_rank ~= nil, "invalid subshell letter")
-
-    if self_l_rank ~= other_l_rank then
-        return self_l_rank < other_l_rank and -1 or 1
-    end
-
-    if self_data.electron_count ~= other_data.electron_count then
-        return self_data.electron_count < other_data.electron_count and -1 or 1
-    end
-
-    return 0
-end
-
 ---@class SubshellOccupancyInitOpts
 ---@field n integer -- principal quantum number (e.g., 3 in 3d10)
 ---@field l Block -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
@@ -188,6 +145,49 @@ function SubshellOccupancy.new(opts)
     }
 
     return obj
+end
+
+---@return integer
+function SubshellOccupancy:principal_quantum_number()
+    return self.n
+end
+
+---@return Block
+function SubshellOccupancy:subshell_letter()
+    return self.l
+end
+
+---@param other SubshellOccupancy
+---@return integer
+function SubshellOccupancy:spectroscopic_compare(other)
+    if rawequal(self, other) then return 0 end
+
+    if getmetatable(self) ~= getmetatable(other) then
+        error("comparison of non-SubshellOccupancy", 2)
+    end
+
+    local self_data, other_data = DATA[self], DATA[other]
+
+    assert(self_data and other_data, "nil backing data in SubshellOccupancy")
+
+    if self_data.n ~= other_data.n then
+        return self_data.n < other_data.n and -1 or 1
+    end
+
+    local self_l_rank = L_LETTER_RANK[self_data.l]
+    local other_l_rank = L_LETTER_RANK[other_data.l]
+
+    assert(self_l_rank ~= nil and other_l_rank ~= nil, "invalid subshell letter")
+
+    if self_l_rank ~= other_l_rank then
+        return self_l_rank < other_l_rank and -1 or 1
+    end
+
+    if self_data.electron_count ~= other_data.electron_count then
+        return self_data.electron_count < other_data.electron_count and -1 or 1
+    end
+
+    return 0
 end
 
 return SubshellOccupancy
