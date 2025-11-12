@@ -4,13 +4,11 @@ local ELECTRON_CAP = { s = 2, p = 6, d = 10, f = 14 }
 local N_MIN = { s = 1, p = 2, d = 3, f = 4 }
 local L_LETTER_RANK = { s = 0, p = 1, d = 2, f = 3 }
 
----@alias SubshellLetter '"s"'|'"p"'|'"d"'|'"f"'
-
 local VALID_L_LETTER = { s = true, p = true, d = true, f = true }
 
 ---@class SubshellOccupancy
----@field n integer              -- principal quantum number (e.g., 3 in 3d10)
----@field l SubshellLetter       -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
+---@field n integer -- principal quantum number (e.g., 3 in 3d10)
+---@field l Block -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
 ---@field electron_count integer -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
 ---@field canonical_string string
 local SubshellOccupancy = {}
@@ -109,7 +107,7 @@ function SubshellOccupancy:principal_quantum_number()
     return self.n
 end
 
----@return SubshellLetter
+---@return Block
 function SubshellOccupancy:subshell_letter()
     return self.l
 end
@@ -148,8 +146,8 @@ function SubshellOccupancy:spectroscopic_compare(other)
 end
 
 ---@class SubshellOccupancyInitOpts
----@field n integer              -- principal quantum number (e.g., 3 in 3d10)
----@field l SubshellLetter       -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
+---@field n integer -- principal quantum number (e.g., 3 in 3d10)
+---@field l Block -- azimuthal (angular-momentum) quantum number (orbital/subshell type or subshell letter): s/p/d/f
 ---@field electron_count integer -- electrons occupying that subshell (capacity: s≤2,p≤6,d≤10,f≤14)
 
 ---@param opts SubshellOccupancyInitOpts

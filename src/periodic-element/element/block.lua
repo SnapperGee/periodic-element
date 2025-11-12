@@ -38,10 +38,9 @@ local function is_f_block(number)
         or (number >= 89 and number <= 102)
 end
 
---- Returns the block letter an atomic number resides in or nil if the atomic
---- number doesn't reside in a block. If the atomic number is a valid atomic
---- number in the range [1, 118], it will return a block letter.
----@param number integer
+--- Returns the block letter an atomic number resides in or ``nil`` if can't
+--- be determined.
+---@param number integer -- 1..118
 ---@return Block|nil
 local function block_of_atomic_number(number)
     if type(number) ~= "number" or number ~= math.floor(number) then

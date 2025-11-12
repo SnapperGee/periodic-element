@@ -4,8 +4,10 @@ local is_array = require("periodic-element.util.is_array")
 local NOBLE_GAS_SYMBOLS = { He = true, Ne = true, Ar = true, Kr = true, Xe = true, Rn = true, Og = true }
 local NOBLE_GAS_RANK = { He = 0, Ne = 1, Ar = 2, Kr = 3, Xe = 4, Rn = 5, Og = 6 }
 
+---@alias NobleGasSymbol "He"|"Ne"|"Ar"|"Kr"|"Xe"|"Rn"|"Og"
+
 ---@class ElectronConfiguration
----@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn", "Og"
+---@field core NobleGasSymbol|nil    -- noble-gas symbol such as "He","Ne","Ar","Kr","Xe","Rn", or "Og"
 ---@field subshell_occupancy SubshellOccupancy[] -- ordered list as written (keep authoring order)
 local ElectronConfiguration = {}
 
@@ -104,11 +106,14 @@ function METATABLE:__tostring()
     )
 end
 
----@class ElectronConfigurationInitOpts
----@field core string|nil    -- noble-gas symbol like "He","Ne","Ar","Kr","Xe","Rn", "Og"
+---@alias AnyCaseNobleGasSymbol NobleGasSymbol|"he"|"ne"|"ar"|"kr"|"xe"|"rn"|"og"
+
+---@class ElectronConfigurationOpts
+---@field core AnyCaseNobleGasSymbol|nil
 ---@field subshell_occupancy  SubshellOccupancy[] -- ordered list as written (keep authoring order)
 
----@param opts ElectronConfigurationInitOpts
+--- Constructs an ``ElectronConfiguration`` instance with the provided properties.
+---@param opts ElectronConfigurationOpts
 ---@return ElectronConfiguration
 function ElectronConfiguration.new(opts)
 

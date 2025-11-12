@@ -61,6 +61,8 @@ local family = {
     [34]="Nonmetal"
 }
 
+--- Returns the family an atomic number resides in or ``nil`` if can't be
+--- determined.
 ---@param atomic_number integer -- 1..118
 ---@return string|nil
 local function family_of_atomic_number(atomic_number)
@@ -84,7 +86,7 @@ local function family_of_atomic_number(atomic_number)
         return "Transition Metal"
     end
 
-    return family[atomic_number] or nil
+    return family[atomic_number]
 end
 
 return family_of_atomic_number

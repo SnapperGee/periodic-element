@@ -6,7 +6,7 @@ local OxidationStates = require("periodic-element.element.oxidation_states")
 
 local standard_states = { Solid = true, Liquid = true, Gas = true }
 
---- Class for creating objects that can represent an elements of the periodic
+--- Class for creating an objects that can represent an element of the periodic
 --- table of elements.
 ---@class Element
 ---@field name   string      -- element name
@@ -131,10 +131,9 @@ end
 ---@field density number -- g/cm³
 ---@field standard_state "solid"|"liquid"|"gas"
 
---- Constructor for Element objects. Parameters are validated making sure
---- they're valid element properties according to this lua module. For instance
---- an atomic number can only be in the range [1, 118]. If any validation fails
---- an exception is thrown.
+--- Constructor for ``Element`` objects. Parameters are validated making sure
+--- they're valid element properties according to this lua module. If any
+--- validation fails an error is thrown.
 ---@param opts ElementOpts
 ---@return Element
 function Element.new(opts)
@@ -304,10 +303,9 @@ end
 ---@field boiling_point number|nil -- kelvin
 ---@field density number|nil  -- g/cm³
 
---- Constructor for Element objects. Parameters are validated making sure
+--- Constructor for ``Element`` objects. Parameters are validated making sure
 --- they're valid element properties according to this lua module. For instance
---- an atomic number can only be in the range [1, 118]. If any validation fails
---- an exception is thrown.
+--- If any validation fails an error is thrown.
 ---@param opts PartialElementOpts
 ---@return PartialElement
 function Element.partial(opts)
@@ -469,9 +467,9 @@ local FIELD_ORDER =
     "standard_state",
 }
 
---- Returns a `string` that's formatted to be a little more readable and
---- prettier than the `string` returned by `tostring`. `nil` values are omitted
---- from the outputted string.
+--- Returns a ``string`` that's formatted to be a little more readable and
+--- prettier than the ``string`` returned by ``tostring``. ``nil`` values are
+--- omitted from the outputted string.
 ---@param indent? integer|nil -- specify how many spaces each indent should be. Defaults to 4.
 ---@return string
 function Element:formatted_string(indent)

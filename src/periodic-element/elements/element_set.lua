@@ -1,6 +1,8 @@
 local Element = require("periodic-element.element")
 local is_array = require("periodic-element.util.is_array")
 
+--- Contains a set of distinct ``Element`` objects that can be queried for
+--- by their atomic number, name, or symbol.
 ---@class ElementSet
 ---@field _name string|nil
 local ElementSet = {}
@@ -46,6 +48,8 @@ local METATABLE = {
     __metatable = ElementSet
 }
 
+--- Constructs a new instance of an ``ElementSet`` that contains the passed
+--- elements and an optional name for the set.
 ---@param elements Element[]
 ---@param name? string|nil
 ---@return ElementSet
@@ -104,11 +108,14 @@ function ElementSet.new(elements, name)
     return obj
 end
 
+--- Returns the number of elements this ``ElementSet`` contains.
 ---@return integer
 function ElementSet:length()
     return #DATA[self].elements
 end
 
+--- Returns the ``string`` name of this ``ElementSet`` object if it has one or
+--- an empty ``string`` if it doesn't have one.
 ---@return string
 function ElementSet:name()
     return DATA[self]._name or ""
