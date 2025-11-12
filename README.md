@@ -169,8 +169,8 @@ Actinide families and in no group. This package attempts to conform to
 whichever convention is most current and/or accurate and:
 
 - treats group 12 elements (Zn, Cd, Hg, Cn) as Post-transition Metals.
-- treats Lanthanum and Actinium as Lanthanides and Actinides, 'f' block, and in
-  no group or period.
+- treats Lanthanum and Actinium as Lanthanides and Actinides, 'f' block, period
+  7, and in no group.
 - treats Lutetium and Lawrencium as Transition Metals, 'd' block, and in
   positions group 3 and periods 6 and 7.
 
