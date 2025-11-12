@@ -119,7 +119,7 @@ for pre-existing elements.
 
 ## Partial Element
 
-A "partial" `Element` objects is identical to a normal `Element` object except
+A "partial" `Element` object is identical to a normal `Element` object except
 it has more nil-able properties.
 
 ## Molecule & ElementSet Collections
