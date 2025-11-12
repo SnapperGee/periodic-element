@@ -3,7 +3,7 @@ package = "periodic-element"
 version = "0.0.alpha.2-2"
 source = {
     url = "git+https://github.com/SnapperGee/periodic-element",
-    tag = "0.0.alpha.2-1"
+    tag = "0.0.alpha.2-2"
 }
 description = {
     summary = "Elements of the periodic table of elements.",
