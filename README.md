@@ -20,12 +20,30 @@ Once installed as a dependency it can be imported and used:
 local elements = require("periodic-element.elements")
 
 local carbon = elements["C"]
--- elements[6] and elements["carbon"] would also work exactly the same
+-- elements[6], elements["c"], and elements["carbon"] would also work exactly the same
 
 print(carbon)
 
 --[[
-Element{name="Carbon", symbol="C", number=6, mass=12.011, group=14, period=2, block='p', oxidation_states={-4, +2, +4}, electron_configuration="[He]2s²2p²", electronegativity=2.55, atomic_radius=170, ionization_energy=11.26, electron_affinity=1.263, melting_point=3823, boiling_point=4098, density=2.267, standard_state="Solid"}
+Element{
+    name="Carbon",
+    symbol="C",
+    number=6,
+    mass=12.011,
+    group=14,
+    period=2,
+    block='p',
+    oxidation_states={-4, +2, +4},
+    electron_configuration="[He]2s²2p²",
+    electronegativity=2.55,
+    atomic_radius=170,
+    ionization_energy=11.26,
+    electron_affinity=1.263,
+    melting_point=3823,
+    boiling_point=4098,
+    density=2.267,
+    standard_state="Solid"
+}
 ]]
 ```
 
