@@ -116,7 +116,7 @@ end
 
 ---@generic T
 ---@param key? (fun(element: Element): T)|nil
----@return fun(): integer?, Element?
+---@return fun(): T?, Element?
 function ElementSet:pairs(key)
     key = key or function(element) return element.number end
     local elements = DATA[self].elements
