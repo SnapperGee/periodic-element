@@ -114,13 +114,16 @@ function ElementSet:name()
     return DATA[self]._name or ""
 end
 
+---@generic T
+---@param key? (fun(element: Element): T)|nil
 ---@return fun(): integer?, Element?
-function ElementSet:ipairs()
+function ElementSet:pairs(key)
+    key = key or function(element) return element.number end
     local elements = DATA[self].elements
     local i = 0
     return function()
         i = i + 1
-        if i <= #elements then return i, elements[i] end
+        if i <= #elements then return key(elements[i]), elements[i] end
         return nil, nil
     end
 end

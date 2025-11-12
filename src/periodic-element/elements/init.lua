@@ -19,7 +19,7 @@ local element_sets = {
 
 for element_set_index = 1, #element_sets do
     local element_set = element_sets[element_set_index]
-    for _, value in element_set:ipairs() do
+    for _, value in element_set:pairs() do
         elements_accumulator[#elements_accumulator + 1] = value
     end
 end
