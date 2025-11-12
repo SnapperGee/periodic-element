@@ -4,7 +4,7 @@ local elements = require("periodic-element.elements")
 local args = parser:parse()
 
 if args.version then
-    print("periodic-element 0.0.alpha.2")
+    print("periodic-element 0.0.alpha.3")
     os.exit()
 end
 
