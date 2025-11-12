@@ -19,8 +19,8 @@ local element_sets = {
 
 for element_set_index = 1, #element_sets do
     local element_set = element_sets[element_set_index]
-    for element_index = 1, element_set:length() do
-        elements_collector[#elements_collector + 1] = element_set[element_index]
+    for _, value in element_set:ipairs() do
+        elements_collector[#elements_collector + 1] = value
     end
 end
 
