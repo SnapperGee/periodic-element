@@ -14,6 +14,8 @@ parser:argument("element", "An element's atomic number, symbol, or name.")
 
 parser:flag("-v --version", "Print version of currently installed script and exit.")
 
+parser:flag("-c --csv", "Output elements as csv.")
+
 parser:option("-a --atomic", "Use an element's atomic number to identify it.")
     :args("+")
     :convert(tonumber)
