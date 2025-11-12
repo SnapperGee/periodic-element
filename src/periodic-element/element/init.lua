@@ -285,13 +285,13 @@ function Element.new(opts)
 end
 
 ---@class PartialElement: Element
----@field oxidation_states OxidationStates|nil
----@field electronegativity number|nil -- Pauling Scale
----@field atomic_radius integer|nil -- van der Waals
----@field ionization_energy number|nil -- eV
----@field melting_point number|nil -- kelvin
----@field boiling_point number|nil -- kelvin
----@field density number|nil  -- g/cm³
+---@field oxidation_states? OxidationStates|nil
+---@field electronegativity? number|nil -- Pauling Scale
+---@field atomic_radius? integer|nil -- van der Waals
+---@field ionization_energy? number|nil -- eV
+---@field melting_point? number|nil -- kelvin
+---@field boiling_point? number|nil -- kelvin
+---@field density? number|nil  -- g/cm³
 
 ---@class PartialElementOpts: ElementOpts
 ---@field oxidation_states OxidationStates|nil
