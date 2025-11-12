@@ -61,6 +61,11 @@ if args.name then
     end
 end
 
+if #element_strings ~= 0 then
+    local elements_string = table.concat(element_strings, "\n\n")
+    print(elements_string)
+end
+
 if #unrecognized_element_args ~= 0 then
     local unrecognized_elements_string = string.format(
         'unrecognized element atomic numbers, symbols, and/or names: "%s"\n',
@@ -68,9 +73,4 @@ if #unrecognized_element_args ~= 0 then
     )
 
     print(unrecognized_elements_string)
-end
-
-if #element_strings ~= 0 then
-    local elements_string = table.concat(element_strings, "\n\n")
-    print(elements_string)
 end
