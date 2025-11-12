@@ -1,5 +1,6 @@
 local parser = require("periodic-element.cli")
 local elements = require("periodic-element.elements")
+local csv = require("src.periodic-element.element.csv")
 
 local args = parser:parse()
 
@@ -11,12 +12,20 @@ end
 local unrecognized_element_args = {}
 local element_strings = {}
 
+if args.csv then
+    element_strings[1] = csv.header_row
+end
+
 for i = 1, #args.element do
     local element_arg = args.element[i]
     local element = elements[element_arg] or elements[tonumber(element_arg)]
 
     if element then
-        element_strings[#element_strings+1] = element:formatted_string()
+        if args.csv then
+            element_strings[#element_strings+1] = csv(element)
+        else
+            element_strings[#element_strings+1] = element:formatted_string()
+        end
     else
         unrecognized_element_args[#unrecognized_element_args+1] = element_arg
     end
@@ -28,7 +37,11 @@ if args.atomic then
         local element = elements[number_arg]
 
         if element then
-            element_strings[#element_strings+1] = element:formatted_string()
+            if args.csv then
+                element_strings[#element_strings+1] = csv(element)
+            else
+                element_strings[#element_strings+1] = element:formatted_string()
+            end
         else
             unrecognized_element_args[#unrecognized_element_args+1] = number_arg
         end
@@ -41,7 +54,11 @@ if args.symbol then
         local element = elements[symbol_arg]
 
         if element then
-            element_strings[#element_strings+1] = element:formatted_string()
+            if args.csv then
+                element_strings[#element_strings+1] = csv(element)
+            else
+                element_strings[#element_strings+1] = element:formatted_string()
+            end
         else
             unrecognized_element_args[#unrecognized_element_args+1] = symbol_arg
         end
@@ -54,7 +71,11 @@ if args.name then
         local element = elements[name_arg]
 
         if element then
-            element_strings[#element_strings+1] = element:formatted_string()
+            if args.csv then
+                element_strings[#element_strings+1] = csv(element)
+            else
+                element_strings[#element_strings+1] = element:formatted_string()
+            end
         else
             unrecognized_element_args[#unrecognized_element_args+1] = name_arg
         end
@@ -62,8 +83,13 @@ if args.name then
 end
 
 if #element_strings ~= 0 then
-    local elements_string = table.concat(element_strings, "\n\n")
-    print(elements_string)
+    if args.csv then
+        local elements_string = table.concat(element_strings, "\n")
+        print(elements_string)
+    else
+        local elements_string = table.concat(element_strings, "\n\n")
+        print(elements_string)
+    end
 end
 
 if #unrecognized_element_args ~= 0 then

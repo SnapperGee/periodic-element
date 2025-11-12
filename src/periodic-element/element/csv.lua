@@ -1,21 +1,36 @@
 local OxidationStates = require("periodic-element.element.oxidation_states")
-local SubshellOccupancy = require("periodic-element.element.subshell_occupancy")
+local ElectronConfiguration = require("periodic-element.element.electron_configuration")
 
-local element_keys = {
-    "name", "symbol", "number", "oxidation_states", "mass", "group", "family",
-    "period", "block", "electronegativity", "atomic_radius", "ionization_energy",
-    "electron_affinity", "melting_point", "boiling_point", "density", "standard_state"
+local concat, tostring, find, getmetatable = table.concat, tostring, string.find, getmetatable
+
+local column_header_values = {
+    "name", "symbol", "number", "mass", "block", "oxidation_states", "family",
+    "electron_configuration", "standard_state", "group", "period",
+    "electronegativity", "ionization_energy", "electron_affinity", "density",
+    "atomic_radius", "melting_point", "boiling_point"
 }
 
+local column_header_values_length = #column_header_values
+
+---@class csv
+local csv = {
+    __newindex = function(self, k, v)
+        error("csv records are immutable", 2)
+    end
+}
+
+--- The ``string`` that can be used as the header for a csv file.
+csv.header_row = concat(column_header_values, ",")
+
+csv.__index = csv
 --- Converts an ``Element`` object into a csv string.
 ---@param element Element
 ---@return string
-local function to_csv(element)
+function csv:__call(element)
+    local out = {}
 
-    local values = {}
-
-    for i = 1, #element_keys do
-        local element_key = element_keys[i]
+    for i = 1, column_header_values_length do
+        local element_key = column_header_values[i]
         local element_property_value = element[element_key]
         local element_property_value_metatable = getmetatable(element_property_value)
 
@@ -27,16 +42,29 @@ local function to_csv(element)
                 oxidation_state_ints[#oxidation_state_ints+1] = oxidation_state_int
             end
 
-            values[#values+1] = string.format("[%s]", table.concat(oxidation_state_ints, ", "))
-
-        elseif element_property_value_metatable == SubshellOccupancy then
-            values[#values+1] = element_property_value.canonical_string
+            out[i] = '"[' .. concat(oxidation_state_ints, ", ") .. ']"'
+        elseif element_property_value_metatable == ElectronConfiguration then
+            out[i] = '"' .. element_property_value.canonical_string .. '"'
         else
-            values[#values+1] = element_property_value or ""
+            if element_property_value == nil then
+                out[i] = ""
+            elseif type(element_property_value) == "string" then
+                out[i] = find(element_property_value, "[%s,]") and ('"' .. element_property_value .. '"') or element_property_value
+            else
+                out[i] = tostring(element_property_value)
+            end
         end
     end
 
-    return table.concat(values, ", ")
+    return concat(out, ",")
 end
 
-return to_csv
+--- Returns an array of csv header column ``string`` values.
+---@return string[]
+function csv.columns()
+    local columns_header_values_copy = {}
+    for i = 1, column_header_values_length do columns_header_values_copy[i] = column_header_values[i] end
+    return columns_header_values_copy
+end
+
+return setmetatable(csv, csv)
