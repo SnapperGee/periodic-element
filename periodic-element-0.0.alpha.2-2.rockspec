@@ -1,23 +1,23 @@
 rockspec_format = "3.1"
 package = "periodic-element"
-version = "0.0.alpha.2-1"
+version = "0.0.alpha.2-2"
 source = {
     url = "git+https://github.com/SnapperGee/periodic-element",
     tag = "0.0.alpha.2-1"
 }
 description = {
-    summary = "Represent an element from the periodic table of elements.",
+    summary = "Elements of the periodic table of elements.",
     detailed = [[
-        The lua periodic-element module provides a class to programmatically
-        represent an element object from the periodic table of elements. As of
-        writing this, all periodic elements have instantiated objects this
-        module exports so having to create one shouldn't be needed.
+        The lua periodic-element module provides classes and objects to
+        programmatically represent an element from the periodic table of
+        elements. This module exports concrete instantiated objects for all
+        periodic elements so having to create one should rarely be necessary.
 
         The Elements object is most likely going to be one of the main and most
         used objects exported by this module. It's capable of using an element's
         atomic number, symbol, or name to return an Element object.
 
-        This package also provides a Molecule and ElementSet class which offers
+        This package also provides a Molecule and ElementSet class which are
         specialized collections for Element objects.
 
         This module employs an immutable by default architecture so all objects

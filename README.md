@@ -1,6 +1,6 @@
 # Periodic Element
 
-Represent an element from the periodic table of elements.
+Elements of the periodic table of elements.
 
 [![lua][lua badge]][lua website]
 ![Git][git badge]
