@@ -91,7 +91,7 @@ function METATABLE:__tostring()
     local self_data = DATA[self]
 
     return string.format(
-        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', oxidation_states=%s, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%s, ionization_energy=%s, electron_affinity=%s, melting_point=%s, boiling_point=%s, density=%s, standard_state=\"%s\"}",
+        "Element{name=\"%s\", symbol=\"%s\", number=%d, mass=%g, group=%s, period=%d, block='%s', family=%s, oxidation_states=%s, electron_configuration=\"%s\", electronegativity=%s, atomic_radius=%s, ionization_energy=%s, electron_affinity=%s, melting_point=%s, boiling_point=%s, density=%s, standard_state=\"%s\"}",
         self_data.name,
         self_data.symbol,
         self_data.number,
@@ -99,6 +99,7 @@ function METATABLE:__tostring()
         tostring(self_data.group),
         self_data.period,
         self_data.block,
+        self_data.family and string.format('"%s"', self_data.family) or tostring(self_data.family),
         self_data.oxidation_states and string.format("{%s}", self_data.oxidation_states:formatted_string()) or tostring(self_data.oxidation_states),
         self_data.electron_configuration.canonical_string,
         self_data.electronegativity and string.format("%g", self_data.electronegativity) or tostring(self_data.electronegativity),
@@ -372,13 +373,6 @@ function Element.partial(opts)
         string.format("'electron_configuration' with metatable of type ElectronConfiguration expected but instead got: %s", tostring(getmetatable(opts.electron_configuration)))
     )
 
-    local family = Family(opts.number)
-
-    assert(
-        family ~= nil,
-        string.format("'family' for atomic number could not be determined: %d", opts.number)
-    )
-
     assert(
         opts.electronegativity == nil or type(opts.electronegativity) == "number" and opts.electronegativity >= 0,
         string.format("non negative 'electronegativity' number expected but got: %s", tostring(opts.electronegativity))
@@ -434,7 +428,7 @@ function Element.partial(opts)
         number = opts.number,
         mass = opts.mass,
         group = opts.group,
-        family = family,
+        family = Family(opts.number),
         period = opts.period,
         block = block,
         oxidation_states = oxidation_states,
@@ -506,7 +500,9 @@ function Element:formatted_string(indent)
                 value or tostring(value)
             )
         elseif key == "family" then
-            strings[#strings + 1] = string.format('family = "%s"', value)
+            if value then
+                strings[#strings + 1] = string.format('family = "%s"', value)
+            end
         elseif key == "period" then
             strings[#strings + 1] = string.format("period = %d", value)
         elseif key == "block" then
