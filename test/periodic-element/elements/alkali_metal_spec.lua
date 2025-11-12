@@ -122,12 +122,16 @@ local francium_properties = {
     {"standard_state", "Solid"},
 }
 
-describe(alkali_metal:name(), function ()
+describe("AlkaliMetal", function ()
+
+    test('AlkaliMetal:name()returns "AlkaliMetal"', function ()
+        assert.are.equal("AlkaliMetal", alkali_metal:name(), 'AlkaliMetal:name() did not return "AlkaliMetal"')
+    end)
 
     test(string.format("%s:length() returns 6", alkali_metal:name()), function ()
         local alkali_metal_length = alkali_metal:length()
-        local message = string.format("%s:length() did not return 6", alkali_metal:name())
-        assert.are.equal(6, alkali_metal_length, message)
+        local fail_message = string.format("%s:length() did not return 6", alkali_metal:name())
+        assert.are.equal(6, alkali_metal_length, fail_message)
     end)
 
     test_elements(alkali_metal.lithium, alkali_metal, lithium_properties, describe, test, assert)

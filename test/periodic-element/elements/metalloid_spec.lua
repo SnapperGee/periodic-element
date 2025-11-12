@@ -122,12 +122,16 @@ local tellurium_properties = {
     {"standard_state", "Solid"},
 }
 
-describe(metalloid:name(), function ()
+describe("Metalloid", function ()
+
+    test('Metalloid:name()returns "Metalloid"', function ()
+        assert.are.equal("Metalloid", metalloid:name(), 'Metalloid:name() did not return "Metalloid"')
+    end)
 
     test(string.format("%s:length() returns 6", metalloid:name()), function ()
         local alkali_metal_length = metalloid:length()
-        local message = string.format("%s:length() did not return 6", metalloid:name())
-        assert.are.equal(6, alkali_metal_length, message)
+        local fail_message = string.format("%s:length() did not return 6", metalloid:name())
+        assert.are.equal(6, alkali_metal_length, fail_message)
     end)
 
     test_elements(metalloid.boron, metalloid, boron_properties, describe, test, assert)

@@ -122,12 +122,16 @@ local radium_properties = {
     {"standard_state", "Solid"},
 }
 
-describe(alkaline_earth_metal:name(), function ()
+describe("AlkalineEarthMetal", function ()
+
+    test('AlkalineEarthMetal:name()returns "AlkalineEarthMetal"', function ()
+        assert.are.equal("AlkalineEarthMetal", alkaline_earth_metal:name(), 'AlkalineEarthMetal:name() did not return "AlkalineEarthMetal"')
+    end)
 
     test(string.format("%s:length() returns 6", alkaline_earth_metal:name()), function ()
         local alkali_metal_length = alkaline_earth_metal:length()
-        local message = string.format("%s:length() did not return 6", alkaline_earth_metal:name())
-        assert.are.equal(6, alkali_metal_length, message)
+        local fail_message = string.format("%s:length() did not return 6", alkaline_earth_metal:name())
+        assert.are.equal(6, alkali_metal_length, fail_message)
     end)
 
     test_elements(alkaline_earth_metal.beryllium, alkaline_earth_metal, beryllium_properties, describe, test, assert)

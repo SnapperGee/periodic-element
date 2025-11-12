@@ -142,12 +142,16 @@ local selenium_properties = {
     {"standard_state", "Solid"},
 }
 
-describe(nonmetal:name(), function ()
+describe("Nonmetal", function ()
+
+    test('Nonmetal:name()returns "Nonmetal"', function ()
+        assert.are.equal("Nonmetal", nonmetal:name(), 'Nonmetal:name() did not return "Nonmetal"')
+    end)
 
     test(string.format("%s:length() returns 7", nonmetal:name()), function ()
         local alkali_metal_length = nonmetal:length()
-        local message = string.format("%s:length() did not return 7", nonmetal:name())
-        assert.are.equal(7, alkali_metal_length, message)
+        local fail_message = string.format("%s:length() did not return 7", nonmetal:name())
+        assert.are.equal(7, alkali_metal_length, fail_message)
     end)
 
     test_elements(nonmetal.hydrogen, nonmetal, hydrogen_properties, describe, test, assert)

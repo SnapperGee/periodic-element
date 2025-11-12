@@ -122,12 +122,16 @@ local tennessine_properties = {
     {"standard_state", "Solid"},
 }
 
-describe(halogen_gas:name(), function ()
+describe("Halogen", function ()
+
+    test('Halogen:name()returns "Halogen"', function ()
+        assert.are.equal("Halogen", halogen_gas:name(), 'Halogen:name() did not return "Halogen"')
+    end)
 
     test(string.format("%s:length() returns 6", halogen_gas:name()), function ()
         local noble_gas_length = halogen_gas:length()
-        local message = string.format("%s:length() did not return 6", halogen_gas:name())
-        assert.are.equal(6, noble_gas_length, message)
+        local fail_message = string.format("%s:length() did not return 6", halogen_gas:name())
+        assert.are.equal(6, noble_gas_length, fail_message)
     end)
 
     test_elements(halogen_gas.fluorine, halogen_gas, fluorine_properties, describe, test, assert)

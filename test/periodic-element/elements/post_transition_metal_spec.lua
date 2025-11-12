@@ -322,12 +322,16 @@ local livermorium_properties = {
     {"standard_state", "Solid"},
 }
 
-describe(post_transition_metal:name(), function ()
+describe("PostTransitionMetal", function ()
+
+    test('PostTransitionMetal:name()returns "PostTransitionMetal"', function ()
+        assert.are.equal("PostTransitionMetal", post_transition_metal:name(), 'PostTransitionMetal:name() did not return "PostTransitionMetal"')
+    end)
 
     test(string.format("%s:length() returns 16", post_transition_metal:name()), function ()
         local alkali_metal_length = post_transition_metal:length()
-        local message = string.format("%s:length() did not return 16", post_transition_metal:name())
-        assert.are.equal(16, alkali_metal_length, message)
+        local fail_message = string.format("%s:length() did not return 16", post_transition_metal:name())
+        assert.are.equal(16, alkali_metal_length, fail_message)
     end)
 
     test_elements(post_transition_metal.aluminum, post_transition_metal, aluminum_properties, describe, test, assert)
