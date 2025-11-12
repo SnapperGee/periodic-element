@@ -469,8 +469,9 @@ local FIELD_ORDER =
     "standard_state",
 }
 
---- Returns a string that's formatted to be a little more readable and prettier
---- than the default tostring string.
+--- Returns a `string` that's formatted to be a little more readable and
+--- prettier than the `string` returned by `tostring`. `nil` values are omitted
+--- from the outputted string.
 ---@param indent? integer|nil -- specify how many spaces each indent should be. Defaults to 4.
 ---@return string
 function Element:formatted_string(indent)
