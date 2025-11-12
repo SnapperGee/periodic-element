@@ -12,18 +12,18 @@ local ElementSet = require("periodic-element.elements.element_set")
 
 local elements_collector = {}
 
-local element_arrays = {
+local element_sets = {
     Actinide, AlkaliMetal, AlkalineEarth, Halogen, Lanthanide, Metalloid, NobleGas,
     Nonmetal, PostTransitionMetal, TransitionMetal
 }
 
-for element_array_index = 1, #element_arrays do
-    local element_array = element_arrays[element_array_index]
-    for element_index = 1, element_array:length() do
-        elements_collector[#elements_collector + 1] = element_array[element_index]
+for element_set_index = 1, #element_sets do
+    local element_set = element_sets[element_set_index]
+    for element_index = 1, element_set:length() do
+        elements_collector[#elements_collector + 1] = element_set[element_index]
     end
 end
 
-local elements_array = ElementSet.new(elements_collector)
+local elements_set = ElementSet.new(elements_collector)
 
-return elements_array
+return elements_set
