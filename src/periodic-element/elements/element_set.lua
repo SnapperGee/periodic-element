@@ -114,16 +114,20 @@ function ElementSet:name()
     return DATA[self]._name or ""
 end
 
+--- Returns iterable pairs of key values of the elements of this element set.
+--- An optional lambda can be passed to determine what element property to use
+--- as keys. It defaults to the atomic number of the element if no key lambda
+--- function is passed.
 ---@generic T
----@param key? (fun(element: Element): T)|nil
+---@param key_function? (fun(element: Element): T)|nil
 ---@return fun(): T?, Element?
-function ElementSet:pairs(key)
-    key = key or function(element) return element.number end
+function ElementSet:pairs(key_function)
+    key_function = key_function or function(element) return element.number end
     local elements = DATA[self].elements
     local i = 0
     return function()
         i = i + 1
-        if i <= #elements then return key(elements[i]), elements[i] end
+        if i <= #elements then return key_function(elements[i]), elements[i] end
         return nil, nil
     end
 end
