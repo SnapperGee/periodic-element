@@ -22,7 +22,7 @@ local standard_states = { Solid = true, Liquid = true, Gas = true }
 ---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number -- eV
----@field electron_affinity number -- eV
+---@field electron_affinity number|nil -- eV
 ---@field melting_point number -- kelvin
 ---@field boiling_point number -- kelvin
 ---@field density number -- g/cm³
@@ -117,14 +117,14 @@ end
 ---@field symbol string
 ---@field number integer
 ---@field mass number
----@field group integer|nil
+---@field group? integer|nil
 ---@field period integer
 ---@field oxidation_states OxidationStates|integer[]
 ---@field electron_configuration ElectronConfiguration
 ---@field electronegativity number -- Pauling Scale
 ---@field atomic_radius integer -- van der Waals
 ---@field ionization_energy number -- eV
----@field electron_affinity number -- eV
+---@field electron_affinity? number|nil -- eV
 ---@field melting_point number -- kelvin
 ---@field boiling_point number -- kelvin
 ---@field density number -- g/cm³
@@ -227,8 +227,8 @@ function Element.new(opts)
     )
 
     assert(
-        type(opts.electron_affinity) == "number" and opts.electron_affinity >= 0,
-        string.format("non negative 'electron_affinity' number expected but got: %s", tostring(opts.electron_affinity))
+        opts.electron_affinity == nil or type(opts.electron_affinity) == "number" and opts.electron_affinity >= 0,
+        string.format("non negative 'electron_affinity' number or nil expected but got: %s", tostring(opts.electron_affinity))
     )
 
     assert(
@@ -289,7 +289,6 @@ end
 ---@field electronegativity number|nil -- Pauling Scale
 ---@field atomic_radius integer|nil -- van der Waals
 ---@field ionization_energy number|nil -- eV
----@field electron_affinity number|nil -- eV
 ---@field melting_point number|nil -- kelvin
 ---@field boiling_point number|nil -- kelvin
 ---@field density number|nil  -- g/cm³
@@ -297,7 +296,6 @@ end
 ---@class PartialElementOpts: ElementOpts
 ---@field oxidation_states OxidationStates|nil
 ---@field electronegativity number|nil -- Pauling Scale
----@field electron_affinity number|nil -- eV
 ---@field atomic_radius integer|nil -- van der Waals
 ---@field ionization_energy number|nil -- eV
 ---@field melting_point number|nil -- kelvin
@@ -513,30 +511,46 @@ function Element:formatted_string(indent)
             strings[#strings + 1] = string.format("period = %d", value)
         elseif key == "block" then
             strings[#strings + 1] = string.format("block = '%s'", value)
-        elseif key == "oxidation_states" and value then
-            strings[#strings + 1] = string.format(
-                "oxidation_states = {%s}",
-                value:formatted_string()
-            )
+        elseif key == "oxidation_states" then
+            if value then
+                strings[#strings + 1] = string.format(
+                    "oxidation_states = {%s}",
+                    value:formatted_string()
+                )
+            end
         elseif key == "electron_configuration" then
             strings[#strings + 1] = string.format(
                 "electron_configuration = %s",
                 value.canonical_string
             )
-        elseif key == "electronegativity" and value then
-            strings[#strings + 1] = string.format("electronegativity = %g", value)
-        elseif key == "atomic_radius" and value then
-            strings[#strings + 1] = string.format("atomic_radius = %g pm", value)
-        elseif key == "ionization_energy" and value then
-            strings[#strings + 1] = string.format("ionization_energy = %g eV", value)
-        elseif key == "electron_affinity" and value then
-            strings[#strings + 1] = string.format("electron_affinity = %g eV", value)
-        elseif key == "melting_point" and value then
-            strings[#strings + 1] = string.format("melting_point = %d K", value)
-        elseif key == "boiling_point" and value then
-            strings[#strings + 1] = string.format("boiling_point = %d K", value)
-        elseif key == "density" and value then
-            strings[#strings + 1] = string.format("density = %g g/cm³", value)
+        elseif key == "electronegativity" then
+            if value then
+                strings[#strings + 1] = string.format("electronegativity = %g", value)
+            end
+        elseif key == "atomic_radius" then
+            if value then
+                strings[#strings + 1] = string.format("atomic_radius = %g pm", value)
+            end
+        elseif key == "ionization_energy" then
+            if value then
+                strings[#strings + 1] = string.format("ionization_energy = %g eV", value)
+            end
+        elseif key == "electron_affinity" then
+            if value then
+                strings[#strings + 1] = string.format("electron_affinity = %g eV", value)
+            end
+        elseif key == "melting_point" then
+            if value then
+                strings[#strings + 1] = string.format("melting_point = %d K", value)
+            end
+        elseif key == "boiling_point" then
+            if value then
+                strings[#strings + 1] = string.format("boiling_point = %d K", value)
+            end
+        elseif key == "density" then
+            if value then
+                strings[#strings + 1] = string.format("density = %g g/cm³", value)
+            end
         elseif key == "standard_state" then
             strings[#strings + 1] = string.format('standard_state = "%s"', value)
         else
