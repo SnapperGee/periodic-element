@@ -290,6 +290,7 @@ end
 ---@field electronegativity? number|nil -- Pauling Scale
 ---@field atomic_radius? integer|nil -- van der Waals
 ---@field ionization_energy? number|nil -- eV
+---@field family string|nil
 ---@field melting_point? number|nil -- kelvin
 ---@field boiling_point? number|nil -- kelvin
 ---@field density? number|nil  -- g/cm³
