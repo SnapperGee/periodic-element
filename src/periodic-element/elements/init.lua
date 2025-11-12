@@ -10,7 +10,7 @@ local PostTransitionMetal = require("periodic-element.elements.post_transition_m
 local TransitionMetal = require("periodic-element.elements.transition_metal")
 local ElementSet = require("periodic-element.elements.element_set")
 
-local elements_collector = {}
+local elements_accumulator = {}
 
 local element_sets = {
     Actinide, AlkaliMetal, AlkalineEarth, Halogen, Lanthanide, Metalloid, NobleGas,
@@ -20,10 +20,10 @@ local element_sets = {
 for element_set_index = 1, #element_sets do
     local element_set = element_sets[element_set_index]
     for _, value in element_set:ipairs() do
-        elements_collector[#elements_collector + 1] = value
+        elements_accumulator[#elements_accumulator + 1] = value
     end
 end
 
-local elements_set = ElementSet.new(elements_collector)
+local elements_set = ElementSet.new(elements_accumulator)
 
 return elements_set
