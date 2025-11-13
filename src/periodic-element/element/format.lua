@@ -3,14 +3,14 @@ local ElectronConfiguration = require("periodic-element.element.electron_configu
 
 local concat, tostring, find, getmetatable = table.concat, tostring, string.find, getmetatable
 
-local element_property_keys = {
+local _element_property_keys = {
     "name", "symbol", "number", "mass", "block", "oxidation_states", "family",
     "electron_configuration", "standard_state", "group", "period",
     "electronegativity", "ionization_energy", "electron_affinity", "density",
     "atomic_radius", "melting_point", "boiling_point"
 }
 
-local element_property_keys_length = #element_property_keys
+local element_property_keys_length = #_element_property_keys
 
 ---@class csv
 local csv = {
@@ -20,7 +20,7 @@ local csv = {
 }
 
 --- The ``string`` that can be used as the header for a csv file.
-csv.header_row = concat(element_property_keys, ",")
+csv.header_row = concat(_element_property_keys, ",")
 
 csv.__index = csv
 --- Converts an ``Element`` object into a csv string.
@@ -30,7 +30,7 @@ function csv:__call(element)
     local out = {}
 
     for i = 1, element_property_keys_length do
-        local element_key = element_property_keys[i]
+        local element_key = _element_property_keys[i]
         local element_property_value = element[element_key]
         local element_property_value_metatable = getmetatable(element_property_value)
 
@@ -59,12 +59,15 @@ function csv:__call(element)
     return concat(out, ",")
 end
 
---- Returns an array of csv header column ``string`` values.
+--- Returns an array the Element class property keys as ``string``.
 ---@return string[]
-function csv.column_header_values()
+local function element_property_keys()
     local columns_header_values_copy = {}
-    for i = 1, element_property_keys_length do columns_header_values_copy[i] = element_property_keys[i] end
+    for i = 1, element_property_keys_length do columns_header_values_copy[i] = _element_property_keys[i] end
     return columns_header_values_copy
 end
 
-return setmetatable(csv, csv)
+return {
+    element_property_keys = element_property_keys,
+    csv = setmetatable(csv, csv)
+}

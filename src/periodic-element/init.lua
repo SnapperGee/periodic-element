@@ -1,6 +1,6 @@
 local parser = require("periodic-element.cli")
 local elements = require("periodic-element.elements")
-local csv = require("src.periodic-element.element.csv")
+local format = require("periodic-element.element.format")
 
 local args = parser:parse()
 
@@ -13,7 +13,7 @@ local unrecognized_element_args = {}
 local element_strings = {}
 
 if args.csv then
-    element_strings[1] = csv.header_row
+    element_strings[1] = format.csv.header_row
 end
 
 for i = 1, #args.element do
@@ -22,7 +22,7 @@ for i = 1, #args.element do
 
     if element then
         if args.csv then
-            element_strings[#element_strings+1] = csv(element)
+            element_strings[#element_strings+1] = format.csv(element)
         else
             element_strings[#element_strings+1] = element:formatted_string()
         end
@@ -38,7 +38,7 @@ if args.atomic then
 
         if element then
             if args.csv then
-                element_strings[#element_strings+1] = csv(element)
+                element_strings[#element_strings+1] = format.csv(element)
             else
                 element_strings[#element_strings+1] = element:formatted_string()
             end
@@ -55,7 +55,7 @@ if args.symbol then
 
         if element then
             if args.csv then
-                element_strings[#element_strings+1] = csv(element)
+                element_strings[#element_strings+1] = format.csv(element)
             else
                 element_strings[#element_strings+1] = element:formatted_string()
             end
@@ -72,7 +72,7 @@ if args.name then
 
         if element then
             if args.csv then
-                element_strings[#element_strings+1] = csv(element)
+                element_strings[#element_strings+1] = format.csv(element)
             else
                 element_strings[#element_strings+1] = element:formatted_string()
             end
