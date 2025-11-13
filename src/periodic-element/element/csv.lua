@@ -3,14 +3,14 @@ local ElectronConfiguration = require("periodic-element.element.electron_configu
 
 local concat, tostring, find, getmetatable = table.concat, tostring, string.find, getmetatable
 
-local column_header_values = {
+local element_property_keys = {
     "name", "symbol", "number", "mass", "block", "oxidation_states", "family",
     "electron_configuration", "standard_state", "group", "period",
     "electronegativity", "ionization_energy", "electron_affinity", "density",
     "atomic_radius", "melting_point", "boiling_point"
 }
 
-local column_header_values_length = #column_header_values
+local element_property_keys_length = #element_property_keys
 
 ---@class csv
 local csv = {
@@ -20,7 +20,7 @@ local csv = {
 }
 
 --- The ``string`` that can be used as the header for a csv file.
-csv.header_row = concat(column_header_values, ",")
+csv.header_row = concat(element_property_keys, ",")
 
 csv.__index = csv
 --- Converts an ``Element`` object into a csv string.
@@ -29,8 +29,8 @@ csv.__index = csv
 function csv:__call(element)
     local out = {}
 
-    for i = 1, column_header_values_length do
-        local element_key = column_header_values[i]
+    for i = 1, element_property_keys_length do
+        local element_key = element_property_keys[i]
         local element_property_value = element[element_key]
         local element_property_value_metatable = getmetatable(element_property_value)
 
@@ -63,7 +63,7 @@ end
 ---@return string[]
 function csv.column_header_values()
     local columns_header_values_copy = {}
-    for i = 1, column_header_values_length do columns_header_values_copy[i] = column_header_values[i] end
+    for i = 1, element_property_keys_length do columns_header_values_copy[i] = element_property_keys[i] end
     return columns_header_values_copy
 end
 
