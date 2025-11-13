@@ -61,7 +61,7 @@ end
 
 --- Returns an array of csv header column ``string`` values.
 ---@return string[]
-function csv.columns()
+function csv.column_header_values()
     local columns_header_values_copy = {}
     for i = 1, column_header_values_length do columns_header_values_copy[i] = column_header_values[i] end
     return columns_header_values_copy
