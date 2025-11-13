@@ -41,6 +41,8 @@ describe("csv", function ()
             local INTERNAL_DATA = get_internal_DATA()
             local raw_hydrogen_table = INTERNAL_DATA[hydrogen]
 
+            assert(raw_hydrogen_table, "Failed to get internal table data of Hydrogen Element object")
+
             for hydrogen_property_key, _ in pairs(raw_hydrogen_table) do
                 local test_string = string.format('csv.column_header_values() contains "%s"', hydrogen_property_key)
                 test(test_string, function ()
