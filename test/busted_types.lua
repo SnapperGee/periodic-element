@@ -21,6 +21,7 @@ local function single_arg(arg, message) end
 local function two_arg(expected, actual, message) end
 
 assert = {
+    is_true = single_arg,
     is_not_nil = single_arg,
     is_nil = single_arg,
     are = {
